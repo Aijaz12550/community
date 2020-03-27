@@ -13,8 +13,8 @@ export const SignUp = () => {
           fontSize: "17px"
         }}
       >
-        Almost there! Please SignUp to access your &lt;Community&gt;
-        community dashboard.
+        Almost there! Please SignUp to access your &lt;Community&gt; community
+        dashboard.
       </p>
 
       <button className="apple-login-btn">continue with Apple</button>

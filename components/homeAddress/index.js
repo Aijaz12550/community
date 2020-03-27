@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "../invitationCode/layout";
 import Link from "next/link";
-import '../../styles/signin/index.scss'
+import "../../styles/signin/index.scss";
 
 export const HomeAddress = () => {
   return (
