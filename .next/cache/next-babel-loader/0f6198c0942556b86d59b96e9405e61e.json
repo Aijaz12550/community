@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport { ProgressBar } from 'react-bootstrap';\nexport const Progress = ({\n  val\n}) => {\n  return __jsx(\"div\", {\n    style: {\n      width: '90%'\n    }\n  }, __jsx(ProgressBar, {\n    variant: \"success\",\n    now: val\n  }));\n};","map":null,"metadata":{},"sourceType":"module"}
