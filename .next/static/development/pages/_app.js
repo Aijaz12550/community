@@ -411,6 +411,41 @@ var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es
 
 /***/ }),
 
+/***/ "./node_modules/next-offline/runtime.js":
+/*!**********************************************!*\
+  !*** ./node_modules/next-offline/runtime.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function unregister() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(function(registration) {
+      registration.unregister();
+    });
+  }
+}
+
+function register(swPath) {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register(swPath || '/service-worker.js')
+      .then(function(registration) {
+        console.log('SW registered: ', registration);
+      })
+      .catch(function(registrationError) {
+        console.log('SW registration failed: ', registrationError);
+      });
+  }
+}
+
+module.exports = {
+  unregister: unregister,
+  register: register
+}
+
+/***/ }),
+
 /***/ "./node_modules/next-redux-wrapper/es6/index.js":
 /*!******************************************************!*\
   !*** ./node_modules/next-redux-wrapper/es6/index.js ***!
@@ -7210,6 +7245,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next-redux-wrapper */ "./node_modules/next-redux-wrapper/es6/index.js");
 /* harmony import */ var _redux_configureStore__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../redux/configureStore */ "./redux/configureStore.js");
+/* harmony import */ var next_offline_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next-offline/runtime */ "./node_modules/next-offline/runtime.js");
+/* harmony import */ var next_offline_runtime__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_offline_runtime__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -7229,6 +7266,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = (Object(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_10__["default"])(_redux_configureStore__WEBPACK_IMPORTED_MODULE_11__["initStore"], {
   debug: true
 })( /*#__PURE__*/function (_App) {
@@ -7243,6 +7281,11 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
   }
 
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(MyApp, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      Object(next_offline_runtime__WEBPACK_IMPORTED_MODULE_12__["register"])();
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -7253,7 +7296,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18,
+          lineNumber: 22,
           columnNumber: 17
         }
       }, __jsx(react_redux__WEBPACK_IMPORTED_MODULE_8__["Provider"], {
@@ -7261,7 +7304,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19,
+          lineNumber: 23,
           columnNumber: 21
         }
       }, __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
@@ -7270,7 +7313,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20,
+          lineNumber: 24,
           columnNumber: 25
         }
       }))));

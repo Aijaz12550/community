@@ -411,11 +411,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _redux_configureStore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/configureStore */ "./redux/configureStore.js");
+/* harmony import */ var next_offline_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next-offline/runtime */ "next-offline/runtime");
+/* harmony import */ var next_offline_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_offline_runtime__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -435,6 +438,10 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
     };
   }
 
+  componentDidMount() {
+    Object(next_offline_runtime__WEBPACK_IMPORTED_MODULE_5__["register"])();
+  }
+
   render() {
     const {
       Component,
@@ -445,7 +452,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 22,
         columnNumber: 17
       }
     }, __jsx(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
@@ -453,7 +460,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 23,
         columnNumber: 21
       }
     }, __jsx(Component, _extends({
@@ -462,7 +469,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 24,
         columnNumber: 25
       }
     }))));
@@ -543,6 +550,17 @@ const AuthReducer = (state = initialState, action) => {
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "next-offline/runtime":
+/*!***************************************!*\
+  !*** external "next-offline/runtime" ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-offline/runtime");
 
 /***/ }),
 

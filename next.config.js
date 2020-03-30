@@ -1,8 +1,9 @@
 const withSass = require("@zeit/next-sass");
 const withCSS = require("@zeit/next-css");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const withOffline = require('next-offline')
 
-module.exports = withCSS(
+module.exports = withOffline(withCSS(
   withSass({
     webpack(config, { dev }) {
       if (config.mode === "production") {
@@ -13,4 +14,5 @@ module.exports = withCSS(
       return config;
     }
   })
-);
+)
+)
