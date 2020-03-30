@@ -1,0 +1,11 @@
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+// import * as Reducers from "./reducers";
+import { AuthReducer } from './reducers/authReducer'
+
+
+// let _combine_reducers = combineReducers(Reducers);
+export const initStore = (initialState={developer:'talktiva'}) => {
+
+    return createStore(AuthReducer,initialState, applyMiddleware(thunk));
+}

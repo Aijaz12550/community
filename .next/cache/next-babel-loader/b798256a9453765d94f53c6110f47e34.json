@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { createStore, combineReducers, applyMiddleware } from \"redux\";\nimport thunk from \"thunk\";\nimport * as Reducers from \"./reducers\";\n\nlet _combine_reducers = combineReducers(Reducers);\n\nexport const initStore = createStore(_combine_reducers, applyMiddleware(thunk));","map":null,"metadata":{},"sourceType":"module"}

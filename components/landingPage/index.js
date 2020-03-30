@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Header } from "./header";
 import "../../styles/landingpage/index.scss";
 
-export const LandingPage = () => {
+export const LandingPage = (props) => {
   return (
     <div>
       <Header />

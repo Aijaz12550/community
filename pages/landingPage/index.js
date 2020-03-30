@@ -1,2 +1,3 @@
 import { LandingPage } from "../../components/landingPage";
-export default () => <LandingPage />;
+import { connect } from 'react-redux'
+export default connect(state=>state)(LandingPage)
