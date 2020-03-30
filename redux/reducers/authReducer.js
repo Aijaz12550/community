@@ -1,4 +1,6 @@
-const initialState = {};
+const initialState = {
+  field: "test Auth reducer"
+};
 
 const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,4 +14,4 @@ const AuthReducer = (state = initialState, action) => {
   }
 };
 
-export {AuthReducer}
+export { AuthReducer };

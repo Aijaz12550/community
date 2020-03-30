@@ -419,6 +419,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -432,9 +438,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
     ctx
   }) {
     return {
-      pageProps: {
-        name: 'Aijaz'
-      }
+      pageProps: _objectSpread({}, Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
     };
   }
 
@@ -452,25 +456,25 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
-        columnNumber: 17
+        lineNumber: 24,
+        columnNumber: 9
       }
     }, __jsx(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
       store: store,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
-        columnNumber: 21
+        lineNumber: 25,
+        columnNumber: 11
       }
     }, __jsx(Component, _extends({
-      data: 'hello'
+      store: store.getState()
     }, pageProps, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
-        columnNumber: 25
+        lineNumber: 26,
+        columnNumber: 13
       }
     }))));
   }
@@ -493,16 +497,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-thunk */ "redux-thunk");
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_thunk__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _reducers_authReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducers/authReducer */ "./redux/reducers/authReducer.js");
+/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducers */ "./redux/reducers/index.js");
 
- // import * as Reducers from "./reducers";
 
- // let _combine_reducers = combineReducers(Reducers);
+
+
+let _combine_reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(_reducers__WEBPACK_IMPORTED_MODULE_2__);
 
 const initStore = (initialState = {
   developer: 'talktiva'
 }) => {
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_authReducer__WEBPACK_IMPORTED_MODULE_2__["AuthReducer"], initialState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_combine_reducers, initialState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a));
 };
 
 /***/ }),
@@ -523,7 +528,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-const initialState = {};
+const initialState = {
+  field: "test Auth reducer"
+};
 
 const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -536,6 +543,22 @@ const AuthReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+
+
+/***/ }),
+
+/***/ "./redux/reducers/index.js":
+/*!*********************************!*\
+  !*** ./redux/reducers/index.js ***!
+  \*********************************/
+/*! exports provided: AuthReducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _authReducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./authReducer */ "./redux/reducers/authReducer.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AuthReducer", function() { return _authReducer__WEBPACK_IMPORTED_MODULE_0__["AuthReducer"]; });
 
 
 
