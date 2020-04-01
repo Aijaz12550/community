@@ -20,6 +20,7 @@ export default connect(state=>state)((props) => {
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"></link>
       </Head>
       <DashBoard {...props} />
     </Fragment>

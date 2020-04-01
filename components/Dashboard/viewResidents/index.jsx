@@ -6,108 +6,277 @@ import {
   CardFooter,
   CardTitle,
   Row,
-  Col
+  Col,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Input,
+  Table
 } from "reactstrap";
+import "../../../styles/viewResidents/index.scss";
 
 export const ViewResident = () => {
   return (
     <div className="content">
       <Row>
-        <Col lg="4" md="6" sm="6">
-          <Card className="card-stats">
+        <Col lg="12" md="12" sm="12">
+          <Card
+            style={{ background: "#F6F7FB", border: "none", boxShadow: "none" }}
+          >
             <CardBody>
               <Row>
-                <Col md="4" xs="5">
-                  <div className="icon-big text-center icon-warning">
-                    <i className="nc-icon nc-globe text-warning" />
-                  </div>
-                </Col>
-                <Col md="8" xs="7">
-                  <div className="numbers">
-                    <p className="card-category">Residents</p>
-                    <CardTitle tag="p">150</CardTitle>
-                    <p />
-                  </div>
-                </Col>
+                <div
+                  className="number"
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <p className="view-residents-title">
+                    Turner Hill HomeOwners Association
+                  </p>
+                  <p className="view-residents-address">
+                    2 barnum place abc abc USA{" "}
+                  </p>
+                  <p />
+                </div>
               </Row>
             </CardBody>
-            <CardFooter>
-              <hr />
-              <div className="stats">
-                <i className="fas fa-sync-alt" /> Update Now
-              </div>
-            </CardFooter>
           </Card>
         </Col>
 
-        <Col lg="4" md="6" sm="6">
-          <Card className="card-stats">
-            <CardBody>
-              <Row>
-                <Col md="4" xs="5">
-                  <div className="icon-big text-center icon-warning">
-                    <i className="nc-icon nc-vector text-danger" />
-                  </div>
-                </Col>
-                <Col md="8" xs="7">
-                  <div className="numbers">
-                    <p className="card-category">Members</p>
-                    <CardTitle tag="p">23</CardTitle>
-                    <p />
-                  </div>
-                </Col>
-              </Row>
-            </CardBody>
-            <CardFooter>
-              <hr />
-              <div className="stats">
-                <i className="far fa-clock" /> In the last 6 month
-              </div>
-            </CardFooter>
-          </Card>
-        </Col>
-        <Col lg="4" md="6" sm="6">
-          <Card className="card-stats">
-            <CardBody>
-              <Row>
-                <Col md="4" xs="5">
-                  <div className="icon-big text-center icon-warning">
-                    <i className="nc-icon nc-favourite-28 text-primary" />
-                  </div>
-                </Col>
-                <Col md="8" xs="7">
-                  <div className="numbers">
-                    <p className="card-category">Followers</p>
-                    <CardTitle tag="p">+45K</CardTitle>
-                    <p />
-                  </div>
-                </Col>
-              </Row>
-            </CardBody>
-            <CardFooter>
-              <hr />
-              <div className="stats">
-                <i className="fas fa-sync-alt" /> Update now
-              </div>
-            </CardFooter>
-          </Card>
+        {/* search ======= */}
+        <Col lg="12" md="12" sm="12">
+          <form style={{ background: "white" }}>
+            <InputGroup
+              className="no-border card-stats"
+              style={{ background: "white", height: "50px" }}
+            >
+              <InputGroupAddon
+                addonType="append"
+                style={{ background: "white" }}
+              >
+                <InputGroupText style={{ background: "white" }}>
+                  <i className="fas fa-search" />
+                </InputGroupText>
+              </InputGroupAddon>
+              <Input placeholder="Search..." style={{ background: "white" }} />
+            </InputGroup>
+          </form>
         </Col>
       </Row>
       <Row>
         <Col md="12">
-          <Card>
-            <CardHeader>
-              <CardTitle tag="h5">Users Behavior</CardTitle>
-              <p className="card-category">24 Hours performance</p>
-            </CardHeader>
-            <CardBody></CardBody>
-            <CardFooter>
-              <hr />
-              <div className="stats">
-                <i className="fa fa-history" /> Updated 3 minutes ago
+          <Table responsive className="residents-tabl">
+            <thead className="text-primary">
+              <tr>
+                <th className='sm-display-none'>Address</th>
+                <th>Family Members</th>
+                <th className="text-right" style={{minWidth:'150px',padding:'0px',paddingRight:'15px'}}>Residence Since</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="residents-table-row">
+                <td className='address-td sm-display-none'>Dakota Rice</td>
+                <td className="row-residents">
+                  <div className=' residents-name-container  truncate-overflow'>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                  </div>
+                  
+                    <span className='residents-name-container truncate-overflow'>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                    </span>
+               
+                </td>
+                <td className="text-right">September 2019</td>
+              </tr>
+              <div style={{height:'15px'}}>
+               
+               </div>
+              {/* ======================= */}
+              <tr className="residents-table-row">
+                <td className='address-td sm-display-none'>Dakota Rice</td>
+                <td className="row-residents">
+                  <div className=' residents-name-container  truncate-overflow'>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                  </div>
+                  
+                    <span className='residents-name-container truncate-overflow'>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                    </span>
+               
+                </td>
+                <td className="text-right">September 2019</td>
+              </tr>
+              <div style={{height:'15px'}}>
+               
+               </div>
+              {/* -========================== */}
+
+              <tr className="residents-table-row">
+                <td className='address-td sm-display-none'>Dakota Rice</td>
+                <td className="row-residents">
+                  <div className=' residents-name-container  truncate-overflow'>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                  </div>
+                  
+                    <span className='residents-name-container truncate-overflow'>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                    </span>
+               
+                </td>
+                <td className="text-right">September 2019</td>
+              </tr>
+              <div style={{height:'15px'}}>
+               
               </div>
-            </CardFooter>
-          </Card>
+
+              {/* ============================= */}
+              <tr className="residents-table-row" >
+                <td className='address-td sm-display-none'>Dakota Rice</td>
+                <td className="row-residents">
+                  <div className=' residents-name-container  truncate-overflow'>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                    <img
+                      src="/zeit.svg"
+                      className="roundedCircle"
+                      style={{ background: "yellow", zIndex: 2 }}
+                    ></img>
+                    <img src="/zeit.svg" className="roundedCircle"></img>
+                  </div>
+                  
+                    <span className='residents-name-container truncate-overflow'>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                      <p>hello,</p>
+                    </span>
+               
+                </td>
+                <td className="text-right">September 2019</td>
+              </tr>
+
+            
+            </tbody>
+          </Table>
         </Col>
       </Row>
     </div>

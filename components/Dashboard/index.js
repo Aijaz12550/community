@@ -1,5 +1,5 @@
 import React from "react";
-import { SideBar } from "./siderbar";
+import { SideBar } from "./sidebar";
 import NavBar from "./navbar";
 import Footer from "./footer";
 import { routes } from "./dashboardRoutes";
@@ -12,11 +12,11 @@ export const DashBoard = props => {
   return (
     <div className="wrapper">
       <SideBar />
-      <div className="main-panel" style={{ background: "#eee" }}>
+      <div className="main-panel" style={{ background: "#F6F7FB" }}>
         <NavBar heading={router?.query?.role?.replace(/_/, " ")} />
 
         <div style={{ marginTop: "80px", minHeight: "185vh" }}>
-          {routes.map((val, key) => {
+          {routes().map((val, key) => {
             if (router?.query?.role === val.path) {
               return (
                 <div key={key} style={{ padding: "10px" }}>

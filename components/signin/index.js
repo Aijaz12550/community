@@ -2,6 +2,8 @@ import React from "react";
 import { Container } from "../mainlayout";
 import Link from "next/link";
 import "../../styles/signin/index.scss";
+import {GoogleLogin} from './google'
+import { Apple } from './apple'
 
 export const SignIn = props => {
   return (
@@ -10,8 +12,10 @@ export const SignIn = props => {
       <p>Please Sign In to access your community dashboard.</p>
 
       <button className="apple-login-btn">continue with Apple</button>
+      <GoogleLogin/>
+      <Apple/>
 
-      <button className="google-login-btn">continue with Google</button>
+      {/* <button className="google-login-btn">continue with Google</button> */}
 
       <Link href="#">
         <a>OR USE YOUR OWN EMAIL</a>

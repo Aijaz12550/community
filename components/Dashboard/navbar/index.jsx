@@ -76,9 +76,9 @@ class Header extends React.Component {
                 <span className="navbar-toggler-bar bar3" />
               </button>
             </div>
-            <NavbarBrand href="/">
+            {/* <NavbarBrand href="/">
               <p style={{ color: "black" }}>{this.props.heading}</p>
-            </NavbarBrand>
+            </NavbarBrand> */}
           </div>
           <NavbarToggler onClick={this.toggle}>
             <span className="navbar-toggler-bar navbar-kebab" />
@@ -90,16 +90,7 @@ class Header extends React.Component {
             navbar
             className="justify-content-end"
           >
-            <form>
-              <InputGroup className="no-border">
-                <Input placeholder="Search..." />
-                <InputGroupAddon addonType="append">
-                  <InputGroupText>
-                    <i className="fas fa-search" />
-                  </InputGroupText>
-                </InputGroupAddon>
-              </InputGroup>
-            </form>
+         
             <Nav navbar>
               <NavItem>
                 <Link href="/">
@@ -116,7 +107,7 @@ class Header extends React.Component {
                 isOpen={this.state.dropdownOpen}
                 toggle={e => this.dropdownToggle(e)}
               >
-                <DropdownToggle caret nav>
+                <DropdownToggle caret nav style={{color:'black'}}>
                   <i className="fas fa-user" />
                   <p>
                     <span
@@ -133,16 +124,7 @@ class Header extends React.Component {
                   <DropdownItem tag="a">Something else here</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
-              <NavItem>
-                <Link href="/">
-                  <div className="nav-link btn-rotate">
-                    <i className="fas fa-user" />
-                    <p>
-                      <span className="d-lg-none d-md-block">Account</span>
-                    </p>
-                  </div>
-                </Link>
-              </NavItem>
+             
             </Nav>
           </Collapse>
         </Container>

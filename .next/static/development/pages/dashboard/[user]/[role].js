@@ -10,86 +10,232 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _viewResidents__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../viewResidents */ "./components/Dashboard/viewResidents/index.jsx");
-var _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/components/Dashboard/dashboardRoutes/index.js";
+/* harmony import */ var _viewResidents__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../viewResidents */ "./components/Dashboard/viewResidents/index.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+var _this = undefined,
+    _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/components/Dashboard/dashboardRoutes/index.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
-var routes = [{
-  path: "view_residents",
-  name: "View Residents",
-  component: __jsx(_viewResidents__WEBPACK_IMPORTED_MODULE_1__["ViewResident"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7,
-      columnNumber: 16
-    }
-  }),
-  icon: "fas fa-home"
-}, {
-  path: "invite_residents",
-  name: "Invite Residents",
-  component: __jsx("p", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 16
-    }
-  }, " hello seond 222222"),
-  icon: "fas fa-home"
-}, {
-  path: "invite_members",
-  name: "Invite Members",
-  component: __jsx("p", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19,
-      columnNumber: 16
-    }
-  }, "Hello 3333333"),
-  icon: "fas fa-users"
-}, {
-  path: "manage_members",
-  name: "Manage Members",
-  component: __jsx("p", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25,
-      columnNumber: 16
-    }
-  }, " hello seond 444444444444"),
-  icon: "fas fa-users"
-}, {
-  path: "managae_documents",
-  name: "Manage Documents",
-  component: __jsx("p", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31,
-      columnNumber: 16
-    }
-  }, "Manage Component"),
-  icon: "fas fa-file"
-}, {
-  path: "send_communication",
-  name: "Send Communication",
-  component: __jsx("p", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37,
-      columnNumber: 16
-    }
-  }, " communication"),
-  icon: "fas fa-phone"
-}];
+
+
+var routes = function routes() {
+  var router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
+  return [{
+    path: "view_residents",
+    name: "View Residents",
+    component: __jsx(_viewResidents__WEBPACK_IMPORTED_MODULE_0__["ViewResident"], {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12,
+        columnNumber: 18
+      }
+    }),
+    icon: __jsx("svg", {
+      width: "18",
+      height: "18",
+      viewBox: "0 0 18 18",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14,
+        columnNumber: 9
+      }
+    }, __jsx("path", {
+      "fill-rule": "evenodd",
+      "clip-rule": "evenodd",
+      d: "M1.85716 0.666748H6.61907C7.27655 0.666748 7.80954 1.19974 7.80954 1.85722V6.61913C7.80954 7.27661 7.27655 7.8096 6.61907 7.8096H1.85716C1.19968 7.8096 0.666687 7.27661 0.666687 6.61913V1.85722C0.666687 1.19974 1.19968 0.666748 1.85716 0.666748ZM11.3809 10.1905H16.1429C16.8003 10.1905 17.3333 10.7235 17.3333 11.381V16.1429C17.3333 16.8004 16.8003 17.3334 16.1429 17.3334H11.3809C10.7235 17.3334 10.1905 16.8004 10.1905 16.1429V11.381C10.1905 10.7235 10.7235 10.1905 11.3809 10.1905ZM11.3809 0.666748H16.1429C16.8003 0.666748 17.3333 1.19974 17.3333 1.85722V6.61913C17.3333 7.27661 16.8003 7.8096 16.1429 7.8096H11.3809C10.7235 7.8096 10.1905 7.27661 10.1905 6.61913V1.85722C10.1905 1.19974 10.7235 0.666748 11.3809 0.666748ZM1.85716 10.1905H6.61907C7.27655 10.1905 7.80954 10.7235 7.80954 11.381V16.1429C7.80954 16.8004 7.27655 17.3334 6.61907 17.3334H1.85716C1.19968 17.3334 0.666687 16.8004 0.666687 16.1429V11.381C0.666687 10.7235 1.19968 10.1905 1.85716 10.1905Z",
+      fill: router.query.role === "view_residents" ? "#009999" : "#344563",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21,
+        columnNumber: 11
+      }
+    }))
+  }, {
+    path: "invite_residents",
+    name: "Invite Residents",
+    component: __jsx("p", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35,
+        columnNumber: 18
+      }
+    }, " hello seond 222222"),
+    icon: __jsx("svg", {
+      width: "18",
+      height: "18",
+      viewBox: "0 0 18 18",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37,
+        columnNumber: 9
+      }
+    }, __jsx("path", {
+      "fill-rule": "evenodd",
+      "clip-rule": "evenodd",
+      d: "M14.9524 3.84128C14.0757 3.84128 13.3651 3.13062 13.3651 2.25397C13.3651 1.37733 14.0757 0.666672 14.9524 0.666672C15.829 0.666672 16.5397 1.37733 16.5397 2.25397C16.5397 3.13062 15.829 3.84128 14.9524 3.84128ZM7.01588 4.63496C7.01588 5.5116 7.72654 6.22226 8.60318 6.22226C9.47982 6.22226 10.1905 5.5116 10.1905 4.63496C10.1905 3.75832 9.47982 3.04766 8.60318 3.04766C7.72654 3.04766 7.01588 3.75832 7.01588 4.63496ZM2.25399 8.60317C1.37735 8.60317 0.666687 7.89251 0.666687 7.01587C0.666687 6.13922 1.37735 5.42857 2.25399 5.42857C3.13063 5.42857 3.84129 6.13922 3.84129 7.01587C3.84129 7.89251 3.13063 8.60317 2.25399 8.60317ZM9.79366 9.39685H8.20635C7.54887 9.39685 7.01588 9.92984 7.01588 10.5873V16.1429C7.01588 16.8004 7.54887 17.3334 8.20635 17.3334H9.79366C10.4511 17.3334 10.9841 16.8004 10.9841 16.1429V10.5873C10.9841 9.92984 10.4511 9.39685 9.79366 9.39685ZM3.44446 11.7778H1.85716C1.19968 11.7778 0.666687 12.3108 0.666687 12.9682V16.1428C0.666687 16.8003 1.19968 17.3333 1.85716 17.3333H3.44446C4.10195 17.3333 4.63494 16.8003 4.63494 16.1428V12.9682C4.63494 12.3108 4.10195 11.7778 3.44446 11.7778ZM16.1428 7.01586H14.5555C13.8981 7.01586 13.3651 7.54886 13.3651 8.20634V16.11C13.3651 16.7675 13.8981 17.3005 14.5555 17.3005H16.1428C16.8003 17.3005 17.3333 16.7675 17.3333 16.11V8.20634C17.3333 7.54886 16.8003 7.01586 16.1428 7.01586ZM6.2237 4.72005C6.23838 5.13769 6.36062 5.52797 6.56358 5.86402L4.59885 6.6008C4.52736 6.19411 4.35265 5.82298 4.10273 5.51541L6.2237 4.72005ZM12.9129 3.48312C12.7099 3.14706 12.5877 2.75679 12.573 2.33915L10.452 3.13451C10.7019 3.44207 10.8766 3.8132 10.9481 4.21989L12.9129 3.48312Z",
+      fill: router.query.role === "invite_residents" ? "#009999" : "#344563",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44,
+        columnNumber: 11
+      }
+    }))
+  }, {
+    path: "invite_members",
+    name: "Invite Members",
+    component: __jsx("p", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58,
+        columnNumber: 18
+      }
+    }, "Hello 3333333"),
+    icon: __jsx("svg", {
+      width: "18",
+      height: "18",
+      viewBox: "0 0 18 18",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
+        columnNumber: 9
+      }
+    }, __jsx("path", {
+      "fill-rule": "evenodd",
+      "clip-rule": "evenodd",
+      d: "M17.3213 16.7365C17.3992 17.0867 17.0867 17.3992 16.7365 17.3213L12.7609 16.4379C11.6055 17.0232 10.3245 17.333 8.99985 17.333C4.39757 17.333 0.666687 13.6021 0.666687 8.99983C0.666687 4.39756 4.39757 0.666672 8.99985 0.666672C13.6021 0.666672 17.333 4.39756 17.333 8.99983C17.333 10.3245 17.0232 11.6055 16.4379 12.7609L17.3213 16.7365Z",
+      fill: router.query.role === "invite_members" ? "#009999" : "#344563",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 67,
+        columnNumber: 11
+      }
+    }))
+  }, {
+    path: "manage_members",
+    name: "Manage Members",
+    component: __jsx("p", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 81,
+        columnNumber: 18
+      }
+    }, " hello seond 444444444444"),
+    icon: __jsx("svg", {
+      width: "17",
+      height: "16",
+      viewBox: "0 0 17 16",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83,
+        columnNumber: 9
+      }
+    }, __jsx("path", {
+      "fill-rule": "evenodd",
+      "clip-rule": "evenodd",
+      d: "M12.6364 0.337662C12.4212 0.337662 12.2468 0.512096 12.2468 0.727272V2.28571C12.2468 2.50089 12.4212 2.67532 12.6364 2.67532C12.8516 2.67532 13.026 2.50089 13.026 2.28571V0.727272C13.026 0.512096 12.8516 0.337662 12.6364 0.337662ZM4.84419 0.337662C4.62902 0.337662 4.45458 0.512096 4.45458 0.727272V2.28571C4.45458 2.50089 4.62902 2.67532 4.84419 2.67532C5.05937 2.67532 5.2338 2.50089 5.2338 2.28571V0.727272C5.2338 0.512096 5.05937 0.337662 4.84419 0.337662ZM6.01302 1.11688H11.4676V2.28571C11.4676 2.93124 11.9909 3.45455 12.6364 3.45455C13.2819 3.45455 13.8052 2.93124 13.8052 2.28571V1.11688H15.7533C16.3988 1.11688 16.9221 1.64019 16.9221 2.28571V5.01299H0.558472V2.28571C0.558472 1.64019 1.08178 1.11688 1.7273 1.11688H3.67535V2.28571C3.67535 2.93124 4.19866 3.45455 4.84419 3.45455C5.48971 3.45455 6.01302 2.93124 6.01302 2.28571V1.11688ZM16.9221 12.4156V5.7922H0.558472V12.4156C0.558472 14.3522 2.12838 15.9221 4.06497 15.9221H13.4156C15.3522 15.9221 16.9221 14.3522 16.9221 12.4156ZM5.27125 9.6467C5.43795 9.48807 5.70169 9.49461 5.86032 9.66132L7.54588 11.4327L11.0855 7.59312C11.2414 7.42393 11.505 7.41321 11.6742 7.56919C11.8434 7.72516 11.8541 7.98876 11.6982 8.15796L7.85705 12.3246C7.69381 12.5017 7.41487 12.5039 7.24885 12.3294L5.25662 10.2358C5.09799 10.0691 5.10454 9.80533 5.27125 9.6467Z",
+      fill: router.query.role === "manage_members" ? "#009999" : "#344563",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 90,
+        columnNumber: 11
+      }
+    }))
+  }, {
+    path: "managae_documents",
+    name: "Manage Documents",
+    component: __jsx("p", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 104,
+        columnNumber: 18
+      }
+    }, "Manage Component"),
+    icon: __jsx("svg", {
+      width: "18",
+      height: "18",
+      viewBox: "0 0 18 18",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 106,
+        columnNumber: 9
+      }
+    }, __jsx("path", {
+      "fill-rule": "evenodd",
+      "clip-rule": "evenodd",
+      d: "M13.2488 6.89959L17.3334 10.9829V3.44445C17.3334 1.91032 16.0897 0.666668 14.5556 0.666668H3.44446C1.91034 0.666668 0.666687 1.91032 0.666687 3.44445V14.1587L6.33847 8.48695C6.49923 8.32618 6.76193 8.33309 6.91403 8.50208L8.90032 10.687L12.6877 6.89965C12.8426 6.7447 13.0938 6.74467 13.2488 6.89959ZM7.80957 4.63492C7.80957 5.51156 7.09892 6.22222 6.22227 6.22222C5.34563 6.22222 4.63497 5.51156 4.63497 4.63492C4.63497 3.75827 5.34563 3.04761 6.22227 3.04761C7.09892 3.04761 7.80957 3.75827 7.80957 4.63492ZM6.22223 5.42857C5.78391 5.42857 5.42858 5.07324 5.42858 4.63491C5.42858 4.19659 5.78391 3.84126 6.22223 3.84126C6.66055 3.84126 7.01588 4.19659 7.01588 4.63491C7.01588 5.07324 6.66055 5.42857 6.22223 5.42857ZM17.3333 14.5068V12.2498L12.9349 7.80953L9.37434 11.4051L14.7065 17.3281C16.1722 17.2383 17.3333 16.0095 17.3333 14.5068ZM3.33818 17.3333H13.6302L6.5218 9.44017L0.666687 15.3528C1.02277 16.5006 2.08417 17.3333 3.33818 17.3333Z",
+      fill: router.query.role === "managae_documents" ? "#009999" : "#344563",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 113,
+        columnNumber: 11
+      }
+    }))
+  }, {
+    path: "send_communication",
+    name: "Send Communication",
+    component: __jsx("p", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 127,
+        columnNumber: 18
+      }
+    }, " communication"),
+    icon: __jsx("svg", {
+      width: "18",
+      height: "18",
+      viewBox: "0 0 18 18",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 129,
+        columnNumber: 9
+      }
+    }, __jsx("path", {
+      "fill-rule": "evenodd",
+      "clip-rule": "evenodd",
+      d: "M13.2488 6.89959L17.3334 10.9829V3.44445C17.3334 1.91032 16.0897 0.666668 14.5556 0.666668H3.44446C1.91034 0.666668 0.666687 1.91032 0.666687 3.44445V14.1587L6.33847 8.48695C6.49923 8.32618 6.76193 8.33309 6.91403 8.50208L8.90032 10.687L12.6877 6.89965C12.8426 6.7447 13.0938 6.74467 13.2488 6.89959ZM7.80957 4.63492C7.80957 5.51156 7.09892 6.22222 6.22227 6.22222C5.34563 6.22222 4.63497 5.51156 4.63497 4.63492C4.63497 3.75827 5.34563 3.04761 6.22227 3.04761C7.09892 3.04761 7.80957 3.75827 7.80957 4.63492ZM6.22223 5.42857C5.78391 5.42857 5.42858 5.07324 5.42858 4.63491C5.42858 4.19659 5.78391 3.84126 6.22223 3.84126C6.66055 3.84126 7.01588 4.19659 7.01588 4.63491C7.01588 5.07324 6.66055 5.42857 6.22223 5.42857ZM17.3333 14.5068V12.2498L12.9349 7.80953L9.37434 11.4051L14.7065 17.3281C16.1722 17.2383 17.3333 16.0095 17.3333 14.5068ZM3.33818 17.3333H13.6302L6.5218 9.44017L0.666687 15.3528C1.02277 16.5006 2.08417 17.3333 3.33818 17.3333Z",
+      fill: router.query.role === "send_communication" ? "#009999" : "#344563",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 136,
+        columnNumber: 11
+      }
+    }))
+  }];
+};
 
 /***/ }),
 
@@ -282,7 +428,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashBoard", function() { return DashBoard; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _siderbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./siderbar */ "./components/Dashboard/siderbar/index.js");
+/* harmony import */ var _sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sidebar */ "./components/Dashboard/sidebar/index.js");
 /* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./navbar */ "./components/Dashboard/navbar/index.jsx");
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footer */ "./components/Dashboard/footer/index.js");
 /* harmony import */ var _dashboardRoutes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboardRoutes */ "./components/Dashboard/dashboardRoutes/index.js");
@@ -315,7 +461,7 @@ var DashBoard = function DashBoard(props) {
       lineNumber: 13,
       columnNumber: 5
     }
-  }, __jsx(_siderbar__WEBPACK_IMPORTED_MODULE_1__["SideBar"], {
+  }, __jsx(_sidebar__WEBPACK_IMPORTED_MODULE_1__["SideBar"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -325,7 +471,7 @@ var DashBoard = function DashBoard(props) {
   }), __jsx("div", {
     className: "main-panel",
     style: {
-      background: "#eee"
+      background: "#F6F7FB"
     },
     __self: _this,
     __source: {
@@ -352,7 +498,7 @@ var DashBoard = function DashBoard(props) {
       lineNumber: 18,
       columnNumber: 9
     }
-  }, _dashboardRoutes__WEBPACK_IMPORTED_MODULE_4__["routes"].map(function (val, key) {
+  }, Object(_dashboardRoutes__WEBPACK_IMPORTED_MODULE_4__["routes"])().map(function (val, key) {
     var _router$query2;
 
     if ((router === null || router === void 0 ? void 0 : (_router$query2 = router.query) === null || _router$query2 === void 0 ? void 0 : _router$query2.role) === val.path) {
@@ -549,25 +695,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
           lineNumber: 76,
           columnNumber: 17
         }
-      }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["NavbarBrand"], {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 79,
-          columnNumber: 13
-        }
-      }, __jsx("p", {
-        style: {
-          color: "black"
-        },
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80,
-          columnNumber: 15
-        }
-      }, this.props.heading))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["NavbarToggler"], {
+      })))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["NavbarToggler"], {
         onClick: this.toggle,
         __self: this,
         __source: {
@@ -609,65 +737,19 @@ var Header = /*#__PURE__*/function (_React$Component) {
           lineNumber: 88,
           columnNumber: 11
         }
-      }, __jsx("form", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 93,
-          columnNumber: 13
-        }
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["InputGroup"], {
-        className: "no-border",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 94,
-          columnNumber: 15
-        }
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["Input"], {
-        placeholder: "Search...",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 95,
-          columnNumber: 17
-        }
-      }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["InputGroupAddon"], {
-        addonType: "append",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 96,
-          columnNumber: 17
-        }
-      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["InputGroupText"], {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 97,
-          columnNumber: 19
-        }
-      }, __jsx("i", {
-        className: "fas fa-search",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 98,
-          columnNumber: 21
-        }
-      }))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["Nav"], {
+      }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["Nav"], {
         navbar: true,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103,
+          lineNumber: 94,
           columnNumber: 13
         }
       }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["NavItem"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104,
+          lineNumber: 95,
           columnNumber: 15
         }
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -675,7 +757,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105,
+          lineNumber: 96,
           columnNumber: 17
         }
       }, __jsx("div", {
@@ -683,7 +765,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 106,
+          lineNumber: 97,
           columnNumber: 19
         }
       }, __jsx("i", {
@@ -691,14 +773,14 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107,
+          lineNumber: 98,
           columnNumber: 21
         }
       }), __jsx("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108,
+          lineNumber: 99,
           columnNumber: 21
         }
       }, __jsx("span", {
@@ -706,7 +788,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109,
+          lineNumber: 100,
           columnNumber: 23
         }
       }, "Stats"))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["Dropdown"], {
@@ -718,16 +800,19 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114,
+          lineNumber: 105,
           columnNumber: 15
         }
       }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["DropdownToggle"], {
         caret: true,
         nav: true,
+        style: {
+          color: 'black'
+        },
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119,
+          lineNumber: 110,
           columnNumber: 17
         }
       }, __jsx("i", {
@@ -735,14 +820,14 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120,
+          lineNumber: 111,
           columnNumber: 19
         }
       }), __jsx("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121,
+          lineNumber: 112,
           columnNumber: 19
         }
       }, __jsx("span", {
@@ -753,7 +838,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122,
+          lineNumber: 113,
           columnNumber: 21
         }
       }, "Some Actions"))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["DropdownMenu"], {
@@ -761,7 +846,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130,
+          lineNumber: 121,
           columnNumber: 17
         }
       }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["DropdownItem"], {
@@ -769,7 +854,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131,
+          lineNumber: 122,
           columnNumber: 19
         }
       }, "Action"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["DropdownItem"], {
@@ -777,7 +862,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132,
+          lineNumber: 123,
           columnNumber: 19
         }
       }, "Another Action"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["DropdownItem"], {
@@ -785,56 +870,10 @@ var Header = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133,
+          lineNumber: 124,
           columnNumber: 19
         }
-      }, "Something else here"))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_8__["NavItem"], {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 136,
-          columnNumber: 15
-        }
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 137,
-          columnNumber: 17
-        }
-      }, __jsx("div", {
-        className: "nav-link btn-rotate",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 138,
-          columnNumber: 19
-        }
-      }, __jsx("i", {
-        className: "fas fa-user",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 139,
-          columnNumber: 21
-        }
-      }), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 140,
-          columnNumber: 21
-        }
-      }, __jsx("span", {
-        className: "d-lg-none d-md-block",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 141,
-          columnNumber: 23
-        }
-      }, "Account")))))))));
+      }, "Something else here")))))));
     }
   }]);
 
@@ -845,10 +884,10 @@ var Header = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ "./components/Dashboard/siderbar/index.js":
-/*!************************************************!*\
-  !*** ./components/Dashboard/siderbar/index.js ***!
-  \************************************************/
+/***/ "./components/Dashboard/sidebar/index.js":
+/*!***********************************************!*\
+  !*** ./components/Dashboard/sidebar/index.js ***!
+  \***********************************************/
 /*! exports provided: SideBar */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -863,10 +902,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboardRoutes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dashboardRoutes */ "./components/Dashboard/dashboardRoutes/index.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styles_sidebar_index_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../styles/sidebar/index.scss */ "./styles/sidebar/index.scss");
+/* harmony import */ var _styles_sidebar_index_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_sidebar_index_scss__WEBPACK_IMPORTED_MODULE_5__);
 var _this = undefined,
-    _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/components/Dashboard/siderbar/index.js";
+    _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/components/Dashboard/sidebar/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -882,33 +924,149 @@ var SideBar = function SideBar() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 12,
       columnNumber: 5
     }
   }, __jsx("div", {
-    className: "logo",
-    style: {
-      color: "black"
-    },
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 7
-    }
-  }, __jsx("a", {
-    href: "#",
-    className: "simple-text logo-normal",
-    style: {
-      color: "white"
-    },
+    className: "sidebar-header logo",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13,
+      columnNumber: 7
+    }
+  }, __jsx("svg", {
+    style: {
+      width: "250px",
+      marginLeft: "-25px",
+      paddingLeft: "-10px"
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
       columnNumber: 9
     }
-  }, "Community Dashboard")), __jsx("div", {
+  }, __jsx("path", {
+    d: "M161.942 59.6442L156.359 60.2954V83.3768H151.991H124.877H120.509V59.6442H114.155L137.754 41.7101L144.347 46.6006V41.7101H150.005V50.8149L161.942 59.6442Z",
+    fill: "#009999",
+    stroke: "#009999",
+    "stroke-width": "1.5",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M133.893 61.5018C135.556 60.6685 137.356 62.5435 138.049 63.5851C140.473 63.2379 142.204 60.4601 146.36 63.5851C147.535 64.469 144.282 75.0435 137.01 75.0435C124.544 67.7518 131.816 62.5435 133.893 61.5018Z",
+    fill: "white",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M79.968 109.768L75.768 99.304L70.872 109.816L63.768 91.456H67.848L71.328 101.68L74.016 94.936L72.624 91.456H76.08L80.04 101.272L83.04 91.456H86.784L79.968 109.768Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M92.3663 106.432C93.0383 106.432 93.7343 106.2 94.4543 105.736L95.9423 108.232C95.3663 108.552 94.7583 108.808 94.1183 109C93.4783 109.192 92.8703 109.288 92.2943 109.288C91.0463 109.288 89.9663 109.056 89.0543 108.592C88.1583 108.112 87.4783 107.448 87.0143 106.6C86.5503 105.736 86.3183 104.752 86.3183 103.648C86.3183 102.624 86.5823 101.68 87.1103 100.816C87.6543 99.952 88.3903 99.272 89.3183 98.776C90.2463 98.264 91.2623 98.008 92.3663 98.008C93.8703 98.008 95.1023 98.448 96.0623 99.328C97.0383 100.208 97.6703 101.464 97.9583 103.096L90.2783 105.544C90.7903 106.136 91.4863 106.432 92.3663 106.432ZM92.1023 100.624C91.3503 100.624 90.7503 100.88 90.3023 101.392C89.8543 101.904 89.6303 102.592 89.6303 103.456V103.672L94.2383 102.112C93.9023 101.12 93.1903 100.624 92.1023 100.624Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M116.864 91.336V109.72H116.768L104.408 98.56L104.48 109H100.952V90.64H101.096L113.432 101.968L113.36 91.336H116.864Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M126.093 106.432C126.765 106.432 127.461 106.2 128.181 105.736L129.669 108.232C129.093 108.552 128.485 108.808 127.845 109C127.205 109.192 126.597 109.288 126.021 109.288C124.773 109.288 123.693 109.056 122.781 108.592C121.885 108.112 121.205 107.448 120.741 106.6C120.277 105.736 120.045 104.752 120.045 103.648C120.045 102.624 120.309 101.68 120.837 100.816C121.381 99.952 122.117 99.272 123.045 98.776C123.973 98.264 124.989 98.008 126.093 98.008C127.597 98.008 128.829 98.448 129.789 99.328C130.765 100.208 131.397 101.464 131.685 103.096L124.005 105.544C124.517 106.136 125.213 106.432 126.093 106.432ZM125.829 100.624C125.077 100.624 124.477 100.88 124.029 101.392C123.581 101.904 123.357 102.592 123.357 103.456V103.672L127.965 102.112C127.629 101.12 126.917 100.624 125.829 100.624Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M137.486 98.512V109H134.126V98.512H137.486ZM134.054 94.792C134.054 94.312 134.238 93.912 134.606 93.592C134.99 93.256 135.422 93.088 135.902 93.088C136.366 93.088 136.782 93.256 137.15 93.592C137.518 93.912 137.702 94.312 137.702 94.792C137.702 95.272 137.518 95.672 137.15 95.992C136.782 96.312 136.366 96.472 135.902 96.472C135.422 96.472 134.99 96.312 134.606 95.992C134.238 95.672 134.054 95.272 134.054 94.792Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M152.683 98.512V109C152.683 109.992 152.395 110.888 151.819 111.688C151.259 112.504 150.491 113.136 149.515 113.584C148.555 114.048 147.507 114.28 146.371 114.28C145.507 114.28 144.747 114.176 144.091 113.968C143.451 113.76 142.931 113.528 142.531 113.272C142.147 113.016 141.683 112.664 141.139 112.216L143.107 109.912C143.587 110.36 144.059 110.712 144.523 110.968C145.003 111.224 145.603 111.352 146.323 111.352C147.171 111.352 147.883 111.136 148.459 110.704C149.035 110.288 149.323 109.704 149.323 108.952V107.464C149.003 108.008 148.507 108.448 147.835 108.784C147.179 109.12 146.371 109.288 145.411 109.288C144.467 109.288 143.587 109.048 142.771 108.568C141.971 108.072 141.331 107.4 140.851 106.552C140.371 105.688 140.131 104.736 140.131 103.696C140.131 102.64 140.379 101.672 140.875 100.792C141.387 99.912 142.051 99.224 142.867 98.728C143.699 98.232 144.571 97.984 145.483 97.984C146.347 97.984 147.115 98.112 147.787 98.368C148.459 98.608 148.971 98.928 149.323 99.328L149.587 98.512H152.683ZM146.419 106.552C147.763 106.552 148.731 106.024 149.323 104.968V102.4C149.099 101.888 148.723 101.48 148.195 101.176C147.683 100.872 147.091 100.72 146.419 100.72C145.603 100.72 144.915 100.992 144.355 101.536C143.795 102.08 143.515 102.768 143.515 103.6C143.515 104.432 143.795 105.136 144.355 105.712C144.915 106.272 145.603 106.552 146.419 106.552Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M163.43 98.008C164.422 98.008 165.246 98.304 165.902 98.896C166.574 99.488 166.918 100.24 166.934 101.152V109H163.574V102.4C163.526 101.376 163.014 100.864 162.038 100.864C161.27 100.864 160.654 101.224 160.19 101.944C159.726 102.664 159.494 103.592 159.494 104.728V109H156.134V90.064H159.422V100.168C159.806 99.496 160.334 98.968 161.006 98.584C161.694 98.2 162.502 98.008 163.43 98.008Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M177.728 97.984C178.64 97.984 179.472 98.208 180.224 98.656C180.992 99.088 181.6 99.72 182.048 100.552C182.496 101.384 182.72 102.376 182.72 103.528C182.72 104.68 182.472 105.696 181.976 106.576C181.48 107.44 180.816 108.112 179.984 108.592C179.152 109.056 178.248 109.288 177.272 109.288C175.848 109.288 174.672 108.84 173.744 107.944V109H170.384V90.064H173.72V99.232C174.168 98.864 174.736 98.568 175.424 98.344C176.112 98.104 176.88 97.984 177.728 97.984ZM176.528 106.456C177.024 106.456 177.48 106.328 177.896 106.072C178.328 105.816 178.672 105.464 178.928 105.016C179.184 104.552 179.312 104.048 179.312 103.504C179.312 102.672 179.04 101.984 178.496 101.44C177.952 100.896 177.296 100.624 176.528 100.624C175.872 100.624 175.296 100.776 174.8 101.08C174.304 101.384 173.952 101.792 173.744 102.304V104.872C174.32 105.928 175.248 106.456 176.528 106.456Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M184.545 103.624C184.545 102.552 184.793 101.592 185.289 100.744C185.801 99.896 186.513 99.232 187.425 98.752C188.353 98.256 189.401 98.008 190.569 98.008C191.737 98.008 192.761 98.256 193.641 98.752C194.537 99.232 195.225 99.896 195.705 100.744C196.185 101.592 196.425 102.552 196.425 103.624C196.425 104.696 196.185 105.664 195.705 106.528C195.225 107.392 194.537 108.072 193.641 108.568C192.761 109.048 191.721 109.288 190.521 109.288C189.353 109.288 188.313 109.064 187.401 108.616C186.505 108.152 185.801 107.496 185.289 106.648C184.793 105.8 184.545 104.792 184.545 103.624ZM187.929 103.648C187.929 104.48 188.169 105.176 188.649 105.736C189.129 106.28 189.737 106.552 190.473 106.552C191.241 106.552 191.857 106.28 192.321 105.736C192.801 105.192 193.041 104.496 193.041 103.648C193.041 102.8 192.801 102.104 192.321 101.56C191.857 101.016 191.241 100.744 190.473 100.744C189.737 100.744 189.129 101.024 188.649 101.584C188.169 102.128 187.929 102.816 187.929 103.648Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M202.36 100.912C202.648 100.352 203.04 99.848 203.536 99.4C204.048 98.952 204.568 98.608 205.096 98.368C205.624 98.112 206.04 97.984 206.344 97.984L206.176 101.344C206.08 101.328 205.944 101.32 205.768 101.32C205.096 101.32 204.504 101.496 203.992 101.848C203.48 102.2 203.088 102.656 202.816 103.216C202.544 103.76 202.408 104.32 202.408 104.896V109H199.072V98.512H202.096L202.36 100.912Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63,
+      columnNumber: 11
+    }
+  }), __jsx("path", {
+    d: "M212.324 109.216C211.46 109.216 210.652 109.064 209.9 108.76C209.148 108.456 208.523 108.032 208.027 107.488L209.419 105.64C210.347 106.504 211.22 106.936 212.036 106.936C212.468 106.936 212.812 106.872 213.068 106.744C213.34 106.6 213.475 106.392 213.475 106.12C213.475 105.8 213.324 105.56 213.02 105.4C212.715 105.224 212.372 105.08 211.988 104.968C211.62 104.856 211.372 104.784 211.243 104.752C210.331 104.464 209.652 104.04 209.204 103.48C208.756 102.904 208.531 102.248 208.531 101.512C208.531 100.952 208.676 100.408 208.964 99.88C209.268 99.336 209.732 98.896 210.355 98.56C210.979 98.208 211.756 98.032 212.684 98.032C213.548 98.032 214.283 98.12 214.891 98.296C215.499 98.472 216.083 98.76 216.643 99.16L215.372 101.128C215.051 100.872 214.691 100.664 214.292 100.504C213.908 100.328 213.556 100.24 213.236 100.24C212.852 100.24 212.54 100.32 212.299 100.48C212.059 100.64 211.939 100.832 211.939 101.056C211.923 101.392 212.06 101.648 212.348 101.824C212.652 101.984 213.116 102.152 213.74 102.328C213.835 102.36 213.932 102.392 214.027 102.424C214.139 102.456 214.251 102.488 214.363 102.52C216.011 103.064 216.835 104.056 216.835 105.496C216.835 106.168 216.667 106.784 216.331 107.344C215.995 107.904 215.484 108.36 214.796 108.712C214.124 109.048 213.299 109.216 212.324 109.216Z",
+    fill: "#344563",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 11
+    }
+  }))), __jsx("div", {
     className: "sidebar-wrapper",
     ref: sidebar,
     style: {
@@ -917,23 +1075,23 @@ var SideBar = function SideBar() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 74,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 75,
       columnNumber: 9
     }
-  }, _dashboardRoutes__WEBPACK_IMPORTED_MODULE_3__["routes"].map(function (prop, key) {
+  }, Object(_dashboardRoutes__WEBPACK_IMPORTED_MODULE_3__["routes"])().map(function (prop, key) {
     return __jsx("li", {
       key: key,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
+        lineNumber: 78,
         columnNumber: 15
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -942,50 +1100,126 @@ var SideBar = function SideBar() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 79,
         columnNumber: 17
       }
     }, __jsx("div", {
       className: "nav-link",
       style: router.query.role === prop.path ? {
-        background: "#296",
-        marginTop: "25px"
+        background: "#F0F9F9",
+        marginTop: "25px",
+        display: "flex",
+        alignItems: "center",
+        color: "#009999",
+        borderLeft: "4px solid #009999"
       } : {
-        marginTop: "25px"
+        marginTop: "25px",
+        display: "flex",
+        alignItems: "center"
       },
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
+        lineNumber: 83,
         columnNumber: 19
       }
-    }, __jsx("i", {
-      className: prop.icon,
+    }, prop.icon, __jsx("p", {
       style: {
-        color: "white",
-        minWidth: "20px",
-        fontSize: "18px"
+        width: "100%",
+        height: "22px",
+        top: " calc(50% - 22px/2 + 2px)",
+        paddingLeft: "15px",
+        fontFamily: "Open Sans",
+        fontStyle: " normal",
+        fontWeight: router.query.role === prop.path ? 650 : "normal",
+        color: router.query.role === prop.path ? "#009999" : "#344563",
+        fontSize: "16px",
+        lineHeight: "22px"
       },
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
+        lineNumber: 104,
         columnNumber: 21
       }
-    }), __jsx("p", {
-      style: {
-        color: "white",
-        minWidth: "30px",
-        width: "100%"
-      },
+    }, prop.name), router.query.role === prop.path && __jsx("svg", {
+      width: "10",
+      height: "14",
+      viewBox: "0 0 10 14",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
-        columnNumber: 21
+        lineNumber: 125,
+        columnNumber: 23
       }
-    }, prop.name))));
-  }))));
+    }, __jsx("path", {
+      d: "M0.877747 1.90001L5.97775 7.00001L0.877747 12.1L2.45552 13.6667L9.12219 7.00001L2.45552 0.333344L0.877747 1.90001Z",
+      fill: "#344563",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 132,
+        columnNumber: 25
+      }
+    })))));
+  })), __jsx("div", {
+    className: "sidebar-card",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 144,
+      columnNumber: 8
+    }
+  }, __jsx("img", {
+    src: "/zeit.svg",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 145,
+      columnNumber: 10
+    }
+  }), __jsx("p", {
+    className: "card-name",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 146,
+      columnNumber: 10
+    }
+  }, "Macado Leam"), __jsx("p", {
+    className: "card-title",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 147,
+      columnNumber: 10
+    }
+  }, "Board Member"), __jsx("div", {
+    className: "sidebar-card-footer",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 149,
+      columnNumber: 10
+    }
+  }, __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 150,
+      columnNumber: 12
+    }
+  }, "Member Since"), __jsx("p", {
+    className: "f-date",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 151,
+      columnNumber: 12
+    }
+  }, "September 2019")))));
 };
 
 /***/ }),
@@ -1003,10 +1237,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var _styles_viewResidents_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../styles/viewResidents/index.scss */ "./styles/viewResidents/index.scss");
+/* harmony import */ var _styles_viewResidents_index_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_viewResidents_index_scss__WEBPACK_IMPORTED_MODULE_2__);
 var _this = undefined,
     _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/components/Dashboard/viewResidents/index.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 var ViewResident = function ViewResident() {
@@ -1015,402 +1252,167 @@ var ViewResident = function ViewResident() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 20,
       columnNumber: 5
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 21,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    lg: "4",
-    md: "6",
-    sm: "6",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16,
-      columnNumber: 9
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-    className: "card-stats",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 11
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 13
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19,
-      columnNumber: 15
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: "4",
-    xs: "5",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 17
-    }
-  }, __jsx("div", {
-    className: "icon-big text-center icon-warning",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 19
-    }
-  }, __jsx("i", {
-    className: "nc-icon nc-globe text-warning",
+    lg: "12",
+    md: "12",
+    sm: "12",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22,
-      columnNumber: 21
+      columnNumber: 9
     }
-  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: "8",
-    xs: "7",
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+    style: {
+      background: "#F6F7FB",
+      border: "none",
+      boxShadow: "none"
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
-      columnNumber: 17
+      lineNumber: 23,
+      columnNumber: 11
     }
-  }, __jsx("div", {
-    className: "numbers",
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26,
-      columnNumber: 19
+      columnNumber: 13
     }
-  }, __jsx("p", {
-    className: "card-category",
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 27,
-      columnNumber: 21
+      columnNumber: 15
     }
-  }, "Residents"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], {
-    tag: "p",
+  }, __jsx("div", {
+    className: "number",
+    style: {
+      display: "flex",
+      width: "100%",
+      justifyContent: "center",
+      flexDirection: "column",
+      alignItems: "center"
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28,
-      columnNumber: 21
-    }
-  }, "150"), __jsx("p", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 21
-    }
-  }))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardFooter"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34,
-      columnNumber: 13
-    }
-  }, __jsx("hr", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35,
-      columnNumber: 15
-    }
-  }), __jsx("div", {
-    className: "stats",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36,
-      columnNumber: 15
-    }
-  }, __jsx("i", {
-    className: "fas fa-sync-alt",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37,
       columnNumber: 17
     }
-  }), " Update Now")))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    lg: "4",
-    md: "6",
-    sm: "6",
+  }, __jsx("p", {
+    className: "view-residents-title",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
-      columnNumber: 9
+      lineNumber: 38,
+      columnNumber: 19
     }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-    className: "card-stats",
+  }, "Turner Hill HomeOwners Association"), __jsx("p", {
+    className: "view-residents-address",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 19
+    }
+  }, "2 barnum place abc abc USA", " "), __jsx("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44,
-      columnNumber: 11
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45,
-      columnNumber: 13
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 15
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: "4",
-    xs: "5",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 17
-    }
-  }, __jsx("div", {
-    className: "icon-big text-center icon-warning",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48,
       columnNumber: 19
     }
-  }, __jsx("i", {
-    className: "nc-icon nc-vector text-danger",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 21
-    }
-  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: "8",
-    xs: "7",
+  })))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    lg: "12",
+    md: "12",
+    sm: "12",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 52,
-      columnNumber: 17
+      columnNumber: 9
     }
-  }, __jsx("div", {
-    className: "numbers",
+  }, __jsx("form", {
+    style: {
+      background: "white"
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 53,
-      columnNumber: 19
+      columnNumber: 11
     }
-  }, __jsx("p", {
-    className: "card-category",
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["InputGroup"], {
+    className: "no-border card-stats",
+    style: {
+      background: "white",
+      height: "50px"
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 54,
-      columnNumber: 21
-    }
-  }, "Members"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], {
-    tag: "p",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 21
-    }
-  }, "23"), __jsx("p", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 21
-    }
-  }))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardFooter"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61,
       columnNumber: 13
     }
-  }, __jsx("hr", {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["InputGroupAddon"], {
+    addonType: "append",
+    style: {
+      background: "white"
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 15
+    }
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["InputGroupText"], {
+    style: {
+      background: "white"
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 62,
-      columnNumber: 15
+      columnNumber: 17
     }
-  }), __jsx("div", {
-    className: "stats",
+  }, __jsx("i", {
+    className: "fas fa-search",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 63,
+      columnNumber: 19
+    }
+  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    placeholder: "Search...",
+    style: {
+      background: "white"
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
       columnNumber: 15
     }
-  }, __jsx("i", {
-    className: "far fa-clock",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64,
-      columnNumber: 17
-    }
-  }), " In the last 6 month")))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    lg: "4",
-    md: "6",
-    sm: "6",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 69,
-      columnNumber: 9
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-    className: "card-stats",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70,
-      columnNumber: 11
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], {
+  }))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 71,
-      columnNumber: 13
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 72,
-      columnNumber: 15
-    }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: "4",
-    xs: "5",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 17
-    }
-  }, __jsx("div", {
-    className: "icon-big text-center icon-warning",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 19
-    }
-  }, __jsx("i", {
-    className: "nc-icon nc-favourite-28 text-primary",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75,
-      columnNumber: 21
-    }
-  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
-    md: "8",
-    xs: "7",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78,
-      columnNumber: 17
-    }
-  }, __jsx("div", {
-    className: "numbers",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79,
-      columnNumber: 19
-    }
-  }, __jsx("p", {
-    className: "card-category",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80,
-      columnNumber: 21
-    }
-  }, "Followers"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], {
-    tag: "p",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81,
-      columnNumber: 21
-    }
-  }, "+45K"), __jsx("p", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 21
-    }
-  }))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardFooter"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 13
-    }
-  }, __jsx("hr", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 15
-    }
-  }), __jsx("div", {
-    className: "stats",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 89,
-      columnNumber: 15
-    }
-  }, __jsx("i", {
-    className: "fas fa-sync-alt",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 90,
-      columnNumber: 17
-    }
-  }), " Update now"))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96,
       columnNumber: 7
     }
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1418,77 +1420,999 @@ var ViewResident = function ViewResident() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 72,
       columnNumber: 9
     }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Table"], {
+    responsive: true,
+    className: "residents-tabl",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 73,
       columnNumber: 11
     }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], {
+  }, __jsx("thead", {
+    className: "text-primary",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 13
+    }
+  }, __jsx("tr", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
+      columnNumber: 15
+    }
+  }, __jsx("th", {
+    className: "sm-display-none",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76,
+      columnNumber: 17
+    }
+  }, "Address"), __jsx("th", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77,
+      columnNumber: 17
+    }
+  }, "Family Members"), __jsx("th", {
+    className: "text-right",
+    style: {
+      minWidth: '150px',
+      padding: '0px',
+      paddingRight: '15px'
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78,
+      columnNumber: 17
+    }
+  }, "Residence Since"))), __jsx("tbody", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81,
+      columnNumber: 13
+    }
+  }, __jsx("tr", {
+    className: "residents-table-row",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82,
+      columnNumber: 15
+    }
+  }, __jsx("td", {
+    className: "address-td sm-display-none",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83,
+      columnNumber: 17
+    }
+  }, "Dakota Rice"), __jsx("td", {
+    className: "row-residents",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84,
+      columnNumber: 17
+    }
+  }, __jsx("div", {
+    className: " residents-name-container  truncate-overflow",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 19
+    }
+  }, __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 92,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 99,
-      columnNumber: 13
+      columnNumber: 21
     }
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"], {
-    tag: "h5",
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 100,
-      columnNumber: 15
+      columnNumber: 21
     }
-  }, "Users Behavior"), __jsx("p", {
-    className: "card-category",
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 101,
-      columnNumber: 15
+      columnNumber: 21
     }
-  }, "24 Hours performance")), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 103,
-      columnNumber: 13
-    }
-  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardFooter"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 104,
-      columnNumber: 13
-    }
-  }, __jsx("hr", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105,
-      columnNumber: 15
-    }
-  }), __jsx("div", {
-    className: "stats",
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 106,
-      columnNumber: 15
+      columnNumber: 21
     }
-  }, __jsx("i", {
-    className: "fa fa-history",
+  })), __jsx("span", {
+    className: "residents-name-container truncate-overflow",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 109,
+      columnNumber: 21
+    }
+  }, __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 111,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 112,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 121,
+      columnNumber: 23
+    }
+  }, "hello,"))), __jsx("td", {
+    className: "text-right",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 125,
       columnNumber: 17
     }
-  }), " Updated 3 minutes ago"))))));
+  }, "September 2019")), __jsx("div", {
+    style: {
+      height: '15px'
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127,
+      columnNumber: 15
+    }
+  }), __jsx("tr", {
+    className: "residents-table-row",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 131,
+      columnNumber: 15
+    }
+  }, __jsx("td", {
+    className: "address-td sm-display-none",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132,
+      columnNumber: 17
+    }
+  }, "Dakota Rice"), __jsx("td", {
+    className: "row-residents",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133,
+      columnNumber: 17
+    }
+  }, __jsx("div", {
+    className: " residents-name-container  truncate-overflow",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 134,
+      columnNumber: 19
+    }
+  }, __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 135,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 136,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 141,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 143,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 148,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 149,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 150,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155,
+      columnNumber: 21
+    }
+  })), __jsx("span", {
+    className: "residents-name-container truncate-overflow",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 158,
+      columnNumber: 21
+    }
+  }, __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 159,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 160,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 161,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 162,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 163,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 164,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 165,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 166,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 167,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 168,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 169,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 170,
+      columnNumber: 23
+    }
+  }, "hello,"))), __jsx("td", {
+    className: "text-right",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 174,
+      columnNumber: 17
+    }
+  }, "September 2019")), __jsx("div", {
+    style: {
+      height: '15px'
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 176,
+      columnNumber: 15
+    }
+  }), __jsx("tr", {
+    className: "residents-table-row",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 181,
+      columnNumber: 15
+    }
+  }, __jsx("td", {
+    className: "address-td sm-display-none",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 182,
+      columnNumber: 17
+    }
+  }, "Dakota Rice"), __jsx("td", {
+    className: "row-residents",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 183,
+      columnNumber: 17
+    }
+  }, __jsx("div", {
+    className: " residents-name-container  truncate-overflow",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 184,
+      columnNumber: 19
+    }
+  }, __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 185,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 186,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 191,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 192,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 193,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 198,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 199,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 200,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 205,
+      columnNumber: 21
+    }
+  })), __jsx("span", {
+    className: "residents-name-container truncate-overflow",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 208,
+      columnNumber: 21
+    }
+  }, __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 209,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 210,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 211,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 212,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 213,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 214,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 215,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 216,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 217,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 218,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 219,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 220,
+      columnNumber: 23
+    }
+  }, "hello,"))), __jsx("td", {
+    className: "text-right",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 224,
+      columnNumber: 17
+    }
+  }, "September 2019")), __jsx("div", {
+    style: {
+      height: '15px'
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 226,
+      columnNumber: 15
+    }
+  }), __jsx("tr", {
+    className: "residents-table-row",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 231,
+      columnNumber: 15
+    }
+  }, __jsx("td", {
+    className: "address-td sm-display-none",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 232,
+      columnNumber: 17
+    }
+  }, "Dakota Rice"), __jsx("td", {
+    className: "row-residents",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 233,
+      columnNumber: 17
+    }
+  }, __jsx("div", {
+    className: " residents-name-container  truncate-overflow",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 234,
+      columnNumber: 19
+    }
+  }, __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 235,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 236,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 241,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 242,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 243,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 248,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 249,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    style: {
+      background: "yellow",
+      zIndex: 2
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 250,
+      columnNumber: 21
+    }
+  }), __jsx("img", {
+    src: "/zeit.svg",
+    className: "roundedCircle",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 255,
+      columnNumber: 21
+    }
+  })), __jsx("span", {
+    className: "residents-name-container truncate-overflow",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 258,
+      columnNumber: 21
+    }
+  }, __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 259,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 260,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 261,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 262,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 263,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 264,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 265,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 266,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 267,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 268,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 269,
+      columnNumber: 23
+    }
+  }, "hello,"), __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 270,
+      columnNumber: 23
+    }
+  }, "hello,"))), __jsx("td", {
+    className: "text-right",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 274,
+      columnNumber: 17
+    }
+  }, "September 2019")))))));
 };
 
 /***/ }),
@@ -2435,6 +3359,184 @@ var Container = function Container(_ref) {
 
 /***/ }),
 
+/***/ "./components/signin/apple.js":
+/*!************************************!*\
+  !*** ./components/signin/apple.js ***!
+  \************************************/
+/*! exports provided: Apple */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Apple", function() { return Apple; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+var _this = undefined,
+    _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/components/signin/apple.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var Apple = function Apple() {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    AppleID.auth.init({
+      clientId: '[CLIENT_ID]',
+      scope: '[SCOPES]',
+      redirectURI: '[REDIRECT_URI]',
+      state: '[STATE]',
+      usePopup: true //or false defaults to false
+
+    });
+  });
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 9
+    }
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 13
+    }
+  }, __jsx("script", {
+    type: "text/javascript",
+    src: "https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 13
+    }
+  })), __jsx("div", {
+    id: "appleid-signin",
+    "data-color": "black",
+    "data-border": "true",
+    "data-type": "sign in",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 13
+    }
+  }));
+};
+
+/***/ }),
+
+/***/ "./components/signin/google.js":
+/*!*************************************!*\
+  !*** ./components/signin/google.js ***!
+  \*************************************/
+/*! exports provided: GoogleLogin */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GoogleLogin", function() { return GoogleLogin; });
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+var _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/components/signin/google.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
+
+function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+ // To federated sign in from Google
+
+var GoogleLogin = /*#__PURE__*/function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(GoogleLogin, _Component);
+
+  var _super = _createSuper(GoogleLogin);
+
+  function GoogleLogin(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, GoogleLogin);
+
+    _this = _super.call(this, props);
+    _this.signIn = _this.signIn.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(GoogleLogin, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var ga = window.gapi && window.gapi.auth2 ? window.gapi.auth2.getAuthInstance() : null;
+      if (!ga) this.createScript();
+    }
+  }, {
+    key: "signIn",
+    value: function signIn() {
+      var ga = window.gapi.auth2.getAuthInstance();
+      ga === null || ga === void 0 ? void 0 : ga.signIn().then(function (googleUser) {
+        console.log('google ===>', googleUser);
+      }, function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: "createScript",
+    value: function createScript() {
+      // load the Google SDK
+      var script = document.createElement('script');
+      script.src = 'https://apis.google.com/js/platform.js';
+      script.async = true;
+      script.onload = this.initGapi;
+      document.body.appendChild(script);
+    }
+  }, {
+    key: "initGapi",
+    value: function initGapi() {
+      // init the Google SDK client
+      var g = window.gapi;
+      g.load('auth2', function () {
+        g.auth2.init({
+          client_id: '215485620819-r3ps1inqudcu9u0dvpeu6lrrfktd7dma.apps.googleusercontent.com',
+          // authorized scopes
+          scope: 'profile email openid'
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return __jsx("button", {
+        className: "google-login-btn",
+        onClick: this.signIn,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55,
+          columnNumber: 17
+        }
+      }, "continue with Google");
+    }
+  }]);
+
+  return GoogleLogin;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+/***/ }),
+
 /***/ "./components/signin/index.js":
 /*!************************************!*\
   !*** ./components/signin/index.js ***!
@@ -2452,10 +3554,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _styles_signin_index_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../styles/signin/index.scss */ "./styles/signin/index.scss");
 /* harmony import */ var _styles_signin_index_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_signin_index_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _google__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./google */ "./components/signin/google.js");
+/* harmony import */ var _apple__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apple */ "./components/signin/apple.js");
 var _this = undefined,
     _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/components/signin/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -2465,21 +3571,21 @@ var SignIn = function SignIn(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 10,
       columnNumber: 5
     }
   }, __jsx("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 11,
       columnNumber: 7
     }
   }, "Welcome Back!"), __jsx("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 12,
       columnNumber: 7
     }
   }, "Please Sign In to access your community dashboard."), __jsx("button", {
@@ -2487,30 +3593,36 @@ var SignIn = function SignIn(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 7
-    }
-  }, "continue with Apple"), __jsx("button", {
-    className: "google-login-btn",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 14,
       columnNumber: 7
     }
-  }, "continue with Google"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "#",
+  }, "continue with Apple"), __jsx(_google__WEBPACK_IMPORTED_MODULE_4__["GoogleLogin"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 7
+    }
+  }), __jsx(_apple__WEBPACK_IMPORTED_MODULE_5__["Apple"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
       columnNumber: 7
     }
+  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "#",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 7
+    }
   }, __jsx("a", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, "OR USE YOUR OWN EMAIL")), __jsx("input", {
@@ -2521,7 +3633,7 @@ var SignIn = function SignIn(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 24,
       columnNumber: 7
     }
   }), __jsx("input", {
@@ -2532,14 +3644,14 @@ var SignIn = function SignIn(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 30,
       columnNumber: 7
     }
   }), __jsx("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 37,
       columnNumber: 7
     }
   }, "Forgot password?"), __jsx("button", {
@@ -2547,7 +3659,7 @@ var SignIn = function SignIn(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 39,
       columnNumber: 7
     }
   }, "Sign In"));
@@ -40478,11 +41590,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
       lineNumber: 19,
       columnNumber: 9
     }
+  }), __jsx("link", {
+    href: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap",
+    rel: "stylesheet",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 9
+    }
   })), __jsx(_components__WEBPACK_IMPORTED_MODULE_2__["DashBoard"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 7
     }
   })));
@@ -40490,7 +41611,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 /***/ }),
 
-/***/ 1:
+/***/ 10:
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fdashboard%2F%5Buser%5D%2F%5Brole%5D&absolutePagePath=%2Fhome%2Faijaz%2Fnextjs%2Fcommunity-dashboard.git%2Fpages%2Fdashboard%2F%5Buser%5D%2F%5Brole%5D.js ***!
   \*******************************************************************************************************************************************************************************************************/
@@ -40513,5 +41634,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[10,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=[role].js.map

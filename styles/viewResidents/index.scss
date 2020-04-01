@@ -1,0 +1,141 @@
+.view-residents-title {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 31px;
+  text-align: center;
+  color: #009999;
+}
+.view-residents-address {
+  // width: 289px;
+  height: 22px;
+  left: 797px;
+  top: 125px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5px;
+  color: #344563;
+  margin: 0px;
+  padding: 0px;
+  transition: all linear 0.3s;
+}
+
+.roundedCircle {
+  width: 40px;
+  height: 40px;
+  background-color: #009999;
+  border-radius: 20px;
+  margin-left: -10px;
+  border: "none";
+  outline: none;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  transition: all linear 0.1s;
+}
+.roundedCircle:hover {
+  border: 1px solid #222222;
+  transition: all linear 0.1s;
+}
+.row-residents {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.residents-name-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  max-width: 400px;
+  p {
+    left: 52.34%;
+    right: 25.61%;
+    top: 23.33%;
+    bottom: 27.78%;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #344563;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 5px;
+  }
+}
+
+.residents-table-row {
+  background: white;
+
+  td {
+    border: none;
+    outline: none;
+    border-top: 1px solid white;
+  }
+}
+.address-td {
+  padding: 0px;
+  transition: display 1s;
+  min-width: 200px;
+}
+
+.truncate-overflow {
+  --lh: 1rem;
+  --max-lines: 4;
+  position: relative;
+  max-height: calc(var(--lh) * var(--max-lines));
+  overflow: hidden;
+  padding-right: 1rem; /* space for ellipsis */
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+.truncate-overflow::before {
+  position: absolute;
+  content: "...";
+  /* tempting... but shows when lines == content */
+  /* top: calc(var(--lh) * (var(--max-lines) - 1)); */
+
+  /*
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  */
+  bottom: 0;
+  right: 0;
+}
+.truncate-overflow::after {
+  content: "";
+  position: absolute;
+  /*
+  inset-inline-end: 0;
+  */
+  right: 0;
+  /* missing bottom on purpose*/
+  width: 1rem;
+  height: 1rem;
+  background: white;
+}
+th , td {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: bold;
+font-size: 17px;
+line-height: 22px;  
+color: #6C7B8A;
+}
+@media only screen and (max-width: 600px) {
+  .sm-display-none {
+    transition: display 1s;
+    display: none;
+  }
+  .table-responsive {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+}

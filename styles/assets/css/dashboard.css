@@ -3315,7 +3315,9 @@ License - nucleoapp.com/license/
     left: 0; }
   .sidebar:after,
   .off-canvas-sidebar:after {
-    background-color: rgb(77, 75, 75);
+    /* ===============\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+  background: white;
+    /* background-color: rgb(77, 75, 75); */
     /* background: rgb(44, 44, 44) ; */
     /* background: -webkit-linear-gradient(#9368E9 0%, #eee 80%);
     background: -o-linear-gradient( #9368E9 0%, rgb(156, 137, 137) 80%);
