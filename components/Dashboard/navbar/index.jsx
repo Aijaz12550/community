@@ -60,7 +60,7 @@ class Header extends React.Component {
       <Navbar
         expand="lg"
         className={"navbar-absolute fixed-top"}
-        style={{ background: "white", borderBottom: "2px solid lightgray" }}
+        style={{ background: "white", borderBottom: "2px solid lightgray", position: 'fixed', top: 0, padding: 0 }}
       >
         <Container fluid>
           <div className="navbar-wrapper">
@@ -90,7 +90,7 @@ class Header extends React.Component {
             navbar
             className="justify-content-end"
           >
-         
+
             <Nav navbar>
               <NavItem>
                 <Link href="/">
@@ -107,7 +107,7 @@ class Header extends React.Component {
                 isOpen={this.state.dropdownOpen}
                 toggle={e => this.dropdownToggle(e)}
               >
-                <DropdownToggle caret nav style={{color:'black'}}>
+                <DropdownToggle caret nav style={{ color: 'black' }}>
                   <i className="fas fa-user" />
                   <p>
                     <span
@@ -124,7 +124,7 @@ class Header extends React.Component {
                   <DropdownItem tag="a">Something else here</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
-             
+
             </Nav>
           </Collapse>
         </Container>
