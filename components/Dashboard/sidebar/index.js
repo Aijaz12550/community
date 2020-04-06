@@ -9,7 +9,7 @@ export const SideBar = () => {
   const sidebar = createRef();
   const router = useRouter();
   return (
-    <div className="sidebar" data-color="red" data-active-color="white">
+    <div className="sidebar" data-color="red" data-active-color="white" style={{ height: '100%' }}>
       <div className="sidebar-header logo">
         <svg
           style={{ width: "250px", marginLeft: "-25px", paddingLeft: "-10px" }}
@@ -71,11 +71,11 @@ export const SideBar = () => {
         </svg>
       </div>
 
-      <div className="sidebar-wrapper" ref={sidebar} style={{ color: "black" }}>
-        <Nav>
+      <div className="sidebar-wrapper scrollBarStyle" ref={sidebar} style={{ color: "black", }}>
+        <Nav style={{ height: 370 }}>
           {routes().map((prop, key) => {
             return (
-              <li key={key}>
+              <li key={key} className="cursorPoint">
                 <Link
                   href="/dashboard/[user]/[role]"
                   as={`/dashboard/user/${prop.path}`}
@@ -85,18 +85,21 @@ export const SideBar = () => {
                     style={
                       router.query.role === prop.path
                         ? {
-                            background: "#F0F9F9",
-                            marginTop: "25px",
-                            display: "flex",
-                            alignItems: "center",
-                            color: "#009999",
-                            borderLeft: "4px solid #009999"
-                          }
+                          background: "#F0F9F9",
+                          marginTop: "25px",
+                          marginRight: '5px',
+                          display: "flex",
+                          alignItems: "center",
+                          color: "#009999",
+                          borderLeft: "4px solid #009999",
+                          borderTopRightRadius: '50px',
+                          borderBottomRightRadius: '50px',
+                        }
                         : {
-                            marginTop: "25px",
-                            display: "flex",
-                            alignItems: "center"
-                          }
+                          marginTop: "25px",
+                          display: "flex",
+                          alignItems: "center"
+                        }
                     }
                   >
                     {prop.icon}
@@ -141,18 +144,19 @@ export const SideBar = () => {
             );
           })}
         </Nav>
-       <div className='sidebar-card'>
-         <img src='/zeit.svg'  />
-         <p className='card-name'>Macado Leam</p>
-         <p className='card-title'>Board Member</p>
-         
-         <div className='sidebar-card-footer'>
-           <p>Member Since</p>
-           <p className='f-date'>September 2019</p>
-         </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 450 }}>
+          <div className='sidebar-card'>
+            <img src='/img.png' />
+            <p className='card-name'>Macado Leam</p>
+            <p className='card-title'>Board Member</p>
 
-       </div>
+            <div className='sidebar-card-footer'>
+              <p>Member Since</p>
+              <p className='f-date'>September 2019</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </div >
   );
 };
