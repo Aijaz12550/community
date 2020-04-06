@@ -7,7 +7,7 @@ class Footer extends React.Component {
     return (
       <footer
         className={"footer" + (this.props.default ? " footer-default" : "")}
-        style={{ background: "white", height: '50px', position: 'absolute', bottom: 0, width: '100%', backgroundColor: 'rgb(0, 153, 153)' }}
+        style={{ background: "white", height: '50px', position: 'absolute', bottom: 0, width: '100%' }}
       >
         <Container fluid={this.props.fluid ? true : false}>
           <Row>
