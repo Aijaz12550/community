@@ -12,10 +12,10 @@ export const DashBoard = props => {
   return (
     <div className="wrapper">
       <SideBar />
-      <div className="main-panel" style={{ background: "#F6F7FB" }}>
+      <div className="main-panel" style={{ background: "#F6F7FB", height: '100%' }}>
         <NavBar heading={router?.query?.role?.replace(/_/, " ")} />
 
-        <div style={{ marginTop: "80px", minHeight: "185vh" }}>
+        <div style={{ height: 'calc(90% - 120px)' }}>
           {routes().map((val, key) => {
             if (router?.query?.role === val.path) {
               return (
@@ -26,7 +26,6 @@ export const DashBoard = props => {
             }
           })}
         </div>
-
         <Footer />
       </div>
     </div>
