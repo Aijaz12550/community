@@ -1,0 +1,35 @@
+.modal {
+    display    : flex !important;
+    align-items: center;
+}
+
+div.fade.in.modal {
+    display: flex;
+}
+
+.modal-dialog {
+    margin: auto;
+}
+
+.contained-modal-title-vcenter {
+    max-width: 100% !important;
+}
+
+.modal-dialog {
+    max-width: 70% !important;
+    margin   : auto;
+}
+
+.modal-dialog-centered {
+    max-width: 70% !important;
+    margin   : auto;
+}
+
+.modal-dialog {
+    width: 70% !important;
+
+}
+
+.modal-header {
+    border: none !important;
+}
