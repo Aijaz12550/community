@@ -54,22 +54,22 @@ class ResidentMemberDetail extends Component {
                     <Table>
                         <thead className="text-primary">
                             <tr>
-                                <th style={{ width: '20%', alignItems: 'center', display: 'flex' }}>Name</th>
-                                <th style={{ width: '20%', alignItems: 'center', display: 'flex' }}>Phone Number</th>
-                                <th style={{ width: '40%', alignItems: 'center', display: 'flex' }}>Email Address</th>
-                                <th className="text-right" style={{ width: '20%', alignItems: 'center', display: 'flex' }}>Residence Since</th>
+                                <th style={{ width: '20%', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis' }}>Name</th>
+                                <th style={{ width: '20%', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis' }}>Phone Number</th>
+                                <th style={{ width: '40%', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis' }}>Email Address</th>
+                                <th className="text-right" style={{ width: '20%', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis' }}>Residence Since</th>
                             </tr>
                         </thead>
-                        <tbody className='scrollBarStyle'>
+                        <tbody className='scrollBarStyle tBody'>
                             {this.props?.trData?.familyMember.map((data1, index) => (
                                 <tr>
-                                    <td className='address-td sm-dmemberImageisplay-none' style={{ width: '20%' }}>
+                                    <td className='address-td sm-dmemberImageisplay-none' style={{ width: '20%', alignItems: 'center', display: 'flex', }}>
                                         <img src={data1.memberImage} key={index} className="roundedCircle"></img>
                                         <span style={{ textOverflow: 'ellipsis', marginLeft: 20 }}>{data1.memberName}</span>
                                     </td>
                                     <td className="" style={{ textOverflow: 'ellipsis', display: 'flex', flexDirection: 'row', alignItems: 'center', width: '20%' }}>{data1.phoneNumber}</td>
                                     <td className="" style={{ textOverflow: 'ellipsis', display: 'flex', flexDirection: 'row', alignItems: 'center', width: '40%' }}>{data1.emailAddress}</td>
-                                    <td className="text-right" style={{ width: '20%', alignItems: 'center', display: 'flex' }}>{data1.memberSince.split(' ')[1] + ' ' + data1.memberSince.split(' ')[2]}</td>
+                                    <td className="text-right" style={{ width: '20%', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis' }}>{data1.memberSince.split(' ')[1] + ' ' + data1.memberSince.split(' ')[2]}</td>
 
                                 </tr>
                             ))}
