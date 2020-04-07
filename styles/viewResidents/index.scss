@@ -161,10 +161,10 @@ tr {
 }
 
 
-tbody {
-  display       : flex;
-  flex-direction: column;
+.tbody {
+  display          : flex;
+  flex-direction   : column;
   height        : calc(100vh - 350px);
-  overflow-y    : auto;
-  overflow-x    : hidden;
+  overflow-y       : auto;
+  overflow-x       : hidden;
 }

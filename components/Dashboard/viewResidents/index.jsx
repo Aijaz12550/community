@@ -89,6 +89,7 @@ export const ViewResident = () => {
   const [modalShow, setModalShow] = useState(false);
   const [sendData, setData] = useState();
   const [searchData, SearchCol] = useState([]);
+  const [noMatchSearchData, noMatchSearchCol] = useState(false);
   function sendProps(setModalValue, setDataValue) {
     setModalShow(setModalValue);
     setData(setDataValue)
@@ -98,6 +99,12 @@ export const ViewResident = () => {
     const results = data.filter(person =>
       person.address.toLowerCase().includes(value.toLowerCase())
     );
+    if (value && results.length === 0) {
+      noMatchSearchCol(true);
+    }
+    if (!value) {
+      noMatchSearchCol(false);
+    }
     SearchCol(results);
   }
 
@@ -168,49 +175,11 @@ export const ViewResident = () => {
                   <th className="text-right" style={{ width: '30%' }}>Residence Since</th>
                 </tr>
               </thead>
-              <tbody className='scrollBarStyle'>
-                {searchData.length ? searchData.map((data1, index) => (
-                  <tr className="residents-table-row" style={{}} key={index} onClick={() => sendProps(true, data1)}>
-                    <td className='address-td sm-dmemberImageisplay-none' style={{ width: '30%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
-                    <td className="" style={{ textOverflow: 'ellipsis', display: 'flex', flexDirection: 'row', alignItems: 'center', width: '40%', }}>
-                      <div className='' style={{
-                        display: 'block',
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                      }}>
-                        {data1.familyMember.map((membersImg, keys) => (
-                          <img src={membersImg.memberImage} key={keys} className="roundedCircle"></img>
-
-                        ))}
-                      </div>
-
-                      <div className='' style={{
-                        display: 'block',
-                        height: 20,
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        marginLeft: 15
-                      }}>
-                        {data1.familyMember.map((memberNames, ind) => (
-                          <span className='' key={ind} style={{
-                            fontFamily: 'Open Sans',
-                            fontStyle: 'normal',
-                            fontWeight: '600',
-                            fontWize: '14px',
-                            lineHeight: '22px',
-                          }}>{memberNames.memberName}, </span>
-                        ))}
-
-                      </div>
-
-                    </td>
-                    <td className="text-right" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end' }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
-
-                  </tr>
-                ))
-
-                  : data.map((data1, index) => (
+              {noMatchSearchData ?
+                <tbody></tbody>
+                :
+                <tbody className='scrollBarStyle tbody'>
+                  {searchData.length ? searchData.map((data1, index) => (
                     <tr className="residents-table-row" style={{}} key={index} onClick={() => sendProps(true, data1)}>
                       <td className='address-td sm-dmemberImageisplay-none' style={{ width: '30%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
                       <td className="" style={{ textOverflow: 'ellipsis', display: 'flex', flexDirection: 'row', alignItems: 'center', width: '40%', }}>
@@ -249,9 +218,52 @@ export const ViewResident = () => {
                       <td className="text-right" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end' }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
 
                     </tr>
-                  ))}
+                  ))
 
-              </tbody>
+                    : data.map((data1, index) => (
+                      <tr className="residents-table-row" style={{}} key={index} onClick={() => sendProps(true, data1)}>
+                        <td className='address-td sm-dmemberImageisplay-none' style={{ width: '30%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
+                        <td className="" style={{ textOverflow: 'ellipsis', display: 'flex', flexDirection: 'row', alignItems: 'center', width: '40%', }}>
+                          <div className='' style={{
+                            display: 'block',
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                          }}>
+                            {data1.familyMember.map((membersImg, keys) => (
+                              <img src={membersImg.memberImage} key={keys} className="roundedCircle"></img>
+
+                            ))}
+                          </div>
+
+                          <div className='' style={{
+                            display: 'block',
+                            height: 20,
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            marginLeft: 15
+                          }}>
+                            {data1.familyMember.map((memberNames, ind) => (
+                              <span className='' key={ind} style={{
+                                fontFamily: 'Open Sans',
+                                fontStyle: 'normal',
+                                fontWeight: '600',
+                                fontWize: '14px',
+                                lineHeight: '22px',
+                              }}>{memberNames.memberName}, </span>
+                            ))}
+
+                          </div>
+
+                        </td>
+                        <td className="text-right" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end' }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
+
+                      </tr>
+                    ))}
+
+                </tbody>
+
+              }
             </Table>
           </Col>
         </Row>
