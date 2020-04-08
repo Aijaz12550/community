@@ -35,11 +35,26 @@ class ResidentMemberDetail extends Component {
                                                     alignItems: "center",
                                                 }}
                                             >
-                                                <p className="view-residents-title">
+                                                <p className="view-residents-title" style={{}}>
                                                     {this.props?.trData?.address}
                                                 </p>
                                                 <p className="view-residents-address">
-                                                    Residence Since:<span style={{ fontWeight: 'bold' }}>{this.props?.trData?.residenceSince.split(' ')[1] + ' ' + this.props?.trData?.residenceSince.split(' ')[2]}</span>
+                                                    <span style={{
+                                                        fontFamily: 'Open Sans',
+                                                        fontStyle: 'normal',
+                                                        fontWeight: 'normal',
+                                                        fontSize: 14,
+                                                        lineHeight: '19px',
+                                                        color: '#7D8DA1',
+                                                    }}>Residence Since:</span>
+                                                    <span style={{
+                                                        fontFamily: 'Open Sans',
+                                                        fontStyle: 'normal',
+                                                        fontWeight: 600,
+                                                        fontSize: 14,
+                                                        lineHeight: '19px',
+                                                        color: '#344563',
+                                                    }}>{this.props?.trData?.residenceSince.split(' ')[1] + ' ' + this.props?.trData?.residenceSince.split(' ')[2]}</span>
                                                 </p>
                                                 <p />
                                             </div>
@@ -50,8 +65,8 @@ class ResidentMemberDetail extends Component {
                         </Row>
                     </div>
                 </Modal.Header>
-                <Modal.Body>
-                    <Table>
+                <Modal.Body style={{ paddingTop: 0 }}>
+                    <Table className="residents-tabl">
                         <thead className="text-primary">
                             <tr>
                                 <th style={{ width: '20%', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis' }}>Name</th>
@@ -62,7 +77,7 @@ class ResidentMemberDetail extends Component {
                         </thead>
                         <tbody className='scrollBarStyle tBody'>
                             {this.props?.trData?.familyMember.map((data1, index) => (
-                                <tr>
+                                <tr className='residents-table-row'>
                                     <td className='address-td sm-dmemberImageisplay-none' style={{ width: '20%', alignItems: 'center', display: 'flex', }}>
                                         <img src={data1.memberImage} key={index} className="roundedCircle"></img>
                                         <span style={{ textOverflow: 'ellipsis', marginLeft: 20 }}>{data1.memberName}</span>
@@ -78,7 +93,7 @@ class ResidentMemberDetail extends Component {
                     </Table>
                 </Modal.Body>
 
-            </Modal>
+            </Modal >
         )
     }
 

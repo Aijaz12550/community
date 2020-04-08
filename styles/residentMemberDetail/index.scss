@@ -24,6 +24,16 @@ div.fade.in.modal {
     border: none !important;
 }
 
+.view-residents-title {
+    margin     : 0 0 10px 0;
+    font-family: 'Open Sans';
+    font-style : normal;
+    font-weight: bold;
+    font-size  : 20px;
+    line-height: 22px;
+    text-align : center;
+    color      : #009999;
+}
 
 .tBody {
     display       : flex;
@@ -31,6 +41,27 @@ div.fade.in.modal {
     max-height    : 50vh;
     overflow-y    : auto;
     overflow-x    : hidden;
+}
+
+.residents-table-row {
+    background   : white;
+    height       : 90;
+    margin-bottom: 5px;
+    background   : #FFFFFF;
+    border-radius: 0px !important;
+
+    td {
+        border : none;
+        outline: none;
+    }
+}
+
+.text-primary {
+    border-radius: 5px;
+}
+
+table {
+    background: rgb(246, 247, 251)
 }
 
 @media screen and (max-width: 860px) {
