@@ -4650,8 +4650,7 @@ License - nucleoapp.com/license/
 
 .sidebar .nav,
 .off-canvas-sidebar .nav {
-  margin-top: 20px;
-  display   : block;
+  display: block;
 }
 
 .sidebar .nav .caret,
@@ -4780,14 +4779,14 @@ License - nucleoapp.com/license/
 
 .sidebar .logo:after,
 .off-canvas-sidebar .logo:after {
-  content         : '';
-  position        : absolute;
-  bottom          : 0;
-  right           : 15px;
-  height          : 1px;
-  margin-top      : 1px;
-  width           : calc(100% - 30px);
-  background-color: rgba(19, 15, 15, 0.5);
+  content            : '';
+  position           : absolute;
+  bottom             : 0;
+  right              : 15px;
+  height             : 1px;
+  margin-top         : 1px;
+  width              : calc(100% - 30px);
+  /* background-color: rgba(19, 15, 15, 0.5); */
 }
 
 .sidebar .logo p,
