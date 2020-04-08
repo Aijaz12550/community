@@ -115,7 +115,7 @@ export const ViewResident = () => {
     <>
       <div className="content">
         <Row style={{ marginTop: 60 }}>
-          <Col lg="12" md="12" sm="12">
+          <Col lg="12" md="12" sm="12" style={{ paddingLeft: 35, paddingRight: 35 }}>
             <Card
               style={{ background: "#F6F7FB", border: "none", boxShadow: "none" }}
             >
@@ -145,11 +145,19 @@ export const ViewResident = () => {
           </Col>
 
           {/* search ======= */}
-          <Col lg="12" md="12" sm="12">
-            <form style={{ background: "white" }}>
+          <Col lg="12" md="12" sm="12" style={{ paddingLeft: 35, paddingRight: 35 }}>
+            <form style={{
+              background: '#FFFFFF',
+              border: 'none !important solid #E9E9E9',
+              boxSizing: 'border-box',
+              boxShadow: '0px 12px 50px rgba(0, 0, 0, 0.04)',
+              borderRadius: '8px',
+              paddingLeft: 5,
+              paddingRight: 5,
+            }}>
               <InputGroup
                 className="no-border card-stats"
-                style={{ background: "white", height: "50px" }}
+                style={{ background: "white", height: "50px", alignItems: 'center', margin: 0 }}
               >
                 <InputGroupAddon
                   addonType="append"
@@ -166,7 +174,7 @@ export const ViewResident = () => {
         </Row>
 
         <Row>
-          <Col md="12">
+          <Col md="12" style={{ paddingLeft: 35, paddingRight: 35 }}>
             <Table responsive="sm" className="residents-tabl">
               <thead className="text-primary">
                 <tr style={{}} >
@@ -181,7 +189,7 @@ export const ViewResident = () => {
                 <tbody className='scrollBarStyle tbody'>
                   {searchData.length ? searchData.map((data1, index) => (
                     <tr className="residents-table-row" style={{}} key={index} onClick={() => sendProps(true, data1)}>
-                      <td className='address-td sm-dmemberImageisplay-none' style={{ width: '30%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
+                      <td className='address-td sm-dmemberImageisplay-none' style={{ width: '30%', alignItems: 'center', display: 'flex', }}>{data1.address}</td>
                       <td className="" style={{ textOverflow: 'ellipsis', display: 'flex', flexDirection: 'row', alignItems: 'center', width: '40%', }}>
                         <div className='' style={{
                           display: 'block',
@@ -215,7 +223,7 @@ export const ViewResident = () => {
                         </div>
 
                       </td>
-                      <td className="text-right" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end' }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
+                      <td className="text-right" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
 
                     </tr>
                   ))

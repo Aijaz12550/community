@@ -77,13 +77,22 @@
 }
 
 .residents-table-row {
-  background: white;
+  background   : white;
+  height       : 90;
+  margin-bottom: 5px;
+  background   : #FFFFFF;
+  border-radius: 6px;
 
   td {
-    border    : none;
-    outline   : none;
-    border-top: 1px solid white;
+    border : none;
+    outline: none;
   }
+}
+
+.table td,
+.table th {
+  border: none !important;
+
 }
 
 .address-td {
@@ -157,14 +166,14 @@ td {
 tr {
   display       : flex;
   flex-direction: row;
-  border-bottom : 5px solid #f6f7fb;
 }
 
 
 .tbody {
-  display          : flex;
-  flex-direction   : column;
+  display       : flex;
+  flex-direction: column;
   height        : calc(100vh - 350px);
-  overflow-y       : auto;
-  overflow-x       : hidden;
+  overflow-y    : auto;
+  overflow-x    : hidden;
+  background    : rgb(246, 247, 251);
 }
