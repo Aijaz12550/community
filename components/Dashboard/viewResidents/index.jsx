@@ -8,9 +8,12 @@ import {
   InputGroupAddon,
   InputGroupText,
   Input,
+  Badge,
+
 } from "reactstrap";
 import MydModalWithGrid from '../residentMemberDetail'
-import { Table } from 'react-bootstrap';
+import { Table, Image } from 'react-bootstrap';
+import { Images } from '../imageRow';
 
 import "../../../styles/viewResidents/index.scss";
 
@@ -18,7 +21,7 @@ export const ViewResident = () => {
   let data = [
     {
       dataID: 1,
-      address: 'TeSt',
+      address: '10 Mckeon Pl',
       familyMember: [
         { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
         { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
@@ -28,7 +31,7 @@ export const ViewResident = () => {
     },
     {
       dataID: 1,
-      address: '10 McKeon PI',
+      address: '12 Barnum Pl',
       familyMember: [
         { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
         { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
@@ -43,7 +46,22 @@ export const ViewResident = () => {
     },
     {
       dataID: 1,
-      address: '10 McKeon PI',
+      address: '5 Taylor Ct',
+      familyMember: [
+        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Owais Warsi', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' }],
+      residenceSince: '10 June 2018'
+    },
+    {
+      dataID: 1,
+      address: '3 Taylor Ct',
       familyMember: [
         { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
         { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
@@ -58,7 +76,7 @@ export const ViewResident = () => {
     },
     {
       dataID: 1,
-      address: '10 McKeon PI',
+      address: '10 Barnum Pl',
       familyMember: [
         { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
         { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
@@ -73,7 +91,7 @@ export const ViewResident = () => {
     },
     {
       dataID: 1,
-      address: '10 McKeon PI',
+      address: '5 Titus Pl',
       familyMember: [
         { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
         { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
@@ -85,11 +103,29 @@ export const ViewResident = () => {
         { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
         { memberName: 'Owais Warsi', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
       residenceSince: '10 September 2018'
-    },]
+    },
+    {
+      dataID: 1,
+      address: '10 Lynn Pl',
+      familyMember: [
+        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Owais Warsi', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
+      residenceSince: '10 September 2018'
+    },
+  ]
+
   const [modalShow, setModalShow] = useState(false);
   const [sendData, setData] = useState();
   const [searchData, SearchCol] = useState([]);
   const [noMatchSearchData, noMatchSearchCol] = useState(false);
+
   function sendProps(setModalValue, setDataValue) {
     setModalShow(setModalValue);
     setData(setDataValue)
@@ -135,7 +171,7 @@ export const ViewResident = () => {
                       Turner Hill HomeOwners Association
                   </p>
                     <p className="view-residents-address">
-                      2 barnum place abc abc USA{" "}
+                      2 Barnum place, Ridgefeild CT 06877
                     </p>
                     <p />
                   </div>
@@ -145,7 +181,7 @@ export const ViewResident = () => {
           </Col>
 
           {/* search ======= */}
-          <Col lg="12" md="12" sm="12" style={{ paddingLeft: 35, paddingRight: 35 }}>
+          <Col lg="12" md="12" sm="12" style={{ paddingLeft: 35, paddingRight: 35, marginTop: 18 }}>
             <form style={{
               background: '#FFFFFF',
               border: 'none !important solid #E9E9E9',
@@ -167,7 +203,7 @@ export const ViewResident = () => {
                     <i className="fas fa-search" />
                   </InputGroupText>
                 </InputGroupAddon>
-                <Input placeholder="Search..." style={{ background: "white" }} onChange={event => setPassword(event.target.value)} />
+                <Input placeholder="Search..." style={{ background: "white", outline: 'none' }} onChange={event => setPassword(event.target.value)} />
               </InputGroup>
             </form>
           </Col>
@@ -175,12 +211,12 @@ export const ViewResident = () => {
 
         <Row>
           <Col md="12" style={{ paddingLeft: 35, paddingRight: 35 }}>
-            <Table responsive="sm" className="residents-tabl">
-              <thead className="text-primary">
+            <Table responsive="sm" className="residents-tabl ">
+              <thead className="">
                 <tr style={{}} >
-                  <th className='sm-display-none' style={{ width: '30%' }}>Address</th>
-                  <th style={{ width: '40%' }}>Family Members</th>
-                  <th className="text-right" style={{ width: '30%' }}>Residence Since</th>
+                  <th className='sm-display-none th td1' style={{ width: '20%' }}>Address</th>
+                  <th className='th td2' style={{ width: '60%' }}>Family Members</th>
+                  <th className="text-right th" style={{ width: '20%' }}>Residence Since</th>
                 </tr>
               </thead>
               {noMatchSearchData ?
@@ -189,82 +225,22 @@ export const ViewResident = () => {
                 <tbody className='scrollBarStyle tbody'>
                   {searchData.length ? searchData.map((data1, index) => (
                     <tr className="residents-table-row" style={{}} key={index} onClick={() => sendProps(true, data1)}>
-                      <td className='address-td sm-dmemberImageisplay-none' style={{ width: '30%', alignItems: 'center', display: 'flex', }}>{data1.address}</td>
-                      <td className="" style={{ textOverflow: 'ellipsis', display: 'flex', flexDirection: 'row', alignItems: 'center', width: '40%', }}>
-                        <div className='' style={{
-                          display: 'block',
-                          whiteSpace: 'nowrap',
-                          overflow: 'hidden',
-                          textOverflow: 'ellipsis',
-                        }}>
-                          {data1.familyMember.map((membersImg, keys) => (
-                            <img src={membersImg.memberImage} key={keys} className="roundedCircle"></img>
-
-                          ))}
-                        </div>
-
-                        <div className='' style={{
-                          display: 'block',
-                          height: 20,
-                          overflow: 'hidden',
-                          textOverflow: 'ellipsis',
-                          marginLeft: 15
-                        }}>
-                          {data1.familyMember.map((memberNames, ind) => (
-                            <span className='' key={ind} style={{
-                              fontFamily: 'Open Sans',
-                              fontStyle: 'normal',
-                              fontWeight: '600',
-                              fontWize: '14px',
-                              lineHeight: '22px',
-                            }}>{memberNames.memberName}, </span>
-                          ))}
-
-                        </div>
-
+                      <td className='address-td sm-dmemberImageisplay-none td1' style={{ width: '20%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
+                      <td className="td2" style={{ width: '60%', display: 'flex', alignItems: 'center', }}>
+                        {Images(data1.familyMember)}
                       </td>
-                      <td className="text-right" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
+                      <td className="text-right td-residence-since" style={{ width: '20%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
 
                     </tr>
                   ))
-
-                    : data.map((data1, index) => (
+                    :
+                    data.map((data1, index) => (
                       <tr className="residents-table-row" style={{}} key={index} onClick={() => sendProps(true, data1)}>
-                        <td className='address-td sm-dmemberImageisplay-none' style={{ width: '30%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
-                        <td className="" style={{ textOverflow: 'ellipsis', display: 'flex', flexDirection: 'row', alignItems: 'center', width: '40%', }}>
-                          <div className='' style={{
-                            display: 'block',
-                            whiteSpace: 'nowrap',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                          }}>
-                            {data1.familyMember.map((membersImg, keys) => (
-                              <img src={membersImg.memberImage} key={keys} className="roundedCircle"></img>
-
-                            ))}
-                          </div>
-
-                          <div className='' style={{
-                            display: 'block',
-                            height: 20,
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            marginLeft: 15
-                          }}>
-                            {data1.familyMember.map((memberNames, ind) => (
-                              <span className='' key={ind} style={{
-                                fontFamily: 'Open Sans',
-                                fontStyle: 'normal',
-                                fontWeight: '600',
-                                fontWize: '14px',
-                                lineHeight: '22px',
-                              }}>{memberNames.memberName}, </span>
-                            ))}
-
-                          </div>
-
+                        <td className='address-td sm-dmemberImageisplay-none td1' style={{ width: '20%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
+                        <td className="td2" style={{ width: '60%', display: 'flex', alignItems: 'center' }}>
+                          {Images(data1.familyMember)}
                         </td>
-                        <td className="text-right" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end' }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
+                        <td className="text-right td-residence-since" style={{ width: '20%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end' }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
 
                       </tr>
                     ))}
