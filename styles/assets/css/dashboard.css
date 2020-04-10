@@ -4598,7 +4598,7 @@ License - nucleoapp.com/license/
   top         : 0;
   height      : 100%;
   bottom      : 0;
-  width       : 260px;
+  width       : 280px;
   left        : 0;
   z-index     : 1030;
   border-right: 1px solid #ddd;
@@ -4606,11 +4606,21 @@ License - nucleoapp.com/license/
 
 .sidebar .sidebar-wrapper,
 .off-canvas-sidebar .sidebar-wrapper {
-  position: relative;
-  height  : calc(100vh - 150px);
-  overflow: auto;
-  width   : 260px;
-  z-index : 4;
+  position   : relative;
+  /* height  : calc(100vh - 150px); */
+  overflow   : auto;
+  width      : 280px;
+  z-index    : 4;
+}
+
+.sidebar-content {
+  height    : calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+.sidebar-body {
+  height: calc(100vh - 173px);
+
 }
 
 .sidebar .sidebar-wrapper .dropdown .dropdown-backdrop,
@@ -5016,7 +5026,7 @@ License - nucleoapp.com/license/
 .main-panel {
   position          : relative;
   float             : right;
-  width             : calc(100% - 260px);
+  width             : calc(100% - 280px);
   background-color  : #f4f3ef;
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -moz-transition   : all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -5046,7 +5056,7 @@ License - nucleoapp.com/license/
 }
 
 .panel-header {
-  height        : 260px;
+  height        : 280px;
   padding-top   : 80px;
   padding-bottom: 45px;
   background    : #141E30;
@@ -5885,11 +5895,11 @@ License - nucleoapp.com/license/
 
   .nav-open .main-panel {
     right            : 0;
-    -webkit-transform: translate3d(260px, 0, 0);
-    -moz-transform   : translate3d(260px, 0, 0);
-    -o-transform     : translate3d(260px, 0, 0);
-    -ms-transform    : translate3d(260px, 0, 0);
-    transform        : translate3d(260px, 0, 0);
+    -webkit-transform: translate3d(280px, 0, 0);
+    -moz-transform   : translate3d(280px, 0, 0);
+    -o-transform     : translate3d(280px, 0, 0);
+    -ms-transform    : translate3d(280px, 0, 0);
+    transform        : translate3d(280px, 0, 0);
   }
 
   .nav-open .sidebar {
@@ -5906,11 +5916,11 @@ License - nucleoapp.com/license/
   }
 
   .nav-open .menu-on-right .main-panel {
-    -webkit-transform: translate3d(-260px, 0, 0);
-    -moz-transform   : translate3d(-260px, 0, 0);
-    -o-transform     : translate3d(-260px, 0, 0);
-    -ms-transform    : translate3d(-260px, 0, 0);
-    transform        : translate3d(-260px, 0, 0);
+    -webkit-transform: translate3d(-280px, 0, 0);
+    -moz-transform   : translate3d(-280px, 0, 0);
+    -o-transform     : translate3d(-280px, 0, 0);
+    -ms-transform    : translate3d(-280px, 0, 0);
+    transform        : translate3d(-280px, 0, 0);
   }
 
   .nav-open .menu-on-right .navbar-collapse,
@@ -5931,18 +5941,18 @@ License - nucleoapp.com/license/
   }
 
   .nav-open .menu-on-right #bodyClick {
-    right: 260px;
+    right: 280px;
     left : auto;
   }
 
   .menu-on-right .sidebar {
     left             : auto;
     right            : 0;
-    -webkit-transform: translate3d(260px, 0, 0);
-    -moz-transform   : translate3d(260px, 0, 0);
-    -o-transform     : translate3d(260px, 0, 0);
-    -ms-transform    : translate3d(260px, 0, 0);
-    transform        : translate3d(260px, 0, 0);
+    -webkit-transform: translate3d(280px, 0, 0);
+    -moz-transform   : translate3d(280px, 0, 0);
+    -o-transform     : translate3d(280px, 0, 0);
+    -ms-transform    : translate3d(280px, 0, 0);
+    transform        : translate3d(280px, 0, 0);
   }
 
   .bar1,
@@ -6276,7 +6286,7 @@ License - nucleoapp.com/license/
     opacity           : 1;
     top               : 0;
     right             : 0;
-    left              : 260px;
+    left              : 280px;
     content           : "";
     z-index           : 9999;
     overflow-x        : hidden;
@@ -6307,7 +6317,7 @@ License - nucleoapp.com/license/
     display           : block;
     top               : 0;
     height            : 100%;
-    width             : 260px;
+    width             : 280px;
     right             : auto;
     left              : 0;
     z-index           : 1032;
@@ -6319,11 +6329,11 @@ License - nucleoapp.com/license/
     -o-transition     : all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     -ms-transition    : all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     transition        : all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    -webkit-transform : translate3d(-260px, 0, 0);
-    -moz-transform    : translate3d(-260px, 0, 0);
-    -o-transform      : translate3d(-260px, 0, 0);
-    -ms-transform     : translate3d(-260px, 0, 0);
-    transform         : translate3d(-260px, 0, 0);
+    -webkit-transform : translate3d(-280px, 0, 0);
+    -moz-transform    : translate3d(-280px, 0, 0);
+    -o-transform      : translate3d(-280px, 0, 0);
+    -ms-transform     : translate3d(-280px, 0, 0);
+    transform         : translate3d(-280px, 0, 0);
   }
 
   .main-panel {
