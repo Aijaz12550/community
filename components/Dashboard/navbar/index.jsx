@@ -13,6 +13,9 @@ import {
   Container,
 } from "reactstrap";
 
+import "../../../styles/navbar/index.scss";
+
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -68,7 +71,7 @@ class Header extends React.Component {
         }
         }
       >
-        <Container fluid>
+        <Container fluid style={this.state.isOpen ? { marginTop: 24 } : { margin: 0 }}>
           <div className="navbar-wrapper">
             <div className="navbar-toggle">
               <button
@@ -97,7 +100,7 @@ class Header extends React.Component {
             isOpen={this.state.isOpen}
             navbar
             className="justify-content-end"
-            style={{ background: '#009999' }}
+            style={{ background: '#009999', marginTop: 19 }}
           >
 
             <Nav navbar>
@@ -147,13 +150,7 @@ class Header extends React.Component {
                 </NavItem>
                 <NavItem>
                   <div className="nav-link btn-magnify">
-                    <span style={{
-                      // fontFamily: 'Open Sans',
-                      fontStyle: 'normal',
-                      fontWeight: 'bold',
-                      fontSize: 16,
-                      textAlign: 'right'
-                    }}>Bradley Robin</span>
+                    <span className='profileName'>Bradley Robin</span>
                   </div>
                 </NavItem>
                 <Dropdown
