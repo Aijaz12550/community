@@ -417,8 +417,6 @@ var _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -452,14 +450,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       pageProps,
       store
     } = this.props;
-    return __jsx(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24,
-        columnNumber: 9
-      }
-    }, __jsx(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
+    return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
       store: store,
       __self: this,
       __source: {
@@ -467,16 +458,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         lineNumber: 25,
         columnNumber: 11
       }
-    }, __jsx(Component, _extends({
-      store: store.getState()
-    }, pageProps, {
+    }, __jsx(Component, {
+      store: store.getState(),
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 26,
         columnNumber: 13
       }
-    }))));
+    }));
   }
 
 }));
@@ -504,9 +494,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let _combine_reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(_reducers__WEBPACK_IMPORTED_MODULE_2__);
 
-const initStore = (initialState = {
-  developer: 'talktiva'
-}) => {
+const initStore = (initialState = {}) => {
   return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_combine_reducers, initialState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a));
 };
 

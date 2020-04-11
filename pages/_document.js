@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <meta name="description" content="community managment system" />
-          {/* <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link> */}
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link>
         </Head>
         <body>
           <Main />

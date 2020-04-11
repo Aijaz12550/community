@@ -6,7 +6,7 @@ export const Apple = () => {
     useEffect(()=>{
         AppleID.auth.init({
             clientId : '[CLIENT_ID]',
-            scope : '[SCOPES]',
+            scope : '[email]',
             redirectURI : '[REDIRECT_URI]',
             state : '[STATE]',
             usePopup : true //or false defaults to false

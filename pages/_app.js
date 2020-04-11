@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import App, { Container } from "next/app";
+import App from "next/app";
 import withRedux from "next-redux-wrapper";
 import { initStore } from "../redux/configureStore";
 import { register } from "next-offline/runtime";
@@ -21,11 +21,11 @@ export default withRedux(initStore, { debug: true })(
     render() {
       const { Component, pageProps, store } = this.props;
       return (
-        <Container>
+       
           <Provider store={store}>
-            <Component store={store.getState()} {...pageProps} />
+            <Component store={store.getState()}  />
           </Provider>
-        </Container>
+      
       );
     }
   }

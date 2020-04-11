@@ -1090,6 +1090,15 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         lineNumber: 8,
         columnNumber: 11
       }
+    }), __jsx("link", {
+      href: "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap",
+      rel: "stylesheet",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 11
+      }
     })), __jsx("body", {
       __self: this,
       __source: {

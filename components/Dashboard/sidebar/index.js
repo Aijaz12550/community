@@ -9,9 +9,13 @@ export const SideBar = () => {
   const sidebar = createRef();
   const router = useRouter();
   return (
+<<<<<<< Updated upstream
     <div className="sidebar" data-color="red" data-active-color="white" style={{
       height: '100%', border: 'none', boxShadow: '1px 0px 25px rgba(0, 0, 0, 0.04)'
     }}>
+=======
+    <div className="sidebar" data-color="red" data-active-color="white" style={{ height: '100%',border:'none' }}>
+>>>>>>> Stashed changes
       <div className="sidebar-header logo">
         <svg width="154" height="75" viewBox="0 0 154 75" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M98.9421 19.6442L93.3587 20.2954V43.3768H88.9911H61.8771H57.5089V19.6442H51.1553L74.7538 1.71014L81.3469 6.60069V1.71014H87.005V10.8149L98.9421 19.6442Z" fill="#009999" stroke="#009999" stroke-width="1.5" />
