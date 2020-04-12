@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 import MydModalWithGrid from '../residentMemberDetail'
 import { Table, Image } from 'react-bootstrap';
-import { Images } from '../imageRow';
+import Images from '../imageRow';
 
 import "../../../styles/viewResidents/index.scss";
 
@@ -23,9 +23,9 @@ export const ViewResident = () => {
       dataID: 1,
       address: '10 Mckeon Pl',
       familyMember: [
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img2.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
       ],
       residenceSince: '10 September 2018'
     },
@@ -33,90 +33,90 @@ export const ViewResident = () => {
       dataID: 1,
       address: '12 Barnum Pl',
       familyMember: [
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Owais Warsi', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Owais Warsi', memberImage: '/assets/mockup/img5.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
       residenceSince: '10 September 2018'
     },
     {
       dataID: 1,
       address: '5 Taylor Ct',
       familyMember: [
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
-        { memberName: 'Owais Warsi', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' }],
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' },
+        { memberName: 'Owais Warsi', memberImage: '/assets/mockup/img5.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 June 2018' }],
       residenceSince: '10 June 2018'
     },
     {
       dataID: 1,
       address: '3 Taylor Ct',
       familyMember: [
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Owais Warsi', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Owais Warsi', memberImage: '/assets/mockup/img5.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
       residenceSince: '10 September 2018'
     },
     {
       dataID: 1,
       address: '10 Barnum Pl',
       familyMember: [
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Owais Warsi', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Owais Warsi', memberImage: '/assets/mockup/img5.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
       residenceSince: '10 September 2018'
     },
     {
       dataID: 1,
       address: '5 Titus Pl',
       familyMember: [
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Owais Warsi', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Owais Warsi', memberImage: '/assets/mockup/img5.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
       residenceSince: '10 September 2018'
     },
     {
       dataID: 1,
       address: '10 Lynn Pl',
       familyMember: [
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Brii Ritter', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Wilam Carry', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Jhon Doe', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Walter Obrain', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
-        { memberName: 'Owais Warsi', memberImage: '/img.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Brii Ritter', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Wilam Carry', memberImage: '/assets/mockup/img1.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Jhon Doe', memberImage: '/assets/mockup/img3.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Walter Obrain', memberImage: '/assets/mockup/img4.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' },
+        { memberName: 'Owais Warsi', memberImage: '/assets/mockup/img5.png', phoneNumber: '(217) 555-0113', emailAddress: 'seth.olson@example.com', memberSince: '10 September 2018' }],
       residenceSince: '10 September 2018'
     },
   ]
@@ -131,7 +131,7 @@ export const ViewResident = () => {
     setData(setDataValue)
   }
 
-  function setPassword(value) {
+  function searchHandleChange(value) {
     const results = data.filter(person =>
       person.address.toLowerCase().includes(value.toLowerCase())
     );
@@ -143,9 +143,6 @@ export const ViewResident = () => {
     }
     SearchCol(results);
   }
-
-
-
 
   return (
     <>
@@ -203,7 +200,7 @@ export const ViewResident = () => {
                     <i className="fas fa-search" />
                   </InputGroupText>
                 </InputGroupAddon>
-                <Input placeholder="Search..." style={{ background: "white", outline: 'none' }} onChange={event => setPassword(event.target.value)} />
+                <Input placeholder="Search..." style={{ background: "white", outline: 'none' }} onChange={event => searchHandleChange(event.target.value)} />
               </InputGroup>
             </form>
           </Col>
@@ -213,10 +210,10 @@ export const ViewResident = () => {
           <Col md="12" style={{ paddingLeft: 35, paddingRight: 35 }}>
             <Table responsive="sm" className="residents-tabl ">
               <thead className="">
-                <tr style={{}} >
-                  <th className='sm-display-none th td1' style={{ width: '20%' }}>Address</th>
-                  <th className='th td2' style={{ width: '60%' }}>Family Members</th>
-                  <th className="text-right th" style={{ width: '20%' }}>Residence Since</th>
+                <tr >
+                  <th className='sm-display-none th td1' style={{ width: '35%' }}>Address</th>
+                  <th className='th td2' style={{ width: '35%', justifyContent: 'space-between', display: 'flex', alignItems: 'center', }}>Family Members</th>
+                  <th className="text-right th" style={{ width: '30%' }}>Residence Since</th>
                 </tr>
               </thead>
               {noMatchSearchData ?
@@ -225,22 +222,25 @@ export const ViewResident = () => {
                 <tbody className='scrollBarStyle tbody'>
                   {searchData.length ? searchData.map((data1, index) => (
                     <tr className="residents-table-row" style={{}} key={index} onClick={() => sendProps(true, data1)}>
-                      <td className='address-td sm-dmemberImageisplay-none td1' style={{ width: '20%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
-                      <td className="td2" style={{ width: '60%', display: 'flex', alignItems: 'center', }}>
-                        {Images(data1.familyMember)}
+                      <td className='address-td sm-dmemberImageisplay-none td1' style={{ width: '35%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
+                      <td className="td2" style={{ width: '35%', justifyContent: 'space-between', display: 'flex', alignItems: 'center', }}>
+
+                        <Images familyMember={data1.familyMember} />
                       </td>
-                      <td className="text-right td-residence-since" style={{ width: '20%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
+                      <td className="text-right td-residence-since" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
 
                     </tr>
                   ))
                     :
                     data.map((data1, index) => (
                       <tr className="residents-table-row" style={{}} key={index} onClick={() => sendProps(true, data1)}>
-                        <td className='address-td sm-dmemberImageisplay-none td1' style={{ width: '20%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
-                        <td className="td2" style={{ width: '60%', display: 'flex', alignItems: 'center' }}>
-                          {Images(data1.familyMember)}
+                        <td className='address-td sm-dmemberImageisplay-none td1' style={{ width: '35%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
+                        <td className="td2" style={{ width: '35%', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}>
+
+                          <Images familyMember={data1.familyMember} />
+
                         </td>
-                        <td className="text-right td-residence-since" style={{ width: '20%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end' }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
+                        <td className="text-right td-residence-since" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end' }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
 
                       </tr>
                     ))}
