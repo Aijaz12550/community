@@ -5,15 +5,14 @@ import "../../styles/signin/index.scss";
 import {GoogleLogin} from './google'
 import { Apple } from './apple'
 import { OauthConfig } from '../../configuration'
+import {login } from '../../redux/middleware/auth'
 
-export const SignIn = props => {
-let clientId =  process.env.oauth_client_id
-console.log('================================',props)
-  const getToken = () => {
-    const token = OauthConfig.createToken('access token')
-    const re = token.client.code.getUri()
-  // let re = token.client.code.getToken({},clientId ,process.env.oauth_token_url)
-    console.log(' token >>>',token ,"---",re)
+export const SignIn = ({_signin}) => {
+ 
+  const _onSubmit = () =>{
+    _signin({
+      
+    })
   }
     return (
     <Container>
@@ -27,7 +26,7 @@ console.log('================================',props)
       {/* <button className="google-login-btn">continue with Google</button> */}
 
       <Link href="#">
-  <a>OR USE YOUR OWN EMAIL {process.env.REACT_APP_TEST}</a>
+  <a>OR USE YOUR OWN EMAIL</a>
       </Link>
 
       <input
@@ -45,7 +44,7 @@ console.log('================================',props)
 
       <p>Forgot password?</p>
 
-      <button className="signinbtn" onClick={getToken}>Sign In</button>
+      <button className="signinbtn" onClick={_onSubmit} >Sign In</button>
     </Container>
   );
 };

@@ -1,11 +1,16 @@
-import React, { Fragment } from "react";
-import { DashBoard } from "../../../components";
+import React, { Fragment, useEffect } from "react";
+import { DashBoard } from "$components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../styles/assets/css/dashboard.css";
 import Head from "next/head";
-import { connect } from 'react-redux'
+import { connect } from "react-redux";
+import { getUsers, login } from "$middleware";
 
-export default connect(state=>state)((props) => {
+export default connect((state) => state)((props) => {
+  useEffect(() => {
+    props.dispatch(getUsers());
+  }, []);
+
   return (
     <Fragment>
       <Head>
@@ -20,10 +25,12 @@ export default connect(state=>state)((props) => {
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
-      <DashBoard {...props} />
+      <DashBoard users={props.AllUsersReducer} />
     </Fragment>
   );
-}
-)
+});

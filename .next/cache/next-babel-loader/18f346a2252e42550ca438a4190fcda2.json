@@ -1,0 +1,1 @@
+{"ast":null,"code":"let ClientOAuth2 = require(\"client-oauth2\");\n\nexport let OauthConfig = new ClientOAuth2({\n  clientId: 'talktivaApp',\n  clientSecret: \"talk@Tiva!1\",\n  accessTokenUri: \"https://devapp.talktiva.com/uaa/oauth/token\",\n  redirectUri: \"http://localhost:3000\",\n  scopes: [\"email\", \"name\"]\n});","map":null,"metadata":{},"sourceType":"module"}

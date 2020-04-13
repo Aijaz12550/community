@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { SIGNIN, SIGNUP } from \"../CONSTANTS\";\n\nconst signin = payload => {\n  return {\n    type: SIGNIN,\n    payload\n  };\n};\n\nconst signup = payload => {\n  return {\n    type: SIGNUP,\n    payload\n  };\n};\n\nexport { signin, signup };","map":null,"metadata":{},"sourceType":"module"}

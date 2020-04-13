@@ -3,14 +3,35 @@ import { Layout } from "../invitationCode/layout";
 import "../../styles/signin/index.scss";
 import "../../styles/userValidation/index.scss";
 
-export const SignUp = () => {
+export const SignUp = ({ _signup }) => {
+  const _onSubmit = () => {
+    _signup({
+      appartmentUnit: "string",
+      communityId: 0,
+      deviceType: "IOS",
+      email: "string",
+      fullName: "string",
+      idToken: "string",
+      invitationCode: "string",
+      password: "string",
+      phone: "string",
+      registrationId: "string",
+      registrationType: "APPLICATION",
+      street: "string",
+      udid: "string",
+      userRoleType: {
+        description: "string",
+        name: "string",
+      },
+    });
+  };
   return (
     <Layout prog={100}>
       <p
         style={{
           color: "black",
           marginTop: "20px",
-          fontSize: "17px"
+          fontSize: "17px",
         }}
       >
         Almost there! Please SignUp to access your &lt;Community&gt; community
@@ -43,7 +64,7 @@ export const SignUp = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          width: "100%"
+          width: "100%",
         }}
       >
         <button

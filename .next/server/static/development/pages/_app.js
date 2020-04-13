@@ -417,13 +417,6 @@ var _jsxFileName = "/home/aijaz/nextjs/community-dashboard.git/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -431,15 +424,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = (next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default()(_redux_configureStore__WEBPACK_IMPORTED_MODULE_4__["initStore"], {
   debug: true
 })(class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
-  static async getInitialProps({
-    Component,
-    ctx
-  }) {
-    return {
-      pageProps: _objectSpread({}, Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
-    };
-  }
-
+  // static async getInitialProps({ Component, ctx }) {
+  //   return {
+  //     pageProps: {
+  //       ...(Component.getInitialProps
+  //         ? await Component.getInitialProps(ctx)
+  //         : {})
+  //     }
+  //   };
+  // }
   componentDidMount() {
     Object(next_offline_runtime__WEBPACK_IMPORTED_MODULE_5__["register"])();
   }
@@ -448,7 +441,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     const {
       Component,
       pageProps,
-      store
+      store,
+      stars,
+      ctx
     } = this.props;
     return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
       store: store,
@@ -456,15 +451,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25,
-        columnNumber: 11
+        columnNumber: 9
       }
     }, __jsx(Component, {
       store: store.getState(),
+      stars: stars,
+      ctx: ctx,
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 26,
-        columnNumber: 13
+        columnNumber: 11
       }
     }));
   }
@@ -494,8 +491,8 @@ __webpack_require__.r(__webpack_exports__);
 
 let _combine_reducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(_reducers__WEBPACK_IMPORTED_MODULE_2__);
 
-const initStore = (initialState = {}) => {
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_combine_reducers, initialState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a));
+const initStore = () => {
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_combine_reducers, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a));
 };
 
 /***/ }),
@@ -527,6 +524,11 @@ const AuthReducer = (state = initialState, action) => {
         user: action.payload
       });
 
+    case "SIGNOUT":
+      return _objectSpread({}, state, {
+        user: null
+      });
+
     default:
       return state;
   }
@@ -540,13 +542,53 @@ const AuthReducer = (state = initialState, action) => {
 /*!*********************************!*\
   !*** ./redux/reducers/index.js ***!
   \*********************************/
-/*! exports provided: AuthReducer */
+/*! exports provided: AuthReducer, AllUsersReducer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _authReducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./authReducer */ "./redux/reducers/authReducer.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AuthReducer", function() { return _authReducer__WEBPACK_IMPORTED_MODULE_0__["AuthReducer"]; });
+
+/* harmony import */ var _usersReducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./usersReducers */ "./redux/reducers/usersReducers.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AllUsersReducer", function() { return _usersReducers__WEBPACK_IMPORTED_MODULE_1__["AllUsersReducer"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./redux/reducers/usersReducers.js":
+/*!*****************************************!*\
+  !*** ./redux/reducers/usersReducers.js ***!
+  \*****************************************/
+/*! exports provided: AllUsersReducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllUsersReducer", function() { return AllUsersReducer; });
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+const initialState = {
+  field: "test Auth reducer"
+};
+
+const AllUsersReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "ALLUSERS":
+      return _objectSpread({}, state, {
+        allUsers: action.payload
+      });
+
+    default:
+      return state;
+  }
+};
 
 
 

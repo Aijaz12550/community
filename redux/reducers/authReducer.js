@@ -1,5 +1,5 @@
 const initialState = {
-  field: "test Auth reducer"
+  field: "test Auth reducer",
 };
 
 const AuthReducer = (state = initialState, action) => {
@@ -7,7 +7,12 @@ const AuthReducer = (state = initialState, action) => {
     case "SIGNIN":
       return {
         ...state,
-        user: action.payload
+        user: action.payload,
+      };
+    case "SIGNOUT":
+      return {
+        ...state,
+        user: null,
       };
     default:
       return state;

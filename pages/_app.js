@@ -6,26 +6,25 @@ import { register } from "next-offline/runtime";
 
 export default withRedux(initStore, { debug: true })(
   class MyApp extends App {
-    static async getInitialProps({ Component, ctx }) {
-      return {
-        pageProps: {
-          ...(Component.getInitialProps
-            ? await Component.getInitialProps(ctx)
-            : {})
-        }
-      };
-    }
+    // static async getInitialProps({ Component, ctx }) {
+    //   return {
+    //     pageProps: {
+    //       ...(Component.getInitialProps
+    //         ? await Component.getInitialProps(ctx)
+    //         : {})
+    //     }
+    //   };
+    // }
     componentDidMount() {
       register();
     }
     render() {
-      const { Component, pageProps, store } = this.props;
+      const { Component, pageProps, store, stars, ctx } = this.props;
+
       return (
-       
-          <Provider store={store}>
-            <Component store={store.getState()}  />
-          </Provider>
-      
+        <Provider store={store}>
+          <Component store={store.getState()} stars={stars} ctx={ctx} />
+        </Provider>
       );
     }
   }

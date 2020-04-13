@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport \"../../styles/mainlayout/index.scss\";\nexport const Container = ({\n  children\n}) => __jsx(\"div\", {\n  className: \"main-container\"\n}, __jsx(\"div\", {\n  className: \"main-container-child\"\n}, children));","map":null,"metadata":{},"sourceType":"module"}

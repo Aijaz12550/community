@@ -81,7 +81,7 @@ class Images extends Component {
                             zIndex = 1;
                         }
                         return (
-                            <Image style={{ marginLeft: margin, zIndex: zIndex }} key={i} className="roundedCircle" src={v.memberImage} circle />
+                            <Image style={{ marginLeft: margin, zIndex: zIndex }} key={i} className="roundedCircle" src={v.memberImage} circle={true} />
 
                         )
                     }

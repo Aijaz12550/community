@@ -126,10 +126,6 @@ export const ViewResident = () => {
   const [searchData, SearchCol] = useState([]);
   const [noMatchSearchData, noMatchSearchCol] = useState(false);
 
-<<<<<<< Updated upstream
-=======
-  
->>>>>>> Stashed changes
   function sendProps(setModalValue, setDataValue) {
     setModalShow(setModalValue);
     setData(setDataValue)
@@ -260,3 +256,5 @@ export const ViewResident = () => {
     </>
   );
 };
+
+

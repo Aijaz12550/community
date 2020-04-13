@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const SIGNIN = 'SIGNIN';\nexport const SIGNUP = `SIGNUP`;\nexport const ALLUSERS = `ALLUSERS`;","map":null,"metadata":{},"sourceType":"module"}
