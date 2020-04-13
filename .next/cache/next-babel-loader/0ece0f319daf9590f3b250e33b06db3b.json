@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { ALLUSERS } from \"../CONSTANTS\";\n\nvar allUsers = function allUsers(payload) {\n  return {\n    type: ALLUSERS,\n    payload: payload\n  };\n};\n\nexport { allUsers };","map":null,"metadata":{},"sourceType":"module"}

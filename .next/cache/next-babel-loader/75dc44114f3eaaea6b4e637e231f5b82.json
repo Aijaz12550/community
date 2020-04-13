@@ -1,1 +1,0 @@
-{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport InvitationScreen from \"../../components/invitationCode\";\nimport \"../../styles/userValidation/index.scss\";\nexport default (() => __jsx(InvitationScreen, null));","map":null,"metadata":{},"sourceType":"module"}

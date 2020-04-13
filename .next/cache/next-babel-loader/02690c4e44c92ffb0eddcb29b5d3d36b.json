@@ -1,1 +1,0 @@
-{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport { SignIn } from \"../../components/signin\";\nimport \"../../styles/signin/index.scss\";\nexport default (function () {\n  return __jsx(SignIn, {\n    test: process.env.REACT_APP_TEST\n  });\n});","map":null,"metadata":{},"sourceType":"module"}

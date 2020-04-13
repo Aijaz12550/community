@@ -1,1 +1,0 @@
-{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport { LandingPage } from \"../../components/landingPage\";\nexport default (function () {\n  return __jsx(LandingPage, null);\n});","map":null,"metadata":{},"sourceType":"module"}

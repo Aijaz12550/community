@@ -1,1 +1,0 @@
-{"ast":null,"code":"import styled from '@emotion/styled';\nexport const Input = styled.input`\nfont-size: 18px;\npadding: 10px;\nmargin: 10px;\nbackground: papayawhip;\nborder: none;\noutline: none;\nwidth: 380px;\nborder-bottom: 1px solid red;\nborder-radius: 10px;\nmargin-top:5px;\n::placeholder {\n  color: palevioletred;\n}\n`;","map":null,"metadata":{},"sourceType":"module"}

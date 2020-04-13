@@ -1,1 +1,0 @@
-{"ast":null,"code":"export const SIGNIN = 'SIGNIN';","map":{"version":3,"sources":["/home/aijaz/nextjs/community-dashboard.git/redux/CONSTANTS/index.js"],"names":["SIGNIN"],"mappings":"AAAA,OAAO,MAAMA,MAAM,GAAG,QAAf","sourcesContent":["export const SIGNIN = 'SIGNIN'"]},"metadata":{},"sourceType":"module"}

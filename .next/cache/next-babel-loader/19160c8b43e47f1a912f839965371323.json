@@ -1,1 +1,0 @@
-{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport { SideBar } from './siderbar';\nexport const DashBoard = () => {\n  return __jsx(\"div\", null, __jsx(SideBar, null));\n};","map":null,"metadata":{},"sourceType":"module"}

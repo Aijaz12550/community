@@ -1,1 +1,0 @@
-{"ast":null,"code":"export * from './OauthConfig';","map":{"version":3,"sources":["/home/aijaz/nextjs/community-dashboard.git/configuration/index.js"],"names":[],"mappings":"AAAA,cAAc,eAAd","sourcesContent":["export * from './OauthConfig'"]},"metadata":{},"sourceType":"module"}
