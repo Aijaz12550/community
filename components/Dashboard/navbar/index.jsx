@@ -73,7 +73,7 @@ class Header extends React.Component {
         }
         }
       >
-        <Container fluid style={this.state.isOpen ? { marginTop: 24 } : { margin: 0 }}>
+        <Container fluid style={this.state.isOpen ? { marginTop: 24,padding:'0 10px 0 10px' } : { margin: 0,padding:'0 10px 0 10px' }}>
           <div className="navbar-wrapper">
             <div className="navbar-toggle">
               <button
@@ -102,15 +102,15 @@ class Header extends React.Component {
             isOpen={this.state.isOpen}
             navbar
             className="justify-content-end"
-            style={{ background: '#009999', marginTop: 19 }}
+            style={this.state.isOpen ? { marginTop: 19,background: '#fff' } : { margin: 0 }}
           >
 
             <Nav navbar>
-              <NavItem style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                 <NavItem style={{ marginRight: 25, }}>
                   <Link href="/">
                     <div className="nav-link btn-magnify" style={{}}>
-                      <Image className="roundedCircle" src='/assets/mockup/Notifications.png' circle />
+                      <Image className="roundedCircle" src='/assets/mockup/Notifications.png' />
                     </div>
                   </Link>
                 </NavItem>
@@ -123,7 +123,7 @@ class Header extends React.Component {
                   borderRadius: '100%',
                 }}>
                   <Link href="/">
-                    <Image className="roundedCircle" style={{ width: 38, height: 38, borderRadius: 19 }} src='/assets/mockup/img10.png' circle />
+                    <Image className="roundedCircle" style={{ width: 38, height: 38, borderRadius: 19 }} src='/assets/mockup/img10.png' />
                     {/* <div className="nav-link btn-magnify" style={{}}>
                     </div> */}
                   </Link>
@@ -147,7 +147,7 @@ class Header extends React.Component {
                     <DropdownItem tag="a">Something else here</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
-              </NavItem>
+              </div>
             </Nav>
           </Collapse>
         </Container>
