@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, Badge } from 'react-bootstrap';
 
-class Images extends Component {
+class _Images extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -62,7 +62,7 @@ class Images extends Component {
 
     render() {
         return (
-            <div key={this.props.key} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+            <div key={this.props.Uniquekey+(+Date.now())+5765} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                 {this.props.familyMember.map((v, i) => {
                     let margin = 0;
                     let zIndex = 0;
@@ -91,7 +91,7 @@ class Images extends Component {
                         }
 
                         return (
-                            <Image  style={{ marginLeft: margin, zIndex: zIndex }} key={i} className="roundedCircle" src={v.memberImage} />
+                             <Image key={i+Math.floor(Math.random() * 10001)}  style={{ marginLeft: margin, zIndex: zIndex }}  className="roundedCircle" src={v.memberImage} />
 
                         )
                     }
@@ -129,7 +129,7 @@ class Images extends Component {
                         if (i < this.state.showData) {
                             return (
 
-                                <>{v.memberName},</>
+                                <div key={i+Math.floor(Math.random() * 10001)}>{v.memberName},</div>
                             )
                         }
                     })}
@@ -140,4 +140,4 @@ class Images extends Component {
         )
     }
 }
-export default Images;
+export default _Images;

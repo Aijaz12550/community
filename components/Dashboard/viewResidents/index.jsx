@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import {
   Card,
   CardBody,
@@ -145,7 +145,7 @@ export const ViewResident = () => {
   }
 
   return (
-    <>
+    <Fragment key={+Date.now()}>
       <div className="content">
         <Row style={{ marginTop: 60 }}>
           <Col lg="12" md="12" sm="12" style={{ paddingLeft: 35, paddingRight: 35 }}>
@@ -233,11 +233,11 @@ export const ViewResident = () => {
                   ))
                     :
                     data.map((data1, index) => (
-                      <tr className="residents-table-row" style={{}} key={index} onClick={() => sendProps(true, data1)}>
+                      <tr className="residents-table-row" style={{}} key={index+6767} onClick={() => sendProps(true, data1)}>
                         <td className='address-td sm-dmemberImageisplay-none td1' style={{ width: '35%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
                         <td className="td2" style={{ width: '35%', justifyContent: 'space-between', display: 'flex', alignItems: 'center' }}>
 
-                          <Images familyMember={data1.familyMember} />
+                          <Images Uniquekey={index+(+Date.now())} familyMember={data1.familyMember} />
 
                         </td>
                         <td className="text-right td-residence-since" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end' }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
@@ -253,7 +253,7 @@ export const ViewResident = () => {
         </Row>
       </div >
       <MydModalWithGrid show={modalShow} trData={sendData} onHide={() => setModalShow(false)} />
-    </>
+    </Fragment>
   );
 };
 
