@@ -36,9 +36,9 @@ export const SideBar = () => {
 
       </div>
 
-      <div className='sidebar-wrapper scrollBarStyle sidebar-content'>
+      <div className='sidebar-wrapper scrollBarStyle-Y sidebar-content'>
         <div className='navUlListHeading' style={{ padding: '0 15px 0px 35px ', margin: '0 0 10px 0' }}>Main Navigation</div>
-        <div className="sidebar-wrapper scrollBarStyle sidebar-body" ref={sidebar} style={{ color: "black", overflowY: 'auto' }}>
+        <div className="sidebar-wrapper scrollBarStyle-Y sidebar-body" ref={sidebar} style={{ color: "black", overflowY: 'auto' }}>
           <Nav style={{ height: 350 }}>
             {routes().map((prop, key) => {
               return (

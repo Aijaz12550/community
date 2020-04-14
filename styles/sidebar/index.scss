@@ -107,21 +107,21 @@
   overflow: hidden !important;
 }
 
-.scrollBarStyle::-webkit-scrollbar-track {
+.scrollBarStyle-Y::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
   background-color  : #F5F5F5;
 }
 
-.scrollBarStyle::-webkit-scrollbar {
+.scrollBarStyle-Y::-webkit-scrollbar {
   width           : 3px;
   background-color: #F5F5F5;
-  overflow-y      : scroll;
+  overflow-y      : auto;
 
 }
 
-.scrollBarStyle::-webkit-scrollbar-thumb {
+.scrollBarStyle-Y::-webkit-scrollbar-thumb {
   background-color: rgb(0, 153, 153);
-  overflow-y      : scroll;
+  overflow-y      : auto;
 }
 
 .cursorPoint:hover {

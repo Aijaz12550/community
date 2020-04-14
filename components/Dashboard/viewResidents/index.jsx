@@ -579,7 +579,7 @@ export const ViewResident = () => {
 
         <Row>
           <Col md="12" style={{ paddingLeft: 35, paddingRight: 35 }}>
-            <Table responsive="sm" className="residents-tabl ">
+            <Table responsive className="residents-tabl ">
               <thead className="">
                 <tr>
                   <th className="th td1" style={{ width: "35%" }}>
@@ -604,7 +604,7 @@ export const ViewResident = () => {
               {noMatchSearchData ? (
                 <tbody></tbody>
               ) : (
-                <tbody className="scrollBarStyle tbody">
+                <tbody className="scrollBarStyle-Y tbody">
                   {searchData.length
                     ? searchData.map((data1, index) => (
                         <tr

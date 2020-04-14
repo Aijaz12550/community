@@ -1,4 +1,24 @@
-.resident-member-detail {
+.contained-modal-title-vcenter {
+  .modal {
+    display: flex !important;
+    align-items: center;
+  }
+
+  div.fade.in.modal {
+    display: flex;
+  }
+  .contained-modal-title-vcenter {
+    max-width: 100% !important;
+
+    button {
+      outline: none !important;
+      outline-offset: none !important;
+    }
+  }
+  .modal-header {
+    border: none !important;
+  }
+
   .close {
     font-size: 40px !important;
     font-weight: normal !important;
@@ -47,65 +67,63 @@
       }
     }
   }
-  .td1-m {
-    width: 30%;
-    align-items: center;
-    display: flex;
-  }
-  .td2-m {
-    width: 20%;
-    align-items: center;
-    display: flex;
-  }
-  .td3-m {
-    width: 30%;
-    align-items: center;
-    display: flex;
-  }
-  .td4-m {
-    width: 100px;
-    align-items: center;
-    display: flex;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: "ellipsis";
-  }
-  .tBody {
-    display: flex;
-    flex-direction: column;
-    max-height: 50vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    .residents-table-row-modal {
-      background: white;
-      height: 90;
-      margin-bottom: 5px;
-      background: #ffffff;
-      border-radius: 0px !important;
-      td {
-        border: none;
-        outline: none;
-        padding: 0 !important;
+
+  table {
+    background: rgb(246, 247, 251);
+
+    .td1-m {
+      width: 30%;
+      align-items: center;
+      display: flex;
+    }
+    .td2-m {
+      width: 20%;
+      align-items: center;
+      display: flex;
+    }
+    .td3-m {
+      width: 30%;
+      align-items: center;
+      display: flex;
+    }
+    .td4-m {
+      width: 20%;
+      align-items: center;
+      display: flex;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: "ellipsis";
+      text-align: left !important;
+    }
+    .tBody {
+      display: flex;
+      flex-direction: column;
+      max-height: 50vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      .residents-table-row-modal {
+        background: white;
+        height: 90;
+        margin-bottom: 5px;
+        background: #ffffff;
+        border-radius: 0px !important;
+        td {
+          border: none;
+          outline: none;
+          padding: 0 !important;
+        }
       }
     }
-  }
-}
-
-.modal {
-  display: flex !important;
-  align-items: center;
-}
-
-div.fade.in.modal {
-  display: flex;
-}
-
-.contained-modal-title-vcenter {
-  max-width: 100% !important;
-
-  button {
-    outline: none !important;
-    outline-offset: none !important;
+    thead {
+      th {
+        font-family: "Open Sans";
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-size: 16px !important;
+        line-height: 22px !important;
+        color: #6c7b8a !important;
+      }
+    }
   }
 }
 
@@ -118,19 +136,18 @@ div.fade.in.modal {
   width: 70% !important;
 }
 
-.modal-header {
-  border: none !important;
+@media screen and (max-width: 1100px) {
+  .modal-dialog-centered {
+    max-width: 90% !important;
+    margin: auto;
+  }
+
+  .modal-dialog {
+    width: 90% !important;
+  }
 }
 
-.text-primary {
-  border-radius: 5px;
-}
-
-table {
-  background: rgb(246, 247, 251);
-}
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 750px) {
   .contained-modal-title-vcenter {
     margin: 0;
   }
@@ -144,50 +161,74 @@ table {
     width: 100% !important;
   }
 
-  .td1-m {
-    width: 35% !important;
-  }
-
-  .td2-m {
-    width: 30% !important;
-  }
-
   .tBody {
     display: flex;
     flex-direction: column;
     max-height: 30vh;
     overflow-y: auto;
     overflow-x: auto;
+    tr {
+      height: 50px !important;
+    }
   }
+  .contained-modal-title-vcenter {
+    .td1-m {
+      width: 30% !important;
+      font-size: 10px !important;
+      .roundedCircle {
+        width: 35px !important;
+        height: 35px !important;
+        border-radius: 18px !important;
+      }
+    }
 
-  .td3-m {
-    width: 35% !important;
+    .td2-m {
+      width: 20% !important;
+      font-size: 10px !important;
+    }
+    .td3-m {
+      width: 30% !important;
+      font-size: 10px !important;
+    }
+    .td4-m {
+      width: 25% !important;
+      font-size: 10px !important;
+    }
+    tr {
+      margin: 0 0 2px 0 !important;
+      padding: 0 !important;
+    }
+    td {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    th {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
   }
 }
 
-.td4-m {
-  text-align: left !important;
-}
-
-thead {
-  th {
-    font-family: "Open Sans";
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-size: 16px !important;
-    line-height: 22px !important;
-    color: #6c7b8a !important;
+@media screen and (max-width: 650px) {
+  .modal-content {
+    width: 97% !important;
   }
 }
 
-@media screen and (max-width: 1100px) {
-  .modal-dialog-centered {
-    max-width: 90% !important;
-    margin: auto;
+@media screen and (max-width: 500px) {
+  .contained-modal-title-vcenter {
+    table {
+      width: 470px !important;
+    }
+    
   }
+}
 
-  .modal-dialog {
-    width: 90% !important;
+@media screen and (max-width: 500px) {
+  .contained-modal-title-vcenter {
+    .view-residents-address {
+      font-size: 14px !important;
+    }
   }
 }
 
@@ -206,11 +247,13 @@ thead {
     margin: 0;
   }
 
-  .tBody {
-    display: flex;
-    flex-direction: column;
-    max-height: 30vh;
-    overflow-y: auto;
-    overflow-x: auto;
+  .contained-modal-title-vcenter {
+    .tBody {
+      display: flex;
+      flex-direction: column;
+      max-height: 30vh;
+      overflow-y: auto;
+      overflow-x: auto;
+    }
   }
 }
