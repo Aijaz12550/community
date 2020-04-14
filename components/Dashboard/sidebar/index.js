@@ -116,7 +116,7 @@ export const SideBar = () => {
             <div className='sidebar-card'>
               <div className='sidebar-card-content'>
                 {/* <img src='/img.png' /> */}
-                <Image className="roundedCircle" style={{ width: 140, height: 140, borderRadius: 70, backgroundColor: 'none' }} src='/assets/mockup/sidebarImg.png' circle />
+                <Image className="roundedCircle" style={{ width: 140, height: 140, borderRadius: 70, backgroundColor: 'none' }} src='/assets/mockup/sidebarImg.png' />
 
                 <p className='card-name'>Macado Leam</p>
                 <p className='card-title'>Board Member</p>
