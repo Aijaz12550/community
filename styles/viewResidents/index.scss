@@ -137,10 +137,6 @@ td {
   white-space  : nowrap;
 }
 
-.sm-display-none {
-  padding-left: 30px !important;
-}
-
 .td-residence-since {
   font-family: 'Open Sans';
   font-style : normal;
@@ -161,6 +157,22 @@ td {
     width  : 100%;
     margin : 0px;
     padding: 0px;
+  }
+
+  .td2 {
+    display: none !important;
+  }
+
+  .td1{
+    width: 50% !important;
+  }
+  .td3{
+    width: 50% !important;
+  }
+  thead{
+    .th{
+      font: 12px !important;
+    }
   }
 }
 

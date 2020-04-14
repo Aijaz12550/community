@@ -211,7 +211,7 @@ export const ViewResident = () => {
             <Table responsive="sm" className="residents-tabl ">
               <thead className="">
                 <tr >
-                  <th className='sm-display-none th td1' style={{ width: '35%' }}>Address</th>
+                  <th className='th td1' style={{ width: '35%' }}>Address</th>
                   <th className='th td2' style={{ width: '35%', justifyContent: 'space-between', display: 'flex', alignItems: 'center', }}>Family Members</th>
                   <th className="text-right th" style={{ width: '30%' }}>Residence Since</th>
                 </tr>
@@ -225,7 +225,7 @@ export const ViewResident = () => {
                       <td className='address-td sm-dmemberImageisplay-none td1' style={{ width: '35%', alignItems: 'center', display: 'flex' }}>{data1.address}</td>
                       <td className="td2" style={{ width: '35%', justifyContent: 'space-between', display: 'flex', alignItems: 'center', }}>
 
-                        <Images familyMember={data1.familyMember} />
+                        <Images key={index} familyMember={data1.familyMember} />
                       </td>
                       <td className="text-right td-residence-since" style={{ width: '30%', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', }}>{data1.residenceSince.split(' ')[1] + ' ' + data1.residenceSince.split(' ')[2]}</td>
 
