@@ -22,10 +22,10 @@ class Images extends Component {
     }
 
     updateWindowDimensions() {
-        this.setState({ width: window.innerWidth, height: window.innerHeight }, () => this.test());
+        this.setState({ width: window.innerWidth, height: window.innerHeight }, () => this.componentFunctionality());
     }
 
-    test = () => {
+    componentFunctionality = () => {
         if (this.state.width >= 2000) {
             this.setState({
                 showData: 6
@@ -62,26 +62,36 @@ class Images extends Component {
 
     render() {
         return (
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+            <div key={this.props.key} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                 {this.props.familyMember.map((v, i) => {
                     let margin = 0;
                     let zIndex = 0;
                     if (i < this.state.showData) {
                         if (i == 0) {
                             margin = 0;
+                            zIndex = 7;
+                        } else if (i == 6) {
+                            margin = -10;
+                            zIndex = 6;
+                        } else if (i == 5) {
+                            margin = -10;
+                            zIndex = 5;
+                        } else if (i == 4) {
+                            margin = -10;
                             zIndex = 4;
-                        } else if (i == 1) {
+                        } else if (i == 3) {
                             margin = -10;
                             zIndex = 3;
                         } else if (i == 2) {
                             margin = -10;
                             zIndex = 2;
-                        } else if (i == 3) {
+                        } else if (i == 1) {
                             margin = -10;
                             zIndex = 1;
                         }
+
                         return (
-                            <Image style={{ marginLeft: margin, zIndex: zIndex }} key={i} className="roundedCircle" src={v.memberImage} circle={true} />
+                            <Image  style={{ marginLeft: margin, zIndex: zIndex }} key={i} className="roundedCircle" src={v.memberImage} />
 
                         )
                     }
@@ -92,7 +102,7 @@ class Images extends Component {
                         < Badge style={{
                             width: 47.5,
                             height: 47.5,
-                            borderRadius: '100%',
+                            borderRadius: 24,
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             fontFamily: 'SF Pro Display',
                             fontStyle: 'normal',
@@ -127,7 +137,6 @@ class Images extends Component {
                     {this.props.familyMember.length > this.state.showData ? ` & ${this.props.familyMember.length > this.state.showData ? this.props.familyMember.length - this.state.showData : 0} Others` : <></>}
                 </div>
             </div >
-
         )
     }
 }
