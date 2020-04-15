@@ -1,11 +1,40 @@
+.M0{
+  margin: 0;
+}
 .PT0 {
   padding-top: 0;
+}
+.PR5{
+  padding-right: 5px;
+}
+.PL5{
+  padding-left: 5px;
 }
 .PL30 {
   padding-left: 30px;
 }
+.PL35{
+  padding-left: 35px;
+}
+.PR35{
+  padding-right: 35px;
+}
 .ML20 {
   margin-left: 20px;
+}
+.MT60{
+  margin-top: 60px;
+}
+.MT18{
+  margin-top: 18px;
+}
+
+.bg-white{
+  background: white;
+}
+
+.outline-none{
+  outline: none;
 }
 
 .animated {

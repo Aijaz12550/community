@@ -47,7 +47,7 @@ class ResidentMemberDetail extends Component {
           </div>
         </Modal.Header>
         <Modal.Body className="PT0">
-          <Table responsive className="residents-tabl scrollBarStyle-X">
+          <Table responsive className="scrollBarStyle-X">
             <thead className="">
               <tr>
                 <th className="td1-m">Name</th>

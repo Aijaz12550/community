@@ -27,6 +27,7 @@ export let routes = () => {
             }
           />
         </svg>
+        // <img src="/assets/mockup/view-resident-icon.png" style={{ width: 17, height: 17 }} />
       ),
     },
     {
@@ -50,6 +51,7 @@ export let routes = () => {
             }
           />
         </svg>
+          // <img src="/assets/mockup/invite-resident-icon.png" style={{ width: 17, height: 17 }} />
       ),
     },
     {
@@ -73,6 +75,7 @@ export let routes = () => {
             }
           />
         </svg>
+        // <img src="/assets/mockup/invite-member-icon.png" style={{ width: 17, height: 17 }} />
       ),
     },
     {
@@ -96,6 +99,7 @@ export let routes = () => {
             }
           />
         </svg>
+        // <img src="/assets/mockup/manage-member-icon.png" style={{ width: 17, height: 17 }} />
       ),
     },
     {
@@ -119,6 +123,7 @@ export let routes = () => {
             }
           />
         </svg>
+        // <img src="/assets/mockup/manage-document-icon.png" style={{ width: 17, height: 17 }} />
       ),
     },
     {
@@ -142,6 +147,7 @@ export let routes = () => {
             }
           />
         </svg>
+        // <img src="/assets/mockup/send-communication-icon.png" style={{ width: 17, height: 17 }} />
       ),
     },
   ];
