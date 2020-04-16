@@ -104,7 +104,7 @@ export const SideBar = () => {
               );
             })}
           </Nav>
-          <div
+          {/* <div
             style={{
               display: "flex",
               justifyContent: "center",
@@ -135,6 +135,7 @@ export const SideBar = () => {
               </div>
             </div>
           </div>
+         */}        
         </div>
       </div>
     </div>
