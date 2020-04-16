@@ -492,33 +492,13 @@ export const ViewResident = () => {
 
   return (
     <Fragment key={+Date.now()}>
-      <div className="content">
-        <Row style={{ marginTop: 60 }}>
-          <Col
-            lg="12"
-            md="12"
-            sm="12"
-            style={{ paddingLeft: 35, paddingRight: 35 }}
-          >
-            <Card
-              style={{
-                background: "#F6F7FB",
-                border: "none",
-                boxShadow: "none",
-              }}
-            >
+      <div className="content view-resident-component">
+        <Row className="MT60 section-top">
+          <Col lg="12" md="12" sm="12" className="PL35 PR35">
+            <Card className="main-card">
               <CardBody>
                 <Row>
-                  <div
-                    className="number"
-                    style={{
-                      display: "flex",
-                      width: "100%",
-                      justifyContent: "center",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
+                  <div className="card-body ">
                     <p className="view-residents-title">
                       Turner Hill HomeOwners Association
                     </p>
@@ -533,43 +513,17 @@ export const ViewResident = () => {
           </Col>
 
           {/* search ======= */}
-          <Col
-            lg="12"
-            md="12"
-            sm="12"
-            style={{ paddingLeft: 35, paddingRight: 35, marginTop: 18 }}
-          >
-            <form
-              style={{
-                background: "#FFFFFF",
-                border: "none !important solid #E9E9E9",
-                boxSizing: "border-box",
-                boxShadow: "0px 12px 50px rgba(0, 0, 0, 0.04)",
-                borderRadius: "8px",
-                paddingLeft: 5,
-                paddingRight: 5,
-              }}
-            >
-              <InputGroup
-                className="no-border card-stats"
-                style={{
-                  background: "white",
-                  height: "50px",
-                  alignItems: "center",
-                  margin: 0,
-                }}
-              >
-                <InputGroupAddon
-                  addonType="append"
-                  style={{ background: "white" }}
-                >
-                  <InputGroupText style={{ background: "white" }}>
+          <Col lg="12" md="12" sm="12" className="PL35 PR35 MT18 search-bar">
+            <form className="PL5 PR5 form">
+              <InputGroup className="no-border input-group bg-white M0">
+                <InputGroupAddon addonType="append" className="bg-white">
+                  <InputGroupText className="bg-white">
                     <i className="fas fa-search" />
                   </InputGroupText>
                 </InputGroupAddon>
                 <Input
                   placeholder="Search..."
-                  style={{ background: "white", outline: "none" }}
+                  className="bg-white outline-none"
                   onChange={(event) => searchHandleChange(event.target.value)}
                 />
               </InputGroup>
@@ -577,10 +531,10 @@ export const ViewResident = () => {
           </Col>
         </Row>
 
-        <Row>
-          <Col md="12" style={{ paddingLeft: 35, paddingRight: 35 }}>
-            <Table responsive className="residents-tabl ">
-              <thead className="">
+        <Row className='table-section'>
+          <Col md="12" className="PL35 PR35">
+            <Table responsive className='table-content scrollBarStyle-X'>
+              <thead className="table-head">
                 <tr>
                   <th className="th td1" style={{ width: "35%" }}>
                     Address
