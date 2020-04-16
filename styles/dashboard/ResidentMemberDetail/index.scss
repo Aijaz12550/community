@@ -70,6 +70,13 @@
 
   table {
     background: rgb(246, 247, 251);
+    tr{
+      display: flex;
+      flex-direction: row;
+    }
+    th{
+      font-size: 14px !important;
+    }
 
     .td1-m {
       width: 30%;

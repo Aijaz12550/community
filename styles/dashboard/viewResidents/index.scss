@@ -22,7 +22,6 @@
         color: #009999;
       }
       .view-residents-address {
-        // width      : 289px;
         height: 22px;
         left: 797px;
         top: 125px;
@@ -50,242 +49,275 @@
       .input-group {
         height: 50px;
         align-items: center;
+        outline: none;
       }
     }
   }
   .table-section {
     .table-content {
+      tr {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
       .table-head {
-        
+        .th {
+          font-family: "Open Sans";
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 22px;
+          color: #6c7b8a;
+        }
+        .Col-1 {
+          width: 35%;
+        }
+        .Col-2 {
+          width: 35%;
+          justify-content: space-between;
+          display: flex;
+          align-items: center;
+        }
+        .Col-3 {
+          width: 30%;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+      .table-tbody {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 350px);
+        overflow-y: auto;
+        overflow-x: auto;
+        background: rgb(246, 247, 251);
+        .residents-table-row {
+          background: white;
+          height: 90px;
+          margin-bottom: 5px;
+          background: #ffffff;
+          border-radius: 6px;
+          cursor: pointer;
+
+          td {
+            border: none;
+            outline: none;
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: bold;
+            font-size: 17px;
+            line-height: 22px;
+            color: #6c7b8a;
+          }
+          .Col-1 {
+            padding-left: 30px;
+            transition: display 1s;
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 22px;
+            color: #344563;
+            width: 35%;
+            align-items: center;
+            display: flex;
+          }
+          .Col-2 {
+            width: 35%;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+          }
+          .Col-3 {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 17px;
+            line-height: 22px;
+            text-align: right;
+            color: #91909a;
+            width: 30%;
+            align-items: center;
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+        tr:hover {
+          box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.07);
+          cursor: pointer;
+          z-index: 1;
+        }
       }
     }
   }
-}
 
-.roundedCircle {
-  // border       : 1px solid #FFFFFF;
-  box-sizing: border-box;
-  border-radius: 50%;
-}
-
-tbody {
-  tr {
-    height: 90px;
-    cursor: pointer;
-  }
-
-  tr:hover {
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.07);
-    cursor: pointer;
-    z-index: 1;
-  }
-}
-
-.roundedCircle:hover {
-  // border    : 1px solid #222222;
-  transition: all linear 0.1s;
-}
-
-.row-residents {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.residents-name-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100%;
-  max-width: 400px;
-
-  p {
-    left: 52.34%;
-    right: 25.61%;
-    top: 23.33%;
-    bottom: 27.78%;
-    font-family: "Open Sans", sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 22px;
-    color: #344563;
-    margin: 0px;
-    padding: 0px;
-    margin-right: 5px;
-  }
-}
-
-.residents-table-row {
-  background: white;
-  height: 90;
-  margin-bottom: 5px;
-  background: #ffffff;
-  border-radius: 6px !important;
-
-  td {
-    border: none;
-    outline: none;
-  }
-}
-
-.table td,
-.table th {
-  border: none !important;
-  text-transform: initial !important;
-}
-
-.address-td {
-  padding-left: 30px !important;
-  transition: display 1s;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 22px;
-  color: #344563;
-}
-
-td {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 17px;
-  line-height: 22px;
-  color: #6c7b8a;
-}
-
-.th {
-  font-family: "Open Sans";
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-size: 16px !important;
-  line-height: 22px !important;
-  color: #6c7b8a !important;
-}
-
-.text-right {
-  text-align: left !important;
-  padding-right: 40px !important;
-  text-align: left !important;
-  white-space: nowrap;
-}
-
-.td-residence-since {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 22px;
-  text-align: right;
-  color: #91909a;
-}
-
-@media only screen and (max-width: 600px) {
-  .sm-display-none {
-    transition: display 1s;
-    display: none;
-  }
-
-  // .table-responsive {
-  //   width: 100%;
-  //   margin: 0px;
-  //   padding: 0px;
-  // }
-
-  // .td2 {
-  //   display: none !important;
-  // }
-
-  // .td1 {
-  //   width: 50% !important;
-  // }
-  // .td3 {
-  //   width: 50% !important;
-  // }
-  thead {
-    .th {
-      font: 12px !important;
+  @media screen and (max-width: 1300px) {
+    .table-tbody {
+      .residents-table-row {
+        .Col-1 {
+          font-size: 15px !important;
+        }
+        .Col-3 {
+          font-size: 15px;
+        }
+      }
     }
   }
-}
 
-@media screen and (max-width: 1300px) {
-  .residents-table-row {
-    .address-td {
-      font-size: 12px;
-    }
-
-    .text-right {
-      font-size: 12px;
+  @media only screen and (max-width: 1000px) {
+    .table-section {
+      .table-tbody {
+        tr {
+          height: 70px !important;
+        }
+      }
     }
   }
-}
-
-@media screen and (max-width: 900px) {
-  .contained-modal-title-vcenter {
-    margin: 0;
+  @media screen and (max-width: 900px) {
+    .table-section {
+      .table-head {
+        .th {
+          font-size: 13px !important;
+        }
+      }
+      .table-tbody {
+        .residents-table-row {
+          .Col-1 {
+            font-size: 13px !important;
+          }
+          .Col-3 {
+            font-size: 13px !important;
+          }
+        }
+      }
+    }
   }
 
-  .modal-dialog-centered {
-    max-width: 100% !important;
-    margin: 0;
+  @media screen and (max-width: 750px) {
+    .table-section {
+      .table-head {
+        tr {
+          height: 30px !important;
+        }
+        .th {
+          font-size: 12px !important;
+          line-height: 10px !important;
+        }
+      }
+      .table-tbody {
+        tr {
+          height: 50px !important;
+        }
+        .residents-table-row {
+          .Col-1 {
+            font-size: 12px !important;
+          }
+          .Col-3 {
+            font-size: 12px !important;
+          }
+        }
+      }
+      .Col-1 {
+        padding: 2px !important;
+      }
+      .Col-3 {
+        padding: 2px !important;
+      }
+    }
   }
 
-  .modal-dialog {
-    width: 100% !important;
+  @media screen and (max-width: 450px) {
+    .section-top {
+      .view-residents-title {
+        margin: 0px !important;
+        font-size: 15px !important;
+        line-height: 15px !important;
+      }
+      .view-residents-address {
+        font-size: 12px !important;
+        letter-spacing: 0.3px !important;
+      }
+    }
+    .table-section {
+      min-width: 330px !important;
+      .table-head {
+        .th {
+          font-size: 10px !important;
+          line-height: 10px !important;
+        }
+      }
+      .table-tbody {
+        tr {
+          height: 35px !important;
+        }
+        .residents-table-row {
+          .Col-1 {
+            font-size: 10px !important;
+          }
+          .Col-3 {
+            font-size: 10px !important;
+          }
+        }
+      }
+      .Col-1 {
+        padding: 2px !important;
+      }
+      .Col-3 {
+        padding: 2px !important;
+      }
+    }
   }
 
-  .tBody {
-    display: flex;
-    flex-direction: column;
-    max-height: 30vh;
-    overflow-y: auto;
-    overflow-x: auto;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  table {
-    width: 560px !important;
-  }
-}
-
-@media screen and (max-height: 500px) {
-  .contained-modal-title-vcenter {
-    margin: 0;
+  @media screen and (max-height: 650px) {
+    .table-section {
+      height: 260px !important;
+      .table-tbody {
+        height: 255px !important;
+      }
+    }
   }
 
-  .modal-dialog-centered {
-    max-width: 100% !important;
-    margin: 0;
+  @media screen and (max-width: 360px) {
+    .section-top {
+      .view-residents-title {
+        margin: 0px !important;
+        font-size: 12px !important;
+        line-height: 12px !important;
+      }
+      .view-residents-address {
+        font-size: 10px !important;
+        letter-spacing: 0px !important;
+      }
+    }
+    .table-section {
+      .table-head {
+        .th {
+          font-size: 8px !important;
+          line-height: 8px !important;
+        }
+      }
+      .table-tbody {
+        tr {
+          height: 30px !important;
+        }
+        .residents-table-row {
+          .Col-1 {
+            font-size: 8px !important;
+          }
+          .Col-3 {
+            font-size: 8px !important;
+          }
+        }
+      }
+    }
   }
 
-  .modal-dialog {
-    width: 100% !important;
-    margin: 0;
+  @media screen and (max-height: 569px) {
+    .table-section {
+      height: 220px !important;
+      .table-tbody {
+        height: 220px !important;
+      }
+    }
   }
-
-  .tBody {
-    display: flex;
-    flex-direction: column;
-    max-height: 30vh;
-    overflow-y: auto;
-    overflow-x: auto;
-  }
-}
-
-tr {
-  display: flex;
-  flex-direction: row;
-}
-
-.tbody {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 350px);
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: rgb(246, 247, 251);
 }

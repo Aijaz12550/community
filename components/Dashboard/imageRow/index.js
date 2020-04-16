@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image, Badge } from "react-bootstrap";
+import "../../../styles/dashboard/ImageRow/index.scss";
 
 class _Images extends Component {
   constructor(props) {
@@ -49,13 +50,9 @@ class _Images extends Component {
       this.setState({
         showData: 2,
       });
-    } else if (this.state.width >= 1000) {
-      this.setState({
-        showData: 1,
-      });
     } else {
       this.setState({
-        showData: 0,
+        showData: 1,
       });
     }
   };
@@ -63,8 +60,8 @@ class _Images extends Component {
   render() {
     return (
       <div
-        key={this.props.Uniquekey+(+Date.now())+5765}
-        style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+        className="image-head"
+        key={this.props.Uniquekey + +Date.now() + 5765}
       >
         {this.props.familyMember.map((v, i) => {
           let margin = 0;
@@ -104,23 +101,7 @@ class _Images extends Component {
           }
         })}
         {this.props.familyMember.length > this.state.showData ? (
-          <Badge
-            style={{
-              width: 47.5,
-              height: 47.5,
-              borderRadius: 24,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "SF Pro Display",
-              fontStyle: "normal",
-              fontWeight: "bold",
-              fontSize: 16,
-              color: "#344563",
-              background: "#dadee2",
-              marginLeft: -10,
-            }}
-          >
+          <Badge className="image-badge">
             +
             {this.props.familyMember.length > this.state.showData
               ? this.props.familyMember.length - this.state.showData
@@ -129,16 +110,7 @@ class _Images extends Component {
         ) : (
           <></>
         )}
-        <div
-          style={{
-            marginLeft: 5,
-            fontFamily: "Open Sans",
-            fontStyle: "normal",
-            fontWeight: 600,
-            fontSize: 14,
-            color: "#344563",
-          }}
-        >
+        <div className="member-name">
           {this.props.familyMember.map((v, i, arr) => {
             if (i < this.state.showData) {
               return (

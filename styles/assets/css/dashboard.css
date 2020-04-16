@@ -6916,10 +6916,10 @@ License - nucleoapp.com/license/
     display: none;
   }
 
-  .main-panel .content {
+  /* .main-panel .content {
     padding-left: 15px;
     padding-right: 15px;
-  }
+  } */
 
   .footer nav {
     display: block;

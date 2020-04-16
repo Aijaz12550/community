@@ -531,75 +531,37 @@ export const ViewResident = () => {
           </Col>
         </Row>
 
-        <Row className='table-section'>
+        <Row className="table-section">
           <Col md="12" className="PL35 PR35">
-            <Table responsive className='table-content scrollBarStyle-X'>
+            <Table responsive className="table-content">
               <thead className="table-head">
                 <tr>
-                  <th className="th td1" style={{ width: "35%" }}>
-                    Address
-                  </th>
-                  <th
-                    className="th td2"
-                    style={{
-                      width: "35%",
-                      justifyContent: "space-between",
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    Family Members
-                  </th>
-                  <th className="text-right th" style={{ width: "30%" }}>
-                    Residence Since
-                  </th>
+                  <th className="th Col-1">Address</th>
+                  <th className="th Col-2">Family Members</th>
+                  <th className="th Col-3">Residence Since </th>
                 </tr>
               </thead>
               {noMatchSearchData ? (
                 <tbody></tbody>
               ) : (
-                <tbody className="scrollBarStyle-Y tbody">
+                <tbody className="scrollBarStyle-Y table-tbody">
                   {searchData.length
                     ? searchData.map((data1, index) => (
                         <tr
                           className="residents-table-row"
-                          style={{}}
                           key={index}
                           onClick={() => sendProps(true, data1)}
                         >
-                          <td
-                            className="address-td sm-dmemberImageisplay-none td1"
-                            style={{
-                              width: "35%",
-                              alignItems: "center",
-                              display: "flex",
-                            }}
-                          >
+                          <td className="Col-1 sm-dmemberImageisplay-none">
                             {data1.address}
                           </td>
-                          <td
-                            className="td2"
-                            style={{
-                              width: "35%",
-                              justifyContent: "space-between",
-                              display: "flex",
-                              alignItems: "center",
-                            }}
-                          >
+                          <td className="Col-2">
                             <Images
                               key={index}
                               familyMember={data1.familyMember}
                             />
                           </td>
-                          <td
-                            className="text-right td-residence-since"
-                            style={{
-                              width: "30%",
-                              alignItems: "center",
-                              display: "flex",
-                              justifyContent: "flex-end",
-                            }}
-                          >
+                          <td className="Col-3">
                             {data1.residenceSince.split(" ")[1] +
                               " " +
                               data1.residenceSince.split(" ")[2]}
@@ -609,43 +571,19 @@ export const ViewResident = () => {
                     : data.map((data1, index) => (
                         <tr
                           className="residents-table-row"
-                          style={{}}
                           key={index + 6767}
                           onClick={() => sendProps(true, data1)}
                         >
-                          <td
-                            className="address-td sm-dmemberImageisplay-none td1"
-                            style={{
-                              width: "35%",
-                              alignItems: "center",
-                              display: "flex",
-                            }}
-                          >
+                          <td className="Col-1 sm-dmemberImageisplay-none">
                             {data1.address}
                           </td>
-                          <td
-                            className="td2"
-                            style={{
-                              width: "35%",
-                              justifyContent: "space-between",
-                              display: "flex",
-                              alignItems: "center",
-                            }}
-                          >
+                          <td className="Col-2">
                             <Images
                               Uniquekey={index + +Date.now()}
                               familyMember={data1.familyMember}
                             />
                           </td>
-                          <td
-                            className="text-right td-residence-since"
-                            style={{
-                              width: "30%",
-                              alignItems: "center",
-                              display: "flex",
-                              justifyContent: "flex-end",
-                            }}
-                          >
+                          <td className="Col-3">
                             {data1.residenceSince.split(" ")[1] +
                               " " +
                               data1.residenceSince.split(" ")[2]}

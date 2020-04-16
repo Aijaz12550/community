@@ -17,7 +17,13 @@ export const DashBoard = ({ users }) => {
         style={{ background: "#F6F7FB", height: "100%" }}
       >
         <NavBar />
-        <div style={{ height: "calc(90% - 120px)" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
           {routes().map((val, key) => {
             if (router?.query?.role === val.path) {
               return (
