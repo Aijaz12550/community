@@ -1,5 +1,6 @@
 const initialState = {
   field: "test Auth reducer",
+  user: {},
 };
 
 const AuthReducer = (state = initialState, action) => {

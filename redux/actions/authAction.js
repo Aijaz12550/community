@@ -12,4 +12,4 @@ const signup = (payload) => {
     payload,
   };
 };
-export { signin,signup };
+export { signin, signup };

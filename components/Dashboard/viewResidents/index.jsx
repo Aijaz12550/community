@@ -533,8 +533,7 @@ export const ViewResident = () => {
 
         <Row className="table-section">
           <Col md="12" className="PL35 PR35">
-            <Table responsive className="table-content">
-              <thead className="table-head">
+            <Table responsive className="tabl       <thead className="table-head">
                 <tr>
                   <th className="th Col-1">Address</th>
                   <th className="th Col-2">Family Members</th>
