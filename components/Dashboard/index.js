@@ -34,7 +34,7 @@ export const DashBoard = ({ users }) => {
             }
           })}
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

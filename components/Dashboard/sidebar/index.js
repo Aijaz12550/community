@@ -58,7 +58,7 @@ export const SideBar = () => {
                               display: "flex",
                               alignItems: "center",
                               color: "#009999",
-                              borderLeft: "4px solid #009999",
+                              borderLeft: "4px solid #344563",
                               background: "#F0F9F9",
                               borderRadius: "0px 76px 76px 0px",
                             }
@@ -82,10 +82,10 @@ export const SideBar = () => {
                           fontStyle: " normal",
                           fontWeight:
                             router.query.role === prop.path ? "bold" : "normal",
-                          color:
-                            router.query.role === prop.path
-                              ? "#009999"
-                              : "#344563",
+                          color:"#344563",
+                            // router.query.role === prop.path
+                            //   ? "#009999"
+                            //   : "#344563",
                           fontSize: "16px",
                           lineHeight: "22px",
                         }}
