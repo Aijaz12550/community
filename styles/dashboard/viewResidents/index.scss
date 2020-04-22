@@ -1,43 +1,43 @@
 .view-resident-component {
   .section-top {
-    .main-card {
-      background: #f6f7fb;
-      border: none;
-      box-shadow: none;
-    }
-    .card-body {
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      .view-residents-title {
-        margin: 0 0 10px 0;
-        font-family: "Open Sans";
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 22px;
-        text-align: center;
-        color: #009999;
-      }
-      .view-residents-address {
-        height: 22px;
-        left: 797px;
-        top: 125px;
-        font-family: "Open Sans";
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        letter-spacing: 0.5px;
-        color: #344563;
-        margin: 0px;
-        padding: 0px;
-        transition: all linear 0.3s;
-      }
-    }
+    // .main-card {
+    //   background: #f6f7fb;
+    //   border: none;
+    //   box-shadow: none;
+    // }
+    // .card-body {
+    //   display: flex;
+    //   width: 100%;
+    //   justify-content: center;
+    //   flex-direction: column;
+    //   align-items: center;
+    //   .view-residents-title {
+    //     margin: 0 0 10px 0;
+    //     font-family: "Open Sans";
+    //     font-style: normal;
+    //     font-weight: bold;
+    //     font-size: 20px;
+    //     line-height: 22px;
+    //     text-align: center;
+    //     color: #009999;
+    //   }
+    //   .view-residents-address {
+    //     height: 22px;
+    //     left: 797px;
+    //     top: 125px;
+    //     font-family: "Open Sans";
+    //     font-style: normal;
+    //     font-weight: normal;
+    //     font-size: 16px;
+    //     display: flex;
+    //     align-items: center;
+    //     letter-spacing: 0.5px;
+    //     color: #344563;
+    //     margin: 0px;
+    //     padding: 0px;
+    //     transition: all linear 0.3s;
+    //   }
+    // }
     .search-bar {
       .form {
         background: #ffffff;
