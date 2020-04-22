@@ -237,6 +237,24 @@
         font-size: 12px !important;
         letter-spacing: 0.3px !important;
       }
+      .search-bar {
+        margin-top: 5px !important;
+        .form {
+          align-items: center;
+          display: flex;
+          flex-direction: row;
+        }
+        .input-group {
+          height: 30px !important;
+          margin-bottom: 0px !important;
+          .input-group-append {
+            height: 30px !important;
+          }
+          input {
+            height: 30px !important;
+          }
+        }
+      }
     }
     .table-section {
       min-width: 330px !important;

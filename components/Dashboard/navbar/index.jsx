@@ -59,21 +59,8 @@ class Header extends React.Component {
     return (
       <Navbar
         expand="lg"
-        className={"navbar-absolute fixed-top"}
-        style={{
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-          background: '#FEFFFF',
-          boxShadow: '0px 25px 50px rgba(0, 0, 0, 0.04)',
-          padding: 0,
-          height: '70px'
-        }
-        }
-      >
-        <Container fluid style={this.state.isOpen ? { marginTop: 24,padding:'0 10px 0 10px' } : { margin: 0,padding:'0 10px 0 10px' }}>
+        className={"navbar-absolute fixed-top nav-bar-main"}>
+        <Container fluid style={this.state.isOpen ? { marginTop: 7, padding: '0 10px 0 10px' } : { margin: 0, padding: '0 10px 0 10px' }}>
           <div className="navbar-wrapper">
             <div className="navbar-toggle">
               <button
@@ -102,17 +89,17 @@ class Header extends React.Component {
             isOpen={this.state.isOpen}
             navbar
             className="justify-content-end"
-            style={this.state.isOpen ? { marginTop: 19,background: '#fff' } : { margin: 0 }}
+            style={this.state.isOpen ? { marginTop: 19, background: '#fff' } : { margin: 0 }}
           >
 
             <Nav navbar>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                 <NavItem style={{ marginRight: 25, }}>
-                  <Link href="/">
-                    <div className="nav-link btn-magnify" style={{}}>
-                      <Image className="roundedCircle" src='/assets/mockup/Notifications.png' />
-                    </div>
-                  </Link>
+                  {/* <Link href="/"> */}
+                  <div className="nav-link btn-magnify" style={{}}>
+                    <Image className="roundedCircle" src='/assets/mockup/Notifications.png' />
+                  </div>
+                  {/* </Link> */}
                 </NavItem>
                 <NavItem style={{
                   width: '38px',
@@ -122,11 +109,9 @@ class Header extends React.Component {
                   justifyContent: 'center',
                   borderRadius: '100%',
                 }}>
-                  <Link href="/">
-                    <Image className="roundedCircle" style={{ width: 38, height: 38, borderRadius: 19 }} src='/assets/mockup/img10.png' />
-                    {/* <div className="nav-link btn-magnify" style={{}}>
-                    </div> */}
-                  </Link>
+                  {/* <Link href="/"> */}
+                  <Image className="roundedCircle" style={{ width: 38, height: 38, borderRadius: 19 }} src='/assets/mockup/img10.png' />
+                  {/* </Link> */}
                 </NavItem>
                 <NavItem>
                   <div className="nav-link btn-magnify">
