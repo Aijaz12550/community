@@ -6,7 +6,7 @@ import { routes } from "./dashboardRoutes";
 import { useRouter } from "next/router";
 export * from "./viewResidents";
 
-export const DashBoard = ({ users }) => {
+export const DashBoard = ({ users,_signout }) => {
   const router = useRouter();
   console.log("users ==>", users);
   return (
@@ -16,7 +16,7 @@ export const DashBoard = ({ users }) => {
         className="main-panel"
         style={{ background: "#F6F7FB", height: "100%" }}
       >
-        <NavBar />
+        <NavBar _signout={_signout}/>
         <div
           style={{
             display: "flex",

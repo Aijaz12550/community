@@ -9,11 +9,12 @@ export class SignIn extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: "",
-      password: "",
+      username: "weneighbors.test1@yopmail.com",
+      password: "Unimel@n12345",
     };
   }
   signIn = (e) => {
+    let { _signin, router } = this.props
     e.preventDefault();
     const { username, password } = this.state;
     const body = {
@@ -21,7 +22,13 @@ export class SignIn extends React.Component {
       username,
       password,
     };
-    this.props._signin(body);
+    _signin(body).then( data => {
+      let scope = (data.scope).toLowerCase()
+      router.push("/dashboard/[user]/[role]",`/dashboard/${scope}/view_residents`)
+      console.log('data from comp', data)
+    }).catch( error => {
+      console.log('error from component',error)
+    })
   };
 
   onChange = (e) => {
@@ -32,13 +39,14 @@ export class SignIn extends React.Component {
 
   render() {
     const { username, password } = this.state;
+    const { _socialLogin, router} = this.props
     return (
       <Container>
         <p>Welcome Back! </p>
         <p>Please Sign In to access your community dashboard.</p>
 
         <button className="apple-login-btn">continue with Apple</button>
-        <GoogleLogin />
+        <GoogleLogin _socialLogin={_socialLogin} router={router} />
         <Apple />
 
         {/* <button className="google-login-btn">continue with Google</button> */}

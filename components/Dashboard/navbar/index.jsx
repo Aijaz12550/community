@@ -129,7 +129,7 @@ class Header extends React.Component {
                   <DropdownMenu right>
                     <DropdownItem tag="a">Action</DropdownItem>
                     <DropdownItem tag="a">Another Action</DropdownItem>
-                    <DropdownItem tag="a">Something else here</DropdownItem>
+                    <DropdownItem tag="a" onClick={this.props._signout}>Sign Out</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </div>

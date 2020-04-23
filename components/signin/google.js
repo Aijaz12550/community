@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {OauthConfig} from '$config'
 
 
 // To federated sign in from Google
@@ -20,6 +21,17 @@ import React, { Component } from 'react';
         ga?.signIn().then(
             googleUser => {
                 console.log('google ===>',googleUser)
+                let payload = {
+                    grant_type: "password",
+                    provider:"GOOGLE",
+                    username:googleUser.Pt.yu,
+                    password:googleUser.tc.id_token,
+                }
+                this.props._socialLogin(payload).then( data =>{
+                    console.log('data from comp social',data)
+                }).catch( error => {
+                    console.log('error',error)
+                })
             },
             error => {
                 console.log(error);

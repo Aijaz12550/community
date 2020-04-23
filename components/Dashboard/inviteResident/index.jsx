@@ -52,6 +52,12 @@ export default class InviteResident extends Component {
     }, () => console.log(this.state.val))
   }
 
+  _onChange = (e,index) => {
+    let { invitationData } = this.state
+    invitationData[index][e.target.name] = e.target.value;
+    this.setState({invitationData})
+  }
+
   render() {
     return (
       <div className="content invite-resident-component">
@@ -75,14 +81,14 @@ export default class InviteResident extends Component {
               </thead>
               <tbody className="scrollBarStyle-Y tBody">
                 {this.state.invitationData?.map((val, index) => (
-                  <tr className="residents-table-row-modal" key={index}>
+                  <tr className="residents-table-row-modal"  key={index} onChange={(e)=>this._onChange(e,index)} >
                     <td className="td1-m PL30">
-                      <input type='text' value={val.homeAddress} />
+                      <input type='text' name='homeAddress' value={val.homeAddress} />
                     </td>
-                    <td className="td2-m"><input type='text' value={val.apt_unit} /></td>
-                    <td className="td3-m"><input type='text' value={val.fullName} /></td>
-                    <td className="td4-m"><input type='text' value={val.email} /></td>
-                    <td className="td5-m"><input type='text' value={val.PhoneNumber} /></td>
+                    <td className="td2-m"><input type='text'  name="apt_unit"   value={val.apt_unit} /></td>
+                    <td className="td3-m"><input type='text' name="fullName"  value={val.fullName} /></td>
+                    <td className="td4-m"><input type='text' name="email"  value={val.email} /></td>
+                    <td className="td5-m"><input type='text' name='PhoneNumber'  value={val.PhoneNumber} /></td>
                     <td className="td6-m">
                       <select className='dropDownInput' >
                         <option value="N/A">{this.state.dropdownInput[0]}</option>
