@@ -24,6 +24,7 @@ class Header extends React.Component {
     this.state = {
       isOpen: false,
       dropdownOpen: false,
+      dropdownOpenNotification: false,
       color: "transparent"
     };
     this.toggle = this.toggle.bind(this);
@@ -50,6 +51,12 @@ class Header extends React.Component {
     });
   }
 
+  dropdownToggleNotification(e) {
+    this.setState({
+      dropdownOpenNotification: !this.state.dropdownOpenNotification
+    });
+  }
+
   openSidebar() {
     document.documentElement.classList.toggle("nav-open");
     this.sidebarToggle.current.classList.toggle("toggled");
@@ -60,47 +67,43 @@ class Header extends React.Component {
       <Navbar
         expand="lg"
         className={"navbar-absolute fixed-top nav-bar-main"}>
-        <Container fluid style={this.state.isOpen ? { marginTop: 7, padding: '0 10px 0 10px' } : { margin: 0, padding: '0 10px 0 10px' }}>
-          <div className="navbar-wrapper">
-            <div className="navbar-toggle">
-              <button
-                type="button"
-                ref={this.sidebarToggle}
-                className="navbar-toggler"
-                onClick={() => this.openSidebar()}
-              >
-                <span className="navbar-toggler-bar bar1" />
-                <span className="navbar-toggler-bar bar2" />
-                <span className="navbar-toggler-bar bar3" />
-              </button>
-            </div>
-            {/* <NavbarBrand href="/">
+        <Container fluid className='container' style={{}}>
+          <div className='divContainer'>
+            <div className="navbar-wrapper" style={{ display: 'flex', flexBasis: '10%' }}>
+              <div className="navbar-toggle">
+                <button
+                  type="button"
+                  ref={this.sidebarToggle}
+                  className="navbar-toggler"
+                  onClick={() => this.openSidebar()}
+                >
+                  <span className="navbar-toggler-bar bar1" />
+                  <span className="navbar-toggler-bar bar2" />
+                  <span className="navbar-toggler-bar bar3" />
+                </button>
+              </div>
+              {/* <NavbarBrand href="/">
               <p style={{ color: "black" }}>{this.props.heading}</p>
             </NavbarBrand> */}
-          </div>
-
-
-          <NavbarToggler onClick={this.toggle}>
-            <span className="navbar-toggler-bar navbar-kebab" />
-            <span className="navbar-toggler-bar navbar-kebab" />
-            <span className="navbar-toggler-bar navbar-kebab" />
-          </NavbarToggler>
-          <Collapse
-            isOpen={this.state.isOpen}
-            navbar
-            className="justify-content-end"
-            style={this.state.isOpen ? { marginTop: 19, background: '#fff' } : { margin: 0 }}
-          >
-
-            <Nav navbar>
+            </div>
+            <Nav navbar style={{ display: 'flex', flexBasis: '90%', justifyContent: 'flex-end', width: '100%' }}>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                <NavItem style={{ marginRight: 25, }}>
-                  {/* <Link href="/"> */}
-                  <div className="nav-link btn-magnify" style={{}}>
+                <Dropdown
+                  nav
+                  isOpen={this.state.dropdownOpenNotification}
+                  toggle={e => this.dropdownToggleNotification(e)}
+
+                >
+                  <DropdownToggle nav style={{ color: 'black' }}>
                     <Image className="roundedCircle" src='/assets/mockup/Notifications.png' />
-                  </div>
-                  {/* </Link> */}
-                </NavItem>
+                  </DropdownToggle>
+                  <DropdownMenu right className='notification-penal'>
+                    <DropdownItem tag="a">Action</DropdownItem>
+                    <DropdownItem tag="a">Another Action</DropdownItem>
+                    <DropdownItem tag="a" onClick={this.props._signout}>Sign Out</DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+
                 <NavItem style={{
                   width: '38px',
                   height: '38px',
@@ -109,9 +112,7 @@ class Header extends React.Component {
                   justifyContent: 'center',
                   borderRadius: '100%',
                 }}>
-                  {/* <Link href="/"> */}
                   <Image className="roundedCircle" style={{ width: 38, height: 38, borderRadius: 19 }} src='/assets/mockup/img10.png' />
-                  {/* </Link> */}
                 </NavItem>
                 <NavItem>
                   <div className="nav-link btn-magnify">
@@ -134,7 +135,8 @@ class Header extends React.Component {
                 </Dropdown>
               </div>
             </Nav>
-          </Collapse>
+
+          </div>
         </Container>
       </Navbar >
     );

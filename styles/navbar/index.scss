@@ -1,23 +1,56 @@
 .nav-bar-main {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    position  : absolute;
+    left      : 0;
+    right     : 0;
+    top       : 0;
+    bottom    : 0;
     background: #feffff;
     box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.04);
-    padding: 0;
-    height: 70px;
+    padding   : 0;
+    height    : 70px;
+
+    .container {
+        margin : 0px;
+        padding: 0px 10px 0px 10px;
+    }
+    .divContainer{
+        display: flex; 
+        flex-direction: row;
+        width: 100%;
+        align-items: center
+    }
+
     .profileName {
         font-family: "Open Sans";
-        font-style: normal;
+        font-style : normal;
         font-weight: bold;
-        font-size: 16px;
+        font-size  : 16px;
         line-height: 22px;
-        text-align: right;
-        color: #344563;
+        text-align : right;
+        color      : #344563;
     }
+
+    .notification-penal{
+        width: 538px;
+        background: red;
+        // height: 100%;
+    }
+
     @media screen and (max-width: 992px) {
         height: 50px !important;
+        .container {
+        height: 50px !important;
+
+        }
+        .divContainer {
+        height: 50px !important;
+
+        }
+        .notification-penal{
+            width: 100%;
+            background: red;
+        height: 100%;
+
+        }
     }
 }
