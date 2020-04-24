@@ -29,7 +29,7 @@ export default withRouter(
         let user = store?.getState()?.AuthReducer?.user;
         console.log("user", user);
 
-        if (true)
+        if (user.access_token)
           return (
             <Provider store={store}>
               <Component store={store.getState()} stars={stars} ctx={ctx} />
