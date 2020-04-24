@@ -6,8 +6,15 @@ import { routes } from "./dashboardRoutes";
 import { useRouter } from "next/router";
 export * from "./viewResidents";
 
-export const DashBoard = ({ users,_signout }) => {
+export const DashBoard = ({ users,_signout, _inviteMember,  }) => {
   const router = useRouter();
+
+  // function to invite members...
+  // _inviteMember("family id")
+
+  /**
+   * users contain all users and family members
+   */
   console.log("users ==>", users);
   return (
     <div className="wrapper">

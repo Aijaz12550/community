@@ -2,23 +2,32 @@ import React, { Fragment, useEffect } from "react";
 import { DashBoard } from "$components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../styles/assets/css/dashboard.css";
-import "../../../styles/sidebar/index.scss"
+import "../../../styles/sidebar/index.scss";
 import Head from "next/head";
 import { connect } from "react-redux";
-import { getUsers, signout } from "$middleware";
-import { useRouter } from 'next/router'
- 
-export default connect((state) => state)(({dispatch,AllUsersReducer}) => {
-  
-  const router = useRouter()
+import {
+  getUsers,
+  signout,
+  familyMembersList,
+  inviteFamilyMembers,
+} from "$middleware";
+import { useRouter } from "next/router";
+
+export default connect((state) => state)(({ dispatch, AllUsersReducer }) => {
+  const router = useRouter();
   useEffect(() => {
     dispatch(getUsers());
+    dispatch( familyMembersList() )
   }, []);
 
+  const _INVITEMEMBER = (id) => {
+    dispatch(inviteFamilyMembers(id))
+  } 
+
   const __SIGNOUT = () => {
-    dispatch(signout())
-    router.push('/signIn')
-  }
+    dispatch(signout());
+    router.push("/signIn");
+  };
 
   return (
     <Fragment>
@@ -39,7 +48,7 @@ export default connect((state) => state)(({dispatch,AllUsersReducer}) => {
           rel="stylesheet"
         ></link>
       </Head>
-      <DashBoard users={AllUsersReducer} _signout={__SIGNOUT} />
+      <DashBoard users={AllUsersReducer} _signout={__SIGNOUT} _inviteMember = {_INVITEMEMBER} />
     </Fragment>
   );
 });

@@ -1,17 +1,44 @@
-import { allUsers } from "../actions";
-import { _axios } from "$config";
-import { getAllUsers } from "$config";
+import { allUsers, familyMembersListAction, inviteMembersAction } from "../actions";
+import { _axios, getAllUsers, listFamilyMembers } from "$config";
 
-export const getUsers = (payload) => {
+export const getUsers = () => {
   return async (dispatch) => {
     await _axios
       .get(getAllUsers)
-      .then((data) => {
-        console.log("data ===>> all users", data);
-        dispatch(allUsers(data));
+      .then((res) => {
+        console.log("data ===>> all users", res?.data);
+        dispatch(allUsers(res?.data));
       })
       .catch((error) => {
         console.log("error", error);
+      });
+  };
+};
+
+export const familyMembersList = () => {
+  return async (dispatch) => {
+    await _axios
+      .get(listFamilyMembers)
+      .then((res) => {
+        console.log("family nenbers list", res);
+        dispatch(familyMembersListAction(res?.data))
+      })
+      .catch((error) => {
+        console.log(" error from getting family members", error);
+      });
+  };
+};
+
+export const inviteFamilyMembers = (id) => {
+  return async (dispatch) => {
+    await _axios
+      .get(`users/familyMember/${id}/invite`)
+      .then((res) => {
+        console.log("res from invite family member", res);
+        dispatch(inviteMembersAction(res?.data))
+      })
+      .catch((error) => {
+        console.log("error from invite family member", error);
       });
   };
 };
@@ -92,10 +119,10 @@ export const downloadProfileImageById = (id) => {
   };
 };
 
-export const changePasswordRequest = ( payload ) => {
-    return async (dispatch) => {
-        await _axios.post(`users/changePassword`, payload).then( res => {
-            console.log('')
-        })
-    }
-}
+export const changePasswordRequest = (payload) => {
+  return async (dispatch) => {
+    await _axios.post(`users/changePassword`, payload).then((res) => {
+      console.log("");
+    });
+  };
+};

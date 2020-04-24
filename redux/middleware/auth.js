@@ -1,7 +1,5 @@
 import { signin, signup } from "../actions";
 import { registerUser, OauthConfig, _axios } from "$config";
-import axios from 'axios'
-
 
 export const login = (payload) => {
   return  (dispatch) => {
