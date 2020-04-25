@@ -1,39 +1,39 @@
-.M0{
+.M0 {
   margin: 0;
 }
 .PT0 {
   padding-top: 0;
 }
-.PR5{
+.PR5 {
   padding-right: 5px;
 }
-.PL5{
+.PL5 {
   padding-left: 5px;
 }
 .PL30 {
   padding-left: 30px;
 }
-.PL35{
+.PL35 {
   padding-left: 35px;
 }
-.PR35{
+.PR35 {
   padding-right: 35px;
 }
 .ML20 {
   margin-left: 20px;
 }
-.MT60{
+.MT60 {
   margin-top: 60px;
 }
-.MT18{
+.MT18 {
   margin-top: 18px;
 }
 
-.bg-white{
+.bg-white {
   background: white;
 }
 
-.outline-none{
+.outline-none {
   outline: none;
 }
 
@@ -3666,6 +3666,10 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
     margin-bottom: 21px;
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  .container-fluid {
+    width: 100% !important;
   }
 
   .navbar-search-form {
@@ -7392,7 +7396,7 @@ License - nucleoapp.com/license/
     width: auto;
     margin: 0 1rem;
     box-shadow: none;
-    position: static !important;
+    /* position: static !important; */
     padding-left: 10px;
     display: block !important;
     -webkit-transform: translateZ(0) !important;
@@ -7434,17 +7438,16 @@ a:focus {
 
 .scrollBarStyle-Y::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color  : #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .scrollBarStyle-Y::-webkit-scrollbar {
-  width           : 3px;
-  background-color: #F5F5F5;
-  overflow-x      : auto;
-
+  width: 3px;
+  background-color: #f5f5f5;
+  overflow-x: auto;
 }
 
 .scrollBarStyle-Y::-webkit-scrollbar-thumb {
   background-color: rgb(0, 153, 153);
-  overflow-x      : auto;
+  overflow-x: auto;
 }

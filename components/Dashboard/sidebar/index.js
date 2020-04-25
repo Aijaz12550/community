@@ -82,10 +82,10 @@ export const SideBar = () => {
                           fontStyle: " normal",
                           fontWeight:
                             router.query.role === prop.path ? "bold" : "normal",
-                          color:"#344563",
-                            // router.query.role === prop.path
-                            //   ? "#009999"
-                            //   : "#344563",
+                          color: "#344563",
+                          // router.query.role === prop.path
+                          //   ? "#009999"
+                          //   : "#344563",
                           fontSize: "16px",
                           lineHeight: "22px",
                         }}
@@ -135,7 +135,7 @@ export const SideBar = () => {
               </div>
             </div>
           </div>
-         */}        
+         */}
         </div>
       </div>
     </div>

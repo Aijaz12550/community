@@ -12,11 +12,9 @@ import {
   DropdownItem,
   Container,
 } from "reactstrap";
-import { Image } from 'react-bootstrap';
-
+import { Image } from "react-bootstrap";
 
 import "../../../styles/navbar/index.scss";
-
 
 class Header extends React.Component {
   constructor(props) {
@@ -25,7 +23,7 @@ class Header extends React.Component {
       isOpen: false,
       dropdownOpen: false,
       dropdownOpenNotification: false,
-      color: "transparent"
+      color: "transparent",
     };
     this.toggle = this.toggle.bind(this);
     this.dropdownToggle = this.dropdownToggle.bind(this);
@@ -34,26 +32,26 @@ class Header extends React.Component {
   toggle() {
     if (this.state.isOpen) {
       this.setState({
-        color: "transparent"
+        color: "transparent",
       });
     } else {
       this.setState({
-        color: "dark"
+        color: "dark",
       });
     }
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
   dropdownToggle(e) {
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen
+      dropdownOpen: !this.state.dropdownOpen,
     });
   }
 
   dropdownToggleNotification(e) {
     this.setState({
-      dropdownOpenNotification: !this.state.dropdownOpenNotification
+      dropdownOpenNotification: !this.state.dropdownOpenNotification,
     });
   }
 
@@ -64,12 +62,13 @@ class Header extends React.Component {
 
   render() {
     return (
-      <Navbar
-        expand="lg"
-        className={"navbar-absolute fixed-top nav-bar-main"}>
-        <Container fluid className='container' style={{}}>
-          <div className='divContainer'>
-            <div className="navbar-wrapper" style={{ display: 'flex', flexBasis: '10%' }}>
+      <Navbar expand="lg" className={"navbar-absolute fixed-top nav-bar-main"}>
+        <Container fluid className="container" style={{}}>
+          <div className="divContainer">
+            <div
+              className="navbar-wrapper"
+              style={{ display: "flex", flexBasis: "10%" }}
+            >
               <div className="navbar-toggle">
                 <button
                   type="button"
@@ -82,63 +81,88 @@ class Header extends React.Component {
                   <span className="navbar-toggler-bar bar3" />
                 </button>
               </div>
-              {/* <NavbarBrand href="/">
-              <p style={{ color: "black" }}>{this.props.heading}</p>
-            </NavbarBrand> */}
             </div>
-            <Nav navbar style={{ display: 'flex', flexBasis: '90%', justifyContent: 'flex-end', width: '100%' }}>
-              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+            <Nav
+              navbar
+              style={{
+                display: "flex",
+                flexBasis: "90%",
+                justifyContent: "flex-end",
+                width: "100%",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "flex-end",
+                }}
+              >
                 <Dropdown
                   nav
                   isOpen={this.state.dropdownOpenNotification}
-                  toggle={e => this.dropdownToggleNotification(e)}
-
+                  toggle={(e) => this.dropdownToggleNotification(e)}
                 >
-                  <DropdownToggle nav style={{ color: 'black' }}>
-                    <Image className="roundedCircle" src='/assets/mockup/Notifications.png' />
+                  <DropdownToggle nav style={{ color: "black" }}>
+                    <Image
+                      className="roundedCircle"
+                      src="/assets/mockup/Notifications.png"
+                    />
                   </DropdownToggle>
-                  <DropdownMenu right className='notification-penal'>
+                  <DropdownMenu right className="notification-penal">
                     <DropdownItem tag="a">Action</DropdownItem>
                     <DropdownItem tag="a">Another Action</DropdownItem>
-                    <DropdownItem tag="a" onClick={this.props._signout}>Sign Out</DropdownItem>
+                    <DropdownItem tag="a" onClick={this.props._signout}>
+                      Sign Out
+                    </DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
 
-                <NavItem style={{
-                  width: '38px',
-                  height: '38px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRadius: '100%',
-                }}>
-                  <Image className="roundedCircle" style={{ width: 38, height: 38, borderRadius: 19 }} src='/assets/mockup/img10.png' />
+                <NavItem
+                  style={{
+                    width: "38px",
+                    height: "38px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "100%",
+                  }}
+                >
+                  <Image
+                    className="roundedCircle"
+                    style={{ width: 38, height: 38, borderRadius: 19 }}
+                    src="/assets/mockup/img10.png"
+                  />
                 </NavItem>
                 <NavItem>
                   <div className="nav-link btn-magnify">
-                    <span className='profileName'>Bradley Robin</span>
+                    <span className="profileName">Bradley Robin</span>
                   </div>
                 </NavItem>
                 <Dropdown
                   nav
                   isOpen={this.state.dropdownOpen}
-                  toggle={e => this.dropdownToggle(e)}
+                  toggle={(e) => this.dropdownToggle(e)}
                 >
-                  <DropdownToggle caret nav style={{ color: 'black' }}>
-
-                  </DropdownToggle>
+                  <DropdownToggle
+                    caret
+                    nav
+                    style={{ color: "black" }}
+                  ></DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem tag="a">Action</DropdownItem>
                     <DropdownItem tag="a">Another Action</DropdownItem>
-                    <DropdownItem tag="a" onClick={this.props._signout}>Sign Out</DropdownItem>
+                    <DropdownItem tag="a" onClick={this.props._signout}>
+                      Sign Out
+                    </DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </div>
             </Nav>
-
           </div>
         </Container>
-      </Navbar >
+      </Navbar>
     );
   }
 }
