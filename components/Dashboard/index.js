@@ -15,7 +15,6 @@ export const DashBoard = ({ users,_signout, _inviteMember,  }) => {
   /**
    * users contain all users and family members
    */
-  console.log("users ==>", users);
   return (
     <div className="wrapper">
       <SideBar />

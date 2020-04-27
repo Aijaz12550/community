@@ -7,10 +7,6 @@ import { useRouter } from "next/router";
 
 export default connect((state) => state)(({ dispatch }) => {
   const router_ = useRouter();
-  // useEffect(() => {
-  //   props.dispatch(getUsers());
-  // }, []);
-
   return (
     <Fragment>
       <Head>
@@ -19,7 +15,9 @@ export default connect((state) => state)(({ dispatch }) => {
       <SignIn
         _signin={(payload) => dispatch(login(payload))}
         router={router_}
-        _socialLogin = {(payload,provider)=> dispatch(socialLogin(payload,provider))}
+        _socialLogin={(payload, provider) =>
+          dispatch(socialLogin(payload, provider))
+        }
       />
     </Fragment>
   );

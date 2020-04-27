@@ -1,4 +1,8 @@
-import { allUsers, familyMembersListAction, inviteMembersAction } from "../actions";
+import {
+  allUsers,
+  familyMembersListAction,
+  inviteMembersAction,
+} from "../actions";
 import { _axios, getAllUsers, listFamilyMembers } from "$config";
 
 export const getUsers = () => {
@@ -6,7 +10,6 @@ export const getUsers = () => {
     await _axios
       .get(getAllUsers)
       .then((res) => {
-        console.log("data ===>> all users", res?.data);
         dispatch(allUsers(res?.data));
       })
       .catch((error) => {
@@ -20,8 +23,7 @@ export const familyMembersList = () => {
     await _axios
       .get(listFamilyMembers)
       .then((res) => {
-        console.log("family nenbers list", res);
-        dispatch(familyMembersListAction(res?.data))
+        dispatch(familyMembersListAction(res?.data));
       })
       .catch((error) => {
         console.log(" error from getting family members", error);
@@ -35,7 +37,7 @@ export const inviteFamilyMembers = (id) => {
       .get(`users/familyMember/${id}/invite`)
       .then((res) => {
         console.log("res from invite family member", res);
-        dispatch(inviteMembersAction(res?.data))
+        dispatch(inviteMembersAction(res?.data));
       })
       .catch((error) => {
         console.log("error from invite family member", error);

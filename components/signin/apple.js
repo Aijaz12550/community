@@ -4,13 +4,13 @@ import Head from 'next/head'
 export const Apple = () => {
 
     useEffect(()=>{
-        AppleID.auth.init({
-            clientId : '[CLIENT_ID]',
-            scope : '[email]',
-            redirectURI : '[REDIRECT_URI]',
-            state : '[STATE]',
-            usePopup : true //or false defaults to false
-        });
+        // AppleID.auth.init({
+        //     clientId : '[CLIENT_ID]',
+        //     scope : '[email]',
+        //     redirectURI : '[REDIRECT_URI]',
+        //     state : '[STATE]',
+        //     usePopup : true //or false defaults to false
+        // });
     })
     return(
         <Fragment>

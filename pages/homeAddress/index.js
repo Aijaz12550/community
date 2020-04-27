@@ -1,2 +1,2 @@
-import {HomeAddress} from '../../components/homeAddress'
-export default () => <HomeAddress/>
+import { HomeAddress } from "../../components/homeAddress";
+export default () => <HomeAddress />;
