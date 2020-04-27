@@ -151,6 +151,15 @@
     }
   }
 
+  .pagination{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 1px;
+    left: 25%;
+    right: 25%;
+  }
+
   @media screen and (max-width: 1300px) {
     .table-tbody {
       .residents-table-row {
