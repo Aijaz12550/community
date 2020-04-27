@@ -47,7 +47,7 @@ export class SignIn extends React.Component {
 
         <button className="apple-login-btn">continue with Apple</button>
         <GoogleLogin _socialLogin={_socialLogin} router={router} />
-        <Apple />
+        {/* <Apple /> */}
 
         {/* <button className="google-login-btn">continue with Google</button> */}
 
