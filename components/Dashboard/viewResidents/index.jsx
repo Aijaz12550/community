@@ -1,13 +1,14 @@
 import React, { useState, Fragment } from "react";
 import {
-  Card,
-  CardBody,
-  Row,
   Col,
+  Row,
   InputGroup,
   InputGroupAddon,
   InputGroupText,
-  Input
+  Input,
+  Pagination,
+  PaginationItem,
+  PaginationLink
 } from "reactstrap";
 import ResidentMemberDetail from "../residentMemberDetail";
 import { DashboardHeaderCard } from "../dashboardHeaderCard";
@@ -531,9 +532,9 @@ export const ViewResident = () => {
               {noMatchSearchData ? (
                 <tbody></tbody>
               ) : (
-                <tbody className="scrollBarStyle-Y table-tbody">
-                  {searchData.length
-                    ? searchData.map((data1, index) => (
+                  <tbody className="scrollBarStyle-Y table-tbody">
+                    {searchData.length
+                      ? searchData.map((data1, index) => (
                         <tr
                           className="residents-table-row"
                           key={index}
@@ -555,7 +556,7 @@ export const ViewResident = () => {
                           </td>
                         </tr>
                       ))
-                    : data.map((data1, index) => (
+                      : data.map((data1, index) => (
                         <tr
                           className="residents-table-row"
                           key={index + 6767}
@@ -577,10 +578,41 @@ export const ViewResident = () => {
                           </td>
                         </tr>
                       ))}
-                </tbody>
-              )}
+                  </tbody>
+                )}
             </Table>
           </Col>
+        </Row>
+        <Row className='pagination'>
+          <Pagination aria-label="Page navigation example">
+            <PaginationItem>
+              <PaginationLink first href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink previous href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">1</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">2</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">3</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">4</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">5</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink next href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink last href="#" />
+            </PaginationItem>
+          </Pagination>
         </Row>
       </div>
       <ResidentMemberDetail
