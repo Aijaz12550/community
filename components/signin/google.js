@@ -19,16 +19,48 @@ export class GoogleLogin extends Component {
     ga?.signIn().then(
       (googleUser) => {
         console.log("google ===>", googleUser);
-        let payload = {
-          grant_type: "password",
-          provider: "GOOGLE",
-          username: googleUser.Pt.yu,
-          password: googleUser.tc.id_token,
-        };
-        // payload = new FormData(payload);
-        console.log("payload", payload);
+        let payload ;
+        // = {
+        //   grant_type: "password",
+        //   provider: "GOOGLE",
+        //   username: googleUser.Pt.yu,
+        //   password: googleUser.tc.id_token,
+        // };
+
+        // payload = new FormData()
+        // payload.grant_type = ("grant_type","password")
+        // payload.provider = ("provider", "GOOGLE")
+        // payload.username = ("username", googleUser.Pt.yu )
+        // payload.password = ("password", googleUser.tc.id_token)
+        
+        let formDiv = document.createElement('div')
+
+        let input_ = document.createElement('input')
+        input_.setAttribute('key', "grant_type")
+        input_.setAttribute("value","password")
+        formDiv.appendChild(input_)
+
+        let input__ = document.createElement('input')
+        input__.setAttribute('key',"provider")
+        input__.setAttribute("value","GOOGLE")
+        formDiv.appendChild(input__)
+
+        let input___ = document.createElement('input')
+        input___.setAttribute("key","username")
+        input___.setAttribute("value",googleUser.Pt.yu)
+        formDiv.appendChild(input___)
+
+        let input____ = document.createElement('input')
+        input____.setAttribute("key","password")
+        input____.setAttribute('value',googleUser.tc.id_token)
+        formDiv.appendChild(input____)
+
+        let formData = new FormData()
+
+        formData.append(HTMLFormElement,formDiv)
+        console.log("formDiv", formDiv);
         this.props
-          ._socialLogin(payload)
+          ._socialLogin(formData)
           .then((data) => {
             console.log("data from comp social", data);
           })
