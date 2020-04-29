@@ -61,6 +61,8 @@
         align-items: center;
       }
       .table-head {
+        tr{
+          margin-bottom: 15px;
         .th {
           font-family: "Open Sans";
           font-style: normal;
@@ -68,7 +70,7 @@
           font-size: 16px;
           line-height: 22px;
           color: #6c7b8a;
-        }
+        }}
         .Col-1 {
           width: 35%;
         }

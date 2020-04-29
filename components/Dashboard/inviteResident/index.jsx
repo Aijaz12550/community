@@ -36,7 +36,7 @@ export default class InviteResident extends Component {
 
   addRow = () => {
     this.setState({
-      invitationData: [...this.state.invitationData, { homeAddress: '10 Mckeon Pl', apt_unit: '78/80', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', PhoneNumber: '207 555-0119', memberRole: 'N/A' }]
+      invitationData: [...this.state.invitationData, { homeAddress: '', apt_unit: '', fullName: '', email: '', PhoneNumber: '', memberRole: 'N/A' }]
     })
   }
 
@@ -87,10 +87,10 @@ export default class InviteResident extends Component {
                     </td>
                     <td className="td2-m"><input type='text' name="apt_unit" value={val.apt_unit} /></td>
                     <td className="td3-m"><input type='text' name="fullName" value={val.fullName} /></td>
-                    <td className="td4-m"><input type='text' name="email" value={val.email} /></td>
+                    <td className="td4-m"><input type='email' name="email" value={val.email} /></td>
                     <td className="td5-m"><input type='text' name='PhoneNumber' value={val.PhoneNumber} /></td>
                     <td className="td6-m">
-                      <select className='dropDownInput' name='memberRole' value='N/A' onChange={(e) => this.dropDownChanging(e, index)} >
+                      <select className='dropDownInput' name='memberRole' value={val.memberRole} onChange={(e) => this.dropDownChanging(e, index)} >
                         <option value="N/A">{this.state.dropdownInput[0]}</option>
                         <option value="Community Manager">{this.state.dropdownInput[1]}</option>
                         <option value="Board Manager">{this.state.dropdownInput[2]}</option>
