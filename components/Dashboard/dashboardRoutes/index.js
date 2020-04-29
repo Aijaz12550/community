@@ -1,5 +1,7 @@
 import { ViewResident } from "../viewResidents";
 import InviteResident  from "../inviteResident";
+import ExternalMember  from "../externalMember";
+import ManageDocument  from "../manageDocument";
 import React from "react";
 import { useRouter } from "next/router";
 
@@ -56,9 +58,9 @@ export let routes = () => {
       ),
     },
     {
-      path: "invite_members",
-      name: "Invite Members",
-      component: <p style={{ marginTop: 80 }}>Hello 3333333</p>,
+      path: "external_members",
+      name: "External Members",
+      component: <ExternalMember/>,
       icon: (
         // <svg
         //   width="18"
@@ -72,7 +74,7 @@ export let routes = () => {
         //     clipRule="evenodd"
         //     d="M17.3213 16.7365C17.3992 17.0867 17.0867 17.3992 16.7365 17.3213L12.7609 16.4379C11.6055 17.0232 10.3245 17.333 8.99985 17.333C4.39757 17.333 0.666687 13.6021 0.666687 8.99983C0.666687 4.39756 4.39757 0.666672 8.99985 0.666672C13.6021 0.666672 17.333 4.39756 17.333 8.99983C17.333 10.3245 17.0232 11.6055 16.4379 12.7609L17.3213 16.7365Z"
         //     fill={
-        //       router.query.role === "invite_members" ? "#009999" : "#344563"
+        //       router.query.role === "external_members" ? "#009999" : "#344563"
         //     }
         //   />
         // </svg>
@@ -106,7 +108,7 @@ export let routes = () => {
     {
       path: "managae_documents",
       name: "Manage Documents",
-      component: <p style={{ marginTop: 80 }}>Manage Component</p>,
+      component: <ManageDocument/>,
       icon: (
         // <svg
         //   width="18"
