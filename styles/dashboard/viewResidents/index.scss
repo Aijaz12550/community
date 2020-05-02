@@ -84,6 +84,7 @@
           width: 30%;
           display: flex;
           justify-content: flex-end;
+          margin-right: 40px;
         }
       }
       .table-tbody {
@@ -142,6 +143,7 @@
             align-items: center;
             display: flex;
             justify-content: flex-end;
+            margin-right: 40px;
           }
         }
         tr:hover {
@@ -215,6 +217,12 @@
           line-height: 10px !important;
           padding: 0px !important;
         }
+        .col-1{
+          margin-left: 5px !important;
+        }
+        .Col-3 {
+          margin-right: 5px !important;
+        }
       }
       .table-tbody {
         tr {
@@ -223,9 +231,11 @@
         .residents-table-row {
           .Col-1 {
             font-size: 12px !important;
+            margin-left: 5px !important;
           }
           .Col-3 {
             font-size: 12px !important;
+            margin-right: 5px !important;
           }
         }
       }

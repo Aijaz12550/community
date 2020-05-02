@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Row, Col, Table } from "reactstrap";
-import { Image } from 'react-bootstrap'
+import { Row, Col, Table, Input } from "reactstrap";
+import { Image, Modal, } from 'react-bootstrap'
 import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
 import "../../../styles/dashboard/manageDocument/index.scss";
 
@@ -8,13 +8,23 @@ export default class ManageDocument extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableCreate: [{ documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }]
+      tableCreate: [{ documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }],
+      setModalShow: true
     }
   }
 
   addRow = () => {
+    // this.setState({
+    //   tableCreate: [...this.state.tableCreate, { documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }]
+    // })
     this.setState({
-      tableCreate: [...this.state.tableCreate, { documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }]
+      setModalShow: true
+    })
+  }
+
+  closeModal = () => {
+    this.setState({
+      setModalShow: false
     })
   }
 
@@ -28,7 +38,7 @@ export default class ManageDocument extends Component {
             <DashboardHeaderCard />
           </Col>
         </Row>
-        <Row responsive className="table-section scrollBarStyle-Y">
+        <Row className="table-section scrollBarStyle-Y">
           <Col md="12" className="PL30 PR30">
             {this.state.tableCreate.map((val, index) => (
               <Table responsive className="scrollBarStyle-X" key={index}>
@@ -90,8 +100,70 @@ export default class ManageDocument extends Component {
             </span>
           </Col>
         </Row>
+        <Modal
+          show={this.state.setModalShow}
+          onHide={() => this.setState({ setModalShow: false })}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+          className='add-record-modal'
+        >
+          <Modal.Header closeButton>
+            <span onClick={this.closeModal}>
+              <Image className='' src={'/assets/mockup/modal-close-btn.png'} />
+            </span>
+          </Modal.Header>
+          <Modal.Body>
+            <Row className='row-1' >
+              <Col>
+                <p>Add Document</p>
+              </Col>
+            </Row>
+            <Row className='row-2'>
+              <Col>
+                <label>Document Type</label>
+              </Col>
+            </Row>
+            <Row className='row-3'>
+              <Col>
+                {/* value={val.role} onChange={(e) => this.dropDownChanging(e, index)}  */}
+                <div>
+                  <select className='dropDownInput' name='role' >
+                    <option value="" selected disabled>Select a documents Type</option>
+                    <option value="N/A">aaaa</option>
+                    <option value="Service Manager">bbb</option>
+                  </select>
+                </div>
+              </Col>
+            </Row>
+            <Row className='row-4'>
+              <Col>
+                <div>
 
+                </div>
+              </Col>
+            </Row>
+            <Row className='row-5'>
+              <Col>
+                <label>Note</label>
+              </Col>
+            </Row>
+            <Row className='row-6'>
+              <Col>
+                <div>
+                  <Input type="textarea" name="text" id="exampleText" placeholder='Add Note Here' />
+                </div>
+              </Col>
+            </Row>
+            <Row className='row-7'>
+              <Col>
+                <button>Save</button>
+              </Col>
+            </Row>
+          </Modal.Body>
+        </Modal>
       </div>
     );
   };
+
 }

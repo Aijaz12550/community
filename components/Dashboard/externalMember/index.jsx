@@ -9,7 +9,7 @@ export default class ExternalMember extends Component {
     super(props);
     this.state = {
       externalMemberData: [
-        { role: '10 Mckeon Pl', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', PhoneNumber: '207 555-0119' },
+        { role: '10 Mckeon Pl', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNumber: '207 555-0119' },
       ],
       dropdownInput: ['N/A', 'Service Manager'],
     }
@@ -18,13 +18,13 @@ export default class ExternalMember extends Component {
 
   addRow = () => {
     this.setState({
-      externalMemberData: [...this.state.externalMemberData, { role: 'N/A', fullName: '', email: '', PhoneNumber: '', memberRole: 'N/A' }]
+      externalMemberData: [...this.state.externalMemberData, { role: 'N/A', fullName: '', email: '', phoneNumber: '', memberRole: 'N/A' }]
     })
   }
 
   resetTable = () => {
     this.setState({
-      externalMemberData: [{ role: 'N/A', fullName: '', email: '', PhoneNumber: '', memberRole: 'N/A' }]
+      externalMemberData: [{ role: 'N/A', fullName: '', email: '', phoneNumber: '', memberRole: 'N/A' }]
     })
   }
 
@@ -73,7 +73,7 @@ export default class ExternalMember extends Component {
                       <input type='text' name='fullName' value={val.fullName} />
                     </td>
                     <td className="td3-m"><input type='email' name="email" value={val.email} /></td>
-                    <td className="td4-m"><input type='text' name='PhoneNumber' value={val.PhoneNumber} /></td>
+                    <td className="td4-m"><input type='text' name='phoneNumber' value={val.phoneNumber} /></td>
                     <td className="td5-m"><button><img src="/assets/mockup/delete-icon.png" style={{ width: 14, height: 16 }} /></button></td>
                   </tr>
                 ))}
