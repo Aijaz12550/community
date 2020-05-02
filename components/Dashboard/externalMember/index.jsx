@@ -40,6 +40,14 @@ export default class ExternalMember extends Component {
     this.setState({ externalMemberData })
   }
 
+  deleteRow = (rowIndex) => {
+    let filterData = this.state.externalMemberData.filter((val, i) => i !== rowIndex);
+    this.setState({
+      externalMemberData: filterData
+    })
+  }
+
+
   render() {
     return (
       // <Fragment>
@@ -53,12 +61,16 @@ export default class ExternalMember extends Component {
           <Col md="12" className="PL35 PR35">
             <Table responsive className="scrollBarStyle-X">
               <thead className="">
-                <tr>
-                  <th className="td1-m">Role</th>
-                  <th className="td2-m">Full Name</th>
-                  <th className="td3-m">Email</th>
-                  <th colSpan={2} className="td4-m">Phone</th>
-                </tr>
+                {this.state.externalMemberData.length ?
+                  <tr>
+                    <th className="td1-m">Role</th>
+                    <th className="td2-m">Full Name</th>
+                    <th className="td3-m">Email</th>
+                    <th colSpan={2} className="td4-m">Phone</th>
+                  </tr>
+                  :
+                  <tr></tr>
+                }
               </thead>
               <tbody className="scrollBarStyle-Y tBody">
                 {this.state.externalMemberData?.map((val, index) => (
@@ -74,7 +86,7 @@ export default class ExternalMember extends Component {
                     </td>
                     <td className="td3-m"><input type='email' name="email" value={val.email} /></td>
                     <td className="td4-m"><input type='text' name='phoneNumber' value={val.phoneNumber} /></td>
-                    <td className="td5-m"><button><img src="/assets/mockup/delete-icon.png" style={{ width: 14, height: 16 }} /></button></td>
+                    <td className="td5-m"><button onClick={() => this.deleteRow(index)}><img src="/assets/mockup/delete-icon.png" style={{ width: 14, height: 16 }} /></button></td>
                   </tr>
                 ))}
               </tbody>
