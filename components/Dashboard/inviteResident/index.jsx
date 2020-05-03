@@ -104,7 +104,7 @@ export default class InviteResident extends Component {
             </Table>
           </Col>
         </Row>
-        <Row className='invite-btn-row'>
+        <Row className='add-btn-row'>
           <Col lg="12" md="12" sm="12" className="PL35 PR35">
             <span className='invite-span'>
               <button className='add-row-invitation-btn' onClick={this.addRow}>
@@ -115,15 +115,13 @@ export default class InviteResident extends Component {
               <p className='btn-text'>Add Resident</p>
             </span>
           </Col>
+        </Row>
+        <Row className='invite-btn-row'>
           <Col lg="12" md="12" sm="12" className="PL35 PR35 invite-send-row">
             <span className='send-invite-box'>
               <button className='reset-invite' onClick={this.resetTable}>
-                <Image className='add-btn' src={'/assets/mockup/reset-icon.png'} />
-                Reset
-              </button>
-              <button className='send-invite-btn'>
-                Invite Send
-              </button>
+                <Image className='add-btn' src={'/assets/mockup/reset-icon.png'} />Reset</button>
+              <button className='send-invite-btn'>Invite Send</button>
             </span>
           </Col>
         </Row>

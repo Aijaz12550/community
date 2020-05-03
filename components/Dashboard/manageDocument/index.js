@@ -9,17 +9,17 @@ export default class ManageDocument extends Component {
     super(props);
     this.state = {
       tableCreate: [{ documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }],
-      setModalShow: false
+      setModalShow: true
     }
   }
 
   addRow = () => {
-    this.setState({
-      tableCreate: [...this.state.tableCreate, { documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }]
-    })
     // this.setState({
-    //   setModalShow: true
+    //   tableCreate: [...this.state.tableCreate, { documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }]
     // })
+    this.setState({
+      setModalShow: true
+    })
   }
 
   closeModal = () => {
@@ -105,68 +105,70 @@ export default class ManageDocument extends Component {
             </span>
           </Col>
         </Row>
-        <Modal
-          show={this.state.setModalShow}
-          onHide={() => this.setState({ setModalShow: false })}
-          size="lg"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-          className='add-record-modal'
-        >
-          <Modal.Header closeButton>
-            <span onClick={this.closeModal}>
-              <Image className='' src={'/assets/mockup/modal-close-btn.png'} />
-            </span>
-          </Modal.Header>
-          <Modal.Body>
-            <Row className='row-1' >
-              <Col>
-                <p>Add Document</p>
-              </Col>
-            </Row>
-            <Row className='row-2'>
-              <Col>
-                <label>Document Type</label>
-              </Col>
-            </Row>
-            <Row className='row-3'>
-              <Col>
-                {/* value={val.role} onChange={(e) => this.dropDownChanging(e, index)}  */}
-                <div>
-                  <select className='dropDownInput' name='role' >
-                    <option value="" selected disabled>Select a documents Type</option>
-                    <option value="N/A">aaaa</option>
-                    <option value="Service Manager">bbb</option>
-                  </select>
-                </div>
-              </Col>
-            </Row>
-            <Row className='row-4'>
-              <Col>
-                <div>
+        {/* <Col className='modal-data'> */}
+          <Modal
+            show={this.state.setModalShow}
+            onHide={() => this.setState({ setModalShow: false })}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+            className='add-record-modal'
+          >
+            <Modal.Header closeButton>
+              <span onClick={this.closeModal}>
+                <Image className='' src={'/assets/mockup/modal-close-btn.png'} />
+              </span>
+            </Modal.Header>
+            <Modal.Body>
+              <Row className='row-1' >
+                <Col>
+                  <p>Add Document</p>
+                </Col>
+              </Row>
+              <Row className='row-2'>
+                <Col>
+                  <label>Document Type</label>
+                </Col>
+              </Row>
+              <Row className='row-3'>
+                <Col>
+                  {/* value={val.role} onChange={(e) => this.dropDownChanging(e, index)}  */}
+                  <div>
+                    <select className='dropDownInput' name='role' >
+                      <option value="" selected disabled>Select a documents Type</option>
+                      <option value="N/A">aaaa</option>
+                      <option value="Service Manager">bbb</option>
+                    </select>
+                  </div>
+                </Col>
+              </Row>
+              <Row className='row-4'>
+                <Col>
+                  <div>
 
-                </div>
-              </Col>
-            </Row>
-            <Row className='row-5'>
-              <Col>
-                <label>Note</label>
-              </Col>
-            </Row>
-            <Row className='row-6'>
-              <Col>
-                <div>
-                  <Input type="textarea" name="text" id="exampleText" placeholder='Add Note Here' />
-                </div>
-              </Col>
-            </Row>
-            <Row className='row-7'>
-              <Col>
-                <button>Save</button>
-              </Col>
-            </Row>
-          </Modal.Body>
-        </Modal>
+                  </div>
+                </Col>
+              </Row>
+              <Row className='row-5'>
+                <Col>
+                  <label>Note</label>
+                </Col>
+              </Row>
+              <Row className='row-6'>
+                <Col>
+                  <div>
+                    <Input type="textarea" name="text" id="exampleText" placeholder='Add Note Here' />
+                  </div>
+                </Col>
+              </Row>
+              <Row className='row-7'>
+                <Col>
+                  <button>Save</button>
+                </Col>
+              </Row>
+            </Modal.Body>
+          </Modal>
+        {/* </Col> */}
       </div>
     );
   };

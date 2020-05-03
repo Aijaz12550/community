@@ -156,12 +156,7 @@
       display: flex;
     }
   }
-  .invite-btn-row {
-    position: absolute;
-    height: 163px;
-    width: 100%;
-    bottom: 0px;
-    display: flex;
+  .add-btn-row{
     .invite-span {
       display: flex;
       flex-direction: row;
@@ -195,6 +190,14 @@
         color: #6c7b8a;
       }
     }
+  }
+  .invite-btn-row {
+    position: absolute;
+    height: 113px;
+    width: 100%;
+    bottom: 0px;
+    display: flex;
+    
     .invite-send-row {
       margin-top: 29px;
       height: 50px;
@@ -274,7 +277,7 @@
         }
       }
     }
-    .invite-btn-row {
+    .add-btn-row {
       .invite-span {
         .add-row-invitation-btn {
           .add-btn {
@@ -338,7 +341,7 @@
         }
       }
     }
-    .invite-btn-row {
+    .add-btn-row {
       .invite-span {
         .add-row-invitation-btn {
           .add-btn {
@@ -447,8 +450,7 @@
         }
       }
     }
-    .invite-btn-row {
-      height: 108px !important;
+    .add-btn-row {
       .invite-span {
         width: 100% !important;
         justify-content: center;

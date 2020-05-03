@@ -2,6 +2,7 @@ import { ViewResident } from "../viewResidents";
 import InviteResident  from "../inviteResident";
 import ExternalMember  from "../externalMember";
 import ManageDocument  from "../manageDocument";
+import SendCommunication  from "../sendCommunication";
 import React from "react";
 import { useRouter } from "next/router";
 
@@ -132,7 +133,7 @@ export let routes = () => {
     {
       path: "send_communication",
       name: "Send Communication",
-      component: <p style={{ marginTop: 80 }}> communication</p>,
+      component:<SendCommunication/>,
       icon: (
         // <svg
         //   width="18"
