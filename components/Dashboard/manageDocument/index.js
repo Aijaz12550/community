@@ -9,17 +9,17 @@ export default class ManageDocument extends Component {
     super(props);
     this.state = {
       tableCreate: [{ documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }],
-      setModalShow: true
+      setModalShow: false
     }
   }
 
   addRow = () => {
-    // this.setState({
-    //   tableCreate: [...this.state.tableCreate, { documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }]
-    // })
     this.setState({
-      setModalShow: true
+      tableCreate: [...this.state.tableCreate, { documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }]
     })
+    // this.setState({
+    //   setModalShow: true
+    // })
   }
 
   closeModal = () => {
@@ -28,7 +28,12 @@ export default class ManageDocument extends Component {
     })
   }
 
-
+  deleteRow = (rowIndex) => {
+    let filterData = this.state.tableCreate.filter((val, index) => index !== rowIndex)
+    this.setState({
+      tableCreate: filterData
+    })
+  }
 
   render() {
     return (
@@ -73,7 +78,7 @@ export default class ManageDocument extends Component {
                               src={'/assets/mockup/edit-row.png'}
                             />
                           </button>
-                          <button className='btn'>
+                          <button className='btn' onClick={() => this.deleteRow(index)}>
                             <Image className=''
                               src={'/assets/mockup/delete-table.png'}
                             />

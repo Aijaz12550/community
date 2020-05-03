@@ -76,10 +76,12 @@ export default class ExternalMember extends Component {
                 {this.state.externalMemberData?.map((val, index) => (
                   <tr className="residents-table-row-modal" key={index} onChange={(e) => this._onChange(e, index)} >
                     <td className="td1-m PL30">
-                      <select className='dropDownInput' name='role' value={val.role} onChange={(e) => this.dropDownChanging(e, index)} >
-                        <option value="N/A">{this.state.dropdownInput[0]}</option>
-                        <option value="Service Manager">{this.state.dropdownInput[1]}</option>
-                      </select>
+                      <div>
+                        <select className='dropDownInput' name='role' value={val.role} onChange={(e) => this.dropDownChanging(e, index)} >
+                          <option value="N/A">{this.state.dropdownInput[0]}</option>
+                          <option value="Service Manager">{this.state.dropdownInput[1]}</option>
+                        </select>
+                      </div>
                     </td>
                     <td className="td2-m ">
                       <input type='text' name='fullName' value={val.fullName} />
@@ -93,7 +95,7 @@ export default class ExternalMember extends Component {
             </Table>
           </Col>
         </Row>
-        <Row className='invite-btn-row'>
+        <Row className='add-btn-row'>
           <Col lg="12" md="12" sm="12" className="PL35 PR35">
             <span className='invite-span'>
               <button className='add-row-invitation-btn' onClick={this.addRow}>
@@ -104,6 +106,8 @@ export default class ExternalMember extends Component {
               <p className='btn-text'>Add Resident</p>
             </span>
           </Col>
+        </Row>
+        <Row className='invite-btn-row'>
           <Col lg="12" md="12" sm="12" className="PL35 PR35 invite-send-row">
             <span className='send-invite-box'>
               <button className='reset-invite' onClick={this.resetTable}>

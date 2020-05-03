@@ -90,11 +90,14 @@ export default class InviteResident extends Component {
                     <td className="td4-m"><input type='email' name="email" value={val.email} /></td>
                     <td className="td5-m"><input type='text' name='PhoneNumber' value={val.PhoneNumber} /></td>
                     <td className="td6-m">
-                      <select className='dropDownInput' name='memberRole' value={val.memberRole} onChange={(e) => this.dropDownChanging(e, index)} >
-                        <option value="N/A">{this.state.dropdownInput[0]}</option>
-                        <option value="Community Manager">{this.state.dropdownInput[1]}</option>
-                        <option value="Board Manager">{this.state.dropdownInput[2]}</option>
-                      </select></td>
+                      <div>
+                        <select className='dropDownInput' name='memberRole' value={val.memberRole} onChange={(e) => this.dropDownChanging(e, index)} >
+                          <option value="N/A">{this.state.dropdownInput[0]}</option>
+                          <option value="Community Manager">{this.state.dropdownInput[1]}</option>
+                          <option value="Board Manager">{this.state.dropdownInput[2]}</option>
+                        </select>
+                      </div>
+                    </td>
                   </tr>
                 ))}
               </tbody>

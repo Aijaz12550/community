@@ -73,15 +73,7 @@
           }
           .dropDownInput {
             background: #ffffff;
-            border: 1px solid #e9e9e9;
-            box-sizing: border-box;
-            box-shadow: 0px 12px 50px rgba(0, 0, 0, 0.04);
-            border-radius: 6px;
-            height: 34px;
-            padding-left: 5px;
-            padding-bottom: 5px;
-            padding-top: 5px;
-            padding-right: 5px;
+            border: none;
             width: 100%;
             text-align-last: center;
             font-family: "Open Sans";
@@ -150,8 +142,14 @@
       display: flex;
     }
     .td6-m {
-      input {
+      div {
         width: 100%;
+        padding: 5px;
+        border: 1px solid #e9e9e9;
+        box-sizing: border-box;
+        box-shadow: 0px 12px 50px rgba(0, 0, 0, 0.04);
+        border-radius: 6px;
+        height: 34px;
       }
       width: 20%;
       align-items: center;
