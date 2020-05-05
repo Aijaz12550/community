@@ -10,6 +10,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@tinymce/tinymce-react": "^3.5.1",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",

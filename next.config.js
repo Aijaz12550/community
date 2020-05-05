@@ -26,4 +26,5 @@ module.exports.env = {
   OAUTH_AUTHORIZATION_KEY: process.env.OAUTH_AUTHORIZATION_KEY,
   OAUTH_REDIRECT_URL: process.env.OAUTH_REDIRECT_URL,
   API_BASE_URL: process.env.API_BASE_URL,
+  EDITOR_KEY: process.env.EDITOR_KEY
 };
