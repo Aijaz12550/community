@@ -8,3 +8,4 @@ export const downloadProfileImage = `users/avatar`
 export const uploadProfileImage = `users/avatar`
 export const registerUser = `users/register`
 export const listFamilyMembers = `users/familyMember`
+

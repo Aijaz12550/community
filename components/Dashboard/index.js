@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { SideBar } from "./sidebar";
 import NavBar from "./navbar";
 import Footer from "./footer";
@@ -6,7 +6,7 @@ import { routes } from "./dashboardRoutes";
 import { useRouter } from "next/router";
 export * from "./viewResidents";
 
-export const DashBoard = ({ users,_signout, _inviteMember,  }) => {
+export const DashBoard = ({ users,_signout, _inviteMember, _residents, ResidentsReducer }) => {
   const router = useRouter();
 
   // function to invite members...
@@ -15,6 +15,8 @@ export const DashBoard = ({ users,_signout, _inviteMember,  }) => {
   /**
    * users contain all users and family members
    */
+
+   console.log('>>>>>>>>>>>>>>residents>>>>>>>',ResidentsReducer)
   return (
     <div className="wrapper">
       <SideBar />
