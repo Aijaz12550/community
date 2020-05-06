@@ -17,8 +17,8 @@ export default withRouter(
       //     pageProps: {
       //       ...(Component.getInitialProps
       //         ? await Component.getInitialProps(ctx)
-      //         : {})
-      //     }
+      //         : {}),
+      //     },
       //   };
       // }
 
