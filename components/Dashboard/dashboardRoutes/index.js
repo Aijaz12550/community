@@ -1,8 +1,9 @@
 import { ViewResident } from "../viewResidents";
-import InviteResident  from "../inviteResident";
-import ExternalMember  from "../externalMember";
-import ManageDocument  from "../manageDocument";
-import SendCommunication  from "../sendCommunication";
+import InviteResident from "../inviteResident";
+import ExternalMember from "../externalMember";
+import ManageDocument from "../manageDocument";
+import SendCommunication from "../sendCommunication";
+import ManageMember from "../manageMember";
 import React from "react";
 import { useRouter } from "next/router";
 
@@ -37,7 +38,7 @@ export let routes = () => {
     {
       path: "invite_residents",
       name: "Invite Residents",
-      component: <InviteResident/>,
+      component: <InviteResident />,
       icon: (
         // <svg
         //   width="18"
@@ -55,13 +56,13 @@ export let routes = () => {
         //     }
         //   />
         // </svg>
-          <img src="/assets/mockup/invite-resident-icon.png" style={{ width: 17, height: 17 }} />
+        <img src="/assets/mockup/invite-resident-icon.png" style={{ width: 17, height: 17 }} />
       ),
     },
     {
       path: "external_members",
       name: "External Members",
-      component: <ExternalMember/>,
+      component: <ExternalMember />,
       icon: (
         // <svg
         //   width="18"
@@ -85,7 +86,7 @@ export let routes = () => {
     {
       path: "manage_members",
       name: "Manage Members",
-      component: <p style={{ marginTop: 80 }}> hello seond 444444444444</p>,
+      component: <ManageMember />,
       icon: (
         // <svg
         //   width="17"
@@ -109,7 +110,7 @@ export let routes = () => {
     {
       path: "managae_documents",
       name: "Manage Documents",
-      component: <ManageDocument/>,
+      component: <ManageDocument />,
       icon: (
         // <svg
         //   width="18"
@@ -133,7 +134,7 @@ export let routes = () => {
     {
       path: "send_communication",
       name: "Send Communication",
-      component:<SendCommunication/>,
+      component: <SendCommunication />,
       icon: (
         // <svg
         //   width="18"
