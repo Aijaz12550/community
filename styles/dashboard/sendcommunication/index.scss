@@ -13,7 +13,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            padding: 20px 15px;
+            padding: 10px 15px;
             height: 50px;
             background: #FFFFFF;
             border: 1px solid #E9E9E9;
@@ -101,21 +101,183 @@
       .row-4{
         .col{
           div{
+            .fileUpload-btn{
+              border: none;
+              background: white;
+              margin-left: 14px;
+              height: 22px;
+              font-weight: 600;
+              font-family: 'Open Sans';
+              font-size: 16px;
+              line-height: 22px;
+              display: flex;
+              align-items: center;
+              color: #009999;
+            }
+            span{
+              font-family: 'Open Sans';
+              font-style: normal;
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 22px;
+              display: flex;
+              align-items: center;
+              color: #91909A;
+              padding: 0px;
+              margin-left: 10px !important;
+              height: 22px;
+            }
+          }
+        }
+      }
+      .row-5{
+        .col{
+          div{
             border: 0px !important;
+          }
+        }
+      }
+      .tox-tinymce{
+        width: 100%;
+        height: 45% !important;
+        .tox-statusbar{
+          display: none;
+        }
+      }
+      .invite-btn-row {
+        display: flex;
+        height: 50px;
+        .invite-send-row {
+          margin-top: 29px;
+          height: 50px;
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 34px;
+          align-items: center;
+          .send-invite-box {
+            height: 50px;
+            width: 294px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: flex-end;
+            .reset-invite {
+              width: 66px;
+              height: 22px;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              padding: 0px;
+              font-family: "Open Sans";
+              font-style: normal;
+              font-weight: bold;
+              font-size: 16px;
+              line-height: 22px;
+              color: #009999;
+              border: 0px;
+              background: transparent;
+              outline: none;
+              margin-right: 40px;
+            }
+            .send-invite-btn {
+              width: 188px;
+              height: 50px;
+              left: 1372px;
+              top: 952px;
+              background: #009999;
+              border-radius: 50px;
+              outline: none;
+              border: none;
+              padding: 0px;
+              margin: 0px;
+              font-family: "Open Sans";
+              font-style: normal;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 22px;
+              text-align: center;
+              color: #ffffff;
+            }
           }
         }
       }
     }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1300px) {
     .send-communication-body{
       width: 70%;
     }
+    .row{
+      .col{
+        div{
+          height: 45px !important;
+          margin-bottom: 10px !important;
+        }
+      }
+    }
+    .row-4{
+      .col{
+        div{
+          .fileUpload-btn{
+            height: 18px !important;
+            font-size: 14px !important;
+            line-height: 18px !important;
+          }
+          span{
+            font-size: 14px !important;
+            line-height: 18px !important;
+            margin-left: 10px !important;
+            height: 18px !important;
+          }
+        }
+      }
+    }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     .send-communication-body{
       width: 80%;
+      padding: 10px !important;
+      .row{
+        .col{
+          div{
+            height: 40px !important;
+            margin-bottom: 5px !important;
+          }
+        }
+      }
+      .invite-btn-row {
+        height: 40px !important;
+        .invite-send-row {
+          margin-top: 5px !important;
+          height: 40px !important;
+          margin-bottom: 5px !important;
+          width: 100% !important;
+          .send-invite-box {
+            height: 40px !important;
+            width: 100% !important;
+            justify-content: center !important;
+            .reset-invite {
+              width: 50px !important;
+              height: 16px !important;
+              font-size: 12px !important;
+              line-height: 16px !important;
+              margin-right: 15px !important;
+              img{
+                width: 12px !important;
+                height: 12px !important;
+              }
+            }
+            .send-invite-btn {
+              width: 100px !important;
+              height: 35px !important;
+              border-radius: 17px !important;
+              font-size: 12px !important;
+              line-height: 12px !important;
+            }
+          }
+        }
+      }
     }
   }
   @media screen and (max-width: 500px) {

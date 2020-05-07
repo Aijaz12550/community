@@ -32,7 +32,7 @@ class ResidentMemberDetail extends Component {
                             Residence Since:
                           </span>
                           <span className="residents-time">
-                            {this.props?.trData?.residenceSince.split(" ")[1] +
+                            {' ' + this.props?.trData?.residenceSince.split(" ")[1] +
                               " " +
                               this.props?.trData?.residenceSince.split(" ")[2]}
                           </span>
@@ -46,7 +46,7 @@ class ResidentMemberDetail extends Component {
             </Row>
           </div>
         </Modal.Header>
-        <Modal.Body className="PT0">
+        <Modal.Body className="PT0 PR34 PL46">
           <Table responsive className="scrollBarStyle-X">
             <thead className="">
               <tr>
@@ -59,10 +59,17 @@ class ResidentMemberDetail extends Component {
             <tbody className="scrollBarStyle-Y tBody">
               {this.props?.trData?.familyMember.map((data1, index) => (
                 <tr className="residents-table-row-modal" key={index}>
-                  <td className="address-td sm-dmemberImageisplay-none td1-m PL30">
-                    <img src={data1.memberImage} key={index} className="roundedCircle"></img>
-                    
-                    <span className="ML20">{data1.memberName}</span>
+                  <td className="td1-m PL30">
+                    <div>
+                      <img src={data1.memberImage} key={index} className="roundedCircle"></img>
+                    </div>
+                    <div className='memberName-div' style={data1.memberRole ? { alignItems: 'flex-start' } : { alignItems: 'center'}}>
+                      <span className="ML13 memberName">{data1.memberName}</span>
+                      {data1.memberRole ?
+                        <span className="ML13 memberRole">{data1.memberRole}</span>
+                        : ''
+                      }
+                    </div>
                   </td>
                   <td className="td2-m">{data1.phoneNumber}</td>
                   <td className="td3-m">{data1.emailAddress}</td>

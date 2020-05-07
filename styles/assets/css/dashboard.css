@@ -10,17 +10,26 @@
 .PL5 {
   padding-left: 5px;
 }
+.ML13 {
+  padding-left: 13px;
+}
 .PL30 {
   padding-left: 30px;
 }
 .PR30 {
   padding-right: 30px;
 }
+.PR34 {
+  padding-right: 34px;
+}
 .PL35 {
   padding-left: 35px;
 }
 .PR35 {
   padding-right: 35px;
+}
+.PL46 {
+  padding-left: 46px;
 }
 .ML20 {
   margin-left: 20px;

@@ -4,15 +4,12 @@
     margin-bottom: 15px;
     margin-left: 5px;
     margin-right: 5px;
-    overflow-y: auto;
     .table-responsive {
       padding: 0px !important;
     }
     table {
       min-width: 700px;
       background: rgb(246, 247, 251);
-      margin-top: 20px;
-      margin-bottom: 0px !important;
       tr {
         display: flex;
         flex-direction: row;
@@ -20,33 +17,14 @@
       tr:hover{
         cursor: pointer;
       }
-      .tBody {
-        display: flex;
-        flex-direction: column;
-        max-height: calc(100vh - 398px);
-        overflow-y: auto;
-        overflow-x: hidden;
-        .residents-table-row-modal {
-          height: 129px !important;
+      thead{
+        tr{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
           align-items: center;
-          margin-bottom: 5px;
-          background: #ffffff;
-          td {
-            border: none;
-            outline: none;
-            padding: 0 !important;
-          }
-        }
-        tr {
-          background: #ffffff;
-          border: 1px solid #ffffff;
-          box-sizing: border-box;
-          border-radius: 5px;
-          td {
-            padding-top: 8px;
-            padding-bottom: 11px;
-            margin-right: 20px;
-            height: 81px;
+          td{
+            border: none !important;
             div{
               label{
                 height: 22px;
@@ -60,50 +38,86 @@
                 align-items: center;
                 color: #6C7B8A;
               }
+            }
+          }
+          .td1-m{
+            width: calc(33.33% - 79px);
+            margin-right: 20px;
+            margin-left: 30px;
+          }
+          .td2-m{
+            width: calc(33.33% - 79px);
+            margin-right: 20px;
+          }
+          .td3-m{
+            width: calc(33.33% - 79px);
+            margin-right: 20px;
+          }
+          .td4-m{
+            width: 79px !important;
+            margin-right: 15px;
+          }
+        }
+      }
+      tbody {
+        max-height: calc(100vh - 300px);
+        .residents-table-row-modal {
+          background: #ffffff;
+          height: 54px !important;
+          margin-bottom: 5px;
+          border: 1px solid #ffffff;
+          box-sizing: border-box;
+          border-radius: 5px;
+          align-items: center;
+          justify-content: space-between;
+          td {
+            border: none;
+            outline: none;
+            padding: 0 !important;
+          }
+          td {
+            padding-top: 8px;
+            padding-bottom: 11px;
+            margin-right: 20px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            background: #ffffff;
+            border-radius: 6px;
+            div{
               .input1 {
-                background: #ffffff;
-                border-radius: 6px;
-                height: 50px;
+                height: 24px;
                 padding-left: 20px;
                 padding-bottom: 13px;
                 padding-top: 16px;
+                border:none;
                 outline: none;
-                font-family: 'SF Pro Display';
+                font-family: 'Open Sans';
                 font-style: normal;
-                font-weight: bold;
-                font-size: 18px;
-                line-height: 21px;
-                display: flex;
-                align-items: center;
-                border: 1px solid #E9E9E9;
-                box-sizing: border-box;
-                border-radius: 8px;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 24px;
+                color: #344563;
               }
 
               .input2 {
-                background: #ffffff;
-                border-radius: 6px;
-                height: 50px;
+                border:none;
+                height: 24px;
                 padding-left: 28px;
                 padding-bottom: 13px;
                 padding-top: 16px;
                 outline: none;
                 font-family: 'Open Sans';
                 font-style: normal;
-                font-weight: 600;
+                font-weight: normal;
                 font-size: 16px;
-                line-height: 22px;
-                display: flex;
-                align-items: center;
+                line-height: 24px;
                 color: #344563;
-                border: 1px solid #E9E9E9;
-                box-sizing: border-box;
-                border-radius: 8px;
               }
               .input3 {
-                background: #ffffff;
-                border-radius: 6px;
-                height: 50px;
+                border:none;
+                height: 24px;
                 padding-left: 20px;
                 padding-bottom: 13px;
                 padding-top: 16px;
@@ -114,9 +128,6 @@
                 font-size: 14px;
                 line-height: 19px;
                 color: #91909A;
-                border: 1px solid #E9E9E9;
-                box-sizing: border-box;
-                border-radius: 8px;
               }
               input:focus {
                 background: #f0f9f9;
@@ -127,66 +138,69 @@
               }
             }
           }
-        }
-      }
-
-      .td1-m {
-        input {
-          width: 100%;
-        }
-        width: 30%;
-        align-items: center;
-        display: flex;
-        margin-left: 30px !important;
-      }
-      .td2-m {
-        input {
-          width: 100%;
-        }
-        width: 30%;
-        align-items: center;
-        display: flex;
-      }
-      .td3-m {
-        input {
-          width: 100%;
-        }
-        width: 30%;
-        align-items: center;
-        display: flex;
-      }
-      .td4-m {
-        width: 10%;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        margin: 0px 15px 0px 0px !important;
-        div{
-          display: 'flex';
-          flex-direction: column;
-          width: 79px;
-          span{
-            width: 79px;
+          .td1-m {
+            border: 1px solid #E9E9E9 !important;
+            input {
+              width: 100%;
+            }
+            width: calc(33.33% - 90px);
+            align-items: center;
             display: flex;
-            justify-content: space-around;
-            .btn{
-              background: none;
-              outline: none;
-              border: none;
-              padding: 0px;
-              img{
-                width: 24px;
-                height: 24px;
+            margin-left: 30px !important;
+          }
+          .td2-m {
+            border: 1px solid #E9E9E9 !important;
+            input {
+              width: 100%;
+            }
+            width: calc(33.33% - 90px);
+            align-items: center;
+            display: flex;
+          }
+          .td3-m {
+            border: 1px solid #E9E9E9 !important;
+            input {
+              width: 100%;
+            }
+            width: calc(33.33% - 90px);
+            align-items: center;
+            display: flex;
+          }
+          .td4-m {
+            width: 79px !important;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin: 0px 15px 0px 0px !important;
+            border: none !important;
+            div{
+              display: 'flex';
+              flex-direction: column;
+              width: 79px;
+              span{
+                width: 79px;
+                display: flex;
+                justify-content: space-around;
+                .btn{
+                  background: none;
+                  outline: none;
+                  border: none;
+                  padding: 0px;
+                  img{
+                    width: 24px;
+                    height: 24px;
+                  }
+                }
+                .btn:hover{
+                  background-color: #ffffff !important;
+                }
+                .btn:active{
+                  background-color: #ffffff !important;
+                }
+                .btn:focus{
+                  background-color: #ffffff !important;
+                }
               }
-            }
-            .btn:hover{
-              background-color: #ffffff !important;
-            }
-            .btn:active{
-              background-color: #ffffff !important;
-            }
-            .btn:focus{
-              background-color: #ffffff !important;
             }
           }
         }
@@ -237,11 +251,11 @@
       table {
         .tBody {
           .residents-table-row-modal {
-            height: 100px !important;
+            height: 54px !important;
           }
           tr {
             td {
-              height: 70px !important;
+              height: 34px !important;
               div{
                 label{
                   height: 18px !important;
@@ -249,18 +263,18 @@
                   line-height: 18px !important;
                 }
                 .input1 {
-                  height: 40px !important;
+                  height: 24px !important;
                   font-size: 15px !important;
                   line-height: 18px !important;
                 }
   
                 .input2 {
-                  height: 40px !important;
+                  height: 24px !important;
                   font-size: 13px !important;
                   line-height: 18px !important;
                 }
                 .input3 {
-                  height: 40px !important;
+                  height: 24px !important;
                   font-size: 12px !important;
                   line-height: 15px;
                 }
@@ -298,11 +312,11 @@
       table {
         .tBody {
           .residents-table-row-modal {
-            height: 95px !important;
+            height: 54px !important;
           }
           tr {
             td {
-              height: 60px !important;
+              height: 34px !important;
               div{
                 label{
                   height: 15px !important;
@@ -376,8 +390,8 @@
     }
   }
 }
-// .modal-data{
-//   display: flex;
+.add-record-modal{
+  // display: flex;
   .modal-dialog-centered{
     width: 470px !important;
     height: 635px !important;
@@ -487,7 +501,7 @@
         .row-5{
           .col{
             label{
-              font-family: Open Sans;
+              font-family: 'Open Sans';
               font-style: normal;
               font-weight: 600;
               font-size: 16px;
@@ -510,7 +524,7 @@
               padding: 16px 20px 16px 20px;
               margin-bottom: 30px;
               .form-control{
-                font-family: Open Sans;
+                font-family: 'Open Sans';
                 font-style: normal;
                 font-weight: normal;
                 font-size: 14px;
@@ -541,4 +555,4 @@
       }
     }
   }
-// }
+}

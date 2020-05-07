@@ -16,7 +16,7 @@ class EditorComponent  extends React.Component {
         initialValue="<p>This is the initial content of the editor</p>"
         apiKey={process.env.EDITOR_KEY}
         init={{
-            height: 500,
+            // height: 500,
             draggable_modal :true,
           menubar: false,
           plugins: [

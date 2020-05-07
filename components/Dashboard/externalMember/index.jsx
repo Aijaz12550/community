@@ -18,13 +18,13 @@ export default class ExternalMember extends Component {
 
   addRow = () => {
     this.setState({
-      externalMemberData: [...this.state.externalMemberData, { role: 'N/A', fullName: '', email: '', phoneNumber: '', memberRole: 'N/A' }]
+      externalMemberData: [...this.state.externalMemberData, { role: 'N/A', fullName: '', email: '', phoneNumber: '' }]
     })
   }
 
   resetTable = () => {
     this.setState({
-      externalMemberData: [{ role: 'N/A', fullName: '', email: '', phoneNumber: '', memberRole: 'N/A' }]
+      externalMemberData: [{ role: 'N/A', fullName: '', email: '', phoneNumber: '' }]
     })
   }
 
@@ -49,8 +49,8 @@ export default class ExternalMember extends Component {
 
 
   render() {
+    console.log('>>>>>>>>>>>>>>>', this.state.externalMemberData)
     return (
-      // <Fragment>
       <div className="content external-member-component" key={Date.now() + 5765}>
         <Row className="MT60 section-top">
           <Col lg="12" md="12" sm="12" className="PL35 PR35">
@@ -66,7 +66,8 @@ export default class ExternalMember extends Component {
                     <th className="td1-m">Role</th>
                     <th className="td2-m">Full Name</th>
                     <th className="td3-m">Email</th>
-                    <th colSpan={2} className="td4-m">Phone</th>
+                    <th className="td4-m">Phone</th>
+                    <th className="td5-m"></th>
                   </tr>
                   :
                   <tr></tr>
@@ -74,7 +75,7 @@ export default class ExternalMember extends Component {
               </thead>
               <tbody className="scrollBarStyle-Y tBody">
                 {this.state.externalMemberData?.map((val, index) => (
-                  <tr className="residents-table-row-modal" key={index} onChange={(e) => this._onChange(e, index)} >
+                  <tr className="residents-table-row-modal" key={index}>
                     <td className="td1-m PL30">
                       <div>
                         <select className='dropDownInput' name='role' value={val.role} onChange={(e) => this.dropDownChanging(e, index)} >
@@ -83,11 +84,12 @@ export default class ExternalMember extends Component {
                         </select>
                       </div>
                     </td>
-                    <td className="td2-m ">
-                      <input type='text' name='fullName' value={val.fullName} />
-                    </td>
-                    <td className="td3-m"><input type='email' name="email" value={val.email} /></td>
-                    <td className="td4-m"><input type='text' name='phoneNumber' value={val.phoneNumber} /></td>
+                    <td><input type='text' name='fullName' value={val.fullName} onChange={(e) => this._onChange(e, index)} /></td>
+                    {/* <td className="td2-m">
+                      <input type='text' name='fullName' value={val.fullName} onChange={(e) => this._onChange(e, index)} />
+                    </td> */}
+                    <td className="td3-m"><input type='email' name="email" value={val.email} onChange={(e) => this._onChange(e, index)} /></td>
+                    <td className="td4-m"><input type='text' name='phoneNumber' value={val.phoneNumber} onChange={(e) => this._onChange(e, index)} /></td>
                     <td className="td5-m"><button onClick={() => this.deleteRow(index)}><img src="/assets/mockup/delete-icon.png" style={{ width: 14, height: 16 }} /></button></td>
                   </tr>
                 ))}
@@ -116,9 +118,7 @@ export default class ExternalMember extends Component {
             </span>
           </Col>
         </Row>
-
       </div>
-      // </Fragment>
     );
   };
 }

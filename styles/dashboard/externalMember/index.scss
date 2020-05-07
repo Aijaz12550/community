@@ -105,11 +105,6 @@
           }
         }
       }
-      tr:hover{
-        .td5-m{
-        display: flex !important;
-        }
-      }
     }
 
     .td1-m {
@@ -123,7 +118,7 @@
         padding: 5px;
         align-self: center;
       }
-      width: 18%;
+      width: calc(25% - 30px);
       align-items: center;
       display: flex;
       margin-left: 10px !important;
@@ -132,7 +127,7 @@
       input {
         width: 100%;
       }
-      width: 18%;
+      width: calc(25% - 30px);
       align-items: center;
       display: flex;
     }
@@ -140,7 +135,7 @@
       input {
         width: 100%;
       }
-      width: 18%;
+      width: calc(25% - 30px);
       align-items: center;
       display: flex;
     }
@@ -148,19 +143,16 @@
       input {
         width: 100%;
       }
-      width: 18%;
+      width: calc(25% - 30px);
       align-items: center;
       display: flex;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: "ellipsis";
       text-align: left !important;
-      margin-right: 40px !important;
     }
     .td5-m{
-      position: absolute;
-      right: -35px;
-      display: none !important;
+      width: 30px !important;
       button{
        background: #E91E63;
        border-radius: 15px;

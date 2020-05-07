@@ -25,6 +25,7 @@ export const ViewResident = () => {
       familyMember: [
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -32,6 +33,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img2.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -39,6 +41,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -48,11 +51,12 @@ export const ViewResident = () => {
       residenceSince: "10 September 2018"
     },
     {
-      dataID: 1,
+      dataID: 2,
       address: "12 Barnum Pl",
       familyMember: [
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -60,6 +64,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -67,6 +72,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -74,6 +80,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -81,6 +88,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -88,6 +96,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -95,6 +104,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -102,6 +112,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -109,6 +120,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Owais Warsi",
+          memberRole:'',
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -118,11 +130,12 @@ export const ViewResident = () => {
       residenceSince: "10 September 2018"
     },
     {
-      dataID: 1,
+      dataID: 3,
       address: "5 Taylor Ct",
       familyMember: [
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -130,6 +143,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -137,6 +151,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -144,6 +159,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -151,6 +167,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -158,6 +175,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -165,6 +183,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -172,6 +191,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -179,6 +199,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Owais Warsi",
+          memberRole:'',
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -188,11 +209,12 @@ export const ViewResident = () => {
       residenceSince: "10 June 2018"
     },
     {
-      dataID: 1,
+      dataID: 4,
       address: "3 Taylor Ct",
       familyMember: [
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -200,6 +222,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -207,6 +230,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -214,6 +238,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -221,6 +246,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -228,6 +254,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -235,6 +262,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -242,6 +270,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -249,6 +278,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Owais Warsi",
+          memberRole:'',
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -258,11 +288,12 @@ export const ViewResident = () => {
       residenceSince: "10 September 2018"
     },
     {
-      dataID: 1,
+      dataID: 5,
       address: "10 Barnum Pl",
       familyMember: [
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -270,6 +301,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -277,6 +309,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -284,6 +317,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -291,6 +325,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -298,6 +333,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -305,6 +341,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -312,6 +349,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -319,6 +357,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Owais Warsi",
+          memberRole:'',
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -328,11 +367,12 @@ export const ViewResident = () => {
       residenceSince: "10 September 2018"
     },
     {
-      dataID: 1,
+      dataID: 6,
       address: "5 Titus Pl",
       familyMember: [
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -340,6 +380,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -347,6 +388,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -354,6 +396,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -361,6 +404,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -368,6 +412,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -375,6 +420,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -382,6 +428,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -389,6 +436,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Owais Warsi",
+          memberRole:'',
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -398,11 +446,12 @@ export const ViewResident = () => {
       residenceSince: "10 September 2018"
     },
     {
-      dataID: 1,
+      dataID: 7,
       address: "10 Lynn Pl",
       familyMember: [
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -410,6 +459,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -417,6 +467,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -424,6 +475,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -431,6 +483,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Brii Ritter",
+          memberRole:'',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -438,6 +491,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Wilam Carry",
+          memberRole:'Community Manager',
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -445,6 +499,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Jhon Doe",
+          memberRole:'',
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -452,6 +507,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Walter Obrain",
+          memberRole:'',
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
@@ -459,6 +515,7 @@ export const ViewResident = () => {
         },
         {
           memberName: "Owais Warsi",
+          memberRole:'',
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",

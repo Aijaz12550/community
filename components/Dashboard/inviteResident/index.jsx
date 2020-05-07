@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Table } from "reactstrap";
-import { Dropdown, Image } from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
 import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
 import "../../../styles/dashboard/inviteResident/index.scss";
 
@@ -81,14 +81,14 @@ export default class InviteResident extends Component {
               </thead>
               <tbody className="scrollBarStyle-Y tBody">
                 {this.state.invitationData?.map((val, index) => (
-                  <tr className="residents-table-row-modal" key={index} onChange={(e) => this._onChange(e, index)} >
+                  <tr className="residents-table-row-modal" key={index}>
                     <td className="td1-m PL30">
-                      <input type='text' name='homeAddress' value={val.homeAddress} />
+                      <input type='text' name='homeAddress' value={val.homeAddress} onChange={(e) => this._onChange(e, index)} />
                     </td>
-                    <td className="td2-m"><input type='text' name="apt_unit" value={val.apt_unit} /></td>
-                    <td className="td3-m"><input type='text' name="fullName" value={val.fullName} /></td>
-                    <td className="td4-m"><input type='email' name="email" value={val.email} /></td>
-                    <td className="td5-m"><input type='text' name='PhoneNumber' value={val.PhoneNumber} /></td>
+                    <td className="td2-m"><input type='text' name="apt_unit" value={val.apt_unit} onChange={(e) => this._onChange(e, index)} /></td>
+                    <td className="td3-m"><input type='text' name="fullName" value={val.fullName} onChange={(e) => this._onChange(e, index)} /></td>
+                    <td className="td4-m"><input type='email' name="email" value={val.email} onChange={(e) => this._onChange(e, index)} /></td>
+                    <td className="td5-m"><input type='text' name='PhoneNumber' value={val.PhoneNumber} onChange={(e) => this._onChange(e, index)} /></td>
                     <td className="td6-m">
                       <div>
                         <select className='dropDownInput' name='memberRole' value={val.memberRole} onChange={(e) => this.dropDownChanging(e, index)} >
