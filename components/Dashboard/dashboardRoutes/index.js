@@ -14,7 +14,7 @@ export let routes = () => {
     {
       path: "view_residents",
       name: "View Residents",
-      component: <ViewResident />,
+      component: ViewResident ,
       icon: (
         // <svg
         //   width="18"
@@ -38,7 +38,7 @@ export let routes = () => {
     {
       path: "invite_residents",
       name: "Invite Residents",
-      component: <InviteResident />,
+      component: InviteResident,
       icon: (
         // <svg
         //   width="18"
@@ -62,7 +62,7 @@ export let routes = () => {
     {
       path: "external_members",
       name: "External Members",
-      component: <ExternalMember />,
+      component: ExternalMember,
       icon: (
         // <svg
         //   width="18"
@@ -110,7 +110,7 @@ export let routes = () => {
     {
       path: "managae_documents",
       name: "Manage Documents",
-      component: <ManageDocument />,
+      component: ManageDocument,
       icon: (
         // <svg
         //   width="18"
@@ -134,7 +134,7 @@ export let routes = () => {
     {
       path: "send_communication",
       name: "Send Communication",
-      component: <SendCommunication />,
+      component:SendCommunication,
       icon: (
         // <svg
         //   width="18"

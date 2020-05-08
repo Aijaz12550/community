@@ -36,7 +36,13 @@ export const DashBoard = ({ users,_signout, _inviteMember, _residents, Residents
             if (router?.query?.role === val.path) {
               return (
                 <div key={key} style={{ padding: "10px" }}>
-                  {val.component}
+                  <val.component 
+                  users = {users}
+                  _signout = {_signout}
+                  _inviteMember = {_inviteMember}
+                  _residents = {_residents}
+                  ResidentsReducer = {ResidentsReducer}
+                  />
                 </div>
               );
             }
