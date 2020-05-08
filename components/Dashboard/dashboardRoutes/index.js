@@ -86,7 +86,7 @@ export let routes = () => {
     {
       path: "manage_members",
       name: "Manage Members",
-      component: <ManageMember />,
+      component: ManageMember ,
       icon: (
         // <svg
         //   width="17"

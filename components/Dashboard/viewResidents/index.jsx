@@ -17,7 +17,9 @@ import Images from "../imageRow";
 
 import "../../../styles/dashboard/viewResidents/index.scss";
 
-export const ViewResident = () => {
+export const ViewResident = (props) => {
+
+  console.log('>>>>>>>> FUN + DATA ===>',props)
   let data = [
     {
       dataID: 1,
