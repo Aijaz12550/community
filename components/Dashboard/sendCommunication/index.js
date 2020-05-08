@@ -131,7 +131,7 @@ export default class Sendcommunication extends Component {
                 <span className='send-invite-box'>
                   <button className='reset-invite' onClick={this.resetTable}>
                     <Image className='add-btn' src={'/assets/mockup/reset-icon.png'} />Reset</button>
-                  <button className='send-invite-btn'>Invite Send</button>
+                  <button className='send-invite-btn'>Send</button>
                 </span>
               </Col>
             </Row>

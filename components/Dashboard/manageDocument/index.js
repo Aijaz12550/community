@@ -9,17 +9,23 @@ export default class ManageDocument extends Component {
     super(props);
     this.state = {
       tableCreate: [{ documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }],
+      addRecord: { documentType: '', upload: '', note: '' },
       setModalShow: false
     }
   }
 
+  addRowModal = () => {
+    this.setState({
+      setModalShow: true
+    })
+  }
+
   addRow = () => {
     this.setState({
-      tableCreate: [...this.state.tableCreate, { documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }]
+      tableCreate: [...this.state.tableCreate, this.state.addRecord],
+      addRecord: { documentType: '', upload: '', note: '' },
+      setModalShow:false
     })
-    // this.setState({
-    //   setModalShow: true
-    // })
   }
 
   closeModal = () => {
@@ -32,6 +38,14 @@ export default class ManageDocument extends Component {
     let filterData = this.state.tableCreate.filter((val, index) => index !== rowIndex)
     this.setState({
       tableCreate: filterData
+    })
+  }
+
+  _onchange = (e) => {
+    let { addRecord } = this.state;
+    addRecord[e.target.name] = e.target.value
+    this.setState({
+      addRecord
     })
   }
 
@@ -59,19 +73,19 @@ export default class ManageDocument extends Component {
                   <tr className="residents-table-row-modal" key={index}>
                     <td className="td1-m PL30">
                       <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <input className='input1' type='email' name="documentType" value={val.documentType} />
+                        <input className='input1' style={{background:'white'}} type='email' name="documentType" value={val.documentType} disabled />
                       </div>
                     </td>
 
                     <td className="td2-m">
                       <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <input className='input2' type='text' name='upload' value={val.upload} />
+                        <input className='input2' style={{background:'white'}} type='text' name='upload' value={val.upload} disabled/>
                       </div>
                     </td>
 
                     <td className="td3-m">
                       <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <input className='input3' type='email' name="email" value={val.note} placeholder='Add Note Here' />
+                        <input className='input3' style={{background:'white'}} type='email' name="email" value={val.note} placeholder='Add Note Here' disabled/>
                       </div>
                     </td>
                     <td className="td4-m">
@@ -100,7 +114,7 @@ export default class ManageDocument extends Component {
         <Row className='invite-btn-row'>
           <Col lg="12" md="12" sm="12" className="PL35 PR35">
             <span className='invite-span'>
-              <button className='add-row-invitation-btn' onClick={this.addRow}>
+              <button className='add-row-invitation-btn' onClick={this.addRowModal}>
                 <Image className='add-btn'
                   src={'/assets/mockup/add-invite-member.png'}
                 />
@@ -137,10 +151,9 @@ export default class ManageDocument extends Component {
               <Col>
                 {/* value={val.role} onChange={(e) => this.dropDownChanging(e, index)}  */}
                 <div>
-                  <select className='dropDownInput' name='role' >
-                    <option value="" selected disabled>Select a documents Type</option>
-                    <option value="N/A">aaaa</option>
-                    <option value="Service Manager">bbb</option>
+                  <select className='dropDownInput' name='documentType' value={this.state.addRecord.documentType} onChange={(e) => this._onchange(e)} >
+                    <option value="N/A">N/A</option>
+                    <option value="Service Manager">Service Manager</option>
                   </select>
                 </div>
               </Col>
@@ -160,13 +173,13 @@ export default class ManageDocument extends Component {
             <Row className='row-6'>
               <Col>
                 <div>
-                  <Input type="textarea" name="text" id="exampleText" placeholder='Add Note Here' />
+                  <Input type="textarea" name="note" id="exampleText" placeholder='Add Note Here' value={this.state.addRecord.note} onChange={(e) => this._onchange(e)} />
                 </div>
               </Col>
             </Row>
             <Row className='row-7'>
               <Col>
-                <button>Save</button>
+                <button onClick={this.addRow}>Save</button>
               </Col>
             </Row>
           </Modal.Body>
