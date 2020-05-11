@@ -1,0 +1,496 @@
+.manage-member-component{
+  .body-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0px;
+    .profile-card{
+      width: 430px;
+      div{
+        width: 340px;
+        height: 563px;
+        margin-left: 90px;
+        margin-bottom: 10px;
+        background: #FFFFFF;
+        border-radius: 5px !important;
+        padding: 38px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .user-name{
+          width: 100%;
+          padding: 0px;
+          margin: 0px 0px 5px 0px !important;
+          height: 40px;
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 33px;
+          display: flex;
+          align-items: center;
+          color: #344563;
+          justify-content: center;
+        }
+        .user-role{
+          width: 131px;
+          padding: 1px 8px 4px 8px !important;
+          margin: 0px 0px 70px 0px !important;
+          height: 21px !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #6C7B8A;
+          border-radius: 50px;
+          transform: matrix(1, 0, 0, 1, 0, 0);
+          span{
+            width: 115px;
+            height: 16px;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            color: #FFFFFF;
+          }
+        }
+        .profile-image-div{
+          width: 150px;
+          height: 150px;
+          padding: 0px;
+          margin: 0px 0px 28px 0px !important;
+          .profile-image{
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+          }
+        }
+        .upload-photo-div{
+          width: 100%;
+          padding: 0px;
+          margin: 0px 0px 28px 0px !important;
+          height: 40px;
+          .fileUpload-btn{
+            width: 178px;
+            height: 40px;
+            background: #009999;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+            span{
+              width: 106px;
+              height: 22px;
+              font-family: 'Open Sans';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 22px;
+              text-align: center;
+              color: #FFFFFF;
+            }
+          }
+        }
+        .footer-card{
+          width: 100%;
+          height: 107px;
+          margin: 0px;
+          padding: 17px 43px 26px 19px;
+          background: #F0F9F9;
+          border: 1px solid #CCEBEB;
+          box-sizing: border-box;
+          border-radius: 6px;
+          .image-content{
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            background: none;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 19px;
+            white-space: pre-wrap;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #6C7B8A;
+            width: 231px;
+            height: 46px;
+            margin-bottom: 7px;
+          }
+          .image-warning{
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            background: none;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 19px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #6C7B8A;
+          }
+        }
+      }
+    }
+    .edit-card{
+      width: 480px;
+      height: 682px;
+      background: #FFFFFF;
+      border-radius: 5px;
+      margin-left: 60px;
+      padding-top: 40px ;
+      padding-bottom: 50px ;
+      padding-left: 50px ;
+      padding-right: 50px ;
+      .required{
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-size: 14px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        color: #6C7B8A;
+        margin-left: 5px;
+      }
+      .heading{
+        width: 138px;
+        height: 35px;
+        margin-bottom: 30px;
+        span{
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 26px;
+          line-height: 35px;
+
+          /* text/primary */
+
+          color: #344563;
+        }
+      }
+      .name-label{
+        width: 100%;
+        height: 22px;
+        display: flex;
+        margin-bottom: 7px;
+        .name-title{
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 22px;
+          display: flex;
+          align-items: center;
+          color: #6C7B8A;
+        }
+      }
+      .input-div{
+        width: 100%;
+        height: 50px;
+        background: #FFFFFF;
+        border: 1px solid #E9E9E9;
+        box-sizing: border-box;
+        box-shadow: 0px 12px 50px rgba(0, 0, 0, 0.04);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        padding: 15px 20px;
+        span{
+          border: none;
+          width: 100%;
+          input{
+            border: none;
+            background: none;
+            padding: 0px;
+            height: 21px;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            display: flex;
+            align-items: center;
+            color: #344563;
+          }
+        }
+      }
+      input:focus{
+        .input-div{
+          background: #F0F9F9;
+          border: 1px solid #CCEBEB;
+        }  
+      }
+      .input-div-remaing{
+        width: 100%;
+        height: 50px;
+        background: #FFFFFF;
+        border: 1px solid #E9E9E9;
+        box-sizing: border-box;
+        box-shadow: 0px 12px 50px rgba(0, 0, 0, 0.04);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        padding: 15px 20px;
+        margin-bottom: 30px;
+        span{
+          border: none;
+          width: 100%;
+          input{
+            border: none;
+            background: none;
+            padding: 0px;
+            height: 21px;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            display: flex;
+            align-items: center;
+            color: #344563;
+          }
+        }
+      }
+      .username-warning{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 23px;
+        span{
+          height: 100%;
+          font-family: 'Open Sans';
+          font-style: normal;
+          white-space: pre-wrap;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 19px;
+          display: flex;
+          align-items: center;
+          color: #6C7B8A;
+        }
+      }
+      .member-since{
+        background: #FAFAFA !important;
+      }
+      .save-btn-div{
+        width: 100%;
+        background: #009999;
+        border-radius: 6px;
+        height: 50px;
+        margin-bottom: 50px;
+        .save-btn{
+          width: 100%;
+          height: 50px;
+          border: none;
+          outline: none;
+          background: transparent;
+          span{
+            width: 36px;
+            height: 22px;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1800px) and (max-width: 2800px) {
+    .body-row{
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    .body-row{
+      justify-content: center;
+      .profile-card{
+        width: 480px !important;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        div{
+          margin: 0px !important;
+        }
+      }
+      .edit-card{
+        margin:0px !important;
+        width: 400px;
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .body-row{
+      justify-content: center;
+      .profile-card{
+        width: 480px !important;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        div{
+          margin: 0px !important;
+        }
+      }
+      .edit-card{
+        margin-left: 0px !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .body-row{
+      .profile-card{
+        div{
+          height: 500px !important;
+          .user-name{
+            margin: 0px 0px 5px 0px !important;
+            font-size: 20px !important;
+            line-height: 30px !important;
+          }
+          .user-role{
+            padding: 2px 8px 2px 8px !important;
+            margin: 0px 0px 40px 0px !important;
+            span{
+              font-size: 12px !important;
+              line-height: 14px !important;
+            }
+          }
+          .profile-image-div{
+            width: 120px !important;
+            height: 120px  !important;
+            margin: 0px 0px 28px 0px !important;
+            .profile-image{
+              width: 120px  !important;
+              height: 120px  !important;
+              border-radius: 60px;
+            }
+          }
+          .upload-photo-div{
+            margin: 0px 0px 20px 0px !important;
+            height: 40px;
+            .fileUpload-btn{
+              width: 140px;
+              height: 40px;
+              span{
+                font-size: 14px !important;
+                line-height: 20px !important;
+              }
+            }
+          }
+        }
+      }
+      .edit-card{
+        padding: 20px !important;
+        height: 540px !important;
+        .required{
+          font-size: 12px !important;
+          line-height: 20px !important;
+        }
+        .heading{
+          margin-bottom: 20px !important;
+          span{
+            font-size: 20px !important;
+            line-height: 30px !important;
+          }
+        }
+        .name-label{
+          .name-title{
+            font-size: 14px !important;
+            line-height: 20px !important;
+          }
+        }
+        .input-div{
+          height: 40px !important;
+          padding: 10px 15px !important;
+          span{
+            input{
+              font-size: 15px !important;
+              line-height: 18px;
+            }
+          }
+        }
+        .input-div-remaing{
+          height: 40px !important;
+          padding: 10px 15px !important;
+          margin-bottom: 20px !important;
+          span{
+            input{
+              font-size: 15px !important;
+              line-height: 18px !important;
+            }
+          }
+        }
+        .username-warning{
+          margin-bottom: 18px !important;
+          span{
+            font-size: 12px !important;
+            line-height: 15px !important;
+          }
+        }
+        .save-btn-div{
+          height: 40px !important;
+          .save-btn{
+            height: 40px;
+            span{
+              width: 25px !important;
+              font-size: 14px !important;
+              line-height: 18px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .body-row{
+      .profile-card{
+        width: 320px !important;
+        .profile-div{
+          width: 320px !important;
+        }
+        .footer-card{
+          padding: 5px !important;
+          height: 80px !important;
+          .image-content{
+            font-size: 12px !important;
+          }
+          .image-warning{
+            font-size: 12px !important;
+          }
+        }
+      }
+      .edit-card{
+       width: 320px !important;
+      }
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .body-row{
+      .profile-card{
+        width: 280px !important;
+        .profile-div{
+          width: 280px !important;
+        }
+      }
+      .edit-card{
+        width: 280px !important;
+       }
+    }
+  }
+}

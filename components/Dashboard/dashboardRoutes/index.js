@@ -2,8 +2,9 @@ import { ViewResident } from "../viewResidents";
 import InviteResident from "../inviteResident";
 import ExternalMember from "../externalMember";
 import ManageDocument from "../manageDocument";
-import SendCommunication from "../sendCommunication";
 import ManageMember from "../manageMember";
+import SendCommunication from "../sendCommunication";
+import UserProfile from "../userProfile";
 import React from "react";
 import { useRouter } from "next/router";
 
@@ -14,7 +15,7 @@ export let routes = () => {
     {
       path: "view_residents",
       name: "View Residents",
-      component: ViewResident ,
+      component: ViewResident,
       icon: (
         // <svg
         //   width="18"
@@ -86,7 +87,31 @@ export let routes = () => {
     {
       path: "manage_members",
       name: "Manage Members",
-      component: ManageMember ,
+      component: ManageMember,
+      icon: (
+        // <svg
+        //   width="17"
+        //   height="16"
+        //   viewBox="0 0 17 16"
+        //   fill="none"
+        //   xmlns="http://www.w3.org/2000/svg"
+        // >
+        //   <path
+        //     fillRule="evenodd"
+        //     clipRule="evenodd"
+        //     d="M12.6364 0.337662C12.4212 0.337662 12.2468 0.512096 12.2468 0.727272V2.28571C12.2468 2.50089 12.4212 2.67532 12.6364 2.67532C12.8516 2.67532 13.026 2.50089 13.026 2.28571V0.727272C13.026 0.512096 12.8516 0.337662 12.6364 0.337662ZM4.84419 0.337662C4.62902 0.337662 4.45458 0.512096 4.45458 0.727272V2.28571C4.45458 2.50089 4.62902 2.67532 4.84419 2.67532C5.05937 2.67532 5.2338 2.50089 5.2338 2.28571V0.727272C5.2338 0.512096 5.05937 0.337662 4.84419 0.337662ZM6.01302 1.11688H11.4676V2.28571C11.4676 2.93124 11.9909 3.45455 12.6364 3.45455C13.2819 3.45455 13.8052 2.93124 13.8052 2.28571V1.11688H15.7533C16.3988 1.11688 16.9221 1.64019 16.9221 2.28571V5.01299H0.558472V2.28571C0.558472 1.64019 1.08178 1.11688 1.7273 1.11688H3.67535V2.28571C3.67535 2.93124 4.19866 3.45455 4.84419 3.45455C5.48971 3.45455 6.01302 2.93124 6.01302 2.28571V1.11688ZM16.9221 12.4156V5.7922H0.558472V12.4156C0.558472 14.3522 2.12838 15.9221 4.06497 15.9221H13.4156C15.3522 15.9221 16.9221 14.3522 16.9221 12.4156ZM5.27125 9.6467C5.43795 9.48807 5.70169 9.49461 5.86032 9.66132L7.54588 11.4327L11.0855 7.59312C11.2414 7.42393 11.505 7.41321 11.6742 7.56919C11.8434 7.72516 11.8541 7.98876 11.6982 8.15796L7.85705 12.3246C7.69381 12.5017 7.41487 12.5039 7.24885 12.3294L5.25662 10.2358C5.09799 10.0691 5.10454 9.80533 5.27125 9.6467Z"
+        //     fill={
+        //       router.query.role === "manage_members" ? "#009999" : "#344563"
+        //     }
+        //   />
+        // </svg>
+        <img src="/assets/mockup/manage-member-icon.png" style={{ width: 17, height: 17 }} />
+      ),
+    },
+    {
+      path: "user_profile",
+      name: "User Profile",
+      component: UserProfile ,
       icon: (
         // <svg
         //   width="17"
