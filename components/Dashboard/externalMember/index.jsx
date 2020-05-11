@@ -89,7 +89,7 @@ export default class ExternalMember extends Component {
                     </td> */}
                     <td className="td3-m"><input type='email' name="email" value={val.email} onChange={(e) => this._onChange(e, index)} /></td>
                     <td className="td4-m"><input type='text' name='phoneNumber' value={val.phoneNumber} onChange={(e) => this._onChange(e, index)} /></td>
-                    <td className="td5-m"><button onClick={() => this.deleteRow(index)}><img src="/assets/mockup/delete-icon.png" style={{ width: 14, height: 16 }} /></button></td>
+                    <td className="td5-m"><button onClick={() => this.deleteRow(index)}><img src="/assets/mockup/delete-icon.png" /></button></td>
                   </tr>
                 ))}
               </tbody>

@@ -96,7 +96,7 @@ export default class Sendcommunication extends Component {
                   <label><Image className='attachment-icon' src={'/assets/mockup/attachment-icon-16px.png'} /></label>
                   <input id="fileButton" type="file" hidden />
                   <button className="fileUpload-btn" onClick={this.fileUploadButton}>
-                    Image Upload
+                    Upload Document
                   </button>
                   <span>{this.state.fileUploadState.length > 2 ? this.state.fileUploadState[this.state.fileUploadState.length - 1] : this.state.fileUploadState[0]}</span>
                   <span>Optional</span>

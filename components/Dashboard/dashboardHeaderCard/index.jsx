@@ -2,14 +2,14 @@ import React from "react";
 import { Card, CardBody, Row } from "reactstrap";
 import "../../../styles/dashboard/dashboardHeaderCard/index.scss";
 
-export const DashboardHeaderCard = () => {
+export const DashboardHeaderCard = ({title}) => {
   return (
     <Card className="main-card">
       <CardBody>
         <Row>
           <div className="card-body ">
             <p className="view-residents-title">
-              Turner Hill HomeOwners Association
+              {title}
             </p>
             <p className="view-residents-address">
               2 Barnum place, Ridgefeild CT 06877

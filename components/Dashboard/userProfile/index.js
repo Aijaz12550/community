@@ -36,7 +36,7 @@ export default class UserProfile extends Component {
   render() {
     return (
       <div
-        className="content manage-member-component"
+        className="content user-profile-component"
         key={Date.now() + 5765}
       >
         <Row className="MT60 section-top">

@@ -154,12 +154,16 @@
     .td5-m{
       width: 30px !important;
       button{
-       background: #E91E63;
-       border-radius: 15px;
+       background: #ffffff;
+       padding: 0px;
        width: 30px;
        height: 30px;
        border: none;
        outline: none;
+       img{
+         width: 21px;
+         height: 25px;
+       }
       }
     }
   }
@@ -282,6 +286,12 @@
         .dropDownInput {
           font-size: 12px !important;
         }
+        .td5-m{
+          img{
+            width: 18px !important;
+            height: 22px !important;
+          }
+        }
       }
     }
     .add-btn-row {
@@ -388,64 +398,6 @@
     }
   }
 
-  // @media screen and (max-width: 900px) {
-  //   table {
-  //     max-height: calc(100vh - 250px);
-  //     thead {
-  //       tr {
-  //         margin-bottom: 10px;
-  //         th {
-  //           font-size: 9px !important;
-  //           height: 2px !important;
-  //           line-height: 2px !important;
-  //         }
-  //       }
-  //     }
-  //     tbody {
-  //       max-height: calc(100vh - 400px);
-  //       input {
-  //         font-size: 10px !important;
-  //       }
-  //       .dropDownInput {
-  //         font-size: 10px !important;
-  //       }
-  //     }
-  //   }
-  //   .invite-btn-row {
-  //     .invite-span {
-  //       .add-row-invitation-btn {
-  //         .add-btn {
-  //           width: 35px;
-  //           height: 35px;
-  //           border-radius: 18px;
-  //         }
-  //         .add-btn:hover {
-  //           box-shadow: 0px 0px 8px 2px #ccc;
-  //         }
-  //       }
-  //       p {
-  //         font-size: 10px !important;
-  //       }
-  //     }
-  //   }
-  //   .invite-send-row {
-  //     .send-invite-box {
-  //       .reset-invite {
-  //         width: 66px !important;
-  //         height: 22px !important;
-  //         font-size: 10px !important;
-  //         margin-right: 30px !important;
-  //       }
-  //       .send-invite-btn {
-  //         width: 140px !important;
-  //         height: 35px !important;
-  //         border-radius: 35px !important;
-  //         font-size: 10px !important;
-  //       }
-  //     }
-  //   }
-  // }
-
   @media screen and (max-width: 500px) {
     table {
       max-height: calc(100vh - 275px) !important;
@@ -460,6 +412,12 @@
         max-height: calc(100vh - 320px) !important;
         td th {
           margin-right: 2px !important;
+        }
+        .td5-m{
+          img{
+            width: 15px !important;
+            height: 18px !important;
+          }
         }
       }
     }

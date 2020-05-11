@@ -3,6 +3,7 @@ import InviteResident from "../inviteResident";
 import ExternalMember from "../externalMember";
 import ManageDocument from "../manageDocument";
 import ManageMember from "../manageMember";
+import ChangeCommunity from "../changeCommunity";
 import SendCommunication from "../sendCommunication";
 import UserProfile from "../userProfile";
 import React from "react";
@@ -12,6 +13,30 @@ export let routes = () => {
   let router = useRouter();
 
   return [
+    {
+      path: "change_community",
+      name: "Change Community",
+      component: ChangeCommunity,
+      icon: (
+        // <svg
+        //   width="18"
+        //   height="18"
+        //   viewBox="0 0 18 18"
+        //   fill="none"
+        //   xmlns="http://www.w3.org/2000/svg"
+        // >
+        //   <path
+        //     fillRule="evenodd"
+        //     clipRule="evenodd"
+        //     d="M1.85716 0.666748H6.61907C7.27655 0.666748 7.80954 1.19974 7.80954 1.85722V6.61913C7.80954 7.27661 7.27655 7.8096 6.61907 7.8096H1.85716C1.19968 7.8096 0.666687 7.27661 0.666687 6.61913V1.85722C0.666687 1.19974 1.19968 0.666748 1.85716 0.666748ZM11.3809 10.1905H16.1429C16.8003 10.1905 17.3333 10.7235 17.3333 11.381V16.1429C17.3333 16.8004 16.8003 17.3334 16.1429 17.3334H11.3809C10.7235 17.3334 10.1905 16.8004 10.1905 16.1429V11.381C10.1905 10.7235 10.7235 10.1905 11.3809 10.1905ZM11.3809 0.666748H16.1429C16.8003 0.666748 17.3333 1.19974 17.3333 1.85722V6.61913C17.3333 7.27661 16.8003 7.8096 16.1429 7.8096H11.3809C10.7235 7.8096 10.1905 7.27661 10.1905 6.61913V1.85722C10.1905 1.19974 10.7235 0.666748 11.3809 0.666748ZM1.85716 10.1905H6.61907C7.27655 10.1905 7.80954 10.7235 7.80954 11.381V16.1429C7.80954 16.8004 7.27655 17.3334 6.61907 17.3334H1.85716C1.19968 17.3334 0.666687 16.8004 0.666687 16.1429V11.381C0.666687 10.7235 1.19968 10.1905 1.85716 10.1905Z"
+        //     fill={
+        //       router.query.role === "view_residents" ? "#009999" : "#344563"
+        //     }
+        //   />
+        // </svg>
+        <img src="/assets/mockup/view-resident-icon.png" style={{ width: 17, height: 17 }} />
+      ),
+    },
     {
       path: "view_residents",
       name: "View Residents",

@@ -1,6 +1,3 @@
-.M0 {
-  margin: 0;
-}
 .PT0 {
   padding-top: 0;
 }
@@ -9,9 +6,6 @@
 }
 .PL5 {
   padding-left: 5px;
-}
-.ML13 {
-  padding-left: 13px;
 }
 .PL30 {
   padding-left: 30px;
@@ -31,14 +25,35 @@
 .PL46 {
   padding-left: 46px;
 }
+.PT60{
+  padding-top: 60px;
+}
+.PL90{
+  padding-left: 90px;
+}
+.PR90{
+  padding-right: 90px;
+}
+.M0 {
+  margin: 0;
+}
+.ML13 {
+  padding-left: 13px;
+}
 .ML20 {
   margin-left: 20px;
+}
+.MB-30 {
+  margin-bottom: 30px;
 }
 .MT60 {
   margin-top: 60px;
 }
 .MT18 {
   margin-top: 18px;
+}
+.MT130{
+  margin-top: 130px;
 }
 
 .bg-white {
