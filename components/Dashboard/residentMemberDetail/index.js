@@ -56,7 +56,7 @@ class ResidentMemberDetail extends Component {
                 <th className="td4-m">Member Since</th>
               </tr>
             </thead>
-            <tbody className="scrollBarStyle-Y tBody">
+            <tbody className="scrollBarStyle-Y tBody-1">
               {this.props?.trData?.familyMember.map((data1, index) => (
                 <tr className="residents-table-row-modal" key={index}>
                   <td className="td1-m PL30">

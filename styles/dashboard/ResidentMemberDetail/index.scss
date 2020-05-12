@@ -114,7 +114,7 @@
       display: flex;
       justify-content: flex-end;
     }
-    .tBody {
+    .tbody-1 {
       display: flex;
       flex-direction: column;
       max-height: 50vh;
@@ -139,29 +139,30 @@
           line-height: 22px;
           color: #344563;
         }
-        .memberName-div{
-          display: 'flex';
-          flex-direction: 'column'; 
-          .memberName{
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 21px;
-            color: #344563;
-            margin-bottom: 3px;
-          }
-          .memberRole{
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 600;
-            font-size: 13px;
-            line-height: 18px;
-            display: flex;
-            align-items: center;
-            color: #009999;
-          }
-        }
+        
+      }
+    }
+    .memberName-div{
+      display: 'flex';
+      flex-direction: 'column'; 
+      .memberName{
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        color: #344563;
+        margin-bottom: 3px;
+      }
+      .memberRole{
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        color: #009999;
       }
     }
     thead {
@@ -223,7 +224,7 @@
 
 @media screen and (max-width: 1100px) {
   
-  tBody {
+  .tBody-1 {
     display: flex;
     flex-direction: column;
     max-height: 30vh;
@@ -343,7 +344,7 @@
     width: 100% !important;
   }
 
-  .tBody {
+  .tbody-1 {
     display: flex;
     flex-direction: column;
     max-height: 30vh;
@@ -465,7 +466,7 @@
   }
 
   .contained-modal-title-vcenter {
-    .tBody {
+    .tbody-1 {
       display: flex;
       flex-direction: column;
       max-height: 30vh;

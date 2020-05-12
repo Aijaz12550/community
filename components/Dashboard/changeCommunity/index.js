@@ -4,7 +4,7 @@ import { Image } from 'react-bootstrap'
 import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
 import "../../../styles/dashboard/changeCommunity/index.scss";
 
-export default class ManageMember extends Component {
+export default class ChangeCommunity extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,7 @@ export default class ManageMember extends Component {
     return (
       <div
         className="content change-community-component"
-        key={Date.now() + 5765}
+        key={Date.now() + 5735}
       >
         <div className="MT130 PT60 PL90 PR90 body-section">
           <Row className='heading'>
@@ -43,7 +43,7 @@ export default class ManageMember extends Component {
                 <div className='find-community-name'>
                   <ul>
                     {this.state.listCommunityName.map((val, index) => (
-                      <li>
+                      <li key={index}>
                         <span className='_icon'><Image src='/assets/mockup/dropdown-list-icon.png' /></span>
                         <span className='list-view'>
                           <span className='name'>{val.name}</span>

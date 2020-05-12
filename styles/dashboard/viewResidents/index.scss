@@ -90,7 +90,7 @@
       .table-tbody {
         display: flex;
         flex-direction: column;
-        height: calc(100vh - 350px);
+        height: calc(100vh - 378px);
         overflow-y: auto;
         overflow-x: auto;
         background: rgb(246, 247, 251);
@@ -155,13 +155,54 @@
     }
   }
 
-  .pagination{
-    position: absolute;
-    display: flex;
+  .pagination-section{
     justify-content: center;
-    bottom: 1px;
-    left: 25%;
-    right: 25%;
+    position: fixed;
+    bottom: 10px;
+    width: calc(100% - 280px);
+    align-items: center;
+    .pagination-nav{
+      height: 59px;
+      width: 70%;
+      align-items: center;
+      display: flex;
+      background: #FFFFFF;
+      opacity: 0.78;
+      border-radius: 500px;
+      justify-content: space-between;
+      padding: 0px 10px;
+      span{
+        .page-link{
+          position: relative;
+          display: block;
+          padding: .5rem .75rem;
+          margin-left: -1px;
+          line-height: 1.25;
+          background-color: #fff;
+          border: none;
+          color: #494F5E;
+          font-size: 18px;
+        }
+      }
+      div{
+        display: flex;
+        flex-direction: row;
+        span{
+          .page-link{
+            position: relative;
+            display: block;
+            padding: .5rem .75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            background-color: #fff;
+            border: none;
+            color: #494F5E;
+            font-size: 18px;
+          }
+        }
+      }
+      
+    }
   }
 
   @media screen and (max-width: 1300px) {
@@ -177,16 +218,7 @@
     }
   }
 
-  @media only screen and (max-width: 1000px) {
-    .table-section {
-      .table-tbody {
-        tr {
-          height: 70px !important;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 991px) {
     .table-section {
       .table-head {
         .th {
@@ -203,6 +235,9 @@
           }
         }
       }
+    }
+    .pagination-section{
+      width: 100%;
     }
   }
 
@@ -285,8 +320,12 @@
           font-size: 10px !important;
           line-height: 10px !important;
         }
+        tr{
+          margin-bottom: 0px !important;
+        }
       }
       .table-tbody {
+        height: calc(100vh - 300px) !important;
         tr {
           height: 35px !important;
         }
@@ -304,15 +343,6 @@
       }
       .Col-3 {
         padding: 2px !important;
-      }
-    }
-  }
-
-  @media screen and (max-height: 650px) {
-    .table-section {
-      height: 260px !important;
-      .table-tbody {
-        height: 255px !important;
       }
     }
   }
@@ -348,15 +378,6 @@
             font-size: 8px !important;
           }
         }
-      }
-    }
-  }
-
-  @media screen and (max-height: 569px) {
-    .table-section {
-      height: 220px !important;
-      .table-tbody {
-        height: 220px !important;
       }
     }
   }
