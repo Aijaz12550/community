@@ -8,9 +8,12 @@ export default class ManageDocument extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableCreate: [{ documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: '' }],
-      addRecord: { documentType: '', upload: '', note: '' },
-      setModalShow: false
+      tableCreate: [{ documentType: 'HOA Bylaws', upload: 'hoa-bylaws.pdf', note: 'hello' }],
+      addRecord: { documentType: 'N/A', upload: '', note: '' },
+      documentTypeList: ['Service Manger', 'HOA Bylaws'],
+      setModalShow: false,
+      hasEdit: false,
+      editIndex: null
     }
   }
 
@@ -21,11 +24,24 @@ export default class ManageDocument extends Component {
   }
 
   addRow = () => {
-    this.setState({
-      tableCreate: [...this.state.tableCreate, this.state.addRecord],
-      addRecord: { documentType: '', upload: '', note: '' },
-      setModalShow:false
-    })
+    if (this.state.hasEdit) {
+      let { tableCreate } = this.state;
+      tableCreate[this.state.editIndex] = this.state.addRecord;
+
+      this.setState({
+        tableCreate,
+        addRecord: { documentType: '', upload: '', note: '' },
+        setModalShow: false,
+        editIndex: null,
+        hasEdit: false
+      })
+    } else {
+      this.setState({
+        tableCreate: [...this.state.tableCreate, this.state.addRecord],
+        addRecord: { documentType: '', upload: '', note: '' },
+        setModalShow: false
+      })
+    }
   }
 
   closeModal = () => {
@@ -46,6 +62,15 @@ export default class ManageDocument extends Component {
     addRecord[e.target.name] = e.target.value
     this.setState({
       addRecord
+    })
+  }
+
+  editRow = (value, index) => {
+    this.setState({
+      addRecord: value,
+      setModalShow: true,
+      editIndex: index,
+      hasEdit: true
     })
   }
 
@@ -73,25 +98,25 @@ export default class ManageDocument extends Component {
                   <tr className="residents-table-row-modal" key={index}>
                     <td className="td1-m PL30">
                       <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <input className='input1' style={{background:'white'}} type='email' name="documentType" value={val.documentType} disabled />
+                        <input className='input1' style={{ background: 'white' }} type='email' name="documentType" value={val.documentType} disabled />
                       </div>
                     </td>
 
                     <td className="td2-m">
                       <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <input className='input2' style={{background:'white'}} type='text' name='upload' value={val.upload} disabled/>
+                        <input className='input2' style={{ background: 'white' }} type='text' name='upload' value={val.upload} disabled />
                       </div>
                     </td>
 
                     <td className="td3-m">
                       <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        <input className='input3' style={{background:'white'}} type='email' name="email" value={val.note} placeholder='Add Note Here' disabled/>
+                        <input className='input3' style={{ background: 'white' }} type='email' name="email" value={val.note} placeholder='Add Note Here' disabled />
                       </div>
                     </td>
                     <td className="td4-m">
                       <div>
                         <span>
-                          <button className='btn'>
+                          <button className='btn' onClick={() => this.editRow(val, index)}>
                             <Image className=''
                               src={'/assets/mockup/edit-row.png'}
                             />
@@ -139,7 +164,7 @@ export default class ManageDocument extends Component {
           <Modal.Body>
             <Row className='row-1' >
               <Col>
-                <p>Add Document</p>
+                <p>{this.state.hasEdit ? 'Edit Document' : 'Add Document'}</p>
               </Col>
             </Row>
             <Row className='row-2'>
@@ -151,10 +176,28 @@ export default class ManageDocument extends Component {
               <Col>
                 {/* value={val.role} onChange={(e) => this.dropDownChanging(e, index)}  */}
                 <div>
-                  <select className='dropDownInput' name='documentType' value={this.state.addRecord.documentType} onChange={(e) => this._onchange(e)} >
-                    <option value="N/A">N/A</option>
-                    <option value="Service Manager">Service Manager</option>
-                  </select>
+                  {this.state.hasEdit ?
+                    <select className='dropDownInput' name='documentType' value={this.state.addRecord.documentType} onChange={(e) => this._onchange(e)} >
+                      <option key='selected' value={this.state.addRecord.documentType}>{this.state.addRecord.documentType}</option>
+                      {this.state.documentTypeList.map((val, index) => (
+                        <>
+                          {val !== this.state.addRecord.documentType ?
+                            <option key={index} value={val}>{val}</option>
+                            : null
+                          }
+                        </>
+                      ))}
+                    </select>
+                    :
+
+                    <select className='dropDownInput' name='documentType' value={this.state.addRecord.documentType} onChange={(e) => this._onchange(e)} >
+                      <option key='disable' value='N/A' disabled>N/A</option>
+                      {this.state.documentTypeList.map((value, index) => (
+                        <option key={index} value={value}>{value}</option>
+                      ))}
+                    </select>
+                  }
+
                 </div>
               </Col>
             </Row>
@@ -179,7 +222,7 @@ export default class ManageDocument extends Component {
             </Row>
             <Row className='row-7'>
               <Col>
-                <button onClick={this.addRow}>Save</button>
+                <button onClick={this.addRow}>{this.state.hasEdit ? 'Update' : 'Save'}</button>
               </Col>
             </Row>
           </Modal.Body>
