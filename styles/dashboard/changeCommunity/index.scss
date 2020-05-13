@@ -192,6 +192,7 @@
           ul{
             li{
               height: 40px !important;
+              padding: 2px 5px !important;
               ._icon{
                 img{
                   width: 20px !important;
@@ -200,32 +201,15 @@
               }
               .list-view{
                 .name{
-                  font-size: 14px !important;
-                  line-height: 18px !important;
-                }
-                .location{
                   font-size: 12px !important;
                   line-height: 15px !important;
                 }
+                .location{
+                  font-size: 10px !important;
+                  line-height: 12px !important;
+                }
+                
               }
-            }
-          }
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .content-data{
-      .find-community-name{
-        ul{
-          li{
-            .name{
-              font-size: 12px !important;
-              line-height: 15px !important;
-            }
-            .location{
-              font-size: 10px !important;
-              line-height: 12px !important;
             }
           }
         }

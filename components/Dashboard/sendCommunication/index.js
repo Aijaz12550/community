@@ -108,18 +108,9 @@ export default class Sendcommunication extends Component {
                 <div className="toggle-row">
                   <label>Importance:</label>
                   <span>
-                    <input
-                      className="react-switch-checkbox"
-                      id={`react-switch-new`}
-                      type="checkbox"
-                    />
-                    <label
-                      className="react-switch-label"
-                      htmlFor={`react-switch-new`}
-                    // style={this.state.toggleChange ? { background: '#009999' } : { background: 'gray' }}
-                    // onClick={this.toggleChange}
-                    >
-                      <span className={`react-switch-button`} />
+                    <label className="switch">
+                      <input type="checkbox" />
+                      <span className="slider round"></span>
                     </label>
                   </span>
                 </div>
