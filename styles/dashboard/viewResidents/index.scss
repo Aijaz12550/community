@@ -90,7 +90,7 @@
       .table-tbody {
         display: flex;
         flex-direction: column;
-        height: calc(100vh - 378px);
+        height: calc(100vh - 428px);
         overflow-y: auto;
         overflow-x: auto;
         background: rgb(246, 247, 251);
@@ -161,6 +161,7 @@
     bottom: 10px;
     width: calc(100% - 280px);
     align-items: center;
+    margin-bottom: 51px;
     .pagination-nav{
       height: 59px;
       width: 70%;
@@ -183,22 +184,35 @@
           color: #494F5E;
           font-size: 18px;
         }
+        .page-link:hover{
+          color: #009999;
+        }
       }
       div{
         display: flex;
         flex-direction: row;
-        span{
-          .page-link{
-            position: relative;
-            display: block;
-            padding: .5rem .75rem;
-            margin-left: -1px;
-            line-height: 1.25;
-            background-color: #fff;
-            border: none;
-            color: #494F5E;
-            font-size: 18px;
-          }
+      }
+      .next-page-btn{
+        padding: 0px;
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.06);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        justify-content: center;
+        display: flex;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #FFFFFF;
+        i{
+          color: #000000;
+        }
+      }
+
+      .next-page-btn:hover{
+        background: #009999;
+        i{
+          color: #FFFFFF;
         }
       }
       
@@ -264,6 +278,7 @@
           height: 50px !important;
         }
         .residents-table-row {
+          margin-bottom: 3px !important;
           .Col-1 {
             font-size: 12px !important;
             margin-left: 5px !important;
@@ -279,6 +294,21 @@
       }
       .Col-3 {
         padding: 2px !important;
+      }
+    }
+    .pagination-section{
+      margin-bottom: 25px !important;
+      .pagination-nav{
+        height: 40px !important;
+        span{
+          .page-link{
+            font-size: 14px !important;
+          }
+        }
+        .next-page-btn{
+          width: 30px !important;
+          height: 30px !important;
+        }
       }
     }
   }

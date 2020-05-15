@@ -8,11 +8,12 @@ import {
   Input,
   Pagination,
   PaginationItem,
-  PaginationLink
+  PaginationLink,
+
 } from "reactstrap";
 import ResidentMemberDetail from "../residentMemberDetail";
 import { DashboardHeaderCard } from "../dashboardHeaderCard";
-import { Table } from "react-bootstrap";
+import { Table, Image } from "react-bootstrap";
 import Images from "../imageRow";
 
 import "../../../styles/dashboard/viewResidents/index.scss";
@@ -954,9 +955,9 @@ export const ViewResident = (props) => {
         </Row>
         <Row className='pagination-section'>
           <div className='pagination-nav' aria-label="Page navigation example">
-            <span>
-              <PaginationLink previous href="#" />
-            </span>
+            <button className='next-page-btn'>
+              <i className="fas fa-chevron-left" />
+            </button>
             <div>
               <span>
                 <PaginationLink href="#">1</PaginationLink>
@@ -974,9 +975,9 @@ export const ViewResident = (props) => {
                 <PaginationLink href="#">5</PaginationLink>
               </span>
             </div>
-            <span>
-              <PaginationLink next href="#" />
-            </span>
+            <button className='next-page-btn'>
+              <i className="fas fa-chevron-right" />
+            </button>
           </div>
         </Row>
       </div>
