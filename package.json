@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "env-cmd --environments dev --file ./.env-cmdrc next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "env-cmd --environments dev --file ./.env-cmdrc next build",
+    "start": "env-cmd --environments dev --file ./.env-cmdrc next start"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
