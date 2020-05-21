@@ -7,7 +7,7 @@
     "build": "env-cmd --environments dev --file ./.env-cmdrc next build",
     "start": "env-cmd --environments dev --file ./.env-cmdrc next start",
     "forever": "env-cmd --environments dev --file ./.env-cmdrc forever start server/index.js",
-    "stop": "env-cmd --environments dev --file ./.env-cmdrc forever stop server/index.js",
+    "stop": "forever stop server/index.js",
     "server": "env-cmd --environments dev --file ./.env-cmdrc node server/index.js"
   },
   "dependencies": {
