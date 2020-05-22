@@ -10,9 +10,6 @@ app
   .prepare()
   .then(() => {
     const server = express();
-    server.get("/hello", (req, res) => {
-      res.send(process.env);
-    });
     server.get("*", (req, res) => {
       return handle(req, res);
     });
