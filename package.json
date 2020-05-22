@@ -6,7 +6,7 @@
     "dev": "env-cmd --environments dev --file ./.env-cmdrc next dev",
     "build": "env-cmd --environments dev --file ./.env-cmdrc next build",
     "start": "env-cmd --environments dev --file ./.env-cmdrc next start",
-    "pm2": "env-cmd --environments prod --file ./.env-cmdrc pm2 start server/index.js",
+    "prod": "env-cmd --environments prod --file ./.env-cmdrc pm2 start server/index.js",
     "stop": "pm2 stop server/index.js",
     "server": "env-cmd --environments dev --file ./.env-cmdrc node server/index.js"
   },
