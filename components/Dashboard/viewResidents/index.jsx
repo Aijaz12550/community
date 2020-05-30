@@ -6,21 +6,16 @@ import {
   InputGroupAddon,
   InputGroupText,
   Input,
-  Pagination,
-  PaginationItem,
   PaginationLink,
-
 } from "reactstrap";
 import ResidentMemberDetail from "../residentMemberDetail";
 import { DashboardHeaderCard } from "../dashboardHeaderCard";
-import { Table, Image } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import Images from "../imageRow";
 
 import "../../../styles/dashboard/viewResidents/index.scss";
 
 export const ViewResident = (props) => {
-
-  console.log('>>>>>>>> FUN + DATA ===>', props)
   let data = [
     {
       dataID: 1,
@@ -28,30 +23,30 @@ export const ViewResident = (props) => {
       familyMember: [
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img2.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
-        }
+          memberSince: "10 September 2018",
+        },
       ],
-      residenceSince: "10 September 2018"
+      residenceSince: "10 September 2018",
     },
     {
       dataID: 1,
@@ -59,30 +54,30 @@ export const ViewResident = (props) => {
       familyMember: [
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img2.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
-        }
+          memberSince: "10 September 2018",
+        },
       ],
-      residenceSince: "10 September 2018"
+      residenceSince: "10 September 2018",
     },
     {
       dataID: 2,
@@ -90,78 +85,78 @@ export const ViewResident = (props) => {
       familyMember: [
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Owais Warsi",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
-        }
+          memberSince: "10 September 2018",
+        },
       ],
-      residenceSince: "10 September 2018"
+      residenceSince: "10 September 2018",
     },
     {
       dataID: 3,
@@ -169,78 +164,78 @@ export const ViewResident = (props) => {
       familyMember: [
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 June 2018"
+          memberSince: "10 June 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 June 2018"
+          memberSince: "10 June 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 June 2018"
+          memberSince: "10 June 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 June 2018"
+          memberSince: "10 June 2018",
         },
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 June 2018"
+          memberSince: "10 June 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 June 2018"
+          memberSince: "10 June 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 June 2018"
+          memberSince: "10 June 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 June 2018"
+          memberSince: "10 June 2018",
         },
         {
           memberName: "Owais Warsi",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 June 2018"
-        }
+          memberSince: "10 June 2018",
+        },
       ],
-      residenceSince: "10 June 2018"
+      residenceSince: "10 June 2018",
     },
     {
       dataID: 4,
@@ -248,78 +243,78 @@ export const ViewResident = (props) => {
       familyMember: [
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Owais Warsi",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
-        }
+          memberSince: "10 September 2018",
+        },
       ],
-      residenceSince: "10 September 2018"
+      residenceSince: "10 September 2018",
     },
     {
       dataID: 5,
@@ -327,78 +322,78 @@ export const ViewResident = (props) => {
       familyMember: [
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Owais Warsi",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
-        }
+          memberSince: "10 September 2018",
+        },
       ],
-      residenceSince: "10 September 2018"
+      residenceSince: "10 September 2018",
     },
     {
       dataID: 6,
@@ -406,78 +401,78 @@ export const ViewResident = (props) => {
       familyMember: [
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Owais Warsi",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
-        }
+          memberSince: "10 September 2018",
+        },
       ],
-      residenceSince: "10 September 2018"
+      residenceSince: "10 September 2018",
     },
     {
       dataID: 7,
@@ -485,79 +480,79 @@ export const ViewResident = (props) => {
       familyMember: [
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Brii Ritter",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Wilam Carry",
-          memberRole: 'Community Manager',
+          memberRole: "Community Manager",
           memberImage: "/assets/mockup/img1.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Jhon Doe",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img3.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Walter Obrain",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img4.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
+          memberSince: "10 September 2018",
         },
         {
           memberName: "Owais Warsi",
-          memberRole: '',
+          memberRole: "",
           memberImage: "/assets/mockup/img5.png",
           phoneNumber: "(217) 555-0113",
           emailAddress: "seth.olson@example.com",
-          memberSince: "10 September 2018"
-        }
+          memberSince: "10 September 2018",
+        },
       ],
-      residenceSince: "10 September 2018"
-    }
+      residenceSince: "10 September 2018",
+    },
   ];
 
   const [modalShow, setModalShow] = useState(false);
@@ -571,7 +566,7 @@ export const ViewResident = (props) => {
   }
 
   function searchHandleChange(value) {
-    const results = data.filter(person =>
+    const results = data.filter((person) =>
       person.address.toLowerCase().includes(value.toLowerCase())
     );
     if (value && results.length === 0) {
@@ -603,7 +598,7 @@ export const ViewResident = (props) => {
                 <Input
                   placeholder="Search..."
                   className="bg-white outline-none"
-                  onChange={event => searchHandleChange(event.target.value)}
+                  onChange={(event) => searchHandleChange(event.target.value)}
                 />
               </InputGroup>
             </form>
@@ -623,9 +618,9 @@ export const ViewResident = (props) => {
               {noMatchSearchData ? (
                 <tbody></tbody>
               ) : (
-                  <tbody className="scrollBarStyle-Y table-tbody">
-                    {searchData.length
-                      ? searchData.map((data1, index) => (
+                <tbody className="scrollBarStyle-Y table-tbody">
+                  {searchData.length
+                    ? searchData.map((data1, index) => (
                         <tr
                           className="residents-table-row"
                           key={index}
@@ -647,7 +642,7 @@ export const ViewResident = (props) => {
                           </td>
                         </tr>
                       ))
-                      : data.map((data1, index) => (
+                    : data.map((data1, index) => (
                         <tr
                           className="residents-table-row"
                           key={index + 6767}
@@ -669,14 +664,14 @@ export const ViewResident = (props) => {
                           </td>
                         </tr>
                       ))}
-                  </tbody>
-                )}
+                </tbody>
+              )}
             </Table>
           </Col>
         </Row>
-        <Row className='pagination-section'>
-          <div className='pagination-nav' aria-label="Page navigation example">
-            <button className='next-page-btn'>
+        <Row className="pagination-section">
+          <div className="pagination-nav" aria-label="Page navigation example">
+            <button className="next-page-btn">
               <i className="fas fa-chevron-left" />
             </button>
             <div>
@@ -696,7 +691,7 @@ export const ViewResident = (props) => {
                 <PaginationLink href="#">5</PaginationLink>
               </span>
             </div>
-            <button className='next-page-btn'>
+            <button className="next-page-btn">
               <i className="fas fa-chevron-right" />
             </button>
           </div>

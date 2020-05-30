@@ -18,7 +18,6 @@ export class GoogleLogin extends Component {
     const ga = window.gapi.auth2.getAuthInstance();
     ga?.signIn().then(
       (googleUser) => {
-        console.log("google ===>", googleUser);
         let payload ;
         // = {
         //   grant_type: "password",
@@ -58,7 +57,6 @@ export class GoogleLogin extends Component {
         let formData = new FormData()
 
         formData.append(HTMLFormElement,formDiv)
-        console.log("formDiv", formDiv);
         this.props
           ._socialLogin(formData)
           .then((data) => {

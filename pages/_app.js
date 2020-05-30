@@ -38,7 +38,6 @@ export default withRouter(
           router.pathname.startsWith("/signIn") &&
           prevProps.Component != this.props.Component
         ) {
-          console.log("jjdgjhg", this.props.Component);
           this.setState({
             ComponentTorender: Signin,
           });

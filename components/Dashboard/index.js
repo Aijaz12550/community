@@ -1,11 +1,11 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { SideBar } from "./sidebar";
 import NavBar from "./navbar";
 import { routes } from "./dashboardRoutes";
 import { useRouter } from "next/router";
 export * from "./viewResidents";
 
-export const DashBoard = ({ users,_signout, _inviteMember, _residents, ResidentsReducer }) => {
+export const DashBoard = (props) => {
   const router = useRouter();
   return (
     <div className="wrapper">
@@ -14,7 +14,7 @@ export const DashBoard = ({ users,_signout, _inviteMember, _residents, Residents
         className="main-panel"
         style={{ background: "#F6F7FB", height: "100%" }}
       >
-        <NavBar _signout={_signout}/>
+        <NavBar _signout={props._signout} />
         <div
           style={{
             display: "flex",
@@ -26,13 +26,7 @@ export const DashBoard = ({ users,_signout, _inviteMember, _residents, Residents
             if (router?.query?.role === val.path) {
               return (
                 <div key={key} style={{ padding: "10px" }}>
-                  <val.component 
-                  users = {users}
-                  _signout = {_signout}
-                  _inviteMember = {_inviteMember}
-                  _residents = {_residents}
-                  ResidentsReducer = {ResidentsReducer}
-                  />
+                  <val.component {...props} />
                 </div>
               );
             }

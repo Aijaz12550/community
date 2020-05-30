@@ -6,7 +6,6 @@ const initialState = {
 const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SIGNIN":
-      console.log('reducer',action)
       return {
         ...state,
         user: action.payload,

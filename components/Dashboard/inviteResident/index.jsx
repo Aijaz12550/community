@@ -58,6 +58,10 @@ export default class InviteResident extends Component {
     this.setState({ invitationData })
   }
 
+  inviteSendFunc = () => {
+    
+  }
+
   render() {
     return (
       <div className="content invite-resident-component">
@@ -121,7 +125,7 @@ export default class InviteResident extends Component {
             <span className='send-invite-box'>
               <button className='reset-invite' onClick={this.resetTable}>
                 <Image className='add-btn' src={'/assets/mockup/reset-icon.png'} />Reset</button>
-              <button className='send-invite-btn'>Invite Send</button>
+              <button className='send-invite-btn' onClick={this.inviteSendFunc}>Invite Send</button>
             </span>
           </Col>
         </Row>

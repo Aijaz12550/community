@@ -24,12 +24,12 @@ export const socialLogin = (payload) => {
       await _axios
         .post(`users/login/${payload.provider}`, { ...payload })
         .then((res) => {
-          console.log('res',res)
+          console.log("res", res);
           dispatch(signin(res.data));
           resolve(res);
         })
         .catch((err) => {
-          console.log('err',err)
+          console.log("err", err);
           reject(err);
         });
     });
