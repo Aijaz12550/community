@@ -282,7 +282,7 @@ export default class ManageDocument extends Component {
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          className="add-record-modal"
+          className='add-record-modal-manage-document'
         >
           <Modal.Header closeButton>
             <span onClick={this.closeModal}>

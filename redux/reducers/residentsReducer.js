@@ -5,7 +5,7 @@ const initialState = {
   residentsError: {},
 };
 
-export const ResidentsReducer = (state = initialState, { payload,type }) => {
+export const ResidentsReducer = (state = initialState, { payload, type }) => {
   switch (type) {
     case COMMUNITY_RESIDENTS:
       return {

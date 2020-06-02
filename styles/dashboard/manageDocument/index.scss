@@ -390,15 +390,16 @@
     }
   }
 }
-.add-record-modal{
+.add-record-modal-manage-document{
   // display: flex;
   .modal-dialog-centered{
-    width: 470px !important;
-    height: 635px !important;
+    width: 470px;
+    height: 635px;
     margin: auto !important;
+    justify-content: center;
     .modal-content{
-      width: 470px !important;
-      height: 635px !important;
+      width: 470px;
+      height: 635px;
       .modal-header{
         padding: 0px !important;
         display: flex;
@@ -429,6 +430,7 @@
         margin: 0px 40px 40px 40px;
         padding: 0px !important;
         .row-1{
+          width: 100% !important;
           margin-bottom: 14px;
           .col{
             p{
@@ -442,6 +444,7 @@
           }
         }
         .row-2{
+          width: 100% !important;
           .col{
             label{
               font-family: 'Open Sans';
@@ -456,6 +459,7 @@
           }
         }
         .row-3{
+          width: 100% !important;
           margin-bottom: 20px;
           .col{
             div{
@@ -486,9 +490,10 @@
           }
         }
         .row-4{
+          width: 100% !important;
           .col{
             div{
-              width: 390px;
+              width: 100%;
               height: 160px;
               background: #FFFFFF;
               border: 1px solid #E9E9E9;
@@ -499,6 +504,7 @@
           }
         }
         .row-5{
+          width: 100% !important;
           .col{
             label{
               font-family: 'Open Sans';
@@ -513,6 +519,7 @@
           }
         }
         .row-6{
+          width: 100% !important;
           .col{
             div{
               width: 100%;
@@ -536,6 +543,7 @@
           }
         }
         .row-7{
+          width: 100% !important;
           button{
             width: 100%;
             height: 50px;
@@ -551,6 +559,20 @@
             border: none;
             outline: none;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .add-record-modal-manage-document{
+    .modal-dialog-centered{
+      width: 100% !important;
+      .modal-content{
+      width: 100% !important;
+        .modal-body{
+          margin: 0px 10px 10px 10px !important;
         }
       }
     }

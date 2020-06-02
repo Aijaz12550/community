@@ -10,26 +10,26 @@ export default class ManageMember extends Component {
 		this.state = {
 			tableCreate: [
 				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
-				// { role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false }
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false },
+				{ role: 'Community Member', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNo: '207 555-0119', hasResident: false, hasDeative: false }
 			],
-			addRecord: { role: 'Community Member', fullName: 'James Smith', email: '', phoneNo: '', hasResident: false, hasDeative: false },
+			addRecord: { role: '', fullName: '', email: '', phoneNo: '', hasResident: false, hasDeative: false },
 			role: ['Community Member', 'Service Manger', 'HOA Bylaws'],
 			setModalShow: false,
 			hasEdit: false,
@@ -88,9 +88,13 @@ export default class ManageMember extends Component {
 	}
 
 	closeModal = () => {
-		this.setState({
-			setModalShow: false
-		})
+		if (this.state.hasAddRow) {
+			this.setState({
+				hasAddRow: false,
+				addRecord: { role: '', fullName: '', email: '', phoneNo: '', hasResident: false, hasDeative: false },
+				hasEdit: false
+			})
+		}
 	}
 
 	deleteRow = (rowIndex) => {
@@ -227,7 +231,7 @@ export default class ManageMember extends Component {
 					size="lg"
 					aria-labelledby="contained-modal-title-vcenter"
 					centered
-					className='add-record-modal'
+					className='add-record-modal-manage-member'
 				>
 					<Modal.Header closeButton>
 						<span onClick={this.closeModal}>
