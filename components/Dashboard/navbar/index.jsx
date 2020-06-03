@@ -13,8 +13,8 @@ import {
   Container,
 } from "reactstrap";
 import { Image } from "react-bootstrap";
-
 import "../../../styles/navbar/index.scss";
+import NotificationList from '../notificationList'
 
 class Header extends React.Component {
   constructor(props) {
@@ -99,7 +99,7 @@ class Header extends React.Component {
                   justifyContent: "flex-end",
                 }}
               >
-                <Dropdown
+                {/* <Dropdown
                   nav
                   isOpen={this.state.dropdownOpenNotification}
                   toggle={(e) => this.dropdownToggleNotification(e)}
@@ -110,14 +110,17 @@ class Header extends React.Component {
                       src="/assets/mockup/Notifications.png"
                     />
                   </DropdownToggle>
-                  <DropdownMenu right className="notification-penal">
+                  
+                  <DropdownMenu right className="">
                     <DropdownItem tag="a">Action</DropdownItem>
                     <DropdownItem tag="a">Another Action</DropdownItem>
                     <DropdownItem tag="a" onClick={this.props._signout}>
                       Sign Out
                     </DropdownItem>
+
                   </DropdownMenu>
-                </Dropdown>
+                </Dropdown> */}
+                    <NotificationList />
 
                 <NavItem
                   style={{
