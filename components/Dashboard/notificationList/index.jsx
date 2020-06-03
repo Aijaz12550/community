@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Overlay, Popover, Image } from "react-bootstrap";
-import List from './list'
+import List from "./list";
 import "../../../styles/dashboard/notificationList/index.scss";
 
 export default function NotificationListComponent() {
@@ -30,54 +30,47 @@ export default function NotificationListComponent() {
         containerPadding={10}
         transition={true}
       >
-        <Popover id="popover-contained"  style={{ minWidth: "30vw",}}>
+        <Popover id="popover-contained" style={{ minWidth: "30vw" }}>
           <div className="notificationList-container">
-
             <div className="notificationList-header">
               <span className="hd">Notifications</span>
               <span className="cross">&#10005;</span>
             </div>
 
-            <div className = "notificationList-body"  >
+            <div className="notificationList-body">
+              <span>Recent</span>
 
-                <span>
-                    Recent
-                </span>
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
 
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
+              <span>Earlier</span>
 
-                <span>
-                   Earlier
-                </span>
-
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />
-                <List />    
-
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
+              <List />
             </div>
           </div>
         </Popover>
