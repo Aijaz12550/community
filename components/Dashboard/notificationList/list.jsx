@@ -3,9 +3,9 @@ import React from "react";
 export default () => {
   return (
     <div className="notification-list-container">
-      <img height={50} width={50} src="/assets/download.jpeg" />
+      <img height={40} width={40} src="/assets/download.jpeg" />
 
-      <div>
+      <div className='list-text-container'>
         <p>jkghjhgjhfggh g,mnjhg ,gjkh kj ghkj kgh gk</p>
       </div>
 

@@ -30,15 +30,24 @@ export default function NotificationListComponent() {
         containerPadding={10}
         transition={true}
       >
-        <Popover id="popover-contained" style={{ minWidth: "30vw" }}>
+        <Popover id="popover-contained" style={{ minWidth: "32vw" }}>
           <div className="notificationList-container">
             <div className="notificationList-header">
-              <span className="hd">Notifications</span>
-              <span className="cross">&#10005;</span>
+              <span className="hd">
+                Notifications <span>2</span>{" "}
+              </span>
+              <span onClick={() => setShow(false)} className="cross">
+                &#10005;
+              </span>
             </div>
 
             <div className="notificationList-body">
-              <span>Recent</span>
+              <span className="sub-hd-recent">Recent</span>
+
+              <List />
+              <List />
+             
+              <span className="list-earlier">Earlier</span>
 
               <List />
               <List />
@@ -46,31 +55,7 @@ export default function NotificationListComponent() {
               <List />
               <List />
               <List />
-              <List />
-
-              <span>Earlier</span>
-
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
-              <List />
+            
             </div>
           </div>
         </Popover>
