@@ -1,0 +1,43 @@
+.hero-part1-container {
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 40vh;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    display: block;
+  }
+  .main-heading {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    
+    font-size: clamp(16px, 4vw, 32px);
+    line-height: 56px;
+
+    text-align: center;
+
+    color: #344563;
+  }
+
+  .sub-heading-1 {
+    font-family: Open Sans;
+    font-style: normal;
+    font-size: clamp(16px, 3vw, 28px);
+    line-height: 56px;
+    text-align: center;
+    color: #344563;
+  }
+
+  .sub-heading-2{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: clamp(16px, 3vw, 20px);
+    line-height: 36px;
+    text-align: center;
+    color: #6C7B8A;
+  }
+
+}

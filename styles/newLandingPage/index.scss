@@ -1,0 +1,68 @@
+.landingpage-container {
+  background: linear-gradient(
+    180deg,
+    #f0f9f9 36.46%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  min-height: 97vh;
+
+  .body-and-footer-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    min-height: 200px;
+    align-items: center;
+    margin: 15px;
+    margin-top: 40px;
+
+    .app-images-container {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 50%;
+      max-width: 350px;
+      min-width: 200px;
+
+      Image {
+        margin: 5px;
+      }
+    }
+
+    .mob-app-hint{
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: clamp(16px, 3vw, 24px);
+        line-height: 33px;
+        text-align: center;
+        color: #344563;
+        max-width: 700px;
+    }
+    .query-address {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: clamp(13px, 3vw, 16px);
+        line-height: 22px;
+        text-align: center;
+        
+        /* text/primary */
+        
+        color: #344563;
+    }
+  }
+}
+
+.landing-page-footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+  padding-bottom: 20px;
+
+  div{
+      span{
+          margin-right: 25px;
+      }
+  }
+}
