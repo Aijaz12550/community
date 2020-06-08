@@ -7478,3 +7478,22 @@ a:focus {
   background-color: rgb(0, 153, 153);
   overflow-x: auto;
 }
+
+.navbar-brand{
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.theme-color{
+  background-color: '#F6F7FB';
+}
+.use-on-email{
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #6C7B8A;
+}

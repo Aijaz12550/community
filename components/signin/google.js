@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Image } from 'react-bootstrap'
 
 export class GoogleLogin extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export class GoogleLogin extends Component {
     const ga = window.gapi.auth2.getAuthInstance();
     ga?.signIn().then(
       (googleUser) => {
-        let payload ;
+        let payload;
         // = {
         //   grant_type: "password",
         //   provider: "GOOGLE",
@@ -31,32 +32,32 @@ export class GoogleLogin extends Component {
         // payload.provider = ("provider", "GOOGLE")
         // payload.username = ("username", googleUser.Pt.yu )
         // payload.password = ("password", googleUser.tc.id_token)
-        
+
         let formDiv = document.createElement('div')
 
         let input_ = document.createElement('input')
         input_.setAttribute('key', "grant_type")
-        input_.setAttribute("value","password")
+        input_.setAttribute("value", "password")
         formDiv.appendChild(input_)
 
         let input__ = document.createElement('input')
-        input__.setAttribute('key',"provider")
-        input__.setAttribute("value","GOOGLE")
+        input__.setAttribute('key', "provider")
+        input__.setAttribute("value", "GOOGLE")
         formDiv.appendChild(input__)
 
         let input___ = document.createElement('input')
-        input___.setAttribute("key","username")
-        input___.setAttribute("value",googleUser.Pt.yu)
+        input___.setAttribute("key", "username")
+        input___.setAttribute("value", googleUser.Pt.yu)
         formDiv.appendChild(input___)
 
         let input____ = document.createElement('input')
-        input____.setAttribute("key","password")
-        input____.setAttribute('value',googleUser.tc.id_token)
+        input____.setAttribute("key", "password")
+        input____.setAttribute('value', googleUser.tc.id_token)
         formDiv.appendChild(input____)
 
         let formData = new FormData()
 
-        formData.append(HTMLFormElement,formDiv)
+        formData.append(HTMLFormElement, formDiv)
         this.props
           ._socialLogin(formData)
           .then((data) => {
@@ -94,7 +95,7 @@ export class GoogleLogin extends Component {
   render() {
     return (
       <button className="google-login-btn" onClick={this.signIn}>
-        continue with Google
+        <Image className='apple-icon' src={'/assets/mockup/google-icon.png'} />Continue with Google
       </button>
     );
   }
