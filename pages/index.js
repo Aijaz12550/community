@@ -2,6 +2,7 @@ import Head from "next/head";
 import LandingPage from "./landingPage";
 import "../styles/assets/css/dashboard.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import { DashBoard } from "../components";
 import { GetToken } from "$config";
 
@@ -20,7 +21,6 @@ const Home = () => (
         href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
       ></link>
     </Head>
-
     <LandingPage />
     {/* <DashBoard /> */}
     {/* <GetToken/> */}

@@ -2,7 +2,13 @@ import React, { Component } from "react";
 import { Row, Col, Table, Input } from "reactstrap";
 import { Image, Modal } from "react-bootstrap";
 import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
-import { getDocument, addDocument } from "$middleware";
+import {
+  getDocument,
+  addDocument,
+  deleteDocument,
+  updateDocument,
+  documentType,
+} from "$middleware";
 import "../../../styles/dashboard/manageDocument/index.scss";
 
 export default class ManageDocument extends Component {
@@ -13,16 +19,17 @@ export default class ManageDocument extends Component {
         {
           documentType: "HOA Bylaws",
           upload: "hoa-bylaws.pdf",
-          note: "hello",
+          notes: "hello",
           file: "",
         },
       ],
       addRecord: {
         documentType: "N/A",
         upload: "",
-        note: "",
+        notes: "",
         file: "",
         docType: "",
+        documentId: "",
       },
       documentTypeList: ["DOC"],
       setModalShow: false,
@@ -38,8 +45,8 @@ export default class ManageDocument extends Component {
       },
       dispatch,
     } = this.props;
-    console.log(communityId, "asdfas");
     dispatch(getDocument(communityId));
+    dispatch(documentType());
   }
 
   addRowModal = () => {
@@ -55,7 +62,7 @@ export default class ManageDocument extends Component {
 
       this.setState({
         tableCreate,
-        addRecord: { documentType: "", upload: "", note: "" },
+        addRecord: { documentType: "", upload: "", notes: "" },
         setModalShow: false,
         editIndex: null,
         hasEdit: false,
@@ -63,7 +70,7 @@ export default class ManageDocument extends Component {
     } else {
       this.setState({
         tableCreate: [...this.state.tableCreate, this.state.addRecord],
-        addRecord: { documentType: "", upload: "", note: "" },
+        addRecord: { documentType: "", upload: "", notes: "", name: "" },
         setModalShow: false,
       });
     }
@@ -75,13 +82,13 @@ export default class ManageDocument extends Component {
     });
   };
 
-  deleteRow = (rowIndex) => {
-    let filterData = this.state.tableCreate.filter(
-      (val, index) => index !== rowIndex
-    );
-    this.setState({
-      tableCreate: filterData,
-    });
+  deleteRow = (val, rowIndex) => {
+    let deleteRowObj = {
+      communityId: val.communityId,
+      documentId: val.documentId,
+      rowIndex,
+    };
+    this.props.dispatch(deleteDocument(deleteRowObj));
   };
 
   _onchange = (e) => {
@@ -92,9 +99,9 @@ export default class ManageDocument extends Component {
     });
   };
 
-  _saveDocument = () => {
+  _saveDocument = (e) => {
     const {
-      addRecord: { note, documentType, docType, file },
+      addRecord: { notes, documentType, docType, file, documentId },
     } = this.state;
     const {
       AuthReducer: {
@@ -104,16 +111,20 @@ export default class ManageDocument extends Component {
     } = this.props;
     let formdata = new FormData();
     formdata.append("file", file);
-    const addDocumentObj = {
-      Notes: note,
-      category: documentType,
+    const documentObj = {
+      Notes: notes,
+      category: "DOC",
       communityId,
-      docType,
+      docType: documentType,
       file: formdata,
       userId,
     };
-    console.log(addDocumentObj);
-    dispatch(addDocument(addDocumentObj));
+    if (this.state.hasEdit) {
+      documentObj.documentId = documentId;
+      dispatch(updateDocument(documentObj));
+    } else {
+      dispatch(addDocument(documentObj));
+    }
   };
 
   _upload = (e) => {
@@ -121,14 +132,28 @@ export default class ManageDocument extends Component {
     let { addRecord } = this.state;
     addRecord.file = file;
     addRecord.docType = file.type;
+    addRecord.name = file.name;
     this.setState({
       addRecord,
     });
   };
 
-  editRow = (value, index) => {
+  removefile = () => {
     this.setState({
-      addRecord: value,
+      addRecord: { name: "", file: "" },
+    });
+  };
+
+  editRow = (value, index) => {
+    const { notes, documentType, fileName, documentUrl, documentId } = value;
+    this.setState({
+      addRecord: {
+        notes,
+        documentType,
+        name: fileName,
+        file: documentUrl,
+        documentId,
+      },
       setModalShow: true,
       editIndex: index,
       hasEdit: true,
@@ -137,8 +162,9 @@ export default class ManageDocument extends Component {
 
   render() {
     const {
-      documentsReducer: { documents, getDocumentsError },
+      documentsReducer: { documents, getDocumentsError, documentType },
     } = this.props;
+    const { addRecord } = this.state;
     return (
       <div className="content manage-document-component">
         <Row className="MT60 section-top">
@@ -244,7 +270,7 @@ export default class ManageDocument extends Component {
                             </button>
                             <button
                               className="btn"
-                              onClick={() => this.deleteRow(index)}
+                              onClick={() => this.deleteRow(val, index)}
                             >
                               <Image
                                 className=""
@@ -317,7 +343,7 @@ export default class ManageDocument extends Component {
                       >
                         {this.state.addRecord.documentType}
                       </option>
-                      {this.state.documentTypeList.map((val, index) => (
+                      {documentType.map((val, index) => (
                         <>
                           {val !== this.state.addRecord.documentType ? (
                             <option key={index} value={val}>
@@ -337,7 +363,7 @@ export default class ManageDocument extends Component {
                       <option key="disable" value="N/A" disabled>
                         N/A
                       </option>
-                      {this.state.documentTypeList.map((value, index) => (
+                      {documentType.map((value, index) => (
                         <option key={index} value={value}>
                           {value}
                         </option>
@@ -349,9 +375,18 @@ export default class ManageDocument extends Component {
             </Row>
             <Row className="row-4">
               <Col>
-                <label>
-                  <input type="file" onChange={(e) => this._upload(e)} />
-                </label>
+                {addRecord.file ? (
+                  <label>
+                    <span>{addRecord.name}</span>
+                    <span onClick={this.removefile}>x</span>
+                  </label>
+                ) : (
+                  <label className="upload_label">
+                    <input type="file" onChange={(e) => this._upload(e)} />
+                    <span>Upload Documents</span>
+                    <span>or Drop file here</span>
+                  </label>
+                )}
               </Col>
             </Row>
             <Row className="row-5">
@@ -364,10 +399,10 @@ export default class ManageDocument extends Component {
                 <div>
                   <Input
                     type="textarea"
-                    name="note"
+                    name="notes"
                     id="exampleText"
                     placeholder="Add Note Here"
-                    value={this.state.addRecord.note}
+                    value={this.state.addRecord.notes}
                     onChange={(e) => this._onchange(e)}
                   />
                 </div>

@@ -5,7 +5,10 @@ import { initStore } from "../redux/configureStore";
 import { withRouter } from "next/router";
 import Signin from "./signIn";
 import Viewresidents from "./dashboard/[user]/[role].js";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+toast.configure();
 export default withRouter(
   withRedux(initStore, { debug: true })(
     class MyApp extends App {
@@ -119,6 +122,7 @@ export default withRouter(
 
         return (
           <Provider store={store}>
+            <ToastContainer />
             <ComponentTorender />
           </Provider>
         );

@@ -7,7 +7,14 @@ class Footer extends React.Component {
     return (
       <footer
         className={"footer" + (this.props.default ? " footer-default" : "")}
-        style={{ background: "white", height: '50px', position: 'absolute', bottom: 0, width: '100%' }}
+        style={{
+          background: "white",
+          height: "50px",
+          position: "absolute",
+          bottom: 0,
+          width: "100%",
+          padding: 0,
+        }}
       >
         <Container fluid={this.props.fluid ? true : false}>
           <Row>
@@ -45,7 +52,7 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   default: PropTypes.bool,
-  fluid: PropTypes.bool
+  fluid: PropTypes.bool,
 };
 
 export default Footer;

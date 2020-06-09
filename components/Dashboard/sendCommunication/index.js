@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Input } from "reactstrap";
-import { Image } from 'react-bootstrap'
+import { Image } from "react-bootstrap";
 import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
 import "../../../styles/dashboard/sendcommunication/index.scss";
 import Editor from "../editor";
@@ -11,7 +11,7 @@ export default class Sendcommunication extends Component {
     this.state = {
       switch1: true,
       toggleChange: true,
-      fileUploadState: ['or Drop file here']
+      fileUploadState: ["or Drop file here"],
     };
   }
 
@@ -27,24 +27,22 @@ export default class Sendcommunication extends Component {
     });
   };
 
-  resetTable = () => {
-
-  }
+  resetTable = () => {};
 
   tast = () => {
-    document.getElementById('selectedFile').click()
-    console.log(document.getElementById('selectedFile'))
-  }
+    document.getElementById("selectedFile").click();
+    console.log(document.getElementById("selectedFile"));
+  };
 
   fileUploadButton = () => {
-    document.getElementById('fileButton').click();
-    let val = '';
-    document.getElementById('fileButton').onchange = () => {
-      val = document.getElementById('fileButton').value;
+    document.getElementById("fileButton").click();
+    let val = "";
+    document.getElementById("fileButton").onchange = () => {
+      val = document.getElementById("fileButton").value;
       val = val.split("\\");
       this.setState({ fileUploadState: val });
-    }
-  }
+    };
+  };
 
   render() {
     return (
@@ -93,12 +91,26 @@ export default class Sendcommunication extends Component {
             <Row className="row-4">
               <Col>
                 <div>
-                  <label><Image className='attachment-icon' src={'/assets/mockup/attachment-icon-16px.png'} /></label>
+                  <label>
+                    <Image
+                      className="attachment-icon"
+                      src={"/assets/mockup/attachment-icon-16px.png"}
+                    />
+                  </label>
                   <input id="fileButton" type="file" hidden />
-                  <button className="fileUpload-btn" onClick={this.fileUploadButton}>
+                  <button
+                    className="fileUpload-btn"
+                    onClick={this.fileUploadButton}
+                  >
                     Upload Document
                   </button>
-                  <span>{this.state.fileUploadState.length > 2 ? this.state.fileUploadState[this.state.fileUploadState.length - 1] : this.state.fileUploadState[0]}</span>
+                  <span>
+                    {this.state.fileUploadState.length > 2
+                      ? this.state.fileUploadState[
+                          this.state.fileUploadState.length - 1
+                        ]
+                      : this.state.fileUploadState[0]}
+                  </span>
                   <span>Optional</span>
                 </div>
               </Col>
@@ -117,12 +129,22 @@ export default class Sendcommunication extends Component {
               </Col>
             </Row>
             <Editor />
-            <Row className='invite-btn-row'>
-              <Col lg="12" md="12" sm="12" className="PL35 PR35 invite-send-row">
-                <span className='send-invite-box'>
-                  <button className='reset-invite' onClick={this.resetTable}>
-                    <Image className='add-btn' src={'/assets/mockup/reset-icon.png'} />Reset</button>
-                  <button className='send-invite-btn'>Send</button>
+            <Row className="invite-btn-row">
+              <Col
+                lg="12"
+                md="12"
+                sm="12"
+                className="PL35 PR35 invite-send-row"
+              >
+                <span className="send-invite-box">
+                  <button className="reset-invite" onClick={this.resetTable}>
+                    <Image
+                      className="add-btn"
+                      src={"/assets/mockup/reset-icon.png"}
+                    />
+                    Reset
+                  </button>
+                  <button className="send-invite-btn">Send</button>
                 </span>
               </Col>
             </Row>

@@ -1,5 +1,5 @@
-.manage-document-component{
-  .table-section{
+.manage-document-component {
+  .table-section {
     max-height: calc(100vh - 250px);
     margin-bottom: 15px;
     margin-left: 5px;
@@ -14,46 +14,46 @@
         display: flex;
         flex-direction: row;
       }
-      tr:hover{
+      tr:hover {
         cursor: pointer;
       }
-      thead{
-        tr{
+      thead {
+        tr {
           width: 100%;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          td{
+          td {
             border: none !important;
-            div{
-              label{
+            div {
+              label {
                 height: 22px;
                 margin-bottom: 7px;
-                font-family: 'Open Sans';
+                font-family: "Open Sans";
                 font-style: normal;
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 22px;
                 display: flex;
                 align-items: center;
-                color: #6C7B8A;
+                color: #6c7b8a;
               }
             }
           }
-          .td1-m{
+          .td1-m {
             width: calc(33.33% - 79px);
             margin-right: 20px;
             margin-left: 30px;
           }
-          .td2-m{
+          .td2-m {
             width: calc(33.33% - 79px);
             margin-right: 20px;
           }
-          .td3-m{
+          .td3-m {
             width: calc(33.33% - 79px);
             margin-right: 20px;
           }
-          .td4-m{
+          .td4-m {
             width: 79px !important;
             margin-right: 15px;
           }
@@ -85,15 +85,15 @@
             box-sizing: border-box;
             background: #ffffff;
             border-radius: 6px;
-            div{
+            div {
               .input1 {
                 height: 24px;
                 padding-left: 20px;
                 padding-bottom: 13px;
                 padding-top: 16px;
-                border:none;
+                border: none;
                 outline: none;
-                font-family: 'Open Sans';
+                font-family: "Open Sans";
                 font-style: normal;
                 font-weight: normal;
                 font-size: 16px;
@@ -102,13 +102,13 @@
               }
 
               .input2 {
-                border:none;
+                border: none;
                 height: 24px;
                 // padding-left: 28px;
                 // padding-bottom: 13px;
                 // padding-top: 16px;
                 outline: none;
-                font-family: 'Open Sans';
+                font-family: "Open Sans";
                 font-style: normal;
                 font-weight: normal;
                 font-size: 16px;
@@ -116,18 +116,18 @@
                 color: #344563;
               }
               .input3 {
-                border:none;
+                border: none;
                 height: 24px;
                 padding-left: 20px;
                 padding-bottom: 13px;
                 padding-top: 16px;
                 outline: none;
-                font-family: 'Open Sans';
+                font-family: "Open Sans";
                 font-style: normal;
                 font-weight: normal;
                 font-size: 14px;
                 line-height: 19px;
-                color: #91909A;
+                color: #91909a;
               }
               input:focus {
                 background: #f0f9f9;
@@ -139,7 +139,7 @@
             }
           }
           .td1-m {
-            border: 1px solid #E9E9E9 !important;
+            border: 1px solid #e9e9e9 !important;
             input {
               width: 100%;
             }
@@ -149,7 +149,7 @@
             margin-left: 30px !important;
           }
           .td2-m {
-            border: 1px solid #E9E9E9 !important;
+            border: 1px solid #e9e9e9 !important;
             input {
               width: 100%;
             }
@@ -158,7 +158,7 @@
             display: flex;
           }
           .td3-m {
-            border: 1px solid #E9E9E9 !important;
+            border: 1px solid #e9e9e9 !important;
             input {
               width: 100%;
             }
@@ -173,31 +173,31 @@
             justify-content: center;
             margin: 0px 15px 0px 0px !important;
             border: none !important;
-            div{
-              display: 'flex';
+            div {
+              display: "flex";
               flex-direction: column;
               width: 79px;
-              span{
+              span {
                 width: 79px;
                 display: flex;
                 justify-content: space-around;
-                .btn{
+                .btn {
                   background: none;
                   outline: none;
                   border: none;
                   padding: 0px;
-                  img{
+                  img {
                     width: 24px;
                     height: 24px;
                   }
                 }
-                .btn:hover{
+                .btn:hover {
                   background-color: #ffffff !important;
                 }
-                .btn:active{
+                .btn:active {
                   background-color: #ffffff !important;
                 }
-                .btn:focus{
+                .btn:focus {
                   background-color: #ffffff !important;
                 }
               }
@@ -211,11 +211,11 @@
     width: 100%;
     display: flex;
     .invite-span {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 50px;
-    width: 172px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 50px;
+      width: 172px;
       .add-row-invitation-btn {
         background: transparent;
         border: 0px;
@@ -224,12 +224,12 @@
         flex-direction: row;
         align-items: center;
         .add-btn {
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
+          width: 50px;
+          height: 50px;
+          border-radius: 25px;
         }
         .add-btn:hover {
-        box-shadow: 0px 0px 8px 2px #ccc;
+          box-shadow: 0px 0px 8px 2px #ccc;
         }
       }
       p {
@@ -241,13 +241,11 @@
         font-size: 16px !important;
         line-height: 22px;
         color: #6c7b8a;
-      } 
+      }
     }
-  
-  
   }
   @media screen and (max-width: 1300px) {
-    .table-section{
+    .table-section {
       table {
         .tBody {
           .residents-table-row-modal {
@@ -256,8 +254,8 @@
           tr {
             td {
               height: 34px !important;
-              div{
-                label{
+              div {
+                label {
                   height: 18px !important;
                   font-size: 14px !important;
                   line-height: 18px !important;
@@ -267,7 +265,7 @@
                   font-size: 15px !important;
                   line-height: 18px !important;
                 }
-  
+
                 .input2 {
                   height: 24px !important;
                   font-size: 13px !important;
@@ -282,7 +280,7 @@
             }
           }
         }
-  
+
         .td1-m {
           margin-left: 20px !important;
         }
@@ -308,7 +306,7 @@
   }
 
   @media screen and (max-width: 1000px) {
-    .table-section{
+    .table-section {
       table {
         .tBody {
           .residents-table-row-modal {
@@ -317,8 +315,8 @@
           tr {
             td {
               height: 34px !important;
-              div{
-                label{
+              div {
+                label {
                   height: 15px !important;
                   font-size: 13px !important;
                   line-height: 15px !important;
@@ -328,7 +326,7 @@
                   font-size: 13px !important;
                   line-height: 15px !important;
                 }
-  
+
                 .input2 {
                   height: 30px !important;
                   font-size: 11px !important;
@@ -341,15 +339,15 @@
             }
           }
         }
-  
+
         .td1-m {
           margin-left: 15px !important;
         }
         .td4-m {
-          div{
-            span{
-              .btn{
-                img{
+          div {
+            span {
+              .btn {
+                img {
                   width: 20px !important;
                   height: 20px !important;
                 }
@@ -359,7 +357,7 @@
         }
       }
     }
-    
+
     .invite-btn-row {
       .invite-span {
         .add-row-invitation-btn {
@@ -390,23 +388,22 @@
     }
   }
 }
-.add-record-modal-manage-document{
+.add-record-modal {
   // display: flex;
-  .modal-dialog-centered{
-    width: 470px;
-    height: 635px;
+  .modal-dialog-centered {
+    width: 470px !important;
+    height: 635px !important;
     margin: auto !important;
-    justify-content: center;
-    .modal-content{
-      width: 470px;
-      height: 635px;
-      .modal-header{
+    .modal-content {
+      width: 470px !important;
+      height: 635px !important;
+      .modal-header {
         padding: 0px !important;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         border: none !important;
-        span{
+        span {
           color: #344563 !important;
           width: 36px !important;
           height: 36px !important;
@@ -421,20 +418,19 @@
           justify-content: center;
           align-items: center;
         }
-        .close{
+        .close {
           display: none;
         }
       }
-      .modal-body{
+      .modal-body {
         border: none !important;
         margin: 0px 40px 40px 40px;
         padding: 0px !important;
-        .row-1{
-          width: 100% !important;
+        .row-1 {
           margin-bottom: 14px;
-          .col{
-            p{
-              font-family: 'Open Sans';
+          .col {
+            p {
+              font-family: "Open Sans";
               font-style: normal;
               font-weight: 600;
               font-size: 20px;
@@ -443,26 +439,24 @@
             }
           }
         }
-        .row-2{
-          width: 100% !important;
-          .col{
-            label{
-              font-family: 'Open Sans';
+        .row-2 {
+          .col {
+            label {
+              font-family: "Open Sans";
               font-style: normal;
               font-weight: 600;
               font-size: 16px;
               line-height: 22px;
               display: flex;
               align-items: center;
-              color: #6C7B8A;
+              color: #6c7b8a;
             }
           }
         }
-        .row-3{
-          width: 100% !important;
+        .row-3 {
           margin-bottom: 20px;
-          .col{
-            div{
+          .col {
+            div {
               background: #ffffff;
               border: 1px solid #e9e9e9;
               box-sizing: border-box;
@@ -479,83 +473,92 @@
                 font-family: "Open Sans";
                 font-style: normal;
                 -webkit-appearance: none;
-                background: url("/assets/mockup/drop-down-icon.png") no-repeat right;
+                background: url("/assets/mockup/drop-down-icon.png") no-repeat
+                  right;
                 font-weight: normal;
                 font-size: 16px;
                 line-height: 22px;
                 outline: none;
-                color: #91909A;
+                color: #91909a;
               }
-            }        
+            }
           }
         }
-        .row-4{
-          width: 100% !important;
-          .col{
-            div{
-              width: 100%;
+        .row-4 {
+          .upload_label {
+            width: 390px;
+            height: 160px;
+            background: #ffffff;
+            border: 1px solid #e9e9e9;
+            box-sizing: border-box;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            input {
+              display: none;
+            }
+          }
+          .col {
+            div {
+              width: 390px;
               height: 160px;
-              background: #FFFFFF;
-              border: 1px solid #E9E9E9;
+              background: #ffffff;
+              border: 1px solid #e9e9e9;
               box-sizing: border-box;
               border-radius: 8px;
               margin-bottom: 30px;
             }
           }
         }
-        .row-5{
-          width: 100% !important;
-          .col{
-            label{
-              font-family: 'Open Sans';
+        .row-5 {
+          .col {
+            label {
+              font-family: "Open Sans";
               font-style: normal;
               font-weight: 600;
               font-size: 16px;
               line-height: 22px;
               display: flex;
               align-items: center;
-              color: #6C7B8A;
+              color: #6c7b8a;
             }
           }
         }
-        .row-6{
-          width: 100% !important;
-          .col{
-            div{
+        .row-6 {
+          .col {
+            div {
               width: 100%;
               height: 100px;
-              background: #FFFFFF;
-              border: 1px solid #E9E9E9;
+              background: #ffffff;
+              border: 1px solid #e9e9e9;
               box-sizing: border-box;
               border-radius: 8px;
               padding: 16px 20px 16px 20px;
               margin-bottom: 30px;
-              .form-control{
-                font-family: 'Open Sans';
+              .form-control {
+                font-family: "Open Sans";
                 font-style: normal;
                 font-weight: normal;
                 font-size: 14px;
                 line-height: 19px;
-                color: #91909A;
+                color: #91909a;
                 border: none;
               }
             }
           }
         }
-        .row-7{
-          width: 100% !important;
-          button{
+        .row-7 {
+          button {
             width: 100%;
             height: 50px;
             background: #009999;
             border-radius: 50px;
-            font-family: 'Open Sans';
+            font-family: "Open Sans";
             font-style: normal;
             font-weight: 600;
             font-size: 16px;
             line-height: 22px;
             text-align: center;
-            color: #FFFFFF;
+            color: #ffffff;
             border: none;
             outline: none;
           }

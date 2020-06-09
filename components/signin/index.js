@@ -5,12 +5,12 @@ import Link from "next/link";
 import "../../styles/signin/index.scss";
 import { GoogleLogin } from "./google";
 import { Apple } from "./apple";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import Modals from './modal';
-library.add(fas);
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fas } from '@fortawesome/free-solid-svg-icons'
+// import '@fortawesome/fontawesome-svg-core/styles.css';
+// import Modals from './modal';
+// library.add(fas);
 // import Theme from '../theme'
 
 export class SignIn extends React.Component {
@@ -123,10 +123,10 @@ export class SignIn extends React.Component {
           <div className='have-an-account'><span>Don’t have an account?</span><button onClick={this.showModal}>Sign Up</button></div>
         </form>
 
-        <Modals
+        {/* <Modals
           show={this.state.modalShow}
           onHide={() => this.setState({ modalShow: false })}
-        />
+        /> */}
       </Container>
     );
   }
