@@ -298,7 +298,7 @@ export default class ManageDocument extends Component {
                   src={"/assets/mockup/add-invite-member.png"}
                 />
               </button>
-              <p className="btn-text">Add Resident</p>
+              <p className="btn-text">Add More Documents</p>
             </span>
           </Col>
         </Row>
