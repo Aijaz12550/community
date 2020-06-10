@@ -5,10 +5,10 @@ import Link from "next/link";
 import "../../styles/signin/index.scss";
 import { GoogleLogin } from "./google";
 import { Apple } from "./apple";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { fas } from '@fortawesome/free-solid-svg-icons'
-// import '@fortawesome/fontawesome-svg-core/styles.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import '@fortawesome/fontawesome-svg-core/styles.css';
 // import Modals from './modal';
 // library.add(fas);
 // import Theme from '../theme'

@@ -9,8 +9,8 @@ export const Layout = ({
 }) => {
     return(
       <div className='main-container'>
-         <div className='user-validation-container'>
 
+         <div className='user-validation-container'>
           <Progress val={prog} />
              <div className='layout-children-container'>
              {children}
