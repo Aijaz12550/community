@@ -1,3 +1,3 @@
 import InvitationScreen from "../../components/invitationCode";
-import "../../styles/userValidation/index.scss";
+import "../../styles/invitaionCode/index.scss";
 export default () => <InvitationScreen />;

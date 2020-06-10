@@ -1,22 +1,13 @@
 import React from 'react'
-import { Progress } from './progressBar'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../styles/userValidation/index.scss'
+import { LayoutHeader} from './header'
 
 export const Layout = ({
     children,
-    prog,
 }) => {
     return(
-      <div className='main-container'>
-
-         <div className='user-validation-container'>
-          <Progress val={prog} />
-             <div className='layout-children-container'>
-             {children}
-             </div>
-         </div>
-        
-      </div>
+        <div className='layout-container'>
+            <LayoutHeader />
+            {children}
+        </div>
     )
 }

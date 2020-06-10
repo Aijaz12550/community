@@ -1,45 +1,48 @@
 import React from "react";
-import Link from "next/link";
 import { Layout } from "./layout";
-import "../../styles/userValidation/index.scss";
-import "../../styles/signin/index.scss";
+import { CentralComponent } from "./centralComponent";
+import Link from 'next/link'
 
-export default () => (
-  <Layout prog={1} key="123">
-    <p>
-      Already have an acoount?
-      <Link href="/signIn">
-        <a>Sign In</a>
-      </Link>
-    </p>
+const InvitationCode = () => {
+  return (
+    <Layout>
+      <CentralComponent>
+        <div className="central-component-body-1">
+          <span>
+            Please Enter the invitation Code That you have recieved from us
+          </span>
 
-    <p>Please Enter the invitation code that you have received from us.</p>
+          <span>
+            Sorry! Entered invitation code is invalid or expired. If problem
+            persist, please contact our support at 
+            <Link href="/test">
+             support@weneighbors.io
+            </Link>
+          </span>
 
-    <p style={{ color: "red" }}>
-      sorry! Entered invitation code is invalid or expired. If problem persist
-      please contact our support.
-      <a href="#">support@weneibours.io</a>
-    </p>
+          <span className="inp-container">
+            <label>Invitaion Code</label>
+            <input className="inp-compo" type="text" placeholder="AED5687" />
+          </span>
+        </div>
 
-    <input
-      className="invitation-code-input"
-      placeholder="Invitation Code"
-      type="password"
-    />
-    <p>Your Community is &lt;abc&gt;</p>
-    <p>And For the member role is president.</p>
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        width: "100%"
-      }}
-    >
-      <button className="btn">&lt; Back</button>
-      <Link href="/homeAddress">
-        <button className="btn"> Next &gt;</button>
-      </Link>
-    </div>
-  </Layout>
-);
+        <div className="central-component-body-2">
+          <span></span>
+          <span></span>
+          <span>Already have an account?
+            <Link href="SignIn">
+
+             Sign in
+            </Link>
+             </span>
+
+          <div className="btn-container">
+            <button>Back</button>
+            <button>Sign in</button>
+          </div>
+        </div>
+      </CentralComponent>
+    </Layout>
+  );
+};
+export default InvitationCode;
