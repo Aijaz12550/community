@@ -12,15 +12,15 @@ import {
 } from "../CONSTANTS";
 const initialState = {
   documents: [],
-  documentsError: {},
+  documentsError: "",
   getDocuments: {},
-  getDocumentsError: {},
+  getDocumentsError: "",
   deleteDocument: {},
-  deleteDocumentError: {},
+  deleteDocumentError: "",
   updateDocument: {},
-  updateDocumentError: {},
+  updateDocumentError: "",
   documentType: [],
-  documentTypeError: {},
+  documentTypeError: "",
 };
 
 export const documentsReducer = (state = initialState, { payload, type }) => {
@@ -38,13 +38,13 @@ export const documentsReducer = (state = initialState, { payload, type }) => {
     case ADD_DOCUMENT_SUCCESS:
       return {
         ...state,
-        getDocuments: payload,
+        addDocuments: payload,
         documents: state.documents.concat([payload]),
       };
     case ADD_DOCUMENT_ERROR:
       return {
         ...state,
-        getDocumentsError: payload,
+        addDocumentsError: payload,
       };
     case DELETE_DOCUMENT_SUCCESS:
       return {

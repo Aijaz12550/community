@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Table, Input } from "reactstrap";
+import { toast } from "react-toastify";
 import { Image, Modal } from "react-bootstrap";
 import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
 import {
@@ -9,6 +10,8 @@ import {
   updateDocument,
   documentType,
 } from "$middleware";
+import { getDocumentError } from "../../../redux/actions";
+import { Loader } from "../../Loader/Loader";
 import "../../../styles/dashboard/manageDocument/index.scss";
 
 export default class ManageDocument extends Component {
@@ -35,6 +38,7 @@ export default class ManageDocument extends Component {
       setModalShow: false,
       hasEdit: false,
       editIndex: null,
+      loader: false,
     };
   }
 
@@ -43,10 +47,38 @@ export default class ManageDocument extends Component {
       AuthReducer: {
         user: { communityId },
       },
+      documentsReducer: { documents },
       dispatch,
     } = this.props;
+    if (!documents.length) {
+      this.setState({ loader: true });
+    }
     dispatch(getDocument(communityId));
     dispatch(documentType());
+  }
+
+  notify = (payload) => {
+    this.setState({ loader: false });
+    toast(payload);
+  };
+
+  componentDidUpdate(prevProps) {
+    const { documentsReducer, dispatch } = this.props;
+    if (
+      documentsReducer.documentsError !==
+        prevProps?.documentsReducer?.documentsError &&
+      documentsReducer.documentsError?.length !== 0
+    ) {
+      this.notify(documentsReducer.documentsError);
+      dispatch(getDocumentError(""));
+    }
+    if (
+      documentsReducer.documents.length !==
+        prevProps?.documentsReducer?.documents.length &&
+      documentsReducer.documents.length !== 0
+    ) {
+      this.setState({ loader: false });
+    }
   }
 
   addRowModal = () => {
@@ -164,6 +196,7 @@ export default class ManageDocument extends Component {
     const {
       documentsReducer: { documents, getDocumentsError, documentType },
     } = this.props;
+    console.log(this.props, "this.props");
     const { addRecord } = this.state;
     return (
       <div className="content manage-document-component">
@@ -286,6 +319,7 @@ export default class ManageDocument extends Component {
             </Table>
           </Col>
         </Row>
+        {this.state.loader ? <Loader /> : null}
         <Row className="invite-btn-row">
           <Col lg="12" md="12" sm="12" className="PL35 PR35">
             <span className="invite-span">
@@ -308,7 +342,7 @@ export default class ManageDocument extends Component {
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          className='add-record-modal-manage-document'
+          className="add-record-modal-manage-document"
         >
           <Modal.Header closeButton>
             <span onClick={this.closeModal}>

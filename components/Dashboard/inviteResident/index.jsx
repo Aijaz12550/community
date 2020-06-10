@@ -38,13 +38,7 @@ export default class InviteResident extends Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener("resize", this.updateWindowDimensions);
-    const {
-      AuthReducer: {
-        user: { communityId },
-      },
-      dispatch,
-    } = this.props;
-    // dispatch(getInvites(communityId));
+    const { dispatch } = this.props;
     dispatch(getRoles());
   }
 

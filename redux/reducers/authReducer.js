@@ -1,6 +1,6 @@
 const initialState = {
   field: "test Auth reducer",
-  user: { access_token: true },
+  user: {},
 };
 
 const AuthReducer = (state = initialState, action) => {

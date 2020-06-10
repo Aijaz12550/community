@@ -28,7 +28,6 @@ export default withRouter(
       componentDidUpdate(prevProps) {
         const { store, router } = this.props;
         let user = store?.getState()?.AuthReducer?.user;
-        user.access_token = true
         if (
           prevProps.Component != this.props.Component &&
           user.access_token &&
@@ -88,7 +87,6 @@ export default withRouter(
       componentDidMount() {
         const { store, router } = this.props;
         let user = store?.getState()?.AuthReducer?.user;
-        user.access_token = true
         if (router.pathname.startsWith("/signIn") && !user.access_token) {
           return false;
         } else if (

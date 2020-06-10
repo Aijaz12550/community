@@ -48,7 +48,11 @@ export const getDocument = (payload) => {
         );
       })
       .catch((error) => {
-        dispatch(getDocumentError(error));
+        dispatch(
+          getDocumentError(
+            JSON.parse(JSON.stringify(error.response))?.data?.error
+          )
+        );
       });
   };
 };
