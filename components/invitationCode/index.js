@@ -1,27 +1,25 @@
 import React from "react";
 import { Layout } from "./layout";
 import { CentralComponent } from "./centralComponent";
-import Link from 'next/link'
+import Link from "next/link";
 
 const InvitationCode = () => {
   return (
     <Layout>
-      <CentralComponent>
+      <CentralComponent progress_value={0}>
         <div className="central-component-body-1">
-          <span>
+          <span className="central-component-heading">
             Please Enter the invitation Code That you have recieved from us
           </span>
 
-          <span>
+          <span className="central-component-warning">
             Sorry! Entered invitation code is invalid or expired. If problem
-            persist, please contact our support at 
-            <Link href="/test">
-             support@weneighbors.io
-            </Link>
+            persist, please contact our support at &nbsp;
+            <Link href="/test">support@weneighbors.io</Link>
           </span>
 
           <span className="inp-container">
-            <label>Invitaion Code</label>
+            <label className="inp-label">Invitaion Code</label>
             <input className="inp-compo" type="text" placeholder="AED5687" />
           </span>
         </div>
@@ -29,16 +27,14 @@ const InvitationCode = () => {
         <div className="central-component-body-2">
           <span></span>
           <span></span>
-          <span>Already have an account?
-            <Link href="SignIn">
-
-             Sign in
-            </Link>
-             </span>
+          <span>
+            Already have an account?
+            <Link href="SignIn">Sign in</Link>
+          </span>
 
           <div className="btn-container">
             <button>Back</button>
-            <button>Sign in</button>
+            <button>Next</button>
           </div>
         </div>
       </CentralComponent>

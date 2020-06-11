@@ -1,0 +1,16 @@
+.account-verified-status{
+display: flex;
+flex-flow: column wrap;
+justify-content: space-around;
+align-items: center;
+min-height: 30vh;
+    span{
+        font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 33px;
+text-align: center;
+color: #344563;
+    }
+}
