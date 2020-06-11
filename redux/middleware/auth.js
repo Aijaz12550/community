@@ -6,7 +6,6 @@ export const login = (payload) => {
     return new Promise((resolve, reject) => {
       return OauthConfig(payload)
         .then((res) => {
-          console.log(res);
           dispatch(signin(res.data));
           resolve(res.data);
         })
@@ -24,7 +23,6 @@ export const socialLogin = (payload) => {
       await _axios
         .post(`users/login/${payload.provider}`, { ...payload })
         .then((res) => {
-          console.log("res", res);
           dispatch(signin(res.data));
           resolve(res);
         })

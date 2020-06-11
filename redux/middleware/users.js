@@ -124,7 +124,6 @@ export const downloadProfileImageById = (id) => {
 export const changePasswordRequest = (payload) => {
   return async (dispatch) => {
     await _axios.post(`users/changePassword`, payload).then((res) => {
-      console.log("");
     });
   };
 };

@@ -65,7 +65,6 @@ export default class InviteResident extends Component {
         prevProps?.inviteReducer?.sendInvites.length &&
       inviteReducer.sendInvites.length !== 0
     ) {
-      console.log(inviteReducer.sendInvites.length, "asdfadf");
       this.notify("Invited Successfully");
       this.setState({
         invitationData: [
@@ -184,7 +183,6 @@ export default class InviteResident extends Component {
   };
 
   render() {
-    console.log(this.props);
     const {
       rolesReducer: { getRoles },
     } = this.props;

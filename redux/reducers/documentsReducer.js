@@ -13,8 +13,8 @@ import {
 const initialState = {
   documents: [],
   documentsError: "",
-  getDocuments: {},
-  getDocumentsError: "",
+  addDocuments: {},
+  addDocumentsError: "",
   deleteDocument: {},
   deleteDocumentError: "",
   updateDocument: {},
@@ -47,20 +47,26 @@ export const documentsReducer = (state = initialState, { payload, type }) => {
         addDocumentsError: payload,
       };
     case DELETE_DOCUMENT_SUCCESS:
+      const { documents } = state;
+      documents.splice(payload.rowIndex, 1);
       return {
         ...state,
         deleteDocument: payload,
-        documents: state.documents.splice(payload.rowIndex, 1),
+        documents,
       };
     case DELETE_DOCUMENT_ERROR:
       return {
         ...state,
-        getDocumentsError: payload,
+        deleteDocumentsError: payload,
       };
     case UPDATE_DOCUMENT_SUCCESS:
+      const documents1 = state.documents;
+      documents1.splice(payload.rowIndex, 1, payload.data);
+      console.log(documents1, "payload");
       return {
         ...state,
-        updateDocument: payload,
+        updateDocument: payload.data,
+        documents: documents1,
       };
     case UPDATE_DOCUMENT_ERROR:
       return {

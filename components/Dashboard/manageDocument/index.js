@@ -10,9 +10,15 @@ import {
   updateDocument,
   documentType,
 } from "$middleware";
-import { getDocumentError } from "../../../redux/actions";
+import {
+  getDocumentError,
+  addDocumentError,
+  updateDocumentError,
+  updateDocumentSuccess,
+} from "../../../redux/actions";
 import { Loader } from "../../Loader/Loader";
 import "../../../styles/dashboard/manageDocument/index.scss";
+import ReactLoading from "react-loading";
 
 export default class ManageDocument extends Component {
   constructor(props) {
@@ -39,6 +45,7 @@ export default class ManageDocument extends Component {
       hasEdit: false,
       editIndex: null,
       loader: false,
+      index: 0,
     };
   }
 
@@ -79,6 +86,35 @@ export default class ManageDocument extends Component {
     ) {
       this.setState({ loader: false });
     }
+    if (
+      documentsReducer?.addDocuments?.documentId !==
+      prevProps.documentsReducer?.addDocuments?.documentId
+    ) {
+      this.closeModal();
+      this.notify("Successfully add Document");
+    }
+    if (
+      documentsReducer.addDocumentsError !==
+      prevProps.documentsReducer.addDocumentsError
+    ) {
+      this.setState({ modalLoader: false });
+    }
+    if (
+      documentsReducer.updateDocumentError !==
+      prevProps.documentsReducer.updateDocumentError
+    ) {
+      this.setState({ modalLoader: false });
+    }
+    if (
+      documentsReducer?.updateDocument?.documentId !==
+        prevProps?.documentsReducer?.updateDocument?.documentId &&
+      documentsReducer?.updateDocument?.documentId
+    ) {
+      this.setState({ modalLoader: false });
+      this.closeModal();
+      dispatch(updateDocumentSuccess({}));
+      this.notify("Updated Successfully");
+    }
   }
 
   addRowModal = () => {
@@ -109,8 +145,18 @@ export default class ManageDocument extends Component {
   };
 
   closeModal = () => {
+    const { dispatch } = this.props;
+    dispatch(addDocumentError(""));
+    dispatch(updateDocumentError(""));
     this.setState({
       setModalShow: false,
+      addRecord: {
+        documentType: "N/A",
+        upload: "",
+        notes: "",
+        file: "",
+      },
+      modalLoader: false,
     });
   };
 
@@ -134,6 +180,8 @@ export default class ManageDocument extends Component {
   _saveDocument = (e) => {
     const {
       addRecord: { notes, documentType, docType, file, documentId },
+      index,
+      hasEdit,
     } = this.state;
     const {
       AuthReducer: {
@@ -141,6 +189,9 @@ export default class ManageDocument extends Component {
       },
       dispatch,
     } = this.props;
+    this.setState({
+      modalLoader: true,
+    });
     let formdata = new FormData();
     formdata.append("file", file);
     const documentObj = {
@@ -151,9 +202,17 @@ export default class ManageDocument extends Component {
       file: formdata,
       userId,
     };
-    if (this.state.hasEdit) {
-      documentObj.documentId = documentId;
-      dispatch(updateDocument(documentObj));
+    documentObj.documentId = documentId;
+    documentObj.rowIndex = index;
+    if (hasEdit) {
+      const UpdateObj = {
+        docObj: { communityId, documentId, userId },
+        rowIndex: index,
+      };
+      notes ? (UpdateObj.docObj.Notes = notes) : null;
+      documentType ? (UpdateObj.docObj["Document Type"] = docType) : null;
+      formdata.file ? (UpdateObj.docObj["Document File"] = formdata) : null;
+      dispatch(updateDocument(UpdateObj));
     } else {
       dispatch(addDocument(documentObj));
     }
@@ -189,15 +248,22 @@ export default class ManageDocument extends Component {
       setModalShow: true,
       editIndex: index,
       hasEdit: true,
+      index,
     });
   };
 
   render() {
     const {
-      documentsReducer: { documents, getDocumentsError, documentType },
+      documentsReducer: {
+        documents,
+        addDocumentsError,
+        documentType,
+        updateDocumentError,
+      },
+      dispatch,
     } = this.props;
-    console.log(this.props, "this.props");
-    const { addRecord } = this.state;
+    const { addRecord, hasEdit, modalLoader } = this.state;
+    console.log(this.props);
     return (
       <div className="content manage-document-component">
         <Row className="MT60 section-top">
@@ -245,7 +311,7 @@ export default class ManageDocument extends Component {
                             style={{ background: "white" }}
                             type="email"
                             name="documentType"
-                            value={val.documentType}
+                            value={val?.documentType}
                             disabled
                           />
                         </div>
@@ -264,7 +330,7 @@ export default class ManageDocument extends Component {
                             style={{ background: "white" }}
                             type="text"
                             name="upload"
-                            value={val.fileName}
+                            value={val?.fileName}
                             disabled
                           />
                         </div>
@@ -283,7 +349,7 @@ export default class ManageDocument extends Component {
                             style={{ background: "white" }}
                             type="email"
                             name="email"
-                            value={val.notes}
+                            value={val?.notes}
                             placeholder="Add Note Here"
                             disabled
                           />
@@ -338,13 +404,25 @@ export default class ManageDocument extends Component {
         </Row>
         <Modal
           show={this.state.setModalShow}
-          onHide={() => this.setState({ setModalShow: false })}
+          onHide={() => {
+            dispatch(addDocumentError(""));
+            this.setState({
+              setModalShow: false,
+              addRecord: {
+                documentType: "N/A",
+                upload: "",
+                notes: "",
+                file: "",
+              },
+              modalLoader: false,
+            });
+          }}
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
           className="add-record-modal-manage-document"
         >
-          <Modal.Header closeButton>
+          <Modal.Header>
             <span onClick={this.closeModal}>
               <Image className="" src={"/assets/mockup/modal-close-btn.png"} />
             </span>
@@ -445,12 +523,40 @@ export default class ManageDocument extends Component {
             <Row className="row-7">
               <Col>
                 <button onClick={this._saveDocument}>
-                  {this.state.hasEdit ? "Update" : "Save"}
+                  {modalLoader ? (
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <ReactLoading
+                        height={"20px"}
+                        width={"20px"}
+                        type="bubbles"
+                        color="white"
+                      />
+                    </div>
+                  ) : hasEdit ? (
+                    "Update"
+                  ) : (
+                    "Save"
+                  )}
                 </button>
               </Col>
             </Row>
             <Row>
-              <Col>{getDocumentsError?.message}</Col>
+              <Col
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: "red",
+                  marginTop: "5px",
+                }}
+              >
+                {addDocumentsError ? addDocumentsError : updateDocumentError}
+              </Col>
             </Row>
           </Modal.Body>
         </Modal>

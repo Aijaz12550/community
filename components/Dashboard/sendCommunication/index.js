@@ -31,7 +31,6 @@ export default class Sendcommunication extends Component {
 
   tast = () => {
     document.getElementById("selectedFile").click();
-    console.log(document.getElementById("selectedFile"));
   };
 
   fileUploadButton = () => {

@@ -27,12 +27,15 @@ export const addDocument = ({
         params: { Notes, category, communityId, docType, userId },
       })
       .then(({ data }) => {
-        console.log("$data", data.paramObjectsMap);
         dispatch(addDocumentSuccess(data?.paramObjectsMap?.DocumentEntityVO));
       })
       .catch((error) => {
-        console.log("error", error);
-        dispatch(addDocumentError(error));
+        dispatch(
+          addDocumentError(
+            JSON.parse(JSON.stringify(error.response))?.data?.paramObjectsMap
+              ?.ErrorMessage
+          )
+        );
       });
   };
 };
@@ -42,7 +45,6 @@ export const getDocument = (payload) => {
     await _axios
       .get(`${process.env.API_BASE_URL}document/community/${payload}`)
       .then(($data) => {
-        console.log("$data", $data);
         dispatch(
           getDocumentSuccess($data?.data?.paramObjectsMap?.DocumentEntityList)
         );
@@ -50,7 +52,7 @@ export const getDocument = (payload) => {
       .catch((error) => {
         dispatch(
           getDocumentError(
-            JSON.parse(JSON.stringify(error.response))?.data?.error
+            JSON.parse(JSON.stringify(error?.response))?.data?.error
           )
         );
       });
@@ -64,10 +66,9 @@ export const deleteDocument = (payload) => {
         `${process.env.API_BASE_URL}document/community/${payload.communityId}/document/${payload.documentId}`
       )
       .then(($data) => {
-        console.log("$data", $data);
         dispatch(
           deleteDocumentSuccess({
-            data: $data?.data?.paramObjectsMap?.DocumentEntityList,
+            data: $data?.data?.paramObjectsMap?.SuccessMsg,
             rowIndex: payload.rowIndex,
           })
         );
@@ -79,20 +80,22 @@ export const deleteDocument = (payload) => {
 };
 
 export const updateDocument = (payload) => {
+  console.log("pagad", payload);
   return async (dispatch) => {
-    console.log(payload, "asdfasdfwerwerwer");
     await _axios
-      .post(`${process.env.API_BASE_URL}document/update`, payload)
+      .post(`${process.env.API_BASE_URL}document/update`, null, {
+        params: payload.docObj,
+      })
       .then(($data) => {
-        console.log("$data", $data);
         dispatch(
-          updateDocumentSuccess(
-            $data?.data?.paramObjectsMap?.DocumentEntityList
-          )
+          updateDocumentSuccess({
+            data: $data?.data?.paramObjectsMap?.DocumentEntityVO,
+            rowIndex: payload.rowIndex,
+          })
         );
       })
       .catch((error) => {
-        dispatch(updateDocumentError(error));
+        dispatch(updateDocumentError(error?.response?.data?.message));
       });
   };
 };
@@ -100,9 +103,8 @@ export const updateDocument = (payload) => {
 export const documentType = () => {
   return async (dispatch) => {
     await _axios
-      .get(`${process.env.API_BASE_URL}lookup/documentType/get`)
+      .get(`${process.env.API_BASE_URL}lookup/documentType`)
       .then(($data) => {
-        console.log("$data", $data.data?.paramObjectsMap);
         dispatch(documentTypeSuccess($data?.data?.paramObjectsMap?.LookupList));
       })
       .catch((error) => {

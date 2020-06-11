@@ -12,7 +12,6 @@ export const residents = (payload) => {
         dispatch(addResidents($data?.data?.body));
       })
       .catch((error) => {
-        console.log("error", error);
         dispatch(residentsError(error));
       });
   };
