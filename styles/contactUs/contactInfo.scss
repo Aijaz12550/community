@@ -1,59 +1,50 @@
- @mixin __flex-box($flex-flow, $justif-content, $align-items ) {
-     display: flex;
-     flex-flow: $flex-flow;
-     justify-content: $justif-content;
-     align-items: $align-items;
- }
+@mixin __flex-box($flex-flow, $justif-content, $align-items, $flex-grow) {
+  display: flex;
+  flex-flow: $flex-flow;
+  justify-content: $justif-content;
+  align-items: $align-items;
+  flex-grow: $flex-grow;
+}
+
+@mixin __font-style(
+  $font-family,
+  $font-style,
+  $font-weight,
+  $font-size,
+  $line-height,
+  $color
+) {
+  font-family: $font-family;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
 
 .contact-info-container {
-    @include __flex-box(column wrap, space-between,none);
-//   display: flex;
-//   flex-flow: column wrap;
-//   justify-content: space-between;
-  flex-grow: 1;
+  @include __flex-box(column wrap, space-between, none, 1);
   max-width: 500px;
   min-width: 300px;
   min-height: 550px;
-  padding: 5px 10px 5px 15px ;
+  padding: 5px 10px 5px 15px;
   margin: 10px 20px 10px 20px;
-  border: 2px solid blue;
 
   .contact-info-heading {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
-    display: flex;
-    align-items: center;
-    color: #344563;
+    @include __font-style(Open Sans, normal, 600, 24px, 33px, #344563);
   }
 
   .contact-info-list-container {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-around;
-    flex-grow: 0.5;
+    @include __flex-box(column wrap, space-around, none, 0.5);
   }
   .contact-row {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+    @include __flex-box(row wrap, none, center, 0);
+
     .contact-row-title {
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 22px;
-      color: #6c7b8a;
+      @include __font-style(Open Sans, normal, normal, 16px, 22px, #6c7b8a);
     }
     .contact-row-val {
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 27px;
-      color: #344563;
+      @include __font-style(Open Sans, normal, bold, 20px, 27px, #344563);
     }
     div {
       display: flex;
