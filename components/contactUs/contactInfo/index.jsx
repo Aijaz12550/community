@@ -4,13 +4,15 @@ import { Image } from 'react-bootstrap'
 export const ContactInfo = () => {
   return (
     <div className='contact-info-container'>
-      <span>Contact Info</span>
+      <span className='contact-info-heading'>Contact Info</span>
+
+<div className='contact-info-list-container'>
 
       <div className='contact-row'>
         <Image src='/assets/mockup/contact.png' />
         <div>
-          <span>Phone Number: </span>
-          <span>+1 401-321-2786</span>
+          <span className='contact-row-title'>Phone Number: </span>
+          <span className='contact-row-val'>+1 401-321-2786</span>
         </div>
       </div>
 <br />
@@ -18,12 +20,13 @@ export const ContactInfo = () => {
       <div className='contact-row'>
         <Image src='/assets/mockup/email.png' />
         <div>
-          <span>Email Address:</span>
-          <span>support@weneighbors.io</span>
+          <span className='contact-row-title'>Email Address:</span>
+          <span className='contact-row-val'>support@weneighbors.io</span>
         </div>
       </div>
+</div>
 
-      <Image src='/assets/mockup/contactInfoFrame.png' />
+      <Image src='/assets/mockup/contactInfoFrame.png' width={350} />
 
     </div>
   );
