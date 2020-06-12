@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import {
   Col,
   Row,
@@ -12,10 +12,18 @@ import ResidentMemberDetail from "../residentMemberDetail";
 import { DashboardHeaderCard } from "../dashboardHeaderCard";
 import { Table } from "react-bootstrap";
 import Images from "../imageRow";
+import { residents } from "$middleware";
 
 import "../../../styles/dashboard/viewResidents/index.scss";
 
 export const ViewResident = (props) => {
+  const {
+    dispatch,
+    AuthReducer: {
+      user: { communityId },
+    },
+  } = props;
+
   let data = [
     {
       dataID: 1,
@@ -565,6 +573,8 @@ export const ViewResident = (props) => {
     setData(setDataValue);
   }
 
+  console.log(props, "asdasdf");
+
   function searchHandleChange(value) {
     const results = data.filter((person) =>
       person.address.toLowerCase().includes(value.toLowerCase())
@@ -577,6 +587,11 @@ export const ViewResident = (props) => {
     }
     SearchCol(results);
   }
+
+  useEffect(() => {
+    console.log("new world")
+    dispatch(residents(communityId));
+  });
 
   return (
     <Fragment key={+Date.now()}>

@@ -32,7 +32,8 @@ class ResidentMemberDetail extends Component {
                             Residence Since:
                           </span>
                           <span className="residents-time">
-                            {' ' + this.props?.trData?.residenceSince.split(" ")[1] +
+                            {" " +
+                              this.props?.trData?.residenceSince.split(" ")[1] +
                               " " +
                               this.props?.trData?.residenceSince.split(" ")[2]}
                           </span>
@@ -61,14 +62,30 @@ class ResidentMemberDetail extends Component {
                 <tr className="residents-table-row-modal" key={index}>
                   <td className="td1-m PL30">
                     <div>
-                      <img src={data1.memberImage} key={index} className="roundedCircle"></img>
+                      <img
+                        src={data1.memberImage}
+                        key={index}
+                        className="roundedCircle"
+                      ></img>
                     </div>
-                    <div className='memberName-div' style={data1.memberRole ? { alignItems: 'flex-start' } : { alignItems: 'center'}}>
-                      <span className="ML13 memberName">{data1.memberName}</span>
-                      {data1.memberRole ?
-                        <span className="ML13 memberRole">{data1.memberRole}</span>
-                        : ''
+                    <div
+                      className="memberName-div"
+                      style={
+                        data1.memberRole
+                          ? { alignItems: "flex-start" }
+                          : { alignItems: "center" }
                       }
+                    >
+                      <span className="ML13 memberName">
+                        {data1.memberName}
+                      </span>
+                      {data1.memberRole ? (
+                        <span className="ML13 memberRole">
+                          {data1.memberRole}
+                        </span>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   </td>
                   <td className="td2-m">{data1.phoneNumber}</td>

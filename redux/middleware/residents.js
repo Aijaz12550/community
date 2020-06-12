@@ -1,15 +1,14 @@
 import { addResidents, residentsError } from "../actions";
 import { _axios } from "$config";
-import axios from "axios";
 
 export const residents = (payload) => {
+  console.log(payload, 'asdfadfafs')
   return async (dispatch) => {
-    await axios
-      .get(
-        `https://devapp.talktiva.com/community-service/api/v1/community/${payload}/residents`
-      )
-      .then(($data) => {
-        dispatch(addResidents($data?.data?.body));
+    await _axios
+      .get(`${process.env.API_BASE_URL}resident/community/${payload}`)
+      .then(({ data }) => {
+        console.log(data, "residennts");
+        dispatch(addResidents(data?.data?.body));
       })
       .catch((error) => {
         dispatch(residentsError(error));
