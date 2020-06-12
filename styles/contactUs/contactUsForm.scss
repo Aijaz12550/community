@@ -21,51 +21,62 @@
     letter-spacing: -1px;
     color: #344563;
   }
-  .contact-us-input-container{
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-around;
-      align-items: center;
-      width: 100%;
-      flex-grow:0.5;
+  .contact-us-input-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-grow: 0.5;
 
-      input{
-        width: 100%;
-        // width: 400px;
-        max-width: 400px;
-        height: 50px;
-        background: #FFFFFF;
-        border: 1px solid #E9E9E9;
-        box-sizing: border-box;
-        border-radius: 6px;
-      }
-      textarea{
-       
-        width: 100%;
-        // width: 400px;
-        max-width: 400px;
-        height: 148px;
-        background: #FFFFFF;
-        border: 1px solid #E9E9E9;
-        box-sizing: border-box;
-        border-radius: 6px;
-        resize: none;
-      }
-      
+    input {
+      width: 100%;
+      max-width: 400px;
+      height: 50px;
+      background: #ffffff;
+      border: 1px solid #e9e9e9;
+      box-sizing: border-box;
+      border-radius: 6px;
+      padding-left: 10px;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 19px;
+      color: #91909a;
+    }
+    textarea {
+      width: 100%;
+      // width: 400px;
+      max-width: 400px;
+      height: 148px;
+      background: #ffffff;
+      border: 1px solid #e9e9e9;
+      box-sizing: border-box;
+      border-radius: 6px;
+      resize: none;
+      padding-left: 10px;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 19px;
+      color: #91909a;
+    }
   }
-  button{
+  button {
     background: #009999;
     border-radius: 8px;
     width: 85%;
     height: 50px;
     color: white;
     outline: none;
-    border:none;
+    border: none;
   }
-  button:hover{
-      transform: translate(0,-2px);
+  button:hover {
+    transform: translate(0, -2px);
   }
-  button:active{
-      transform: translate(0,0px);
+  button:active {
+    transform: translate(0, 0px);
   }
 }
