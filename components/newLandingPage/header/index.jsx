@@ -9,14 +9,23 @@ export const Header = () => {
         <Image src="/assets/mockup/logoAndTitle.png" />
       </div>
 
+      <div></div>
+     
+
       <div className="btn-container">
+        <div></div>
+        <div></div>
         <button>whyWeNeighbourse ?</button>
 
         <button>contact us</button>
 
-        <button>
-          <a href="/signIn">Sign In</a>
+          <a href="/signIn">
+        <button className='signin-btn'>
+            Sign In
         </button>
+            </a>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );

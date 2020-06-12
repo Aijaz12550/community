@@ -1,0 +1,21 @@
+@import './contactUsForm.scss';
+@import './contactInfo.scss';
+
+.contact-us-body-container{
+    display: flex;
+    min-height: 92.7vh;
+    background: #E5E5E5;
+    margin:0;
+    justify-content: center;
+    align-items: center;
+    .contact-body-sub{
+        border: 2px solid green;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 850px;
+        
+    }
+}
