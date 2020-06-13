@@ -468,6 +468,12 @@
   transition: all 150ms linear;
 }
 
+.flex-center-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn:hover,
 .btn:focus,
 .btn:active,

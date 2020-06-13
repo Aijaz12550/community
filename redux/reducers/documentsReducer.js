@@ -62,7 +62,6 @@ export const documentsReducer = (state = initialState, { payload, type }) => {
     case UPDATE_DOCUMENT_SUCCESS:
       const documents1 = state.documents;
       documents1.splice(payload.rowIndex, 1, payload.data);
-      console.log(documents1, "payload");
       return {
         ...state,
         updateDocument: payload.data,

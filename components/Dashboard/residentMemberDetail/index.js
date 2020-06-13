@@ -8,6 +8,7 @@ class ResidentMemberDetail extends Component {
   }
 
   render() {
+    const { familyDetails } = this.props;
     return (
       <Modal
         show={this.props.show}
@@ -25,18 +26,13 @@ class ResidentMemberDetail extends Component {
                     <Row>
                       <div className="header-modal-card-body">
                         <p className="view-residents-title">
-                          {this.props?.trData?.address}
+                          {familyDetails?.address}
                         </p>
                         <p className="view-residents-address">
                           <span className="residence-since">
                             Residence Since:
                           </span>
-                          <span className="residents-time">
-                            {" " +
-                              this.props?.trData?.residenceSince.split(" ")[1] +
-                              " " +
-                              this.props?.trData?.residenceSince.split(" ")[2]}
-                          </span>
+                          <span className="residents-time"></span>
                         </p>
                         <p />
                       </div>
@@ -58,12 +54,12 @@ class ResidentMemberDetail extends Component {
               </tr>
             </thead>
             <tbody className="scrollBarStyle-Y tBody-1">
-              {this.props?.trData?.familyMember.map((data1, index) => (
+              {familyDetails?.map((data1, index) => (
                 <tr className="residents-table-row-modal" key={index}>
                   <td className="td1-m PL30">
                     <div>
                       <img
-                        src={data1.memberImage}
+                        src={data1.avatarUrl}
                         key={index}
                         className="roundedCircle"
                       ></img>
@@ -76,9 +72,7 @@ class ResidentMemberDetail extends Component {
                           : { alignItems: "center" }
                       }
                     >
-                      <span className="ML13 memberName">
-                        {data1.memberName}
-                      </span>
+                      <span className="ML13 memberName">{data1.fullName}</span>
                       {data1.memberRole ? (
                         <span className="ML13 memberRole">
                           {data1.memberRole}
@@ -88,13 +82,13 @@ class ResidentMemberDetail extends Component {
                       )}
                     </div>
                   </td>
-                  <td className="td2-m">{data1.phoneNumber}</td>
-                  <td className="td3-m">{data1.emailAddress}</td>
-                  <td className="td4-m">
+                  <td className="td2-m">{data1.phone}</td>
+                  <td className="td3-m">{data1.email}</td>
+                  {/* <td className="td4-m">
                     {data1.memberSince.split(" ")[1] +
                       " " +
                       data1.memberSince.split(" ")[2]}
-                  </td>
+                  </td> */}
                 </tr>
               ))}
             </tbody>

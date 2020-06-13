@@ -15,6 +15,7 @@ import {
   addDocumentError,
   updateDocumentError,
   updateDocumentSuccess,
+  deleteDocumentSuccess,
 } from "../../../redux/actions";
 import { Loader } from "../../Loader/Loader";
 import "../../../styles/dashboard/manageDocument/index.scss";
@@ -46,6 +47,7 @@ export default class ManageDocument extends Component {
       editIndex: null,
       loader: false,
       index: 0,
+      deleteIndex: null,
     };
   }
 
@@ -84,7 +86,7 @@ export default class ManageDocument extends Component {
         prevProps?.documentsReducer?.documents.length &&
       documentsReducer.documents.length !== 0
     ) {
-      this.setState({ loader: false });
+      this.setState({ loader: false, deleteIndex: null });
     }
     if (
       documentsReducer?.addDocuments?.documentId !==
@@ -115,6 +117,21 @@ export default class ManageDocument extends Component {
       dispatch(updateDocumentSuccess({}));
       this.notify("Updated Successfully");
     }
+    // if (
+    //   documentsReducer?.deleteDocument?.data !==
+    //     prevProps?.documentsReducer?.deleteDocument?.data &&
+    //   documentsReducer?.deleteDocument?.data
+    // ) {
+    //   console.log('new dunnya')
+    //   this.setState({
+    //     deleteIndex: null,
+    //   });
+    //   dispatch(
+    //     deleteDocumentSuccess({
+    //       data: "",
+    //     })
+    //   );
+    // }
   }
 
   addRowModal = () => {
@@ -161,6 +178,9 @@ export default class ManageDocument extends Component {
   };
 
   deleteRow = (val, rowIndex) => {
+    // this.setState({
+    //   deleteIndex: rowIndex,
+    // });
     let deleteRowObj = {
       communityId: val.communityId,
       documentId: val.documentId,
@@ -262,7 +282,7 @@ export default class ManageDocument extends Component {
       },
       dispatch,
     } = this.props;
-    const { addRecord, hasEdit, modalLoader } = this.state;
+    const { addRecord, hasEdit, modalLoader, loader, deleteIndex } = this.state;
     console.log(this.props);
     return (
       <div className="content manage-document-component">
@@ -368,13 +388,22 @@ export default class ManageDocument extends Component {
                               />
                             </button>
                             <button
-                              className="btn"
+                              className="btn flex-center-center"
                               onClick={() => this.deleteRow(val, index)}
                             >
-                              <Image
-                                className=""
-                                src={"/assets/mockup/delete-table.png"}
-                              />
+                              {deleteIndex === index ? (
+                                <ReactLoading
+                                  height={"20px"}
+                                  width={"20px"}
+                                  type="spin"
+                                  color="#009999"
+                                />
+                              ) : (
+                                <Image
+                                  className=""
+                                  src={"/assets/mockup/delete-table.png"}
+                                />
+                              )}
                             </button>
                           </span>
                         </div>
@@ -385,7 +414,7 @@ export default class ManageDocument extends Component {
             </Table>
           </Col>
         </Row>
-        {this.state.loader ? <Loader /> : null}
+        {loader ? <Loader /> : null}
         <Row className="invite-btn-row">
           <Col lg="12" md="12" sm="12" className="PL35 PR35">
             <span className="invite-span">
@@ -532,8 +561,8 @@ export default class ManageDocument extends Component {
                       }}
                     >
                       <ReactLoading
-                        height={"20px"}
-                        width={"20px"}
+                        height={"30px"}
+                        width={"30px"}
                         type="bubbles"
                         color="white"
                       />

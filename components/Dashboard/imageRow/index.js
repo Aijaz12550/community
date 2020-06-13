@@ -58,60 +58,60 @@ class _Images extends Component {
   };
 
   render() {
+    const { familyMember } = this.props;
     return (
-      <div
-        className="image-head"
-        key={this.props.Uniquekey+(+Date.now())+5765}
-      >
-        {this.props.familyMember.map((v, i) => {
-          let margin = 0;
-          let zIndex = 0;
-          if (i < this.state.showData) {
-            if (i == 0) {
-              margin = 0;
-              zIndex = 7;
-            } else if (i == 6) {
-              margin = -10;
-              zIndex = 6;
-            } else if (i == 5) {
-              margin = -10;
-              zIndex = 5;
-            } else if (i == 4) {
-              margin = -10;
-              zIndex = 4;
-            } else if (i == 3) {
-              margin = -10;
-              zIndex = 3;
-            } else if (i == 2) {
-              margin = -10;
-              zIndex = 2;
-            } else if (i == 1) {
-              margin = -10;
-              zIndex = 1;
-            }
+      <div className="image-head">
+        {familyMember?.length
+          ? familyMember?.map((v, i) => {
+              let margin = 0;
+              let zIndex = 0;
+              if (i < this.state.showData) {
+                if (i == 0) {
+                  margin = 0;
+                  zIndex = 7;
+                } else if (i == 6) {
+                  margin = -10;
+                  zIndex = 6;
+                } else if (i == 5) {
+                  margin = -10;
+                  zIndex = 5;
+                } else if (i == 4) {
+                  margin = -10;
+                  zIndex = 4;
+                } else if (i == 3) {
+                  margin = -10;
+                  zIndex = 3;
+                } else if (i == 2) {
+                  margin = -10;
+                  zIndex = 2;
+                } else if (i == 1) {
+                  margin = -10;
+                  zIndex = 1;
+                }
 
-            return (
-              <Image
-                key={i + Math.floor(Math.random() * 10001)}
-                style={{ marginLeft: margin, zIndex: zIndex }}
-                className="roundedCircle"
-                src={v.memberImage}
-              />
-            );
-          }
-        })}
-        {this.props.familyMember.length > this.state.showData ? (
+                return (
+                  <Image
+                    key={i + Math.floor(Math.random() * 10001)}
+                    style={{ marginLeft: margin, zIndex: zIndex }}
+                    className="roundedCircle"
+                    src={v.avatarUrl}
+                  />
+                );
+              }
+            })
+          : null}
+        {this.props.familyMember?.length > this.state.showData ? (
           <Badge className="image-badge">
             +
-            {this.props.familyMember.length > this.state.showData
-              ? this.props.familyMember.length - this.state.showData
+            {this.props.familyMember?.length > this.state.showData
+              ? this.props.familyMember?.length - this.state.showData
               : 0}
           </Badge>
         ) : (
           <></>
         )}
         <div className="member-name">
-          {this.props.familyMember.map((v, i, arr) => {
+          {familyMember?.map((v, i, arr) => {
             if (i < this.state.showData) {
               return (
                 <span key={i + Math.floor(Math.random() * 10001)}>
@@ -121,10 +121,10 @@ class _Images extends Component {
             }
           })}
 
-          {this.props.familyMember.length > this.state.showData ? (
+          {familyMember?.length > this.state.showData ? (
             ` & ${
-              this.props.familyMember.length > this.state.showData
-                ? this.props.familyMember.length - this.state.showData
+              familyMember?.length > this.state.showData
+                ? familyMember?.length - this.state.showData
                 : 0
             } Others`
           ) : (
