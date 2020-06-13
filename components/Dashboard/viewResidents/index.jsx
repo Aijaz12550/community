@@ -27,11 +27,13 @@ export const ViewResident = (props) => {
 
   const [modalShow, setModalShow] = useState(false);
   const [sendData, setData] = useState();
+  const [sendStreetName, setStreetName] = useState('');
   const [searchData, SearchCol] = useState("");
 
-  function sendProps(setModalValue, setDataValue) {
+  function sendProps(setModalValue, setDataValue, StreetName) {
     setModalShow(setModalValue);
     setData(setDataValue);
+    setStreetName(StreetName);
   }
 
   useEffect(() => {
@@ -89,7 +91,7 @@ export const ViewResident = (props) => {
                         <tr
                           className="residents-table-row"
                           key={index}
-                          onClick={() => sendProps(true, data1?.familyMembers)}
+                          onClick={() => sendProps(true, data1?.familyMembers, data1.street)}
                         >
                           <td className="Col-1 sm-dmemberImageisplay-none">
                             {data1.street}
@@ -97,14 +99,14 @@ export const ViewResident = (props) => {
                           <td className="Col-2">
                             <Images familyMember={data1?.familyMembers} />
                           </td>
-                          <td className="Col-3">{data1.residentSince}</td>
+                          <td className="Col-3">{data1.residentSince ? data1.residentSince.split(' ')[0] + ' ' + data1.residentSince.split(' ')[2] : ''}</td>
                         </tr>
                       );
                     } else null;
                   })
                 ) : (
-                  <Loader />
-                )}
+                    <Loader />
+                  )}
               </tbody>
             </Table>
           </Col>
@@ -140,6 +142,7 @@ export const ViewResident = (props) => {
       <ResidentMemberDetail
         show={modalShow}
         familyDetails={sendData}
+        streetName={sendStreetName}
         onHide={() => setModalShow(false)}
       />
     </Fragment>

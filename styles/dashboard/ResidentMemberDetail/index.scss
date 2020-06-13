@@ -91,18 +91,26 @@
       width: 30%;
       align-items: center;
       display: flex;
+      border: none !important;
+      .roundedCircle {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+      }
     }
     .td2-m {
       height: 60px;
       width: 25%;
       align-items: center;
       display: flex;
+      border: none !important;
     }
     .td3-m {
       height: 60px;
       width: 30%;
       align-items: center;
       display: flex;
+      border: none !important;
     }
     .td4-m {
       height: 60px;
@@ -113,6 +121,7 @@
       overflow: hidden;
       display: flex;
       justify-content: flex-end;
+      border: none !important;
     }
     .tbody-1 {
       display: flex;
