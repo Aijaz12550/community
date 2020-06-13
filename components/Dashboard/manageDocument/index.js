@@ -15,7 +15,6 @@ import {
   addDocumentError,
   updateDocumentError,
   updateDocumentSuccess,
-  deleteDocumentSuccess,
 } from "../../../redux/actions";
 import { Loader } from "../../Loader/Loader";
 import "../../../styles/dashboard/manageDocument/index.scss";

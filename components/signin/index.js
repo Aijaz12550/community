@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import ReactLoading from "react-loading";
 // import Modals from './modal';
 // library.add(fas);
 // import Theme from '../theme'
@@ -23,6 +24,7 @@ export class SignIn extends React.Component {
       eyeIcon: "eye-slash",
       hiddnField: "password",
       modalShow: false,
+      loader: false,
     };
   }
   showModal = () => {
@@ -33,6 +35,9 @@ export class SignIn extends React.Component {
   signIn = (e) => {
     let { _signin, router } = this.props;
     e.preventDefault();
+    this.setState({
+      loader: true,
+    });
     const { username, password } = this.state;
     const body = {
       grant_type: "password",
@@ -75,9 +80,21 @@ export class SignIn extends React.Component {
     }
   };
 
+  componentDidUpdate(prevProps) {
+    if (
+      this.props.AuthReducer?.user?.userId !==
+      prevProps.AuthReducer?.user?.userId
+    ) {
+      this.setState({
+        loader: false,
+      });
+    }
+  }
+
   render() {
-    const { username, password } = this.state;
-    const { _socialLogin, router } = this.props;
+    const { username, password, loader } = this.state;
+    const { _socialLogin, router, AuthReducer } = this.props;
+    console.log(this.props.AuthReducer);
     return (
       <Container>
         <div>
@@ -141,8 +158,17 @@ export class SignIn extends React.Component {
             <p className="forgot-pwd">Forgot password?</p>
           </div>
 
-          <button className="signinbtn" type="submit">
-            Sign In
+          <button className="signinbtn flex-center-center" type="submit">
+            {loader ? (
+              <ReactLoading
+                height={"20px"}
+                width={"20px"}
+                type="bubbles"
+                color="white"
+              />
+            ) : (
+              "Sign In"
+            )}
           </button>
           <div className="have-an-account">
             <span>Don’t have an account?</span>

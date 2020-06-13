@@ -18,32 +18,11 @@ import { useRouter } from "next/router";
 export default connect((state) => state)((props) => {
   const router = useRouter();
   const { dispatch } = props;
-  // let {
-  //   user: { communityId },
-  // } = AuthReducer;
-  // useEffect(() => {
-  //   dispatch(getUsers());
-  //   dispatch(familyMembersList());
-  //   dispatch(residents(communityId));
-  //   dispatch(addDocument(communityId));
-  // }, []);
-
-  // const _INVITEMEMBER = (id) => {
-  //   dispatch(inviteFamilyMembers(id));
-  // };
 
   const __SIGNOUT = () => {
     dispatch(signout());
     router.push("/signIn");
   };
-
-  // const _RESIDENTS_ = (id = communityId) => {
-  //   dispatch(residents(id));
-  // };
-
-  // const _DOCUMENTS_ = (id = communityId) => {
-  //   dispatch(addDocument(id));
-  // };
 
   return (
     <Fragment>
@@ -65,14 +44,7 @@ export default connect((state) => state)((props) => {
         ></link>
       </Head>
       <DashBoard
-        // users={AllUsersReducer}
-        // user={AuthReducer.user}
         _signout={__SIGNOUT}
-        // _inviteMember={_INVITEMEMBER}
-        // _residents={_RESIDENTS_}
-        // _DOCUMENTS={_DOCUMENTS_}
-        // dispatch={dispatch}
-        // ResidentsReducer={ResidentsReducer}
         {...props}
       />
     </Fragment>

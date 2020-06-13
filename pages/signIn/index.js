@@ -5,7 +5,7 @@ import Head from "next/head";
 import React, { Fragment } from "react";
 import { useRouter } from "next/router";
 
-export default connect((state) => state)(({ dispatch }) => {
+export default connect((state) => state)((props) => {
   const router_ = useRouter();
   return (
     <Fragment>
@@ -13,11 +13,12 @@ export default connect((state) => state)(({ dispatch }) => {
         <title>Sign In</title>
       </Head>
       <SignIn
-        _signin={(payload) => dispatch(login(payload))}
+        _signin={(payload) => props.dispatch(login(payload))}
         router={router_}
         _socialLogin={(payload, provider) =>
-          dispatch(socialLogin(payload, provider))
+          props.dispatch(socialLogin(payload, provider))
         }
+        {...props}
       />
     </Fragment>
   );
