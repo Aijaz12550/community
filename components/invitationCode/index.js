@@ -3,7 +3,7 @@ import { Layout } from "./layout";
 import { CentralComponent } from "./centralComponent";
 import Link from "next/link";
 
-const InvitationCode = ({ _invitationCode }) => {
+const InvitationCode = ({ _invitationCode, codeError }) => {
   let [inv_code, setInv_code] = useState(null);
 
   return (
@@ -14,7 +14,7 @@ const InvitationCode = ({ _invitationCode }) => {
             Please Enter the invitation Code That you have recieved from us
           </span>
 
-          {false && (
+          {codeError && (
             <span className="central-component-warning">
               Sorry! Entered invitation code is invalid or expired. If problem
               persist, please contact our support at &nbsp;

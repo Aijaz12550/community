@@ -15,13 +15,18 @@ export const sendInvites = (payload) => {
 };
 
 export const invitationCode = (code) => {
-  return async (dispatch) => {
-    await _axios
-    .get(`users/invitationCode/${code}/valid`)
-    .then( data => {
-      console.log('data ===>', data)
-    }).catch( error => {
-      console.log( 'error ===>',error)
+  return  (dispatch) => {
+    return new Promise(async(resolve, reject) => {
+
+      await _axios
+      .get(`${process.env.NEW_BASE_URL}users/invitationCode/${code}/valid`)
+      .then( data => {
+        resolve(data)
+        console.log('data ===>', data)
+      }).catch( error => {
+        reject(error)
+        console.log( 'error ===>',error)
+      })
     })
   }
 }
