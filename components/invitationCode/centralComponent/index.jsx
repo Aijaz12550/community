@@ -1,6 +1,6 @@
 import React from "react";
 import { Progress } from "../progressBar";
-
+import '../../../styles/invitaionCode/centralComponent.scss'
 export const CentralComponent = ({
   children,
   progressbar,
