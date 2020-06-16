@@ -13,3 +13,15 @@ export const sendInvites = (payload) => {
       });
   };
 };
+
+export const invitationCode = (code) => {
+  return async (dispatch) => {
+    await _axios
+    .get(`users/invitationCode/${code}/valid`)
+    .then( data => {
+      console.log('data ===>', data)
+    }).catch( error => {
+      console.log( 'error ===>',error)
+    })
+  }
+}

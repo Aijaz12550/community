@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { DashBoard } from "$components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../styles/assets/css/dashboard.css";

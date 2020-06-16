@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout } from "./layout";
 import { CentralComponent } from "./centralComponent";
 import Link from "next/link";
 
-const InvitationCode = () => {
+const InvitationCode = ({ _invitationCode }) => {
+  let [inv_code, setInv_code] = useState(null);
+
   return (
     <Layout>
       <CentralComponent progress_value={0}>
@@ -12,15 +14,22 @@ const InvitationCode = () => {
             Please Enter the invitation Code That you have recieved from us
           </span>
 
-          <span className="central-component-warning">
-            Sorry! Entered invitation code is invalid or expired. If problem
-            persist, please contact our support at &nbsp;
-            <Link href="/test">support@weneighbors.io</Link>
-          </span>
+          {false && (
+            <span className="central-component-warning">
+              Sorry! Entered invitation code is invalid or expired. If problem
+              persist, please contact our support at &nbsp;
+              <Link href="/test">support@weneighbors.io</Link>
+            </span>
+          )}
 
           <span className="inp-container">
             <label className="inp-label">Invitaion Code</label>
-            <input className="inp-compo" type="text" placeholder="AED5687" />
+            <input
+              className="inp-compo"
+              onChange={(e) => setInv_code(e.target.value)}
+              type="text"
+              placeholder="AED5687"
+            />
           </span>
         </div>
 
@@ -34,7 +43,7 @@ const InvitationCode = () => {
 
           <div className="btn-container">
             <button>Back</button>
-            <button>Next</button>
+            <button onClick={() => _invitationCode(inv_code)}>Next</button>
           </div>
         </div>
       </CentralComponent>
