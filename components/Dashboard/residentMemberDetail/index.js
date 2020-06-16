@@ -8,7 +8,7 @@ class ResidentMemberDetail extends Component {
   }
 
   render() {
-    const { familyDetails } = this.props;
+    const { familyDetails, streetName } = this.props;
     return (
       <Modal
         show={this.props.show}
@@ -26,7 +26,7 @@ class ResidentMemberDetail extends Component {
                     <Row>
                       <div className="header-modal-card-body">
                         <p className="view-residents-title">
-                          {familyDetails?.address}
+                          {streetName ? streetName : ''}
                         </p>
                         <p className="view-residents-address">
                           <span className="residence-since">
@@ -59,7 +59,7 @@ class ResidentMemberDetail extends Component {
                   <td className="td1-m PL30">
                     <div>
                       <img
-                        src={data1.avatarUrl}
+                        src={data1.avatarUrl ? data1.avatarUrl : "/assets/mockup/defaultImage.png"}
                         key={index}
                         className="roundedCircle"
                       ></img>

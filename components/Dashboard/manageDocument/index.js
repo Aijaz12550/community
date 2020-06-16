@@ -503,13 +503,13 @@ export default class ManageDocument extends Component {
                       <option key="disable" value="N/A" disabled>
                         N/A
                       </option>
-                      {documentType.map((value, index) => (
-                        <option key={index} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                  )}
+                        {documentType.map((value, index) => (
+                          <option key={index} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                    )}
                 </div>
               </Col>
             </Row>
@@ -521,12 +521,12 @@ export default class ManageDocument extends Component {
                     <span onClick={this.removefile}>x</span>
                   </label>
                 ) : (
-                  <label className="upload_label">
-                    <input type="file" onChange={(e) => this._upload(e)} />
-                    <span>Upload Documents</span>
-                    <span>or Drop file here</span>
-                  </label>
-                )}
+                    <label className="upload_label">
+                      <input type="file" onChange={(e) => this._upload(e)} />
+                      <span>Upload Documents</span>
+                      <span>or Drop file here</span>
+                    </label>
+                  )}
               </Col>
             </Row>
             <Row className="row-5">

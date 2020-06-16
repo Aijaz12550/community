@@ -19,11 +19,14 @@ class EditorComponent extends React.Component {
           // height: 500,
           draggable_modal: true,
           menubar: false,
+          selector: "textarea", // change this value according to your HTML
+          toolbar: "image",
+          imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions",
           plugins: [
-            "a11ychecker advcode  casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable  tinymcespellchecker",
+            "a11ychecker advcode  casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinymcespellchecker image imagetools fullscreen bbcode",
           ],
           toolbar:
-            "a11ycheck addcomment showcomments casechange forecolor backcolor checklist code formatpainter pageembed permanentpen table js css bold color insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            "a11ycheck addcomment showcomments casechange forecolor backcolor checklist code formatpainter pageembed permanentpen table js css bold color insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | imagetools_toolbar | fullscreen",
           content_css: "//www.tiny.cloud/css/codepen.min.css",
           toolbar_mode: "floating",
           allow_script_urls: true,
