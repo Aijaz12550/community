@@ -4,7 +4,7 @@ import { Nav, Col, Card } from "reactstrap";
 import { routes } from "../dashboardRoutes";
 import { useRouter } from "next/router";
 import "../../../styles/sidebar/index.scss";
-import { Image } from "react-bootstrap";
+// import { Image } from "react-bootstrap";
 
 export const SideBar = () => {
   const sidebar = createRef();
@@ -21,7 +21,9 @@ export const SideBar = () => {
       }}
     >
       <div className="sidebar-header logo">
+        <Link href='/' >
         <img src="/assets/mockup/Logo.png" style={{ width: 154, height: 75 }} />
+        </Link>
       </div>
 
       <div className="sidebar-wrapper scrollBarStyle-Y sidebar-content">

@@ -78,7 +78,7 @@ export const ViewResident = (props) => {
                 </tr>
               </thead>
               <tbody className="scrollBarStyle-Y table-tbody">
-                {ResidentsReducer?.residents.length ? (
+                {ResidentsReducer?.residents?.length ? (
                   ResidentsReducer?.residents.map((data1, index) => {
                     if (
                       `${data1.street}`

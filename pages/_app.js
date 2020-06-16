@@ -53,6 +53,12 @@ export default withRouter(
         ) {
           return false;
         } else if (
+          router.pathname.startsWith("/") &&
+          !user.access_token &&
+          prevProps.Component != this.props.Component
+        ) {
+          return false;
+        } else if (
           !router.pathname.startsWith("/signIn") &&
           !user.access_token &&
           prevProps.Component != this.props.Component
@@ -88,6 +94,8 @@ export default withRouter(
         const { store, router } = this.props;
         let user = store?.getState()?.AuthReducer?.user;
         if (router.pathname.startsWith("/signIn") && !user.access_token) {
+          return false;
+        } else if (router.pathname.startsWith("/") && !user.access_token) {
           return false;
         } else if (
           !router.pathname.startsWith("/signIn") &&
