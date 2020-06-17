@@ -4,7 +4,7 @@ import { _axios } from "$config";
 export const sendInvites = (payload) => {
   return async (dispatch) => {
     await _axios
-      .post(`${process.env.API_BASE_URL}invitation/send`, payload)
+      .post(`${process.env.API_BASE_URL}/v2/invitation/send`, payload)
       .then(({ data }) => {
         dispatch(sendInvitesSuccess(data?.paramObjectsMap?.InvitationEntityVO));
       })

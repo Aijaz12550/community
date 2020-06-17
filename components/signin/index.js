@@ -127,8 +127,7 @@ export class SignIn extends React.Component {
 
   render() {
     const { username, password, loader } = this.state;
-    const { _socialLogin, router, AuthReducer } = this.props;
-    console.log(this.props.AuthReducer);
+    const { _socialLogin, router } = this.props;
     return (
       <Container>
         <div>
