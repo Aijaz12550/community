@@ -6,13 +6,8 @@ import "../../styles/signin/index.scss";
 import { GoogleLogin } from "./google";
 import { Apple } from "./apple";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import ReactLoading from "react-loading";
 import ModalCustomize from './modalsCustomize'
-library.add(fas);
-// import Theme from '../theme'
 
 export class SignIn extends React.Component {
   constructor() {
@@ -142,7 +137,6 @@ export class SignIn extends React.Component {
             Please Sign In to access your community dashboard.
           </p>
         </div>
-        {/* <Theme /> */}
         <div>
           <button className="apple-login-btn">
             <Image
@@ -153,10 +147,6 @@ export class SignIn extends React.Component {
           </button>
           <GoogleLogin _socialLogin={_socialLogin} router={router} />
         </div>
-        {/* <Apple /> */}
-
-        {/* <button className="google-login-btn">continue with Google</button> */}
-
         <div className="another-login">
           <span className="line-draw"></span>
           <span className="use-on-email">OR USE YOUR OWN EMAIL</span>
@@ -187,7 +177,7 @@ export class SignIn extends React.Component {
             />
             <button onClick={this.showPwd} className="pwd-btn">
               <FontAwesomeIcon
-                icon={[fas, this.state.eyeIcon]}
+                icon={['fas', this.state.eyeIcon]}
                 color="#444444"
               />
             </button>
@@ -220,7 +210,7 @@ export class SignIn extends React.Component {
           modalName={this.state.showModalName}
           closeModal={() => this.setState({ showModal: false })}
           emailVerifiedRequiredModal={this.emailVerifiedRequiredModal}
-          recoverPasswordSendReq={this.recoverPassword}
+          recoverPasswordSendReq={this.recoverPasswordSendReq}
         />
       </Container>
     );
