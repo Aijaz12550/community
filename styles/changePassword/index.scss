@@ -1,0 +1,83 @@
+.change-password{
+  .central-component-sub-2{
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    min-height: 0rem !important;
+    // height: 560px;
+    .heading{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 35px;
+      color: #344563;
+      margin-bottom: 11px !important;
+    }
+    .warning-criteria{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 29px;
+      color: #91909A;
+      margin-bottom: 15px !important;
+    }
+    .pwd-required-validation{
+      background: #FAFAFD;
+      border-radius: 6px;
+      padding: 15px 19px 30px 15px;
+      .warning{
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 32px;
+        color: #344563;
+        margin-bottom: 0px;
+      }
+    }
+    .pwd-row{
+      width: 100%;
+      padding-bottom: 15px;
+      margin-top: 40px;
+      border-bottom: 1px solid #D1D1D1;
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid #D1D1D1;
+      margin-bottom: 30px;
+      .pwd-field{
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        color: #6C7B8A;
+        border: none;
+        width: calc(100% - 25px);
+      }
+      .pwd-btn{
+        width: 25px;
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        outline: none !important;
+      }
+    }
+    .change-pwd-btn{
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 50px;
+      background: #009999;
+      border-radius: 8px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+  }
+}

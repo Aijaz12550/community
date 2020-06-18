@@ -1,5 +1,6 @@
 import React from "react";
 import { LayoutHeader } from "./header";
+import '../../styles/invitaionCode/layout.scss'
 
 export const Layout = ({ children }) => {
   return (

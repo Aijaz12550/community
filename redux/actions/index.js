@@ -5,3 +5,4 @@ export * from "./documentsActions";
 export * from "./membersActions";
 export * from "./inviteActions";
 export * from "./rolesActions";
+export * from "./profileAction"

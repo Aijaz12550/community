@@ -22,7 +22,7 @@ export const addDocument = ({
 }) => {
   return async (dispatch) => {
     await _axios
-      .post(`${process.env.API_BASE_URL}document/add`, file, {
+      .post(`${process.env.API_BASE_URL}/v2/document/add`, file, {
         headers: { "Content-Type": "multipart/form-data" },
         params: { Notes, category, communityId, docType, userId },
       })
@@ -43,7 +43,7 @@ export const addDocument = ({
 export const getDocument = (payload) => {
   return async (dispatch) => {
     await _axios
-      .get(`${process.env.API_BASE_URL}document/community/${payload}`)
+      .get(`${process.env.API_BASE_URL}/v2/document/community/${payload}`)
       .then(($data) => {
         dispatch(
           getDocumentSuccess($data?.data?.paramObjectsMap?.DocumentEntityList)
@@ -63,7 +63,7 @@ export const deleteDocument = (payload) => {
   return async (dispatch) => {
     await _axios
       .delete(
-        `${process.env.API_BASE_URL}document/community/${payload.communityId}/document/${payload.documentId}`
+        `${process.env.API_BASE_URL}/v2/document/community/${payload.communityId}/document/${payload.documentId}`
       )
       .then(($data) => {
         dispatch(
@@ -83,7 +83,7 @@ export const updateDocument = (payload) => {
   console.log("pagad", payload);
   return async (dispatch) => {
     await _axios
-      .post(`${process.env.API_BASE_URL}document/update`, null, {
+      .post(`${process.env.API_BASE_URL}/v2/document/update`, null, {
         params: payload.docObj,
       })
       .then(($data) => {
@@ -103,7 +103,7 @@ export const updateDocument = (payload) => {
 export const documentType = () => {
   return async (dispatch) => {
     await _axios
-      .get(`${process.env.API_BASE_URL}lookup/documentType`)
+      .get(`${process.env.API_BASE_URL}/v2/lookup/documentType`)
       .then(($data) => {
         dispatch(documentTypeSuccess($data?.data?.paramObjectsMap?.LookupList));
       })

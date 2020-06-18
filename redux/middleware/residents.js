@@ -5,7 +5,7 @@ export const residents = (payload) => {
   console.log(payload, "asdfadfafs");
   return async (dispatch) => {
     await _axios
-      .get(`${process.env.API_BASE_URL}resident/community/${payload}`)
+      .get(`${process.env.API_BASE_URL}/v2/resident/community/${payload}`)
       .then(({ data }) => {
         dispatch(addResidents(data?.paramObjectsMap?.residentsHomeAddresses));
       })
