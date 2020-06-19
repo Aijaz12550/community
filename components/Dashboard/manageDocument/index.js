@@ -40,7 +40,7 @@ export default class ManageDocument extends Component {
         docType: "",
         documentId: "",
       },
-      documentTypeList: ["DOC"],
+      documentTypeList: ["document"],
       setModalShow: false,
       hasEdit: false,
       editIndex: null,
@@ -215,7 +215,7 @@ export default class ManageDocument extends Component {
     formdata.append("file", file);
     const documentObj = {
       Notes: notes,
-      category: "DOC",
+      category: "document",
       communityId,
       docType: documentType,
       file: formdata,
