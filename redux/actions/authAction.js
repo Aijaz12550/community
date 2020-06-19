@@ -1,4 +1,4 @@
-import { SIGNIN, SIGNUP } from "../CONSTANTS";
+import { SIGNIN, SIGNUP, EMAILVERIFICATIONSTATUS } from "../CONSTANTS";
 const signin = (payload) => {
   return {
     type: SIGNIN,
@@ -12,4 +12,11 @@ const signup = (payload) => {
     payload,
   };
 };
-export { signin, signup };
+
+const emailverification = (payload) => {
+  return {
+    type: EMAILVERIFICATIONSTATUS,
+    payload,
+  };
+};
+export { signin, signup, emailverification };

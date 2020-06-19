@@ -3,8 +3,11 @@ import { Layout } from "../layout";
 import { CentralComponent } from "../centralComponent";
 import { Image } from "react-bootstrap";
 import Link from "next/link";
-
-const SignUp = () => {
+import ReactLoading from 'react-loading'
+const SignUp = ({
+  __reSendVerificationEmail,
+  isloading
+}) => {
   return (
     <Layout>
       <CentralComponent progressbar='none'>
@@ -28,7 +31,16 @@ const SignUp = () => {
           <Link href="#">http://help.weneighbors.io</Link>
         </span>
 
-        <button className="verify-email-btn">Resend Verification Email</button>
+        {/* <button className="verify-email-btn" onClick={__reSendVerificationEmail}>Resend Verification Email</button> */}
+        <div className={!isloading?"btn-class":'btn-class-isloading'} onClick={__reSendVerificationEmail}  disabled={isloading} >
+              {
+                isloading
+                ?
+                <ReactLoading type={'balls'} color={'white'} height='20px' width='20px'  />
+                :
+              'Resend Verification Email'
+              }
+              </div >
       </CentralComponent>
     </Layout>
   );

@@ -1,4 +1,4 @@
-import { signin, signup } from "../actions";
+import { signin, signup, emailverification } from "../actions";
 import { registerUser, OauthConfig, _axios } from "$config";
 
 export const login = (payload) => {
@@ -48,10 +48,11 @@ export const register = (payload) => {
 };
 
 export const reSendEmailVerification = (email) => {
-  return async dispatch => {
-   await _axios.post(`${API_BASE_URL_1}v1/users/resendVerificationEmail/${email}`)
+  return async (dispatch) => {
+   await _axios.get(`https://microservices-dev.weneighbors.io/ms-event/api/v1/users/resendVerificationEmail/${email}`)
    .then( data => {
      console.log(' data ==>', data)
+     dispatch(emailverification(data?.data))
    }).catch( error => {
      console.log(' error ==>', error)
    })

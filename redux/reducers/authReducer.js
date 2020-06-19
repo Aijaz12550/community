@@ -3,17 +3,23 @@ const initialState = {
   user: {},
 };
 
-const AuthReducer = (state = initialState, action) => {
-  switch (action.type) {
+const AuthReducer = (state = initialState, { payload, type }) => {
+  switch (type) {
     case "SIGNIN":
       return {
         ...state,
-        user: action.payload,
+        user: payload,
       };
     case "SIGNOUT":
       return {
         ...state,
         user: null,
+      };
+
+    case "EMAILVERIFICATIONSTATUS":
+      return {
+        ...state,
+        emailVerificationStatus: payload,
       };
     default:
       return state;

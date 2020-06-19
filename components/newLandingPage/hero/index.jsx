@@ -1,5 +1,6 @@
 import React from 'react'
 import "../../../styles/newLandingPage/hero.scss"
+import Link from 'next/link'
 
 export const Hero = () => {
     return(
@@ -15,6 +16,12 @@ export const Hero = () => {
             <span className='sub-heading-2' >
             Keep communications organized in WeNeighbors, the smart alternative to email
             </span>
+
+                <Link href='/invitationCode' >
+            <div className='landing-page-btn'>
+                Get Started &nbsp; &nbsp; &gt;
+            </div>
+                </Link>
         </div>
     )
 }

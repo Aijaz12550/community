@@ -12,7 +12,7 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
-    
+
     font-size: clamp(16px, 4vw, 32px);
     line-height: 56px;
 
@@ -30,14 +30,41 @@
     color: #344563;
   }
 
-  .sub-heading-2{
+  .sub-heading-2 {
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
     font-size: clamp(16px, 3vw, 20px);
     line-height: 36px;
     text-align: center;
-    color: #6C7B8A;
+    color: #6c7b8a;
   }
+}
 
+.landing-page-btn {
+  background: #009999;
+  padding: 3px;
+  margin-top: 25px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+  min-width: 160px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.landing-page-btn:hover{
+  transform: translate(0,-3px);
+  transition: all 0.3s;
+}
+.landing-page-btn:active{
+  transform: translate(0);
+  opacity: 0.9;
+  transition: all 0.3s;
 }
