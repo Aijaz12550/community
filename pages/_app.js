@@ -53,10 +53,22 @@ export default withRouter(
         ) {
           return false;
         } else if (
-          router.pathname.startsWith("/") &&
+          router.pathname === "/" &&
           !user.access_token &&
           prevProps.Component != this.props.Component
         ) {
+          this.setState({
+            ComponentTorender: this.props.Component,
+          });
+          return false;
+        } else if (
+          router.pathname.startsWith("/invitationCode") &&
+          !user.access_token &&
+          prevProps.Component != this.props.Component
+        ) {
+          this.setState({
+            ComponentTorender: this.props.Component,
+          });
           return false;
         } else if (
           !router.pathname.startsWith("/signIn") &&
@@ -95,7 +107,14 @@ export default withRouter(
         let user = store?.getState()?.AuthReducer?.user;
         if (router.pathname.startsWith("/signIn") && !user.access_token) {
           return false;
-        } else if (router.pathname.startsWith("/") && !user.access_token) {
+        } else if (router.pathname === "/" && !user.access_token) {
+
+          
+          return false;
+        } else if (
+          router.pathname.startsWith("/invitationCode") &&
+          !user.access_token
+        ) {
           return false;
         } else if (
           !router.pathname.startsWith("/signIn") &&

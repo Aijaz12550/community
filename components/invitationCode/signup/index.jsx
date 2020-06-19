@@ -1,9 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import { Layout } from "../layout";
 import { CentralComponent } from "../centralComponent";
 import { Image } from "react-bootstrap";
 
-const SignUp = () => {
+const SignUp = ({
+  _register,
+}) => {
+  let [email, setEmail] = useState("")
+  let [phone, setPhone] = useState("")
+  let [password, setPassword] = useState("")
+
   return (
     <Layout>
       <CentralComponent progress_value={100}>
@@ -22,22 +28,22 @@ const SignUp = () => {
 
         <div className="_inp_container">
           <label>Email</label>
-          <input type="email" placeholder="Email" />
+          <input onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="Email" />
 
           <br />
           <label>Phone</label>
-          <input type="number" placeholder="Phone" />
+          <input onChange={(e)=>setPhone(e.target.value)} type="number" placeholder="Phone" />
 
           <br />
           <label>Password</label>
-          <input type="password" placeholder="Password" />
+          <input onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
         </div>
 
         <span></span>
         <div className="bottom-button-container">
           <button>Back</button>
 
-          <button>Sign Up</button>
+          <button onClick={()=>_register({email,phone,password})}>Sign Up</button>
         </div>
       </CentralComponent>
     </Layout>

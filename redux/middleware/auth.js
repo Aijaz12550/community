@@ -35,9 +35,9 @@ export const socialLogin = (payload) => {
 };
 
 export const register = (payload) => {
-  return (dispatch) => {
-    _axios
-      .post(registerUser, payload)
+  return async(dispatch) => {
+    await _axios
+      .post(`${process.env.NEW_BASE_URL}users/register`, payload)
       .then((data) => {
         dispatch(signup(data));
       })
@@ -46,6 +46,18 @@ export const register = (payload) => {
       });
   };
 };
+
+export const reSendEmailVerification = (email) => {
+  return async dispatch => {
+   await _axios.post(`${API_BASE_URL_1}v1/users/resendVerificationEmail/${email}`)
+   .then( data => {
+     console.log(' data ==>', data)
+   }).catch( error => {
+     console.log(' error ==>', error)
+   })
+
+  }
+}
 
 export const signout = () => {
   return (dispatch) => {

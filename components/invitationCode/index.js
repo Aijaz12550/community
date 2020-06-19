@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Layout } from "./layout";
 import { CentralComponent } from "./centralComponent";
 import Link from "next/link";
+import ReactLoading from 'react-loading'
 
-const InvitationCode = ({ _invitationCode, codeError }) => {
-  let [inv_code, setInv_code] = useState(null);
+const InvitationCode = ({ _invitationCode, codeError, isloading }) => {
+  let [inv_code, setInv_code] = useState('RMAN707066');
 
   return (
     <Layout>
@@ -28,6 +29,7 @@ const InvitationCode = ({ _invitationCode, codeError }) => {
               className="inp-compo"
               onChange={(e) => setInv_code(e.target.value)}
               type="text"
+              value={inv_code}
               placeholder="AED5687"
             />
           </span>
@@ -37,13 +39,21 @@ const InvitationCode = ({ _invitationCode, codeError }) => {
           <span></span>
           <span></span>
           <span>
-            Already have an account?
-            <Link href="SignIn">Sign in</Link>
+            Already have an account? &nbsp;
+            <Link href="/SignIn">Sign in</Link>
           </span>
 
           <div className="btn-container">
             <button>Back</button>
-            <button onClick={() => _invitationCode(inv_code)}>Next</button>
+            <div className={!isloading?"btn-class":'btn-class-isloading'} onClick={() => _invitationCode(inv_code)} disabled={isloading} >
+              {
+                isloading
+                ?
+                <ReactLoading type={'balls'} color={'white'} height='20px' width='20px'  />
+                :
+              'Next'
+              }
+              </div >
           </div>
         </div>
       </CentralComponent>

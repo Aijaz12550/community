@@ -7,7 +7,7 @@ import Link from "next/link";
 const SignUp = () => {
   return (
     <Layout>
-      <CentralComponent>
+      <CentralComponent progressbar='none'>
         <Image src="/assets/mockup/Frame.png" />
 
         <span className="verify-email-heading">
