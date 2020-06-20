@@ -6,3 +6,4 @@ export * from "./membersReducer";
 export * from "./inviteReducers";
 export * from "./rolesReducer";
 export * from "./profileReducer"
+export * from "./externalMemberReducer"

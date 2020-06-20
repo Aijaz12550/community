@@ -12,10 +12,10 @@ export default class UserProfile extends Component {
       userDetail: {
         userName: "",
         profilePicUrl: "",
-        role: "",
+        role: "Board Member",
         email: "",
         phoneNumber: "",
-        memberSince: "",
+        memberSince: "10 Auguest 2019",
       },
     };
   }
@@ -24,6 +24,9 @@ export default class UserProfile extends Component {
     document.getElementById("fileButton").click();
     document.getElementById("fileButton").onchange = (e) => {
       let val = URL.createObjectURL(e.target.files[0]);
+      // let size = e.target.files[0].size;
+      // var sizeInMB = (size / (1024 * 1024)).toFixed(2);
+      // console.log('size', sizeInMB)
 
       let { userDetail } = this.state;
       userDetail.profilePicUrl = val;
@@ -69,6 +72,7 @@ export default class UserProfile extends Component {
   }
 
   render() {
+    const { profileReducer: { getProfile } } = this.props;
     return (
       <div className="content user-profile-component" key={Date.now() + 5765}>
         <Row className="MT60 section-top">
@@ -79,14 +83,14 @@ export default class UserProfile extends Component {
         <Row className="body-row scrollBarStyle-Y ">
           <div className="profile-card">
             <div className="profile-div">
-              <div className="user-name">{this.state.userDetail.userName}</div>
+              <div className="user-name">{getProfile.fullName}</div>
               <div className="user-role">
                 <span>{this.state.userDetail.role}</span>
               </div>
               <div className="profile-image-div">
                 <Image
                   className="profile-image"
-                  src={this.state.userDetail.profilePicUrl}
+                  src={getProfile.familyMemberAvatarUrl}
                 />
               </div>
               <div className="upload-photo-div">
@@ -126,7 +130,7 @@ export default class UserProfile extends Component {
                 <Input
                   type="text"
                   name="userName"
-                  value={this.state.userDetail.userName}
+                  value={getProfile.fullName}
                   onChange={(e) => this._onChange(e)}
                 />
               </span>
@@ -147,7 +151,7 @@ export default class UserProfile extends Component {
                 <Input
                   type="text"
                   name="email"
-                  value={this.state.userDetail.email}
+                  value={getProfile.email}
                   onChange={(e) => this._onChange(e)}
                 />
               </span>
@@ -161,7 +165,7 @@ export default class UserProfile extends Component {
                 <Input
                   type="text"
                   name="phoneNumber"
-                  value={this.state.userDetail.phoneNumber}
+                  value={getProfile.phone}
                   onChange={(e) => this._onChange(e)}
                 />
               </span>

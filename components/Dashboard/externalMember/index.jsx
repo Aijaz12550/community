@@ -2,25 +2,35 @@ import React, { Component, Fragment } from "react";
 import { Row, Col, Table } from "reactstrap";
 import { Dropdown, Image } from 'react-bootstrap'
 import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
+import { getExternalMember, getRoles } from "$middleware";
 import "../../../styles/dashboard/externalMember/index.scss";
 
 export default class ExternalMember extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      externalMemberData: [
-        { role: '10 Mckeon Pl', fullName: 'Jackson Smith', email: 'alice.bryant@example.com', phoneNumber: '207 555-0119' },
+      externalMemberData: [],
+      dropdownInput: [
+        { name: "ROLE_ADMINISTRATOR", description: "Administrator" },
+        { name: "ROLE_REGIONAL_MANAGER", description: "Regional Manager" },
+        { name: "ROLE_COMMUNITY_RESIDENT", description: "Community Resident" },
+        { name: "ROLE_COMMUNITY_MEMBER", description: "Community Member" }
       ],
-      dropdownInput: ['N/A', 'Service Manager'],
     }
+    this.myRef = React.createRef();
   }
 
 
   addRow = () => {
     this.setState({
-      externalMemberData: [...this.state.externalMemberData, { role: 'N/A', fullName: '', email: '', phoneNumber: '' }]
+      externalMemberData: [...this.state.externalMemberData, { roleName: 'N/A', fullName: '', email: '', phoneNumber: '' }]
     })
+    this.handleScrollToElement();
   }
+  handleScrollToElement = (event) => {
+    window.scrollTo(0, this.myRef.current.offsetTop);
+  }
+
 
   resetTable = () => {
     this.setState({
@@ -47,8 +57,47 @@ export default class ExternalMember extends Component {
     })
   }
 
+  componentDidMount() {
+    const {
+      AuthReducer: {
+        user: { communityId },
+      },
+      dispatch,
+    } = this.props;
+    dispatch(getExternalMember(communityId));
+    dispatch(getRoles());
+  }
+
+  componentDidUpdate(prevProps) {
+    const { externalMemberReducer: { getExternalMember, getExternalMemberError } } = this.props;
+    if (!this.state.externalMemberData.length) {
+      this.setState({
+        externalMemberData: getExternalMember
+      })
+    }
+    // if (profileReducer.getProfile.email !== prevProps.profileReducer.email) {
+    //   const {
+    //     fullName,
+    //     familyMemberAvatarUrl,
+    //     email,
+    //     phone,
+    //     residentSince,
+    //   } = profileReducer.getProfile;
+    //   this.setState({
+    //     userName: fullName,
+    //     profilePicUrl: familyMemberAvatarUrl,
+    //     role: "",
+    //     email,
+    //     phoneNumber: phone,
+    //     memberSince: residentSince,
+    //   });
+    // }
+  }
+
 
   render() {
+    const { externalMemberReducer: { getExternalMember, getExternalMemberError }, rolesReducer } = this.props;
+    console.log('aa', getExternalMember)
     return (
       <div className="content external-member-component" key={Date.now() + 5765}>
         <Row className="MT60 section-top">
@@ -72,15 +121,23 @@ export default class ExternalMember extends Component {
                   <tr></tr>
                 }
               </thead>
-              <tbody className="scrollBarStyle-Y tBody">
-                {this.state.externalMemberData?.map((val, index) => (
+              <tbody className="scrollBarStyle-Y tBody" ref={this.myRef}>
+                {this.state.externalMemberData.length && this.state.externalMemberData?.map((val, index) => (
                   <tr className="residents-table-row-modal" key={index}>
                     <td className="td1-m PL30">
                       <div>
-                        <select className='dropDownInput' name='role' value={val.role} onChange={(e) => this.dropDownChanging(e, index)} >
-                          <option value="N/A">{this.state.dropdownInput[0]}</option>
-                          <option value="Service Manager">{this.state.dropdownInput[1]}</option>
-                        </select>
+                        {val.roleName === 'N/A' ?
+                          <select className='dropDownInput' name='role' value={this.state.dropdownInput[0].name} onChange={(e) => this.dropDownChanging(e, index)} >
+                            <option value={this.state.dropdownInput[0].name}>{this.state.dropdownInput[0].name}</option>
+                            <option value={this.state.dropdownInput[1].name}>{this.state.dropdownInput[1].name}</option>
+                            <option value={this.state.dropdownInput[2].name}>{this.state.dropdownInput[2].name}</option>
+                            <option value={this.state.dropdownInput[3].name}>{this.state.dropdownInput[3].name}</option>
+                          </select>
+                          :
+                          <select className='dropDownInput' name='role' value={val.roleName} onChange={(e) => this.dropDownChanging(e, index)} >
+                            <option value={val.roleName}>{val.roleName}</option>
+                          </select>
+                        }
                       </div>
                     </td>
                     <td><input type='text' name='fullName' value={val.fullName} onChange={(e) => this._onChange(e, index)} /></td>
@@ -88,7 +145,7 @@ export default class ExternalMember extends Component {
                       <input type='text' name='fullName' value={val.fullName} onChange={(e) => this._onChange(e, index)} />
                     </td> */}
                     <td className="td3-m"><input type='email' name="email" value={val.email} onChange={(e) => this._onChange(e, index)} /></td>
-                    <td className="td4-m"><input type='text' name='phoneNumber' value={val.phoneNumber} onChange={(e) => this._onChange(e, index)} /></td>
+                    <td className="td4-m"><input type='text' name='phoneNumber' value={val.phoneNo} onChange={(e) => this._onChange(e, index)} /></td>
                     <td className="td5-m"><button onClick={() => this.deleteRow(index)}><img src="/assets/mockup/delete-icon.png" /></button></td>
                   </tr>
                 ))}

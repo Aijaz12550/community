@@ -74,7 +74,7 @@ export default class ManageDocument extends Component {
     const { documentsReducer, dispatch } = this.props;
     if (
       documentsReducer.documentsError !==
-        prevProps?.documentsReducer?.documentsError &&
+      prevProps?.documentsReducer?.documentsError &&
       documentsReducer.documentsError?.length !== 0
     ) {
       this.notify(documentsReducer.documentsError);
@@ -82,7 +82,7 @@ export default class ManageDocument extends Component {
     }
     if (
       documentsReducer.documents.length !==
-        prevProps?.documentsReducer?.documents.length &&
+      prevProps?.documentsReducer?.documents.length &&
       documentsReducer.documents.length !== 0
     ) {
       this.setState({ loader: false, deleteIndex: null });
@@ -108,7 +108,7 @@ export default class ManageDocument extends Component {
     }
     if (
       documentsReducer?.updateDocument?.documentId !==
-        prevProps?.documentsReducer?.updateDocument?.documentId &&
+      prevProps?.documentsReducer?.updateDocument?.documentId &&
       documentsReducer?.updateDocument?.documentId
     ) {
       this.setState({ modalLoader: false });
@@ -398,11 +398,11 @@ export default class ManageDocument extends Component {
                                   color="#009999"
                                 />
                               ) : (
-                                <Image
-                                  className=""
-                                  src={"/assets/mockup/delete-table.png"}
-                                />
-                              )}
+                                  <Image
+                                    className=""
+                                    src={"/assets/mockup/delete-table.png"}
+                                  />
+                                )}
                             </button>
                           </span>
                         </div>
@@ -494,14 +494,14 @@ export default class ManageDocument extends Component {
                       ))}
                     </select>
                   ) : (
-                    <select
-                      className="dropDownInput"
-                      name="documentType"
-                      value={this.state.addRecord.documentType}
-                      onChange={(e) => this._onchange(e)}
-                    >
-                      <option key="disable" value="N/A" disabled>
-                        N/A
+                      <select
+                        className="dropDownInput"
+                        name="documentType"
+                        value={this.state.addRecord.documentType}
+                        onChange={(e) => this._onchange(e)}
+                      >
+                        <option key="disable" value="N/A" disabled>
+                          N/A
                       </option>
                         {documentType.map((value, index) => (
                           <option key={index} value={value}>
@@ -569,8 +569,8 @@ export default class ManageDocument extends Component {
                   ) : hasEdit ? (
                     "Update"
                   ) : (
-                    "Save"
-                  )}
+                        "Save"
+                      )}
                 </button>
               </Col>
             </Row>
