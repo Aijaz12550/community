@@ -70,11 +70,11 @@ export default class ExternalMember extends Component {
 
   componentDidUpdate(prevProps) {
     const { externalMemberReducer: { getExternalMember, getExternalMemberError } } = this.props;
-    if (!this.state.externalMemberData.length) {
-      this.setState({
-        externalMemberData: getExternalMember
-      })
-    }
+    // if (!this.state.externalMemberData.length) {
+    //   this.setState({
+    //     externalMemberData: getExternalMember
+    //   })
+    // }
     // if (profileReducer.getProfile.email !== prevProps.profileReducer.email) {
     //   const {
     //     fullName,
