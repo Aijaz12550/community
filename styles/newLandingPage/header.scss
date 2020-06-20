@@ -1,6 +1,7 @@
 .header-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding-top: 10px;
   padding-bottom: 8px;
@@ -21,7 +22,8 @@
   }
   .btn-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     flex-grow: 0.5;
     justify-content: space-around;
 
@@ -29,7 +31,7 @@
       background: transparent;
       border: none;
       outline: none;
-      font-family: Open Sans;
+      font-family: 'Open Sans';
       font-style: normal;
       font-weight: 600;
       font-size: 16px;
@@ -55,6 +57,19 @@
     .signin-btn:active,
     button:active {
       transform: translate(0, 0px);
+    }
+  }
+  @media screen and (max-width: 700px) {
+    flex-direction: column !important;
+    .btn-container {
+      margin-top: 5px;
+      flex-direction: column !important;
+      align-items: center;
+    }
+    .signin-btn {
+      margin-top: 5px !important;
+      height: 30px !important;
+      border-radius: 30px !important;
     }
   }
 }

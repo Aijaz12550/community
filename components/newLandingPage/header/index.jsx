@@ -7,8 +7,8 @@ export const Header = () => {
   return (
     <div className="header-container">
       <div className="logo-container">
-      <Link href='/'>
-        <Image src="/assets/mockup/logoAndTitle.png" />
+        <Link href='/'>
+          <Image src="/assets/mockup/logoAndTitle.png" />
         </Link>
       </div>
 
@@ -17,12 +17,12 @@ export const Header = () => {
       <div className="btn-container">
         <div></div>
         <div></div>
-       
-        <button>whyWeNeighbourse ?</button>
 
-<Link href='/landingPage/contactUs'>
-        <button>contact us</button>
-</Link>
+        <button>why WeNeighbourse ?</button>
+
+        <Link href='/landingPage/contactUs'>
+          <button>Contact Us</button>
+        </Link>
 
         <a href="/signIn">
           <button className="signin-btn">Sign In</button>

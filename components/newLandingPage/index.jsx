@@ -31,11 +31,12 @@ export const LandingPage = () => {
         </div>
       </div>
       <div className="landing-page-footer">
-        <span>© 2020 WeNeighbors. All rights reserved.</span>
-
-        <div>
-          <span>Terms</span>
-          <span>Privacy</span>
+        <div className='landing-page-footer-div'>
+          <span className='copy-right'>© 2020 WeNeighbors. All rights reserved.</span>
+          <div>
+            <span className='term'>Terms</span>
+            <span>Privacy</span>
+          </div>
         </div>
       </div>
     </Fragment>
