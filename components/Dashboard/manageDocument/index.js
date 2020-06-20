@@ -19,11 +19,13 @@ import {
 import { Loader } from "../../Loader/Loader";
 import "../../../styles/dashboard/manageDocument/index.scss";
 import ReactLoading from "react-loading";
+import DragAndDrop from './dnd';
 
 export default class ManageDocument extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      files: [],
       tableCreate: [
         {
           documentType: "HOA Bylaws",
@@ -48,6 +50,17 @@ export default class ManageDocument extends Component {
       index: 0,
       deleteIndex: null,
     };
+  }
+
+  handleDrop = (files) => {
+    let file = files[0];
+    let { addRecord } = this.state;
+    addRecord.file = file;
+    addRecord.docType = file.type;
+    addRecord.name = file.name;
+    this.setState({
+      addRecord,
+    });
   }
 
   componentDidMount() {
@@ -246,6 +259,24 @@ export default class ManageDocument extends Component {
     this.setState({
       addRecord,
     });
+  };
+
+  fileUploadButton = () => {
+    document.getElementById("fileButton").click();
+    let val = "";
+    document.getElementById("fileButton").onchange = () => {
+      val = document.getElementById("fileButton").files;
+
+      let file = val[0];
+      let { addRecord } = this.state;
+      addRecord.file = file;
+      addRecord.docType = file.type;
+      addRecord.name = file.name;
+      this.setState({
+        addRecord,
+      });
+      // this.setState({ fileUploadState: val });
+    };
   };
 
   removefile = () => {
@@ -515,7 +546,7 @@ export default class ManageDocument extends Component {
             </Row>
             <Row className="row-4">
               <Col>
-                {addRecord.file ? (
+                {/* {addRecord.file ? (
                   <label>
                     <span>{addRecord.name}</span>
                     <span onClick={this.removefile}>x</span>
@@ -526,7 +557,24 @@ export default class ManageDocument extends Component {
                       <span>Upload Documents</span>
                       <span>or Drop file here</span>
                     </label>
-                  )}
+                  )} */}
+                <DragAndDrop handleDrop={this.handleDrop}>
+                  {addRecord.file ? (
+                    <label>
+                      <span>{addRecord.name}</span>
+                      <span onClick={this.removefile}>x</span>
+                    </label>
+                  ) :
+                    (
+                      <div className='drag-n-drop'>
+                        <Image className="" src={"/assets/mockup/file-import.png"} />
+                        <input id="fileButton" type="file" hidden />
+                        <button className="fileUpload-btn" onClick={this.fileUploadButton}>Upload Document</button>
+                        <span>or Drop file here</span>
+                      </div>
+                    )
+                  }
+                </DragAndDrop>
               </Col>
             </Row>
             <Row className="row-5">
@@ -588,7 +636,7 @@ export default class ManageDocument extends Component {
             </Row>
           </Modal.Body>
         </Modal>
-      </div>
+      </div >
     );
   }
 }

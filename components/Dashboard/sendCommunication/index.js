@@ -27,7 +27,7 @@ export default class Sendcommunication extends Component {
     });
   };
 
-  resetTable = () => {};
+  resetTable = () => { };
 
   tast = () => {
     document.getElementById("selectedFile").click();
@@ -106,8 +106,8 @@ export default class Sendcommunication extends Component {
                   <span>
                     {this.state.fileUploadState.length > 2
                       ? this.state.fileUploadState[
-                          this.state.fileUploadState.length - 1
-                        ]
+                      this.state.fileUploadState.length - 1
+                      ]
                       : this.state.fileUploadState[0]}
                   </span>
                   <span>Optional</span>
