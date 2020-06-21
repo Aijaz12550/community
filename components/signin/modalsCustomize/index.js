@@ -20,6 +20,7 @@ export default class ModalCustomize extends Component {
         onHide={() => this.props.closeModal}
         size="sm"
         aria-labelledby="contained-modal-title-vcenter"
+        className='modal-parent'
         centered
       >
         <Modal.Body>
