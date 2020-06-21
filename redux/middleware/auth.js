@@ -37,7 +37,7 @@ export const socialLogin = (payload) => {
 export const register = (payload) => {
   return async(dispatch) => {
     await _axios
-      .post(`${process.env.NEW_BASE_URL}users/register`, payload)
+      .post(`${process.env.API_BASE_URL_1}v2/users/register`, payload)
       .then((data) => {
         dispatch(signup(data));
       })

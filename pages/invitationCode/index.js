@@ -21,7 +21,10 @@ export default connect((state) => state)((props) => {
       if (data?.customMessage) {
         setCodeError(data.customMessage);
       }
-      router.push('/invitationCode/homeAddress')
+      else if(data?.statusDescription === "Invitation Code Found"){
+
+        router.push('/invitationCode/homeAddress')
+      }
     });
   };
   return (

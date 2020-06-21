@@ -16,7 +16,7 @@ export default connect((state) => state)((props) => {
     console.log(" resend email", user?.email);
     dispatch(reSendEmailVerification(user?.email))
     console.log('======>',props.AuthReducer)
-    router.push('/invitationCode/accountVerified')
+    // router.push('/invitationCode/accountVerified')
 
   };
   return (

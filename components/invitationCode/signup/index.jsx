@@ -1,18 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Layout } from "../layout";
 import { CentralComponent } from "../centralComponent";
 import { Image } from "react-bootstrap";
 
-const SignUp = ({
-  _register,
-}) => {
-  let [email, setEmail] = useState("")
-  let [phone, setPhone] = useState("")
-  let [password, setPassword] = useState("")
+const SignUp = ({ _register, isloading }) => {
+  let [email, setEmail] = useState("anschessclub@gmail.com");
+  let [phone, setPhone] = useState(+12308766554);
+  let [password, setPassword] = useState("123455676");
 
   return (
     <Layout>
-      <CentralComponent progress_value={100}>
+      <CentralComponent progress_value={100} style={{minHeight:'600px'}}>
         <span className="signup-heading">
           Almost there please signup to access your community dashboard.
         </span>
@@ -28,22 +26,56 @@ const SignUp = ({
 
         <div className="_inp_container">
           <label>Email</label>
-          <input onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="Email" />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email"
+            value={email}
+          />
 
           <br />
           <label>Phone</label>
-          <input onChange={(e)=>setPhone(e.target.value)} type="number" placeholder="Phone" />
+          <input
+            onChange={(e) => setPhone(e.target.value)}
+            type="number"
+            placeholder="Phone"
+            value={phone}
+          />
 
           <br />
           <label>Password</label>
-          <input onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="Password"
+            value={password}
+          />
         </div>
 
         <span></span>
         <div className="bottom-button-container">
           <button>Back</button>
 
-          <button onClick={()=>_register({email,phone,password})}>Sign Up</button>
+          {/* <button onClick={()=>_register({email,phone,password})}>Sign Up</button> */}
+          <div
+            onClick={() => _register({ email, phone, password })}
+            disabled={isloading}
+            style={{ maxWidth: "150px" }}
+            className={!isloading ? "btn-class" : "btn-class-isloading"}
+            onClick={() => _register({ email, phone, password })}
+            disabled={isloading}
+          >
+            {isloading ? (
+              <ReactLoading
+                height={"20px"}
+                width={"20px"}
+                type="spin"
+                color="#fff"
+              />
+            ) : (
+              "Sign Up"
+            )}
+          </div>
         </div>
       </CentralComponent>
     </Layout>

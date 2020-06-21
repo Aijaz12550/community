@@ -10,7 +10,7 @@ const SignUp = ({
 }) => {
   return (
     <Layout>
-      <CentralComponent progressbar='none'>
+      <CentralComponent progressbar='none' style={{minHeight:'600px'}}>
         <Image src="/assets/mockup/Frame.png" />
 
         <span className="verify-email-heading">
@@ -32,7 +32,9 @@ const SignUp = ({
         </span>
 
         {/* <button className="verify-email-btn" onClick={__reSendVerificationEmail}>Resend Verification Email</button> */}
-        <div className={!isloading?"btn-class":'btn-class-isloading'} onClick={__reSendVerificationEmail}  disabled={isloading} >
+        <div
+        disabled={true}
+        className={!isloading?"btn-class":'btn-class-isloading'} onClick={!isloading? __reSendVerificationEmail:()=>null}  disabled={isloading} >
               {
                 isloading
                 ?

@@ -31,12 +31,31 @@ export default withRouter(
         if (
           prevProps.Component != this.props.Component &&
           user.access_token &&
-          !router.pathname.startsWith("/signIn")
+          !router.pathname.startsWith("/signIn") &&
+          !router.pathname.startsWith("/invitationCode")
         ) {
           this.setState({
             ComponentTorender: this.props.Component,
           });
-        } else if (
+        } 
+        else if (
+          prevProps.Component != this.props.Component &&
+          user.access_token &&
+          router.pathname.startsWith("/invitationCode")
+        ) {
+          this.setState(
+            {
+              ComponentTorender: Viewresidents,
+            },
+            () => {
+              router.push(
+                "/dashboard/[user]/[role]",
+                `/dashboard/user_role/view_residents`
+              );
+            }
+          );
+        } 
+        else if (
           !user.access_token &&
           router.pathname.startsWith("/signIn") &&
           prevProps.Component != this.props.Component
@@ -108,8 +127,6 @@ export default withRouter(
         if (router.pathname.startsWith("/signIn") && !user.access_token) {
           return false;
         } else if (router.pathname === "/" && !user.access_token) {
-
-          
           return false;
         } else if (
           router.pathname.startsWith("/invitationCode") &&

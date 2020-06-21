@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Layout } from "./layout";
 import { CentralComponent } from "./centralComponent";
 import Link from "next/link";
-import ReactLoading from 'react-loading'
+import ReactLoading from "react-loading";
 
 const InvitationCode = ({ _invitationCode, codeError, isloading }) => {
-  let [inv_code, setInv_code] = useState('RMAN707066');
+  let [inv_code, setInv_code] = useState("RMAN707066");
 
   return (
     <Layout>
@@ -45,15 +45,23 @@ const InvitationCode = ({ _invitationCode, codeError, isloading }) => {
 
           <div className="btn-container">
             <button>Back</button>
-            <div className={!isloading?"btn-class":'btn-class-isloading'} onClick={() => _invitationCode(inv_code)} disabled={isloading} >
-              {
-                isloading
-                ?
-                <ReactLoading type={'balls'} color={'white'} height='20px' width='20px'  />
-                :
-              'Next'
-              }
-              </div >
+            <div
+            style={{maxWidth:'150px'}}
+              className={!isloading ? "btn-class" : "btn-class-isloading"}
+              onClick={() => _invitationCode(inv_code)}
+              disabled={isloading}
+            >
+              {isloading ? (
+                <ReactLoading
+                  height={"20px"}
+                  width={"20px"}
+                  type="spin"
+                  color="#fff"
+                />
+              ) : (
+                "Next"
+              )}
+            </div>
           </div>
         </div>
       </CentralComponent>
