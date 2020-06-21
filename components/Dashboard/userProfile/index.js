@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Row, Col, Input } from "reactstrap";
 import { Image } from "react-bootstrap";
-import { getProfile } from "$middleware";
+import { getProfile, updateProfile } from "$middleware";
 import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
+import { Loader } from "../../Loader/Loader";
+import ReactLoading from "react-loading";
+import { updateProfileError } from "../../../redux/actions";
 import "../../../styles/dashboard/userProfile/index.scss";
 
 export default class UserProfile extends Component {
@@ -10,13 +13,14 @@ export default class UserProfile extends Component {
     super(props);
     this.state = {
       userDetail: {
-        userName: "",
+        fullName: "",
         profilePicUrl: "",
         role: "Board Member",
         email: "",
-        phoneNumber: "",
-        memberSince: "10 Auguest 2019",
+        phone: "",
+        residentSince: "10 Auguest 2019",
       },
+      loader: false,
     };
   }
 
@@ -38,6 +42,8 @@ export default class UserProfile extends Component {
 
   _onChange = (e) => {
     let { userDetail } = this.state;
+    console.log(e.target.value);
+    console.log(e.target.name);
     userDetail[e.target.name] = e.target.value;
     this.setState({
       userDetail,
@@ -45,34 +51,104 @@ export default class UserProfile extends Component {
   };
 
   componentDidMount() {
-    const { dispatch } = this.props;
+    const { dispatch, profileReducer } = this.props;
     dispatch(getProfile());
+    if (profileReducer.getProfile.email) {
+      const {
+        fullName,
+        familyMemberAvatarUrl,
+        email,
+        phone,
+        residentSince,
+      } = profileReducer.getProfile;
+      this.setState({
+        userDetail: {
+          fullName,
+          familyMemberAvatarUrl,
+          role: "",
+          email,
+          phone,
+          residentSince,
+        },
+      });
+    }
   }
 
   componentDidUpdate(prevProps) {
-    const { profileReducer } = this.props;
-    console.log(profileReducer, "profileReducer");
-    // if (profileReducer.getProfile.email !== prevProps.profileReducer.email) {
-    //   const {
-    //     fullName,
-    //     familyMemberAvatarUrl,
-    //     email,
-    //     phone,
-    //     residentSince,
-    //   } = profileReducer.getProfile;
-    //   this.setState({
-    //     userName: fullName,
-    //     profilePicUrl: familyMemberAvatarUrl,
-    //     role: "",
-    //     email,
-    //     phoneNumber: phone,
-    //     memberSince: residentSince,
-    //   });
-    // }
+    const { profileReducer, dispatch } = this.props;
+    console.log(
+      profileReducer.updateProfileSuccess.email,
+      "profileReducer.updateProfileSuccess.email"
+    );
+    if (
+      profileReducer.getProfile.email !==
+      prevProps.profileReducer.getProfile.email
+    ) {
+      const {
+        fullName,
+        familyMemberAvatarUrl,
+        email,
+        phone,
+        residentSince,
+      } = profileReducer.getProfile;
+      this.setState({
+        userDetail: {
+          fullName,
+          familyMemberAvatarUrl,
+          role: "",
+          email,
+          phone,
+          residentSince,
+        },
+      });
+    }
+    if (
+      profileReducer.updateProfileSuccess.email !==
+      prevProps.profileReducer.updateProfileSuccess.email
+    ) {
+      this.setState({ loader: false });
+    }
+    if (
+      profileReducer.updateProfileError !==
+      prevProps.profileReducer.updateProfileError
+    ) {
+      this.setState({
+        loader: false,
+        error: profileReducer.updateProfileError,
+      });
+      dispatch(updateProfileError(""));
+    }
   }
 
+  saveProfile = () => {
+    const {
+      userDetail: { fullName, familyMemberAvatarUrl, email, phone },
+    } = this.state;
+    this.setState({
+      loader: true,
+    });
+    const { profileReducer, dispatch } = this.props;
+    const {
+      canChangeName,
+      showMyBirthday,
+      showMyContactInfo,
+      residentSince,
+    } = profileReducer.getProfile;
+    let updatedProfile = {
+      email,
+      familyMemberAvatarUrl,
+      fullName,
+      phone,
+      canChangeName,
+      showMyBirthday,
+      showMyContactInfo,
+      residentSince: residentSince ? residentSince : new Date(),
+    };
+    dispatch(updateProfile(updatedProfile));
+  };
+
   render() {
-    const { profileReducer: { getProfile } } = this.props;
+    const { userDetail, loader, error } = this.state;
     return (
       <div className="content user-profile-component" key={Date.now() + 5765}>
         <Row className="MT60 section-top">
@@ -81,120 +157,154 @@ export default class UserProfile extends Component {
           </Col>
         </Row>
         <Row className="body-row scrollBarStyle-Y ">
-          <div className="profile-card">
-            <div className="profile-div">
-              <div className="user-name">{getProfile.fullName}</div>
-              <div className="user-role">
-                <span>{this.state.userDetail.role}</span>
+          {userDetail.email ? (
+            <>
+              <div className="profile-card">
+                <div className="profile-div">
+                  <div className="user-name">{userDetail.fullName}</div>
+                  <div className="user-role">
+                    <span>{this.state.userDetail.role}</span>
+                  </div>
+                  <div className="profile-image-div">
+                    <Image
+                      className="profile-image"
+                      src={userDetail.familyMemberAvatarUrl}
+                    />
+                  </div>
+                  <div className="upload-photo-div">
+                    <input id="fileButton" type="file" hidden />
+                    <button
+                      className="fileUpload-btn"
+                      onClick={this.fileUploadButton}
+                    >
+                      <span>Upload Photo</span>
+                    </button>
+                  </div>
+                  <div className="footer-card">
+                    <div className="image-content">
+                      <span>
+                        Upload a new avatar. Larger image will be resized
+                        automatically.
+                      </span>
+                    </div>
+                    <div className="image-warning">
+                      <span>
+                        Maximum upload size is <b>1 MB</b>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="profile-image-div">
-                <Image
-                  className="profile-image"
-                  src={getProfile.familyMemberAvatarUrl}
-                />
-              </div>
-              <div className="upload-photo-div">
-                <input id="fileButton" type="file" hidden />
-                <button
-                  className="fileUpload-btn"
-                  onClick={this.fileUploadButton}
-                >
-                  <span>Upload Photo</span>
-                </button>
-              </div>
-              <div className="footer-card">
-                <div className="image-content">
+              <div className="edit-card">
+                <div className="heading">
+                  <span>Edit Profile</span>
+                </div>
+                <div className="name-label">
+                  <span className="name-title">Full Name </span>
+                  <span className="required">(Required)</span>
+                </div>
+                <div className="input-div">
                   <span>
-                    Upload a new avatar. Larger image will be resized
-                    automatically.
+                    <Input
+                      type="text"
+                      name="fullName"
+                      value={userDetail.fullName}
+                      onChange={(e) => this._onChange(e)}
+                    />
                   </span>
                 </div>
-                <div className="image-warning">
+                {/* <div className="username-warning">
                   <span>
-                    Maximum upload size is <b>1 MB</b>
+                    Please note: If you change your name, you can't change it
+                    again for 60 days.
+                  </span>
+                </div> */}
+
+                <div className="name-label">
+                  <span className="name-title">Email Address </span>
+                  <span className="required">(Required)</span>
+                </div>
+                <div className="input-div-remaing">
+                  <span>
+                    <Input
+                      type="text"
+                      name="email"
+                      value={userDetail.email}
+                      disabled
+                      onChange={(e) => this._onChange(e)}
+                    />
                   </span>
                 </div>
+
+                <div className="name-label">
+                  <span className="name-title">Phone Number </span>
+                </div>
+                <div className="input-div-remaing">
+                  <span>
+                    <Input
+                      type="text"
+                      name="phone"
+                      value={userDetail.phone}
+                      onChange={(e) => this._onChange(e)}
+                    />
+                  </span>
+                </div>
+
+                <div className="name-label">
+                  <span className="name-title">Member Since </span>
+                </div>
+                <div className="input-div-remaing member-since">
+                  <span>
+                    <Input
+                      type="text"
+                      name="memberSince"
+                      value={userDetail.residentSince}
+                      disabled
+                    />
+                  </span>
+                </div>
+
+                <div className="save-btn-div">
+                  <button onClick={this.saveProfile} className="save-btn">
+                    {loader ? (
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        <ReactLoading
+                          height={"30px"}
+                          width={"30px"}
+                          type="bubbles"
+                          color="white"
+                        />
+                      </div>
+                    ) : (
+                      <span>Save</span>
+                    )}
+                  </button>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "50px",
+                      color: "red",
+                    }}
+                  >
+                    {error}
+                  </div>
+                </div>
               </div>
+            </>
+          ) : (
+            <div style={{ width: "100%", height: "100%" }}>
+              <Loader />
             </div>
-          </div>
-          <div className="edit-card">
-            <div className="heading">
-              <span>Edit Profile</span>
-            </div>
-            <div className="name-label">
-              <span className="name-title">Full Name </span>
-              <span className="required">(Required)</span>
-            </div>
-            <div className="input-div">
-              <span>
-                <Input
-                  type="text"
-                  name="userName"
-                  value={getProfile.fullName}
-                  onChange={(e) => this._onChange(e)}
-                />
-              </span>
-            </div>
-            <div className="username-warning">
-              <span>
-                Please note: If you change your name, you can't change it again
-                for 60 days.
-              </span>
-            </div>
-
-            <div className="name-label">
-              <span className="name-title">Email Address </span>
-              <span className="required">(Required)</span>
-            </div>
-            <div className="input-div-remaing">
-              <span>
-                <Input
-                  type="text"
-                  name="email"
-                  value={getProfile.email}
-                  onChange={(e) => this._onChange(e)}
-                />
-              </span>
-            </div>
-
-            <div className="name-label">
-              <span className="name-title">Phone Number </span>
-            </div>
-            <div className="input-div-remaing">
-              <span>
-                <Input
-                  type="text"
-                  name="phoneNumber"
-                  value={getProfile.phone}
-                  onChange={(e) => this._onChange(e)}
-                />
-              </span>
-            </div>
-
-            <div className="name-label">
-              <span className="name-title">Member Since </span>
-            </div>
-            <div className="input-div-remaing member-since">
-              <span>
-                <Input
-                  type="text"
-                  name="memberSince"
-                  value={
-                    this.state.userDetail.memberSince.split(" ")[1] +
-                    " " +
-                    this.state.userDetail.memberSince.split(" ")[2]
-                  }
-                  disabled
-                />
-              </span>
-            </div>
-
-            <div className="save-btn-div">
-              <button className="save-btn">
-                <span>Save</span>
-              </button>
-            </div>
-          </div>
+          )}
         </Row>
       </div>
     );
