@@ -9,7 +9,7 @@ const InvitationCode = ({ _invitationCode, codeError, isloading }) => {
 
   return (
     <Layout>
-      <CentralComponent progress_value={0}>
+      <CentralComponent steps={[{ title: '' }, { title: '' }]} progress_value={0}>
         <div className="central-component-body-1">
           <span className="central-component-heading">
             Please Enter the invitation Code That you have recieved from us
@@ -45,15 +45,15 @@ const InvitationCode = ({ _invitationCode, codeError, isloading }) => {
 
           <div className="btn-container">
             <button>Back</button>
-            <div className={!isloading?"btn-class":'btn-class-isloading'} onClick={() => _invitationCode(inv_code)} disabled={isloading} >
+            <div className={!isloading ? "btn-class" : 'btn-class-isloading'} onClick={() => _invitationCode(inv_code)} disabled={isloading} >
               {
                 isloading
-                ?
-                <ReactLoading type={'balls'} color={'white'} height='20px' width='20px'  />
-                :
-              'Next'
+                  ?
+                  <ReactLoading type={'balls'} color={'white'} height='20px' width='20px' />
+                  :
+                  'Next'
               }
-              </div >
+            </div >
           </div>
         </div>
       </CentralComponent>

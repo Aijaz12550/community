@@ -54,14 +54,15 @@
   flex-flow: row wrap;
   justify-content: space-around;
   margin-top: 50px;
-  height: 61px;
+  height: 71px;
   .landing-page-footer-div{
     width: 70%;
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #f0f2f3;
-    height: 61px;
+    height: 71px;
     padding-top: 10px;
+    align-items: center;
     div{
       .copy-right{
         font-size: clamp(10px, 2vw, 12px);
@@ -89,6 +90,7 @@ body{
   }
   .landing-page-footer-div{
     flex-direction: column;
+    align-items: flex-start !important;
   }
 }
 

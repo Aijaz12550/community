@@ -1,15 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Layout } from "../layout";
 import { CentralComponent } from "../centralComponent";
 import Link from "next/link";
 import ReactLoading from 'react-loading';
 
-const HomeAddress = ({home_address_validator, isloading, isError}) => {
+const HomeAddress = ({ home_address_validator, isloading, isError }) => {
   const [homeAddress, setHomeAddress] = useState("")
   const [apt, setApt] = useState("")
   return (
     <Layout>
-      <CentralComponent progress_value={50}>
+      <CentralComponent steps={[{ title: '' }, { title: '' }, { title: '' }]} progress_value={1}>
         <div className="central-component-body-1">
           <span className="home-address-heading">
             It seems you're also a resident at
@@ -24,7 +24,7 @@ const HomeAddress = ({home_address_validator, isloading, isError}) => {
 
           <span className="inp-container">
             <label className="inp-label">Home Address</label>
-            <input className="inp-compo" onChange={(e)=>setHomeAddress(e.target.value)} value={homeAddress} type="text" placeholder="AED5687" />
+            <input className="inp-compo" onChange={(e) => setHomeAddress(e.target.value)} value={homeAddress} type="text" placeholder="AED5687" />
             <br />
           </span>
         </div>
@@ -32,11 +32,11 @@ const HomeAddress = ({home_address_validator, isloading, isError}) => {
         <div className="central-component-body-2">
           <span className="inp-container">
             <label className="inp-label">Apt / Unit</label>
-            <input className="inp-compo" onChange={(e)=>setApt(e.target.value)} value={apt} type="text" placeholder="AED5687" />
+            <input className="inp-compo" onChange={(e) => setApt(e.target.value)} value={apt} type="text" placeholder="AED5687" />
           </span>
           <span></span>
           <span></span>
-          { isError && <span className="home-address-error">
+          {isError && <span className="home-address-error">
             Cannot find your home at this community. Please enter your correct
             home address or please contact our support at
             <Link href="/test">support@weneighbors.io</Link>
@@ -45,15 +45,15 @@ const HomeAddress = ({home_address_validator, isloading, isError}) => {
 
           <div className="btn-container">
             <button>Back</button>
-            <div className={!isloading?"btn-class":'btn-class-isloading'} onClick={() => home_address_validator({homeAddress,apt})} disabled={isloading} >
+            <div className={!isloading ? "btn-class" : 'btn-class-isloading'} onClick={() => home_address_validator({ homeAddress, apt })} disabled={isloading} >
               {
                 isloading
-                ?
-                <ReactLoading type={'balls'} color={'white'} height='20px' width='20px'  />
-                :
-              'Next'
+                  ?
+                  <ReactLoading type={'balls'} color={'white'} height='20px' width='20px' />
+                  :
+                  'Next'
               }
-              </div >
+            </div >
           </div>
         </div>
       </CentralComponent>

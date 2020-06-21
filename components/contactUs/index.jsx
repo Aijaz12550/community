@@ -14,6 +14,15 @@ const ContactUs = () => {
           <ContactInfo />
         </div>
       </div>
+      <div className="landing-page-footer" style={{ background: '#F6F7FB', margin: 0 }}>
+        <div className='landing-page-footer-div'>
+          <span className='copy-right'>© 2020 WeNeighbors. All rights reserved.</span>
+          <div>
+            <span className='term'>Terms</span>
+            <span>Privacy</span>
+          </div>
+        </div>
+      </div>
     </Fragment>
   );
 };

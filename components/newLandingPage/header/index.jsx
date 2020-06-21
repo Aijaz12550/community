@@ -18,7 +18,7 @@ export const Header = () => {
         <div></div>
         <div></div>
 
-        <button>why WeNeighbourse ?</button>
+        <button>Why WeNeighbourse ?</button>
 
         <Link href='/landingPage/contactUs'>
           <button>Contact Us</button>
