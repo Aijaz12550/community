@@ -6,3 +6,4 @@ export * from "./members";
 export * from "./invite";
 export * from "./roles";
 export * from './profile'
+export * from './externalMember'

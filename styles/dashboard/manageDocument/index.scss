@@ -507,6 +507,43 @@
               margin-bottom: 30px;
             }
           }
+          .drag-n-drop{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 32px 10px 26px 10px;
+            img{
+              color: #6C7B8A;
+              width: 29px;
+              height: 32px;
+            }
+            button{
+              font-family: 'Open Sans';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 22px;
+              display: flex;
+              align-items: center;
+              color: #009999;
+              border: none;
+              outline: none;
+              background-color: transparent;
+              margin-top: 12px;
+              margin-bottom: 7px;
+            }
+            span{
+              font-family: 'Open Sans';
+              font-style: normal;
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 29px;
+              display: flex;
+              align-items: center;
+              color: #91909A;
+            }
+          }
         }
         .row-5 {
           .col {

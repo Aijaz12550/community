@@ -10,7 +10,7 @@ const SignUp = ({ _register, isloading }) => {
 
   return (
     <Layout>
-      <CentralComponent progress_value={100} style={{minHeight:'600px'}}>
+      <CentralComponent steps={[{ title: '' }, { title: '' }, { title: '' }]} progress_value={2}>
         <span className="signup-heading">
           Almost there please signup to access your community dashboard.
         </span>
@@ -26,30 +26,15 @@ const SignUp = ({ _register, isloading }) => {
 
         <div className="_inp_container">
           <label>Email</label>
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="Email"
-            value={email}
-          />
+          <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
 
           <br />
           <label>Phone</label>
-          <input
-            onChange={(e) => setPhone(e.target.value)}
-            type="number"
-            placeholder="Phone"
-            value={phone}
-          />
+          <input onChange={(e) => setPhone(e.target.value)} type="number" placeholder="Phone" />
 
           <br />
           <label>Password</label>
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Password"
-            value={password}
-          />
+          <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
         </div>
 
         <span></span>

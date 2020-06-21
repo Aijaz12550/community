@@ -5,11 +5,11 @@ import Link from "next/link";
 import ReactLoading from "react-loading";
 
 const HomeAddress = ({ home_address_validator, isloading, isError }) => {
-  const [homeAddress, setHomeAddress] = useState("");
-  const [apt, setApt] = useState("");
+  const [homeAddress, setHomeAddress] = useState("")
+  const [apt, setApt] = useState("")
   return (
     <Layout>
-      <CentralComponent progress_value={50}>
+      <CentralComponent steps={[{ title: '' }, { title: '' }, { title: '' }]} progress_value={1}>
         <div className="central-component-body-1">
           <span className="home-address-heading">
             It seems you're also a resident at
