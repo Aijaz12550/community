@@ -236,145 +236,145 @@
     }
   }
 }
-// .modal-dialog{
-//   width: 30% !important;
-// }  
-// .modal-sm {
-//   width: 30% !important;
-// }
-// .modal-dialog-centered{
-//   width: 30% !important;
-// }
-// .modal-content{
-//   // height: 330px !important;
-//   padding: 0px !important;
-//   .modal-body{
-//     padding: 0px;
-//     .close-row{
-//       margin: 0px;
-//       display: flex;
-//       justify-content: flex-end;
-//       padding-top: 15px;
-//       padding-right: 15px;
-//       button{
-//         border: none;
-//         outline: none;
-//         width: 35px;
-//         height: 35px;
-//         background: #e9ebed;
-//         font-size: 22px;
-//         border-radius: 100%;
-//       }
-//     }
-//     .heading{
-//       font-family: 'Open Sans';
-//       font-style: normal;
-//       font-weight: 600;
-//       font-size: 24px;
-//       line-height: 33px;
-//       text-align: center;
-//       color: #344563;
-//       margin: 15px 46px 30px 46px;
-//     }
-//     .warning{
-//       font-family: 'Open Sans';
-//       font-style: normal;
-//       font-weight: normal;
-//       font-size: 16px;
-//       line-height: 28px;
-//       text-align: center;
-//       color: #344563;
-//       margin: 0px 51px 0px 51px;
+.modal-dialog{
+  width: 30% !important;
+}  
+.modal-sm {
+  width: 30% !important;
+}
+.modal-dialog-centered{
+  width: 30% !important;
+}
+.modal-content{
+  // height: 330px !important;
+  padding: 0px !important;
+  .modal-body{
+    padding: 0px;
+    .close-row{
+      margin: 0px;
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 15px;
+      padding-right: 15px;
+      button{
+        border: none;
+        outline: none;
+        width: 35px;
+        height: 35px;
+        background: #e9ebed;
+        font-size: 22px;
+        border-radius: 100%;
+      }
+    }
+    .heading{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 33px;
+      text-align: center;
+      color: #344563;
+      margin: 15px 46px 30px 46px;
+    }
+    .warning{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 28px;
+      text-align: center;
+      color: #344563;
+      margin: 0px 51px 0px 51px;
 
-//     }
-//     .warning-username{
-//       margin: 0px 51px 40px 51px;
-//       font-weight: bold;
-//     }
-//     .resend-btn{
-//       background: #009999;
-//       border-radius: 8px;
-//       margin-top: 0px !important;
-//       margin-left: 35px !important;
-//       margin-right: 35px !important;
-//       margin-bottom: 49px !important;
-//       border: none;
-//       outline: none;
-//       width: calc(100% - 70px);
-//       height: 50px;
-//       font-family: 'Open Sans';
-//       font-style: normal;
-//       font-weight: 600;
-//       font-size: 16px;
-//       line-height: 22px;
-//       text-align: center;
-//       color: #FFFFFF;
+    }
+    .warning-username{
+      margin: 0px 51px 40px 51px;
+      font-weight: bold;
+    }
+    .resend-btn{
+      background: #009999;
+      border-radius: 8px;
+      margin-top: 0px !important;
+      margin-left: 35px !important;
+      margin-right: 35px !important;
+      margin-bottom: 49px !important;
+      border: none;
+      outline: none;
+      width: calc(100% - 70px);
+      height: 50px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      color: #FFFFFF;
       
-//     }
-//     .heading-email-verify{
-//       font-family: 'Open Sans';
-//       font-style: normal;
-//       font-weight: bold;
-//       font-size: 26px;
-//       line-height: 35px;
-//       text-align: center;
-//       color: #323236;
-//       margin-bottom: 11px;
-//     }
-//     .warning-email-verfiy{
-//       font-family: 'Open Sans';
-//       font-style: normal;
-//       font-weight: normal;
-//       font-size: 16px;
-//       line-height: 29px;
-//       text-align: center;
-//       color: #91909A;
-//       margin-bottom: 35px;
-//     }
-//     .email-label{
-//       font-family: 'Open Sans';
-//       font-style: normal;
-//       font-weight: normal;
-//       font-size: 14px;
-//       line-height: 19px;
-//       color: #6C7B8A;
-//       margin: 0px 40px;
-//     }
-//     .input-email-field{
-//       font-family: 'Open Sans';
-//       font-style: normal;
-//       font-weight: 600;
-//       font-size: 16px;
-//       line-height: 22px;
-//       color: #02010E;
-//       margin: 0px 40px;
-//       padding-bottom: 12px;
-//       padding-top: 11px;
-//       width: calc(100% - 80px);
-//       border: none;
-//       border-bottom: 1px solid black;
-//     }
-//     .warning-email-row{
-//       margin: 12px 40px 19px 40px;
-//     }
-//     .warning-email-msg{
-//       font-family: "Open Sans";
-//       font-style: normal;
-//       font-weight: normal;
-//       font-size: 14px;
-//       line-height: 19px;
-//       color: #E91E63;
-//     }
-//     .warning-email-recover{
-//       margin: 0px 51px 0px 51px;
-//       font-family: 'Open Sans';
-//       font-style: normal;
-//       font-weight: normal;
-//       font-size: 16px;
-//       line-height: 28px;
-//       text-align: center;
-//       color: #000000;
-//       margin-bottom: 69px;
-//     }
-  // }
-// }
+    }
+    .heading-email-verify{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 35px;
+      text-align: center;
+      color: #323236;
+      margin-bottom: 11px;
+    }
+    .warning-email-verfiy{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 29px;
+      text-align: center;
+      color: #91909A;
+      margin-bottom: 35px;
+    }
+    .email-label{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 19px;
+      color: #6C7B8A;
+      margin: 0px 40px;
+    }
+    .input-email-field{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: #02010E;
+      margin: 0px 40px;
+      padding-bottom: 12px;
+      padding-top: 11px;
+      width: calc(100% - 80px);
+      border: none;
+      border-bottom: 1px solid black;
+    }
+    .warning-email-row{
+      margin: 12px 40px 19px 40px;
+    }
+    .warning-email-msg{
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 19px;
+      color: #E91E63;
+    }
+    .warning-email-recover{
+      margin: 0px 51px 0px 51px;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 28px;
+      text-align: center;
+      color: #000000;
+      margin-bottom: 69px;
+    }
+  }
+}

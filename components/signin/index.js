@@ -7,7 +7,7 @@ import { GoogleLogin } from "./google";
 import { Apple } from "./apple";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactLoading from "react-loading";
-import ModalCustomize from './modalsCustomize'
+import ModalCustomize from "./modalsCustomize";
 
 export class SignIn extends React.Component {
   constructor() {
@@ -20,13 +20,14 @@ export class SignIn extends React.Component {
       hiddnField: "password",
       modalShow: false,
       loader: false,
-      showModalName: 'emailVerifiedRequiredModal'
+      showModalName: "emailVerifiedRequiredModal",
+      email: "",
     };
   }
   showModal = (modalName) => {
     this.setState({
       modalShow: true,
-      showModalName: modalName
+      showModalName: modalName,
     });
   };
 
@@ -92,42 +93,92 @@ export class SignIn extends React.Component {
   emailVerifiedRequiredModal = () => {
     return (
       <>
-        <p className='close-row'><button onClick={() => this.setState({ modalShow: false })}>X</button></p>
-        <p className='heading'>Email Verfication Required!</p>
-        <p className='warning'>Please verify your email registered with us.</p>
-        <p className='warning warning-username'>{`"${this.state.username}"`}</p>
-        <button className='resend-btn'>Resend</button>
+        <p className="close-row">
+          <button onClick={() => this.setState({ modalShow: false })}>X</button>
+        </p>
+        <p className="heading">Email Verfication Required!</p>
+        <p className="warning">Please verify your email registered with us.</p>
+        <p className="warning warning-username">{`"${this.state.username}"`}</p>
+        <button className="resend-btn">Resend</button>
       </>
-    )
-  }
+    );
+  };
 
   recoverPasswordSendReq = () => {
+    let { _recoverPassword_, recoverPasswordLoading, error } = this.props;
+    let { email } = this.state;
     return (
       <>
-        <p className='close-row'><button onClick={() => this.setState({ modalShow: false })}>X</button></p>
-        <p className='heading-email-verify'>Recover Password</p>
-        <p className='warning-email-verfiy'>Don't worry, happen to the best for us</p>
-        <p className='email-label'>Email</p>
-        <input type='email' className='input-email-field' placeholder='Enter your valid Email' value='demomail@gmail.com' />
-        <p className='warning-email-row'><Image src='/assets/mockup/fe_warning.png' /><span className='warning-email-msg'>The email address you entered could not be found</span></p>
-        <button className='resend-btn'>Email me a recovery link</button>
+        <p className="close-row">
+          <button onClick={() => this.setState({ modalShow: false })}>X</button>
+        </p>
+        <p className="heading-email-verify">Recover Password</p>
+        <p className="warning-email-verfiy">
+          Don't worry, happen to the best for us
+        </p>
+        <p className="email-label">Email</p>
+        <input
+          onChange={(e) => this.setState({ email: e.target.value })}
+          type="email"
+          className="input-email-field"
+          placeholder="Enter your valid Email"
+          value={email}
+        />
+        {error && (
+          <p className="warning-email-row">
+            <Image src="/assets/mockup/fe_warning.png" />
+            <span className="warning-email-msg">
+              The email address you entered could not be found
+            </span>
+          </p>
+        )}
+
+        {!recoverPasswordLoading ? (
+          <button
+            className="resend-btn"
+            onClick={() => _recoverPassword_(email)}
+          >
+            Email me a recovery link
+          </button>
+        ) : (
+          <div
+            className="resend-btn"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <ReactLoading
+              height={"20px"}
+              width={"20px"}
+              type="spin"
+              color="white"
+            />
+          </div>
+        )}
       </>
-    )
-  }
+    );
+  };
 
   recoverPassword = () => {
     return (
       <>
-        <p className='close-row'><button onClick={() => this.setState({ modalShow: false })}>X</button></p>
-        <p className='heading'>Recover Password</p>
-        <p className='warning-email-recover'>An email has been sent. Please follow the instructions to recover your password.</p>
+        <p className="close-row">
+          <button onClick={() => this.setState({ modalShow: false })}>X</button>
+        </p>
+        <p className="heading">Recover Password</p>
+        <p className="warning-email-recover">
+          An email has been sent. Please follow the instructions to recover your
+          password.
+        </p>
       </>
-    )
-  }
+    );
+  };
 
   render() {
     const { username, password, loader } = this.state;
-    const { _socialLogin, router } = this.props;
+    const { _socialLogin, router, recoverPasswordLoading } = this.props;
     return (
       <Container>
         <div>
@@ -176,16 +227,24 @@ export class SignIn extends React.Component {
             />
             <button onClick={this.showPwd} className="pwd-btn">
               <FontAwesomeIcon
-                icon={['fas', this.state.eyeIcon]}
+                icon={["fas", this.state.eyeIcon]}
                 color="#444444"
               />
             </button>
           </div>
-          <div className='forgot-div'>
-            <button className="forgot-pwd" onClick={() => this.showModal('recoverPasswordSendReq')}>Forgot password?</button>
+          <div className="forgot-div">
+            <button
+              className="forgot-pwd"
+              onClick={() => this.showModal("recoverPasswordSendReq")}
+            >
+              Forgot password?
+            </button>
           </div>
 
-          <button className="signinbtn flex-center-center" onClick={this.signIn}>
+          <button
+            className="signinbtn flex-center-center"
+            onClick={this.signIn}
+          >
             {loader ? (
               <ReactLoading
                 height={"20px"}
@@ -194,15 +253,17 @@ export class SignIn extends React.Component {
                 color="white"
               />
             ) : (
-                "Sign In"
-              )}
+              "Sign In"
+            )}
           </button>
         </div>
 
-
         <div className="have-an-account">
           <span>Don’t have an account?</span>
-          <button onClick={() => this.showModal('emailVerifiedRequiredModal')}>Sign Up</button>
+          {/* <button onClick={() => this.showModal("emailVerifiedRequiredModal")}>
+            Sign Up
+          </button> */}
+          <Link href="/invitationCode">Sign Up</Link>
         </div>
         <ModalCustomize
           modalShow={this.state.modalShow}

@@ -49,7 +49,7 @@ export const register = (payload) => {
 
 export const reSendEmailVerification = (email) => {
   return async (dispatch) => {
-   await _axios.get(`https://microservices-dev.weneighbors.io/ms-event/api/v1/users/resendVerificationEmail/${email}`)
+   await _axios.get(`${process.env.API_BASE_URL_1}v1/users/resendVerificationEmail/${email}`)
    .then( data => {
      console.log(' data ==>', data)
      dispatch(emailverification(data?.data))
@@ -65,3 +65,18 @@ export const signout = () => {
     dispatch(signin({}));
   };
 };
+
+export const recoverPassword = (email) => {
+  return dispatch => {
+    return new Promise(async (resolve, reject)=>{
+      await _axios(`${process.env.API_BASE_URL_1}v1/users/resetPassword/${email}`)
+      .then( data => {
+        console.log('data', data)
+        resolve(data)
+      }).catch( error => {
+        console.log('error =>', error)
+        reject(error)
+      })
+    })
+  }
+}

@@ -3,14 +3,11 @@ import { Layout } from "../layout";
 import { CentralComponent } from "../centralComponent";
 import { Image } from "react-bootstrap";
 import Link from "next/link";
-import ReactLoading from 'react-loading'
-const SignUp = ({
-  __reSendVerificationEmail,
-  isloading
-}) => {
+import ReactLoading from "react-loading";
+const SignUp = ({ __reSendVerificationEmail, isloading }) => {
   return (
     <Layout>
-      <CentralComponent progressbar='none' style={{minHeight:'600px'}}>
+      <CentralComponent progressbar="none" style={{ minHeight: "600px" }}>
         <Image src="/assets/mockup/Frame.png" />
 
         <span className="verify-email-heading">
@@ -33,16 +30,22 @@ const SignUp = ({
 
         {/* <button className="verify-email-btn" onClick={__reSendVerificationEmail}>Resend Verification Email</button> */}
         <div
-        disabled={true}
-        className={!isloading?"btn-class":'btn-class-isloading'} onClick={!isloading? __reSendVerificationEmail:()=>null}  disabled={isloading} >
-              {
-                isloading
-                ?
-                <ReactLoading type={'balls'} color={'white'} height='20px' width='20px'  />
-                :
-              'Resend Verification Email'
-              }
-              </div >
+          disabled={true}
+          className={!isloading ? "btn-class-ve" : "btn-class-isloading-ve"}
+          onClick={!isloading ? __reSendVerificationEmail : () => null}
+          disabled={isloading}
+        >
+          {isloading ? (
+            <ReactLoading
+            height={"20px"}
+            width={"20px"}
+            type="spin"
+            color="#fff"
+            />
+          ) : (
+            "Resend Verification Email"
+          )}
+        </div>
       </CentralComponent>
     </Layout>
   );
