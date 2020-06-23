@@ -8,7 +8,7 @@ export const Header = () => {
     <div className="header-container">
       <div className="logo-container">
         <Link href='/'>
-          <Image src="/assets/mockup/logoAndTitle.png" />
+          <Image className='logo-img' src="/assets/mockup/bandLogo.png" />
         </Link>
       </div>
 
