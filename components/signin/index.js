@@ -141,22 +141,22 @@ export class SignIn extends React.Component {
             Email me a recovery link
           </button>
         ) : (
-          <div
-            className="resend-btn"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <ReactLoading
-              height={"20px"}
-              width={"20px"}
-              type="spin"
-              color="white"
-            />
-          </div>
-        )}
+            <div
+              className="resend-btn"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <ReactLoading
+                height={"20px"}
+                width={"20px"}
+                type="spin"
+                color="white"
+              />
+            </div>
+          )}
       </>
     );
   };
@@ -184,7 +184,7 @@ export class SignIn extends React.Component {
         <div>
           <p className="signIn-Heading">Welcome Back! </p>
           <p className="sigiin-message">
-            Please Sign In to access your community dashboard.
+            Please sign in to access your community dashboard.
           </p>
         </div>
         <div>
@@ -253,8 +253,8 @@ export class SignIn extends React.Component {
                 color="white"
               />
             ) : (
-              "Sign In"
-            )}
+                "Sign In"
+              )}
           </button>
         </div>
 

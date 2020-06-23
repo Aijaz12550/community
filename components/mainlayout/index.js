@@ -6,7 +6,7 @@ import "../../styles/mainlayout/index.scss";
 export const Container = ({ children }) => (
   <div className='main-layout' style={{ backgroundColor: '#F6F7FB' }}>
     <Navbar style={{ backgroundColor: '#F6F7FB' }}>
-      <Navbar.Brand>
+      <Navbar.Brand href='/'>
         <Image className='profile-image' src={'/assets/mockup/bandLogo.png'} />
       </Navbar.Brand>
     </Navbar>

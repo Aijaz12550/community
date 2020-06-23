@@ -109,14 +109,14 @@ class _Images extends Component {
               : 0}
           </Badge>
         ) : (
-          <></>
-        )}
+            <></>
+          )}
         <div className="member-name">
           {familyMember?.map((v, i, arr) => {
             if (i < this.state.showData) {
               return (
                 <span key={i + Math.floor(Math.random() * 10001)}>
-                  {v.fullName},
+                  {arr.length === i + 1 ? `${v.fullName}` : `${v.fullName},`}
                 </span>
               );
             }
@@ -124,13 +124,13 @@ class _Images extends Component {
 
           {familyMember?.length > this.state.showData ? (
             ` & ${
-              familyMember?.length > this.state.showData
-                ? familyMember?.length - this.state.showData
-                : 0
+            familyMember?.length > this.state.showData
+              ? familyMember?.length - this.state.showData
+              : 0
             } Others`
           ) : (
-            <></>
-          )}
+              <></>
+            )}
         </div>
       </div>
     );

@@ -11,7 +11,7 @@ export const LandingPage = () => {
         <div className="hero-and-header-container">
           <Header />
           <Hero />
-          <Image src="/assets/mockup/heroImage.png" />
+          <Image className='landing-page-img' src="/assets/mockup/heroImage.png" />
         </div>
         <div className="body-and-footer-container">
           <span className="mob-app-hint">
