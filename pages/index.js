@@ -10,7 +10,7 @@ const Home = () => (
   <div>
     <Head>
       <title>Community System</title>
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/Favicon.png" />
       <link
         rel="stylesheet"
         type="text/css"

@@ -28,7 +28,7 @@ export default connect((state) => state)((props) => {
     <Fragment>
       <Head>
         <title>Dashboard</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/Favicon.png" />
         <link
           rel="stylesheet"
           type="text/css"
