@@ -97,7 +97,6 @@ export default class ExternalMember extends Component {
 
   render() {
     const { externalMemberReducer: { getExternalMember, getExternalMemberError }, rolesReducer } = this.props;
-    console.log('aa', getExternalMember)
     return (
       <div className="content external-member-component" key={Date.now() + 5765}>
         <Row className="MT60 section-top">

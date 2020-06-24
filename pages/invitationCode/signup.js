@@ -12,7 +12,6 @@ export default connect((state) => state)((props) => {
   let [isloading, setIsLoading] = useState(false)
 
   const _register = (payload) => {
-    console.log('inviteReducer', inviteReducer)
     setIsLoading(true)
     const data = {
       appartmentUnit: "string",
@@ -31,7 +30,6 @@ export default connect((state) => state)((props) => {
       userRoleType: "string",
       ...payload,
     };
-    console.log("payload", payload);
     dispatch(register(data));
     router.push('/invitationCode/verifyEmail')
     

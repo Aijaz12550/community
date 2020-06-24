@@ -4688,7 +4688,7 @@ License - nucleoapp.com/license/
   font-size: 14px;
   font-weight: 700;
   padding-bottom: 0;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   border: 0;
 }
 

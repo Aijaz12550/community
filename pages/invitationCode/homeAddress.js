@@ -11,8 +11,6 @@ export default connect((state) => state)((props) => {
   const [isloading, setIsloading] = useState(false)
   const home_address_validator = (payload) => {
     setIsloading(true)
-    console.log('payload',payload)
-    
     setTimeout(()=>{
       setIsloading(false)
       router.push('/invitationCode/signup')

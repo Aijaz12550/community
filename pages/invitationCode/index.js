@@ -17,7 +17,6 @@ export default connect((state) => state)((props) => {
     setLoading(true);
     dispatch(__invitationCode(code)).then(({ data }) => {
       setLoading(false);
-      console.log("kjhgjhgjh0", data);
       if (data?.customMessage) {
         setCodeError(data.customMessage);
       }

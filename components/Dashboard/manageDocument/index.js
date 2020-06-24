@@ -313,7 +313,6 @@ export default class ManageDocument extends Component {
       dispatch,
     } = this.props;
     const { addRecord, hasEdit, modalLoader, loader, deleteIndex } = this.state;
-    console.log(this.props);
     return (
       <div className="content manage-document-component">
         <Row className="MT60 section-top">

@@ -29,7 +29,6 @@ export const updateProfile = (payload) => {
         payload
       )
       .then(({ data }) => {
-        console.log(data, "update profile");
         dispatch(updateProfileSuccess(data));
       })
       .catch((error) => {

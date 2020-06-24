@@ -27,6 +27,7 @@ export const profileReducer = (state = initialState, { payload, type }) => {
       return {
         ...state,
         updateProfileSuccess: payload,
+        getProfile: payload
       };
     case UPDATE_PROFILE_ERROR:
       return {

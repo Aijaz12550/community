@@ -71,7 +71,6 @@ export const recoverPassword = (email) => {
     return new Promise(async (resolve, reject)=>{
       await _axios(`${process.env.API_BASE_URL_1}/v1/users/resetPassword/${email}`)
       .then( data => {
-        console.log('data', data)
         resolve(data)
       }).catch( error => {
         console.log('error =>', error)

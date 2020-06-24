@@ -80,7 +80,6 @@ export const deleteDocument = (payload) => {
 };
 
 export const updateDocument = (payload) => {
-  console.log("pagad", payload);
   return async (dispatch) => {
     await _axios
       .post(`${process.env.API_BASE_URL}/v2/document/update`, null, {
