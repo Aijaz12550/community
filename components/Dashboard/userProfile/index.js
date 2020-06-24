@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Row, Col, Input } from "reactstrap";
 import { Image } from "react-bootstrap";
-import { getProfile, updateProfile } from "$middleware";
+import { updateProfile, updateAvatar } from "$middleware";
 import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
 import { Loader } from "../../Loader/Loader";
 import ReactLoading from "react-loading";
-import { updateProfileError } from "../../../redux/actions";
+import { updateProfileError, updateAvatarError } from "../../../redux/actions";
 import { toast } from "react-toastify";
 import "../../../styles/dashboard/userProfile/index.scss";
 
@@ -15,36 +15,43 @@ export default class UserProfile extends Component {
     this.state = {
       userDetail: {
         fullName: "",
-        profilePicUrl: "",
+        familyMemberAvatarUrl: "",
         role: "Board Member",
         email: "",
         phone: "",
         residentSince: "10 Auguest 2019",
+        file: {},
       },
+      error: "",
       loader: false,
     };
   }
 
   fileUploadButton = () => {
-    document.getElementById("fileButton").click();
-    document.getElementById("fileButton").onchange = (e) => {
-      let val = URL.createObjectURL(e.target.files[0]);
-      // let size = e.target.files[0].size;
-      // var sizeInMB = (size / (1024 * 1024)).toFixed(2);
-      // console.log('size', sizeInMB)
-
-      let { userDetail } = this.state;
-      userDetail.profilePicUrl = val;
-      this.setState({
-        userDetail,
-      });
-    };
+    try {
+      document.getElementById("fileButton").click();
+      let val = "";
+      document.getElementById("fileButton").onchange = (e) => {
+        let val1 = URL.createObjectURL(e.target.files[0]);
+        val = document.getElementById("fileButton").files;
+        let file = val[0];
+        let { userDetail } = this.state;
+        userDetail.familyMemberAvatarUrl = val1;
+        this.setState({
+          userDetail,
+        });
+        let formdata = new FormData();
+        formdata.append("file", file);
+        this.props.dispatch(updateAvatar(formdata));
+      };
+    } catch (error) {
+      throw error;
+    }
   };
 
   _onChange = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     let { userDetail } = this.state;
-    console.log(e.target.name);
     userDetail[e.target.name] = e.target.value;
     this.setState({
       userDetail,
@@ -81,10 +88,6 @@ export default class UserProfile extends Component {
 
   componentDidUpdate(prevProps) {
     const { profileReducer, dispatch } = this.props;
-    console.log(
-      profileReducer?.updateProfileSuccess?.email,
-      "profileReducer.updateProfileSuccess.email"
-    );
     if (
       profileReducer?.updateProfileSuccess?.email !==
         prevProps.profileReducer?.updateProfileSuccess?.email ||
@@ -94,7 +97,7 @@ export default class UserProfile extends Component {
         prevProps.profileReducer?.updateProfileSuccess?.fullName
     ) {
       this.setState({ loader: false });
-      this.notify('successfully updated')
+      this.notify("successfully updated");
     }
     if (
       profileReducer.updateProfileError !==
@@ -105,6 +108,20 @@ export default class UserProfile extends Component {
         error: profileReducer.updateProfileError,
       });
       dispatch(updateProfileError(""));
+    }
+    if (
+      profileReducer?.updateAvatar?.userImage !==
+      prevProps.profileReducer?.updateAvatar?.userImage
+    ) {
+      this.notify("successfully Image updated");
+    }
+    if (
+      profileReducer?.updateAvatarError !==
+        prevProps.profileReducer?.updateAvatarError &&
+      !profileReducer?.updateAvatarError
+    ) {
+      this.setState({ error: profileReducer?.updateAvatarError });
+      dispatch(updateAvatarError(""));
     }
   }
 
@@ -137,6 +154,7 @@ export default class UserProfile extends Component {
 
   render() {
     const { userDetail, loader, error } = this.state;
+    console.log(error, "error");
     return (
       <div className="content user-profile-component" key={Date.now() + 5765}>
         <Row className="MT60 section-top">
@@ -168,6 +186,7 @@ export default class UserProfile extends Component {
                       <span>Upload Photo</span>
                     </button>
                   </div>
+                  {error && <p style={{ color: "red" }}>Hello world</p>}
                   <div className="footer-card">
                     <div className="image-content">
                       <span>

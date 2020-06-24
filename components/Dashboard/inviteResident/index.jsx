@@ -150,7 +150,6 @@ export default class InviteResident extends Component {
   };
 
   inviteSendFunc = () => {
-    console.log(this.state.invitationData);
     const {
       AuthReducer: {
         user: { communityId, userId },

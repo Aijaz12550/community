@@ -50,7 +50,6 @@ export class SignIn extends React.Component {
           "/dashboard/[user]/[role]",
           `/dashboard/${scope}/view_residents`
         );
-        console.log("data from comp", data);
       })
       .catch((error) => {
         console.log("error from component", error);

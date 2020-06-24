@@ -3,16 +3,18 @@ import { SideBar } from "./sidebar";
 import NavBar from "./navbar";
 import { routes } from "./dashboardRoutes";
 import { useRouter } from "next/router";
-import { getProfile } from "$middleware";
+import { getProfile, getAvatar } from "$middleware";
 export * from "./viewResidents";
 
 export const DashBoard = (props) => {
   const router = useRouter();
+  const { dispatch } = props;
 
   useEffect(() => {
-    const { dispatch } = props;
     dispatch(getProfile());
   }, [props?.profileReducer?.getProfile?.email]);
+
+  useEffect(() => dispatch(getAvatar()), [props?.profileReducer?.getAvatar]);
 
   return (
     <div className="wrapper">

@@ -65,7 +65,6 @@ class Header extends React.Component {
       profileReducer: { getProfile },
     } = this.props;
 
-    console.log(this.props, "profileReducerr");
     return (
       <Navbar expand="lg" className={"navbar-absolute fixed-top nav-bar-main"}>
         <Container fluid className="container" style={{}}>
