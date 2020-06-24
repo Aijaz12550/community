@@ -3,10 +3,17 @@ import { SideBar } from "./sidebar";
 import NavBar from "./navbar";
 import { routes } from "./dashboardRoutes";
 import { useRouter } from "next/router";
+import { getProfile } from "$middleware";
 export * from "./viewResidents";
 
 export const DashBoard = (props) => {
   const router = useRouter();
+
+  useEffect(() => {
+    const { dispatch } = props;
+    dispatch(getProfile());
+  }, [props?.profileReducer?.getProfile?.email]);
+
   return (
     <div className="wrapper">
       <SideBar />
@@ -14,7 +21,7 @@ export const DashBoard = (props) => {
         className="main-panel"
         style={{ background: "#F6F7FB", height: "100%" }}
       >
-        <NavBar _signout={props._signout} />
+        <NavBar {...props} />
         <div
           style={{
             display: "flex",

@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 import { Image } from "react-bootstrap";
 import "../../../styles/navbar/index.scss";
-import NotificationList from '../notificationList'
+import NotificationList from "../notificationList";
 
 class Header extends React.Component {
   constructor(props) {
@@ -61,6 +61,11 @@ class Header extends React.Component {
   }
 
   render() {
+    const {
+      profileReducer: { getProfile },
+    } = this.props;
+
+    console.log(this.props, "profileReducerr");
     return (
       <Navbar expand="lg" className={"navbar-absolute fixed-top nav-bar-main"}>
         <Container fluid className="container" style={{}}>
@@ -120,7 +125,7 @@ class Header extends React.Component {
 
                   </DropdownMenu>
                 </Dropdown> */}
-                    <NotificationList />
+                <NotificationList />
 
                 <NavItem
                   style={{
@@ -140,7 +145,7 @@ class Header extends React.Component {
                 </NavItem>
                 <NavItem>
                   <div className="nav-link btn-magnify">
-                    <span className="profileName">Bradley Robin</span>
+                    <span className="profileName">{getProfile.fullName}</span>
                   </div>
                 </NavItem>
                 <Dropdown

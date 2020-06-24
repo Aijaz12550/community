@@ -27,7 +27,6 @@ export const updateProfileSuccess = (payload) => {
 };
 
 export const updateProfileError = (payload) => {
-  console.log(payload, 'update error reducer')
   return {
     type: UPDATE_PROFILE_ERROR,
     payload,

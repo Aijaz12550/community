@@ -6,6 +6,7 @@ import { DashboardHeaderCard } from "../dashboardHeaderCard/index.jsx";
 import { Loader } from "../../Loader/Loader";
 import ReactLoading from "react-loading";
 import { updateProfileError } from "../../../redux/actions";
+import { toast } from "react-toastify";
 import "../../../styles/dashboard/userProfile/index.scss";
 
 export default class UserProfile extends Component {
@@ -41,8 +42,8 @@ export default class UserProfile extends Component {
   };
 
   _onChange = (e) => {
+    e.preventDefault()
     let { userDetail } = this.state;
-    console.log(e.target.value);
     console.log(e.target.name);
     userDetail[e.target.name] = e.target.value;
     this.setState({
@@ -51,8 +52,7 @@ export default class UserProfile extends Component {
   };
 
   componentDidMount() {
-    const { dispatch, profileReducer } = this.props;
-    dispatch(getProfile());
+    const { profileReducer } = this.props;
     if (profileReducer.getProfile.email) {
       const {
         fullName,
@@ -74,39 +74,27 @@ export default class UserProfile extends Component {
     }
   }
 
+  notify = (payload) => {
+    this.setState({ loader: false });
+    toast(payload);
+  };
+
   componentDidUpdate(prevProps) {
     const { profileReducer, dispatch } = this.props;
     console.log(
-      profileReducer.updateProfileSuccess.email,
+      profileReducer?.updateProfileSuccess?.email,
       "profileReducer.updateProfileSuccess.email"
     );
     if (
-      profileReducer.getProfile.email !==
-      prevProps.profileReducer.getProfile.email
-    ) {
-      const {
-        fullName,
-        familyMemberAvatarUrl,
-        email,
-        phone,
-        residentSince,
-      } = profileReducer.getProfile;
-      this.setState({
-        userDetail: {
-          fullName,
-          familyMemberAvatarUrl,
-          role: "",
-          email,
-          phone,
-          residentSince,
-        },
-      });
-    }
-    if (
-      profileReducer.updateProfileSuccess.email !==
-      prevProps.profileReducer.updateProfileSuccess.email
+      profileReducer?.updateProfileSuccess?.email !==
+        prevProps.profileReducer?.updateProfileSuccess?.email ||
+      profileReducer?.updateProfileSuccess?.phone !==
+        prevProps.profileReducer?.updateProfileSuccess?.phone ||
+      profileReducer?.updateProfileSuccess?.fullName !==
+        prevProps.profileReducer?.updateProfileSuccess?.fullName
     ) {
       this.setState({ loader: false });
+      this.notify('successfully updated')
     }
     if (
       profileReducer.updateProfileError !==
