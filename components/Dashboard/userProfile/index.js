@@ -90,11 +90,11 @@ export default class UserProfile extends Component {
     const { profileReducer, dispatch } = this.props;
     if (
       profileReducer?.updateProfileSuccess?.email !==
-        prevProps.profileReducer?.updateProfileSuccess?.email ||
+      prevProps.profileReducer?.updateProfileSuccess?.email ||
       profileReducer?.updateProfileSuccess?.phone !==
-        prevProps.profileReducer?.updateProfileSuccess?.phone ||
+      prevProps.profileReducer?.updateProfileSuccess?.phone ||
       profileReducer?.updateProfileSuccess?.fullName !==
-        prevProps.profileReducer?.updateProfileSuccess?.fullName
+      prevProps.profileReducer?.updateProfileSuccess?.fullName
     ) {
       this.setState({ loader: false });
       this.notify("successfully updated");
@@ -210,7 +210,7 @@ export default class UserProfile extends Component {
                   <span className="name-title">Full Name </span>
                   <span className="required">(Required)</span>
                 </div>
-                <div className="input-div">
+                <div className="input-div-remaining">
                   <span>
                     <Input
                       type="text"
@@ -231,7 +231,7 @@ export default class UserProfile extends Component {
                   <span className="name-title">Email Address </span>
                   <span className="required">(Required)</span>
                 </div>
-                <div className="input-div-remaing">
+                <div className="input-div-remaining">
                   <span>
                     <Input
                       type="text"
@@ -246,7 +246,7 @@ export default class UserProfile extends Component {
                 <div className="name-label">
                   <span className="name-title">Phone Number </span>
                 </div>
-                <div className="input-div-remaing">
+                <div className="input-div-remaining">
                   <span>
                     <Input
                       type="text"
@@ -260,7 +260,7 @@ export default class UserProfile extends Component {
                 <div className="name-label">
                   <span className="name-title">Member Since </span>
                 </div>
-                <div className="input-div-remaing member-since">
+                <div className="input-div-remaining member-since">
                   <span>
                     <Input
                       type="text"
@@ -289,8 +289,8 @@ export default class UserProfile extends Component {
                         />
                       </div>
                     ) : (
-                      <span>Save</span>
-                    )}
+                        <span>Save</span>
+                      )}
                   </button>
 
                   <div
@@ -308,10 +308,10 @@ export default class UserProfile extends Component {
               </div>
             </>
           ) : (
-            <div style={{ width: "100%", height: "100%" }}>
-              <Loader />
-            </div>
-          )}
+              <div style={{ width: "100%", height: "100%" }}>
+                <Loader />
+              </div>
+            )}
         </Row>
       </div>
     );
