@@ -249,7 +249,7 @@ export default class InviteResident extends Component {
                     </td>
                     <td className="td5-m">
                       <input
-                        type="text"
+                        type="number"
                         name="phoneNo"
                         value={val.phoneNo}
                         onChange={(e) => this._onChange(e, index)}

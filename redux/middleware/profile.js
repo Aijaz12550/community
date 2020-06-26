@@ -36,7 +36,6 @@ export const updateProfile = (payload) => {
         dispatch(updateProfileSuccess(data));
       })
       .catch((error) => {
-        console.log(error?.response?.data, "update profile");
         dispatch(updateProfileError(error?.response?.data?.errors[0]?.message));
       });
   };
@@ -49,18 +48,15 @@ export const getAvatar = () => {
         `https://cors-anywhere.herokuapp.com/https://microservices-dev.weneighbors.io/ms-event/api/v1/users/avatar`
       )
       .then(({ data }) => {
-        console.log(data, "get avatar data");
         dispatch(getAvatarSuccess(data));
       })
       .catch((error) => {
-        console.log(error?.response?.data, "getAvatar error");
         dispatch(getAvatarError(error));
       });
   };
 };
 
 export const updateAvatar = (payload) => {
-  console.log(payload, "payload");
   return async (dispatch) => {
     await _axios
       .post(
@@ -69,7 +65,6 @@ export const updateAvatar = (payload) => {
         { headers: { "Content-Type": "multipart/form-data" } }
       )
       .then(({ data }) => {
-        console.log(data, "update avatar data");
         dispatch(updateAvatarSuccess(data));
       })
       .catch((error) => {

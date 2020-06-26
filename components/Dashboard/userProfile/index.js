@@ -90,11 +90,11 @@ export default class UserProfile extends Component {
     const { profileReducer, dispatch } = this.props;
     if (
       profileReducer?.updateProfileSuccess?.email !==
-      prevProps.profileReducer?.updateProfileSuccess?.email ||
+        prevProps.profileReducer?.updateProfileSuccess?.email ||
       profileReducer?.updateProfileSuccess?.phone !==
-      prevProps.profileReducer?.updateProfileSuccess?.phone ||
+        prevProps.profileReducer?.updateProfileSuccess?.phone ||
       profileReducer?.updateProfileSuccess?.fullName !==
-      prevProps.profileReducer?.updateProfileSuccess?.fullName
+        prevProps.profileReducer?.updateProfileSuccess?.fullName
     ) {
       this.setState({ loader: false });
       this.notify("successfully updated");
@@ -289,8 +289,8 @@ export default class UserProfile extends Component {
                         />
                       </div>
                     ) : (
-                        <span>Save</span>
-                      )}
+                      <span>Save</span>
+                    )}
                   </button>
 
                   <div
@@ -308,10 +308,10 @@ export default class UserProfile extends Component {
               </div>
             </>
           ) : (
-              <div style={{ width: "100%", height: "100%" }}>
-                <Loader />
-              </div>
-            )}
+            <div style={{ width: "100%", height: "100%" }}>
+              <Loader />
+            </div>
+          )}
         </Row>
       </div>
     );

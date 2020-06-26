@@ -86,6 +86,10 @@ export const updateDocument = (payload) => {
         params: payload.docObj,
       })
       .then(($data) => {
+        console.log(
+          $data?.data?.paramObjectsMap?.DocumentEntityVO,
+          "$data?.data?.paramObjectsMap?.DocumentEntityVO"
+        );
         dispatch(
           updateDocumentSuccess({
             data: $data?.data?.paramObjectsMap?.DocumentEntityVO,
