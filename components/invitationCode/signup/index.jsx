@@ -10,7 +10,7 @@ const SignUp = ({ _register, isloading }) => {
 
   return (
     <Layout>
-      <CentralComponent steps={[{ title: '' }, { title: '' }, { title: '' }]} progress_value={2}>
+      <CentralComponent style={{minHeight:'700px'}} steps={[{ title: '' }, { title: '' }, { title: '' }]} progress_value={2}>
         <span className="signup-heading">
           Almost there please signup to access your community dashboard.
         </span>

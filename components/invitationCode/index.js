@@ -9,7 +9,7 @@ const InvitationCode = ({ _invitationCode, codeError, isloading }) => {
 
   return (
     <Layout>
-      <CentralComponent steps={[{ title: '' }, { title: '' }]} progress_value={0}>
+      <CentralComponent style={{minHeight:'700px'}} steps={[{ title: '' }, { title: '' }]} progress_value={0}>
         <div className="central-component-body-1">
           <span className="central-component-heading">
             Please Enter the invitation Code That you have recieved from us

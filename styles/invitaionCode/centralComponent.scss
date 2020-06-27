@@ -7,6 +7,7 @@
 
 .central-component-container {
   @include flex-box-column-center();
+  padding-bottom: 30px;
   .central-component-sub {
     width: 100%;
     max-width: 450px;

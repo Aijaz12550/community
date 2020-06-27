@@ -7,7 +7,7 @@ import ReactLoading from "react-loading";
 const SignUp = ({ __reSendVerificationEmail, isloading }) => {
   return (
     <Layout>
-      <CentralComponent progressbar="none" style={{ minHeight: "600px" }}>
+      <CentralComponent style={{minHeight:'700px'}} progressbar="none" style={{ minHeight: "600px" }}>
         <Image src="/assets/mockup/Frame.png" />
 
         <span className="verify-email-heading">
