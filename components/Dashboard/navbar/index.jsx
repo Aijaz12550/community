@@ -139,7 +139,7 @@ class Header extends React.Component {
                   <Image
                     className="roundedCircle"
                     style={{ width: 38, height: 38, borderRadius: 19 }}
-                    src="/assets/mockup/img10.png"
+                    src={getProfile?.familyMemberAvatarUrl}
                   />
                 </NavItem>
                 <NavItem>

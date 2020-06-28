@@ -53,9 +53,12 @@ export const profileReducer = (state = initialState, { payload, type }) => {
         getAvatarError: payload,
       };
     case UPDATE_AVATAR_SUCCESS:
+      const { getProfile } = state;
+      getProfile.familyMemberAvatarUrl = payload.userImage;
       return {
         ...state,
         updateAvatar: payload,
+        getProfile,
       };
     case UPDATE_AVATAR_ERROR:
       return {

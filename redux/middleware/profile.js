@@ -68,7 +68,6 @@ export const updateAvatar = (payload) => {
         dispatch(updateAvatarSuccess(data));
       })
       .catch((error) => {
-        // console.log(error?.response, "update avatar error");
         dispatch(updateAvatarError("something went wrong"));
       });
   };

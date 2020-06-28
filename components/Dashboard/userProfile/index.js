@@ -154,7 +154,6 @@ export default class UserProfile extends Component {
 
   render() {
     const { userDetail, loader, error } = this.state;
-    console.log(error, "error");
     return (
       <div className="content user-profile-component" key={Date.now() + 5765}>
         <Row className="MT60 section-top">

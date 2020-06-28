@@ -12,13 +12,11 @@ export default connect((state) => state)((props) => {
   let [ error, setError] = useState(null)
 
   const _recoverPassword_ = (email) => {
-    console.log('email ==>', email)
     dispatch(recoverPassword(email)).then(data => {
       setRecoverPasswordLoading(false)
     }).catch( error => {
       setError(error)
       setRecoverPasswordLoading(false)
-      console.log('error',error)
     })
   }
   return (

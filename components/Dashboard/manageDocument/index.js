@@ -209,7 +209,6 @@ export default class ManageDocument extends Component {
   };
 
   _saveDocument = (e) => {
-    console.log(this.state, "this.state");
     const {
       addRecord: { notes, docType, file, documentId },
       index,
@@ -244,10 +243,6 @@ export default class ManageDocument extends Component {
       notes ? (UpdateObj.docObj.Notes = notes) : null;
       docType ? (UpdateObj.docObj["Document Type"] = docType) : null;
       file ? (UpdateObj.docObj["Document File"] = formdata) : null;
-      console.log(UpdateObj, "UpdateObj");
-      console.log(file, "file");
-      console.log(docType, "docType");
-      console.log(UpdateObj, "UpdateObj");
       dispatch(updateDocument(UpdateObj));
     } else {
       dispatch(addDocument(documentObj));
@@ -291,7 +286,6 @@ export default class ManageDocument extends Component {
   };
 
   editRow = (value, index) => {
-    console.log(value, "value");
     const { notes, documentType, fileName, documentUrl, documentId } = value;
     this.setState({
       addRecord: {
@@ -319,7 +313,6 @@ export default class ManageDocument extends Component {
       dispatch,
     } = this.props;
     const { addRecord, hasEdit, modalLoader, loader, deleteIndex } = this.state;
-    console.log(this.props, "this.props");
     return (
       <div className="content manage-document-component">
         <Row className="MT60 section-top">

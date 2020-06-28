@@ -4,9 +4,9 @@ import { CentralComponent } from "../centralComponent";
 import { Image } from "react-bootstrap";
 
 const SignUp = ({ _register, isloading }) => {
-  let [email, setEmail] = useState("anschessclub@gmail.com");
+  let [email, setEmail] = useState("owaiskhan148@gmail.com");
   let [phone, setPhone] = useState(+12308766554);
-  let [password, setPassword] = useState("123455676");
+  let [password, setPassword] = useState("Hello123!");
 
   return (
     <Layout>

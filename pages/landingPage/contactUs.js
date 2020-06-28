@@ -11,18 +11,12 @@ export default  connect(state=>state) ((props) => {
 
     const sendFeedback = (payload) => {
         setLoading(true)
-        console.log('_sendFeedback ===>', payload)
-        
-      return Send_Feedback(payload)
+        dispatch(Send_Feedback(payload))
     }
     return (
         <Fragment>
             <Head>
                 <title>Contact Us</title>
-                <link
-        rel="stylesheet"
-        type="text/css"
-        href='../../styles/contactUs/index.scss'></link>
             </Head>
             <ContactUs isLoading={isLoading} sendFeedback={sendFeedback} />
         </Fragment>

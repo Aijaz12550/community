@@ -29,7 +29,7 @@ export const __invitationCode = (code) => {
       await _axios
         .get(`${process.env.API_BASE_URL_1}/v2/users/invitationCode/${code}/valid`)
         .then((data) => {
-          dispatch(invitationCode(data));
+          dispatch(invitationCode(data?.data?.body));
           resolve(data);
         })
         .catch((error) => {

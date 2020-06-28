@@ -7,32 +7,42 @@ import { register } from "$middleware";
 import { useRouter } from "next/router";
 
 export default connect((state) => state)((props) => {
-  let { dispatch, inviteReducer } = props;
+  let {
+    dispatch,
+    inviteReducer: {
+      // invitationCode: {
+      //   community: { communityId, street },
+      //   roles,
+      // },
+      code,
+    },
+  } = props;
   let router = useRouter();
-  let [isloading, setIsLoading] = useState(false)
+  let [isloading, setIsLoading] = useState(false);
 
   const _register = (payload) => {
-    setIsLoading(true)
+    setIsLoading(true);
     const data = {
-      appartmentUnit: "string",
-      communityId: "USC10001",
-      deviceType: "desktop",
-      fullName: "string",
-      idToken: "string",
-      invitationCode: "RMAN707066",
-      latitude: 0,
-      longitude: 0,
-      registrationId: "string",
-      registrationType: "string",
-      street: "Barnum Pl, Mckeon Pl, Lynn Pl, Titus Pl, Taylor Ct",
-      timeZone: "string",
-      udid: "string",
-      userRoleType: "string",
+      apnsKey: "",
+      appartmentUnit: "",
+      communityId: 1,
+      deviceType: "ANDROID",
+      fcmKey: "",
+      fullName: "Muhammad Owais Warsi",
+      idToken: "",
+      invitationCode: "RMAN959309",
+      latitude: 44.500000,
+      longitude: -89.500000,
+      registrationId: "",
+      registrationType: "APPLICATION",
+      street: "12 Barnum Pl",
+      timeZone: "",
+      udid: "",
+      userRoleType: "ROLE_COMMUNITY_RESIDENT, ROLE_COMMUNITY_MEMBER",
       ...payload,
     };
     dispatch(register(data));
-    router.push('/invitationCode/verifyEmail')
-    
+    router.push("/invitationCode/verifyEmail");
   };
   return (
     <Fragment>

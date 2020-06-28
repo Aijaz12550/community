@@ -27,7 +27,6 @@ export const socialLogin = (payload) => {
           resolve(res);
         })
         .catch((err) => {
-          console.log("err", err);
           reject(err);
         });
     });
@@ -51,7 +50,6 @@ export const reSendEmailVerification = (email) => {
   return async (dispatch) => {
    await _axios.get(`${process.env.API_BASE_URL_1}/v1/users/resendVerificationEmail/${email}`)
    .then( data => {
-     console.log(' data ==>', data)
      dispatch(emailverification(data?.data))
    }).catch( error => {
      console.log(' error ==>', error)
@@ -73,7 +71,6 @@ export const recoverPassword = (email) => {
       .then( data => {
         resolve(data)
       }).catch( error => {
-        console.log('error =>', error)
         reject(error)
       })
     })

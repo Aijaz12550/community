@@ -178,7 +178,6 @@ export default class InviteResident extends Component {
       sourceType: "WEB-APP",
     };
     dispatch(sendInvites(invitationObj));
-    // console.log(invitationObj, "adsasdf");
   };
 
   render() {

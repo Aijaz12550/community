@@ -54,7 +54,6 @@ export const deleteDocumentError = (payload) => {
 };
 
 export const updateDocumentSuccess = (payload) => {
-  console.log('hello world', payload)
   return {
     type: UPDATE_DOCUMENT_SUCCESS,
     payload,
