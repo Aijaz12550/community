@@ -22,9 +22,9 @@ const _axios1 = axios.create({
   baseURL: process.env.API_BASE_URL_1,
 });
 
-_axios.CancelToken = axios.CancelToken;
+_axios1.CancelToken = axios.CancelToken;
 
-_axios.interceptors.request.use(async (config) => {
+_axios1.interceptors.request.use(async (config) => {
   getToken().then((_tok) => {
     if (_tok) {
       config.headers.Authorization = `bearer ${_tok}`;

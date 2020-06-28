@@ -64,7 +64,7 @@
       color: #91909a;
     }
   }
-  button {
+  button, .btn-class-ve {
     background: #009999;
     border-radius: 8px;
     width: 85%;
@@ -72,11 +72,14 @@
     color: white;
     outline: none;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  button:hover {
+  button:hover , .btn-class-ve:hover{
     transform: translate(0, -2px);
   }
-  button:active {
+  button:active, .btn-class-ve:active {
     transform: translate(0, 0px);
   }
 }
