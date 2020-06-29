@@ -4,8 +4,8 @@ import { CentralComponent } from "./centralComponent";
 import Link from "next/link";
 import ReactLoading from "react-loading";
 
-const InvitationCode = ({ _invitationCode, codeError, isloading }) => {
-  let [inv_code, setInv_code] = useState("RMAN707066");
+const InvitationCode = ({ _invitationCode, codeError, isloading, goBack }) => {
+  let [inv_code, setInv_code] = useState("RMAN928781");
 
   return (
     <Layout>
@@ -44,7 +44,7 @@ const InvitationCode = ({ _invitationCode, codeError, isloading }) => {
           </span>
 
           <div className="btn-container">
-            <button>Back</button>
+            <button onClick={goBack}>Back</button>
             <div
             style={{maxWidth:'150px'}}
               className={!isloading ? "btn-class" : "btn-class-isloading"}

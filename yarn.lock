@@ -1728,7 +1728,7 @@ array-unique@^0.3.2:
   resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
   integrity sha1-qJS3XUvE9s1nnvMkSp/Y9Gri1Cg=
 
-asap@~2.0.3:
+asap@~2.0.3, asap@~2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
   integrity sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY=
@@ -1856,6 +1856,21 @@ aws4@^1.8.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.9.1.tgz#7e33d8f7d449b3f673cd72deb9abdc552dbe528e"
   integrity sha512-wMHVg2EOHaMRxbzgFJ9gtjOOCrI80OHLG14rxi28XwOW8ux6IiEbRCGGGqCtdAIg4FQCbW20k9RsT4y3gJlFug==
+
+axios-proxy-fix@^0.16.3:
+  version "0.16.3"
+  resolved "https://registry.yarnpkg.com/axios-proxy-fix/-/axios-proxy-fix-0.16.3.tgz#6a015d9fd14c16bc613f713980745bfb71a82666"
+  integrity sha512-dLRTjqYW7A9kuqh3aiFjvQrBSQipVwsHFV401MdQb2JhQS9rAobAMhME2GxZXNXDblWRGCVfW/LdoHUXrPFBRg==
+  dependencies:
+    follow-redirects "^1.2.3"
+    is-buffer "^1.1.5"
+
+axios-retry@^3.0.1:
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/axios-retry/-/axios-retry-3.1.8.tgz#ffcfed757e1fab8cbf832f8505bb0e0af47c520c"
+  integrity sha512-yPw5Y4Bg6Dgmhm35KaJFtlh23s1TecW0HsUerK4/IS1UKl0gtN2aJqdEKtVomiOS/bDo5w4P3sqgki/M10eF8Q==
+  dependencies:
+    is-retry-allowed "^1.1.0"
 
 axios@^0.19.2:
   version "0.19.2"
@@ -3932,6 +3947,11 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "^3.0.0"
 
+follow-redirects@^1.2.3:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.12.1.tgz#de54a6205311b93d60398ebc01cf7015682312b6"
+  integrity sha512-tmRv0AVuR7ZyouUHLeNSiO6pqulF7dYa3s19c6t+wz9LD69/uSzdMxJ2S91nTI9U3rt/IldxpzMOFejp6f0hjg==
+
 for-in@^0.1.3:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
@@ -4771,6 +4791,11 @@ is-resolvable@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.1.0.tgz#fb18f87ce1feb925169c9a407c19318a3206ed88"
   integrity sha512-qgDYXFSR5WvEfuS5dMj6oTMEbrrSaM0CrFk2Yiq/gXnBvD9pMa2jGXxyhGLfvhZpuMZe18CJpFxAt3CRs42NMg==
+
+is-retry-allowed@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/is-retry-allowed/-/is-retry-allowed-1.2.0.tgz#d778488bd0a4666a3be8a1482b9f2baafedea8b4"
+  integrity sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==
 
 is-stream@^1.0.1:
   version "1.1.0"
@@ -7168,6 +7193,13 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
+promise@^8.0.1:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/promise/-/promise-8.1.0.tgz#697c25c3dfe7435dd79fcd58c38a135888eaf05e"
+  integrity sha512-W04AqnILOL/sPRXziNicCjSNRruLAuIHEOVBazepu0545DDNGYHz7ar9ZgZ1fMU8/MA4mVxp5rkBWRi6OXIy3Q==
+  dependencies:
+    asap "~2.0.6"
+
 prop-types-exact@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/prop-types-exact/-/prop-types-exact-1.2.0.tgz#825d6be46094663848237e3925a98c6e944e9869"
@@ -8131,6 +8163,15 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
   integrity sha1-xB8vbDn8FtHNF61LXYlhFK5HDVU=
+
+smartystreets-javascript-sdk@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/smartystreets-javascript-sdk/-/smartystreets-javascript-sdk-1.4.4.tgz#87fd18038eef26c1a79518c885f53dc9909578be"
+  integrity sha512-X6tu7K44LX4pu1xUEazNsw9gb3lOqVIwNkELSFfPslOrd+SMqCoq0qMAWA+KupfoDlidZS3WMu+Pb2nrT2zP7g==
+  dependencies:
+    axios-proxy-fix "^0.16.3"
+    axios-retry "^3.0.1"
+    promise "^8.0.1"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

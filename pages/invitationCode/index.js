@@ -16,13 +16,17 @@ export default connect((state) => state)((props) => {
   let _invitationCode = (code) => {
     setLoading(true);
     dispatch(__invitationCode(code)).then(({ data }) => {
+      console.log('===>',data)
       setLoading(false);
       if (data?.customMessage) {
         setCodeError(data.customMessage);
       }
+      else if(data?.body?.homeAddressRequired){
+        router.push(`/invitationCode/${data?.body?.community?.otherCommunityName}`)
+      }
       else if(data?.statusDescription === "Invitation Code Found"){
-
         router.push('/invitationCode/homeAddress')
+
       }
     });
   };
@@ -35,6 +39,7 @@ export default connect((state) => state)((props) => {
         _invitationCode={_invitationCode}
         codeError={codeError}
         isloading={isloading}
+        goBack = {router.back}
       />
     </Fragment>
   );
