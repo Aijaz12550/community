@@ -162,6 +162,11 @@
         line-height: 21px;
         color: #344563;
         margin-bottom: 3px;
+        overflow: hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        width:150px;
+        display:flex;
       }
       .memberRole{
         font-family: 'Open Sans';
@@ -228,6 +233,29 @@
 
   .modal-dialog {
     width: 70% !important;
+  }
+  .contained-modal-title-vcenter {
+    .td1-m {
+      width: 30% !important;
+      font-size: 10px !important;
+      div{
+        .roundedCircle {
+          width: 35px !important;
+          height: 35px !important;
+          border-radius: 18px !important;
+        }
+      }
+      div{
+        .memberName{
+          font-size: 14px !important;
+          width: 120px !important;
+          line-height: 14px !important;
+        }
+        .memberRole{
+          font-size: 12px !important;
+        }
+      }
+    }
   }
 }
 
@@ -298,6 +326,7 @@
       div{
         .memberName{
           font-size: 11px !important;
+          width: 100px !important;
         }
         .memberRole{
           font-size: 9px !important;
@@ -433,6 +462,7 @@
       div{
         .memberName{
           font-size: 10px !important;
+          width: 70px !important;
         }
         .memberRole{
           font-size: 8px !important;
@@ -447,12 +477,6 @@
     table {
       width: 470px !important;
     }
-    
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .contained-modal-title-vcenter {
     .view-residents-address {
       font-size: 14px !important;
     }
