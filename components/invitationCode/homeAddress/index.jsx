@@ -54,7 +54,7 @@ const HomeAddress = ({
   goBack,
 }) => {
   let router = useRouter();
-  const [homeAddress, setHomeAddress] = useState("");
+  const [homeAddress_, setHomeAddress] = useState("");
   const [apt, setApt] = useState("");
   const [listCommunityName, setListCommunityName] = useState([]);
 
@@ -105,7 +105,7 @@ const HomeAddress = ({
             <input
               className="inp-compo"
               onChange={(e) => changehandler(e.target.value)}
-              value={homeAddress?.text}
+              value={homeAddress_?.text}
               type="text"
               placeholder="AED5687"
             />
@@ -163,7 +163,7 @@ const HomeAddress = ({
             <div
               style={{ maxWidth: "150px" }}
               className={!isloading ? "btn-class" : "btn-class-isloading"}
-              onClick={() => home_address_validator({ homeAddress, apt })}
+              onClick={homeAddress_?() => home_address_validator({ homeAddress_, apt }):()=>null}
               disabled={isloading}
             >
               {isloading ? (

@@ -15,10 +15,12 @@ const HomeA = connect((state) => state)((props) => {
   
   console.log("======>>>>>123", homeAddress);
   const home_address_validator = (params) => {
+    let { homeAddress_ } = params
+    console.log('=====',params)
     let payload = {
       address: {
         active: "string",
-        city: "string",
+        city: homeAddress_?.city,
         city_name: "string",
         congressional_district: "string",
         countyFips: "string",
@@ -44,9 +46,9 @@ const HomeA = connect((state) => state)((props) => {
         secondary: "string",
         secondary_designator: "string",
         secondary_number: "string",
-        state: "string",
+        state: homeAddress_?.state,
         state_abbreviation: "string",
-        street_line: "string",
+        street_line: homeAddress_?.streetline,
         structured_formatting: {
           main_text: "string",
           main_text_matched_substrings: [
@@ -69,7 +71,7 @@ const HomeA = connect((state) => state)((props) => {
             value: "string",
           },
         ],
-        text: "string",
+        text: homeAddress_?.text,
         time_zone: "string",
         types: ["string"],
         utc_offset: "string",
