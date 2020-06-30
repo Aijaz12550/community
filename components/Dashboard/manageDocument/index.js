@@ -87,7 +87,7 @@ export default class ManageDocument extends Component {
     const { documentsReducer, dispatch } = this.props;
     if (
       documentsReducer.documentsError !==
-        prevProps?.documentsReducer?.documentsError &&
+      prevProps?.documentsReducer?.documentsError &&
       documentsReducer.documentsError?.length !== 0
     ) {
       this.notify(documentsReducer.documentsError);
@@ -95,7 +95,7 @@ export default class ManageDocument extends Component {
     }
     if (
       documentsReducer.documents.length !==
-        prevProps?.documentsReducer?.documents.length &&
+      prevProps?.documentsReducer?.documents.length &&
       documentsReducer.documents.length !== 0
     ) {
       this.setState({ loader: false, deleteIndex: null });
@@ -121,7 +121,7 @@ export default class ManageDocument extends Component {
     }
     if (
       documentsReducer?.updateDocument?.documentId !==
-        prevProps?.documentsReducer?.updateDocument?.documentId &&
+      prevProps?.documentsReducer?.updateDocument?.documentId &&
       documentsReducer?.updateDocument?.documentId
     ) {
       this.setState({ modalLoader: false });
@@ -428,11 +428,11 @@ export default class ManageDocument extends Component {
                                   color="#009999"
                                 />
                               ) : (
-                                <Image
-                                  className=""
-                                  src={"/assets/mockup/delete-table.png"}
-                                />
-                              )}
+                                  <Image
+                                    className=""
+                                    src={"/assets/mockup/delete-table.png"}
+                                  />
+                                )}
                             </button>
                           </span>
                         </div>
@@ -524,22 +524,22 @@ export default class ManageDocument extends Component {
                       ))}
                     </select>
                   ) : (
-                    <select
-                      className="dropDownInput"
-                      name="documentType"
-                      value={this.state.addRecord.documentType}
-                      onChange={(e) => this._onchange(e)}
-                    >
-                      <option key="disable" value="N/A" disabled>
-                        N/A
+                      <select
+                        className="dropDownInput"
+                        name="documentType"
+                        value={this.state.addRecord.documentType}
+                        onChange={(e) => this._onchange(e)}
+                      >
+                        <option key="disable" value="N/A" disabled>
+                          N/A
                       </option>
-                      {documentType.map((value, index) => (
-                        <option key={index} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                  )}
+                        {documentType.map((value, index) => (
+                          <option key={index} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                    )}
                 </div>
               </Col>
             </Row>
@@ -559,26 +559,26 @@ export default class ManageDocument extends Component {
                   )} */}
                 <DragAndDrop handleDrop={this.handleDrop}>
                   {addRecord.file ? (
-                    <label>
-                      <span>{addRecord.name}</span>
-                      <span onClick={this.removefile}>x</span>
+                    <label className='getFileContainer'>
+                      <span className='cancleFile'><span onClick={this.removefile}>X</span></span>
+                      <span className='fileName'>{addRecord.name}</span>
                     </label>
                   ) : (
-                    <div className="drag-n-drop">
-                      <Image
-                        className=""
-                        src={"/assets/mockup/file-import.png"}
-                      />
-                      <input id="fileButton" type="file" hidden />
-                      <button
-                        className="fileUpload-btn"
-                        onClick={this.fileUploadButton}
-                      >
-                        Upload Document
+                      <div className="drag-n-drop">
+                        <Image
+                          className=""
+                          src={"/assets/mockup/file-import.png"}
+                        />
+                        <input id="fileButton" type="file" hidden />
+                        <button
+                          className="fileUpload-btn"
+                          onClick={this.fileUploadButton}
+                        >
+                          Upload Document
                       </button>
-                      <span>or Drop file here</span>
-                    </div>
-                  )}
+                        <span>or Drop file here</span>
+                      </div>
+                    )}
                 </DragAndDrop>
               </Col>
             </Row>
@@ -622,8 +622,8 @@ export default class ManageDocument extends Component {
                   ) : hasEdit ? (
                     "Update"
                   ) : (
-                    "Save"
-                  )}
+                        "Save"
+                      )}
                 </button>
               </Col>
             </Row>
