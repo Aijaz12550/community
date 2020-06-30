@@ -11,10 +11,12 @@ const HomeA = connect((state) => state)((props) => {
   const router = useRouter();
   const { dispatch } = props
   const [isloading, setIsloading] = useState(false);
+  const [error, setError] = useState(null)
   const  homeAddress  = router?.query?.homeAddress;
   
   console.log("======>>>>>123", homeAddress);
   const home_address_validator = (params) => {
+    setError(null)
     let { homeAddress_ } = params
     console.log('=====',params)
     let payload = {
@@ -82,8 +84,15 @@ const HomeA = connect((state) => state)((props) => {
     setIsloading(true);
    return dispatch(__homeAddressValidation(payload))
    .then((data) => {
+     setIsloading(false)
     console.log("=-=-=-=-=-?>", data);
-    router.push('/invitationCode/signup')
+    if(data?.data.statusCode === 6){
+      setError(data?.data?.message)
+    }
+    else{
+
+      router.push('/invitationCode/signup')
+    }
   })
   .catch((error) => {
     console.log("error=========>", error);
@@ -100,6 +109,7 @@ const HomeA = connect((state) => state)((props) => {
         isloading={isloading}
         address={homeAddress}
         goBack={router.back}
+        error = {error}
       />
     </Fragment>
   );

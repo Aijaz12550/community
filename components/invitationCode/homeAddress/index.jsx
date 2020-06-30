@@ -52,6 +52,7 @@ const HomeAddress = ({
   isError,
   address,
   goBack,
+  error
 }) => {
   let router = useRouter();
   const [homeAddress_, setHomeAddress] = useState("");
@@ -149,12 +150,19 @@ const HomeAddress = ({
           </span>
           <span></span>
           <span></span>
+          {error && (
+            <span className="home-address-error">
+              {error}&nbsp;
+              <Link href="/test">support@weneighbors.io</Link>
+              &nbsp;for any help.
+            </span>
+          )}
           {isError && (
             <span className="home-address-error">
               Cannot find your home at this community. Please enter your correct
-              home address or please contact our support at
+              home address or please contact our support at&nbsp;
               <Link href="/test">support@weneighbors.io</Link>
-              for any help.
+              &nbsp;for any help.
             </span>
           )}
 
