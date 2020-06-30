@@ -5,20 +5,88 @@ import "../../styles/dashboard/changeCommunity/index.scss";
 import { connect } from "react-redux";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { __homeAddressValidation } from "$middleware";
 
-export default connect((state) => state)((props) => {
+const HomeA = connect((state) => state)((props) => {
   const router = useRouter();
-  console.log('*************************',router)
+  const { dispatch } = props
   const [isloading, setIsloading] = useState(false);
-  const { homeAddress } = router.query;
-  const [address] = homeAddress;
+  const  homeAddress  = router?.query?.homeAddress;
+  
   console.log("======>>>>>123", homeAddress);
-  const home_address_validator = (payload) => {
+  const home_address_validator = (params) => {
+    let payload = {
+      address: {
+        active: "string",
+        city: "string",
+        city_name: "string",
+        congressional_district: "string",
+        countyFips: "string",
+        county_name: "string",
+        default_city_name: "string",
+        delivery_line_1: "string",
+        description: "string",
+        id: "string",
+        latitude: 0,
+        longitude: 0,
+        matched_substrings: [
+          {
+            length: 0,
+            offset: 0,
+          },
+        ],
+        place_id: "string",
+        plus4_code: "string",
+        primary_number: "string",
+        rdi: "string",
+        record_type: "string",
+        reference: "string",
+        secondary: "string",
+        secondary_designator: "string",
+        secondary_number: "string",
+        state: "string",
+        state_abbreviation: "string",
+        street_line: "string",
+        structured_formatting: {
+          main_text: "string",
+          main_text_matched_substrings: [
+            {
+              length: 0,
+              offset: 0,
+            },
+          ],
+          secondary_text: "string",
+          secondary_text_matched_substrings: [
+            {
+              length: 0,
+              offset: 0,
+            },
+          ],
+        },
+        terms: [
+          {
+            offset: 0,
+            value: "string",
+          },
+        ],
+        text: "string",
+        time_zone: "string",
+        types: ["string"],
+        utc_offset: "string",
+        zipcode: "string",
+      },
+      invitationCode: homeAddress[0].split(". ")[1],
+    };
     setIsloading(true);
-    setTimeout(() => {
-      setIsloading(false);
-      router.push("/invitationCode/signup");
-    }, 3000);
+   return dispatch(__homeAddressValidation(payload))
+   .then((data) => {
+    console.log("=-=-=-=-=-?>", data);
+    router.push('/invitationCode/signup')
+  })
+  .catch((error) => {
+    console.log("error=========>", error);
+  })
+     
   };
   return (
     <Fragment>
@@ -28,9 +96,10 @@ export default connect((state) => state)((props) => {
       <HomeAddress
         home_address_validator={home_address_validator}
         isloading={isloading}
-        address={address}
-        goBack = {router.back}
+        address={homeAddress}
+        goBack={router.back}
       />
     </Fragment>
   );
 });
+export default HomeA

@@ -22,10 +22,11 @@ export default connect((state) => state)((props) => {
         setCodeError(data.customMessage);
       }
       else if(data?.body?.homeAddressRequired){
-        router.push(`/invitationCode/${data?.body?.community?.otherCommunityName}`)
+        router.push(`/invitationCode/${data?.body?.community?.otherCommunityName}%20${code}?123%20%20@=`)
+        // router.push(`/invitationCode/homeAddress`)
       }
-      else if(data?.statusDescription === "Invitation Code Found"){
-        router.push('/invitationCode/homeAddress')
+      else if(!data?.body?.homeAddressRequired){
+        router.push('/invitationCode/signup')
 
       }
     });

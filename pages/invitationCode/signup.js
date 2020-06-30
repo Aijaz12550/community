@@ -39,7 +39,7 @@ export default connect((state) => state)((props) => {
       timeZone: "",
       udid: "",
       userRoleType: "ROLE_COMMUNITY_RESIDENT, ROLE_COMMUNITY_MEMBER",
-      ...payload,
+      
     };
     dispatch(register(data));
     router.push("/invitationCode/verifyEmail");
@@ -49,7 +49,8 @@ export default connect((state) => state)((props) => {
       <Head>
         <title>Sign Up</title>
       </Head>
-      <SignUp _register={_register} />
+      <SignUp _register={_register} 
+      goBack = {router.back} />
     </Fragment>
   );
 });

@@ -3,7 +3,7 @@ import { Layout } from "../layout";
 import { CentralComponent } from "../centralComponent";
 import { Image } from "react-bootstrap";
 
-const SignUp = ({ _register, isloading }) => {
+const SignUp = ({ _register, isloading, goBack }) => {
   let [email, setEmail] = useState("owaiskhan148@gmail.com");
   let [phone, setPhone] = useState(+12308766554);
   let [password, setPassword] = useState("Hello123!");
@@ -39,7 +39,7 @@ const SignUp = ({ _register, isloading }) => {
 
         <span></span>
         <div className="bottom-button-container">
-          <button>Back</button>
+          <button onClick={goBack}>Back</button>
 
           {/* <button onClick={()=>_register({email,phone,password})}>Sign Up</button> */}
           <div
