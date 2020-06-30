@@ -7,10 +7,11 @@ const SignUp = ({ _register, isloading, goBack }) => {
   let [email, setEmail] = useState("owaiskhan148@gmail.com");
   let [phone, setPhone] = useState(+12308766554);
   let [password, setPassword] = useState("Hello123!");
+  let [userName, setUserName] = useState("Owais Khan");
 
   return (
     <Layout>
-      <CentralComponent style={{minHeight:'700px'}} steps={[{ title: '' }, { title: '' }, { title: '' }]} progress_value={2}>
+      <CentralComponent style={{ minHeight: '700px' }} steps={[{ title: '' }, { title: '' }, { title: '' }]} progress_value={2}>
         <span className="signup-heading">
           Almost there please signup to access your community dashboard.
         </span>
@@ -25,16 +26,21 @@ const SignUp = ({ _register, isloading, goBack }) => {
         <span className="signup-option">OR USE YOUR OWN EMAIL</span>
 
         <div className="_inp_container">
+          <label>User Name</label>
+          <input value={userName} onChange={(e) => setUserName(e.target.value)} type="username" placeholder="Username" />
+
+          <br />
+
           <label>Email</label>
-          <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
+          <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
 
           <br />
           <label>Phone</label>
-          <input onChange={(e) => setPhone(e.target.value)} type="number" placeholder="Phone" />
+          <input value={phone} onChange={(e) => setPhone(e.target.value)} type="number" placeholder="Phone" />
 
           <br />
           <label>Password</label>
-          <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+          <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
         </div>
 
         <span></span>
@@ -58,8 +64,8 @@ const SignUp = ({ _register, isloading, goBack }) => {
                 color="#fff"
               />
             ) : (
-              "Sign Up"
-            )}
+                "Sign Up"
+              )}
           </div>
         </div>
       </CentralComponent>
