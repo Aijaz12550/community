@@ -9,14 +9,10 @@ import { useRouter } from "next/router";
 export default connect((state) => state)((props) => {
   let {
     dispatch,
-    inviteReducer: {
-      // invitationCode: {
-      //   community: { communityId, street },
-      //   roles,
-      // },
-      code,
-    },
+    inviteReducer
   } = props;
+  console.log('-------------->',inviteReducer)
+  
   let router = useRouter();
   let [isloading, setIsLoading] = useState(false);
 
@@ -39,10 +35,11 @@ export default connect((state) => state)((props) => {
       timeZone: "",
       udid: "",
       userRoleType: "ROLE_COMMUNITY_RESIDENT, ROLE_COMMUNITY_MEMBER",
-      
+      ...payload
     };
     dispatch(register(data));
-    router.push("/invitationCode/verifyEmail");
+    // router.push("/invitationCode/verifyEmail");
+    setIsLoading(false)
   };
   return (
     <Fragment>
@@ -50,7 +47,9 @@ export default connect((state) => state)((props) => {
         <title>Sign Up</title>
       </Head>
       <SignUp _register={_register} 
-      goBack = {router.back} />
+      goBack = {router.back} 
+      isloading = {isloading}
+      />
     </Fragment>
   );
 });

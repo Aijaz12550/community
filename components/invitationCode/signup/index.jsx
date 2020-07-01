@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Layout } from "../layout";
 import { CentralComponent } from "../centralComponent";
 import { Image } from "react-bootstrap";
+import ReactLoading from 'react-loading'
 
 const SignUp = ({ _register, isloading, goBack }) => {
   let [email, setEmail] = useState("owaiskhan148@gmail.com");

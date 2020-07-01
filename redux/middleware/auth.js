@@ -1,5 +1,5 @@
 import { signin, signup, emailverification } from "../actions";
-import { registerUser, OauthConfig, _axios } from "$config";
+import { registerUser, OauthConfig, _axios,_axios1 } from "$config";
 
 export const login = (payload) => {
   return (dispatch) => {
@@ -35,13 +35,14 @@ export const socialLogin = (payload) => {
 
 export const register = (payload) => {
   return async(dispatch) => {
-    await _axios
-      .post(`${process.env.API_BASE_URL_1}/v2/users/register`, payload)
+    await _axios1
+      .post(`/v2/users/register`, payload)
       .then((data) => {
         dispatch(signup(data));
+        console,log('=-=-=',data)
       })
       .catch((error) => {
-        console.log("error", error);
+        console.log("error ====>", error);
       });
   };
 };
