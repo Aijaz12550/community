@@ -115,22 +115,24 @@ const HomeAddress = ({
               className="find-community-name"
               style={{ position: "absolute", zIndex: 4000, background: "#fff" }}
             >
-              {listCommunityName.map((val, index) => (
-                <li
-                  onClick={() =>
-                    setHomeAddress(val) || changehandler(val)
-                  }
-                  key={index}
-                >
-                  <span className="_icon">
-                    <Image src="/assets/mockup/dropdown-list-icon.png" />
-                  </span>
-                  <span className="list-view">
-                    <span className="name">{val.text}</span>
-                    <span className="location">{val.city}</span>
-                  </span>
-                </li>
-              ))}
+              <ul>
+                {listCommunityName.map((val, index) => (
+                  <li
+                    onClick={() =>
+                      setHomeAddress(val) || changehandler(val)
+                    }
+                    key={index}
+                  >
+                    <span className="_icon">
+                      <Image src="/assets/mockup/dropdown-list-icon.png" />
+                    </span>
+                    <span className="list-view">
+                      <span className="name">{val.text}</span>
+                      <span className="location">{val.city}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <br />
@@ -171,7 +173,7 @@ const HomeAddress = ({
             <div
               style={{ maxWidth: "150px" }}
               className={!isloading ? "btn-class" : "btn-class-isloading"}
-              onClick={homeAddress_?() => home_address_validator({ homeAddress_, apt }):()=>null}
+              onClick={homeAddress_ ? () => home_address_validator({ homeAddress_, apt }) : () => null}
               disabled={isloading}
             >
               {isloading ? (
@@ -182,8 +184,8 @@ const HomeAddress = ({
                   color="#fff"
                 />
               ) : (
-                "Next"
-              )}
+                  "Next"
+                )}
             </div>
           </div>
         </div>

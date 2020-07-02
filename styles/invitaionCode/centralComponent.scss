@@ -66,6 +66,61 @@
       align-items: center;
       color: #6c7b8a;
     }
+    .find-community-name{
+      background: #FFFFFF;
+      border: 1px solid #F3F3F3;
+      box-sizing: border-box;
+      box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.03);
+      border-radius: 8px;
+      ul{
+        list-style: none !important;
+        padding: 10px !important;
+        margin:0px;
+        li{
+          height: 62px;
+          border-radius: 3px;
+          padding: 10px 14px;
+          display: flex;
+          flex-direction: row;
+          ._icon{
+            img{
+              width: 24px;
+              height: 21px; 
+            }
+          }
+          .list-view{
+            margin-left: 13px;
+            display: flex;
+            flex-direction: column;
+            .name{
+              font-family: 'Open Sans';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 22px;
+              display: flex;
+              align-items: center;
+              color: #344563;
+              margin-bottom: 1px;
+            }
+            .location{
+              font-family: 'Open Sans';
+              font-style: normal;
+              font-weight: normal;
+              font-size: 14px;
+              line-height: 19px;
+              display: flex;
+              align-items: center;
+              color: #6C7B8A;
+            }
+          }
+        }
+        li:hover{
+          background: #F0F9F9;
+          cursor: pointer;
+        }
+      }
+    }
   }
   .central-component-heading {
     font-family: 'Open Sans';
