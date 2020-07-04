@@ -1,4 +1,6 @@
-export const SIGNIN = "SIGNIN";
+export const SIGNIN_SUCCESS = "SIGNIN_SUCCESS";
+export const SIGNIN_ERROR = "SIGNIN_ERROR"
+
 export const SIGNUP = `SIGNUP`;
 export const SIGNOUT = `SIGNOUT`;
 export const ALLUSERS = `ALLUSERS`;

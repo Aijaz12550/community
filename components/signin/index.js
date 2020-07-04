@@ -8,6 +8,7 @@ import { Apple } from "./apple";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactLoading from "react-loading";
 import ModalCustomize from "./modalsCustomize";
+import { signInError } from "../../redux/actions";
 
 export class SignIn extends React.Component {
   constructor() {
@@ -32,7 +33,7 @@ export class SignIn extends React.Component {
   };
 
   signIn = (e) => {
-    let { _signin, router } = this.props;
+    let { _signin, router, dispatch } = this.props;
     e.preventDefault();
     this.setState({
       loader: true,
@@ -45,11 +46,18 @@ export class SignIn extends React.Component {
     };
     _signin(body)
       .then((data) => {
-        let scope = data.scope.toLowerCase();
-        router.push(
-          "/dashboard/[user]/[role]",
-          `/dashboard/${scope}/view_residents`
+        const allow = data?.roles.filter(
+          (item) => item.roleId === 7 || item.roleId === 9 || item.roleId === 10
         );
+        if (allow.length) {
+          let scope = data.scope.toLowerCase();
+          router.push(
+            "/dashboard/[user]/[role]",
+            `/dashboard/${scope}/view_residents`
+          );
+        } else {
+          dispatch(signInError("You are not authorised to login"))
+        }
       })
       .catch((error) => {
         console.log("error from component", error);
@@ -79,13 +87,22 @@ export class SignIn extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
-    if (
-      this.props.AuthReducer?.user?.userId !==
-      prevProps.AuthReducer?.user?.userId
-    ) {
+    console.log(AuthReducer?.userError, "AuthReducer?.userError");
+    const { AuthReducer, dispatch } = this.props;
+    if (AuthReducer?.user?.userId !== prevProps.AuthReducer?.user?.userId) {
       this.setState({
         loader: false,
       });
+    }
+    if (
+      AuthReducer?.userError !== prevProps.AuthReducer?.userError &&
+      AuthReducer?.userError
+    ) {
+      this.setState({
+        error: AuthReducer?.userError,
+        loader: false,
+      });
+      dispatch(signInError(""));
     }
   }
 
@@ -140,22 +157,22 @@ export class SignIn extends React.Component {
             Email me a recovery link
           </button>
         ) : (
-            <div
-              className="resend-btn"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <ReactLoading
-                height={"20px"}
-                width={"20px"}
-                type="spin"
-                color="white"
-              />
-            </div>
-          )}
+          <div
+            className="resend-btn"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <ReactLoading
+              height={"20px"}
+              width={"20px"}
+              type="spin"
+              color="white"
+            />
+          </div>
+        )}
       </>
     );
   };
@@ -176,7 +193,7 @@ export class SignIn extends React.Component {
   };
 
   render() {
-    const { username, password, loader } = this.state;
+    const { username, password, loader, error } = this.state;
     const { _socialLogin, router, recoverPasswordLoading } = this.props;
     return (
       <Container>
@@ -252,18 +269,31 @@ export class SignIn extends React.Component {
                 color="white"
               />
             ) : (
-                "Sign In"
-              )}
+              "Sign In"
+            )}
           </button>
         </div>
 
         <div className="have-an-account">
-          <span>Don’t have an account?</span>
+          <span style={{ marginRight: "5px" }}>Don’t have an account?</span>
           {/* <button onClick={() => this.showModal("emailVerifiedRequiredModal")}>
             Sign Up
           </button> */}
           <Link href="/invitationCode">Sign Up</Link>
         </div>
+
+        {error && (
+          <p
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              color: "red",
+            }}
+          >
+            {error}
+          </p>
+        )}
+
         <ModalCustomize
           modalShow={this.state.modalShow}
           modalName={this.state.showModalName}

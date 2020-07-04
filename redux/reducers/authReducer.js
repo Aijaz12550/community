@@ -1,21 +1,22 @@
 const initialState = {
   field: "test Auth reducer",
   user: {},
+  userError: "",
 };
 
 const AuthReducer = (state = initialState, { payload, type }) => {
   switch (type) {
-    case "SIGNIN":
+    case "SIGNIN_SUCCESS":
       return {
         ...state,
         user: payload,
       };
-    case "SIGNOUT":
+    case "SIGNIN_ERROR":
+      console.log(payload, 'payload')
       return {
         ...state,
-        user: null,
+        userError: payload,
       };
-
     case "EMAILVERIFICATIONSTATUS":
       return {
         ...state,

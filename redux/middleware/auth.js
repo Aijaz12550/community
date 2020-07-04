@@ -1,16 +1,22 @@
-import { signin, signup, emailverification } from "../actions";
-import { registerUser, OauthConfig, _axios,_axios1 } from "$config";
+import {
+  signInSuccess,
+  signInError,
+  signup,
+  emailverification,
+} from "../actions";
+import { registerUser, OauthConfig, _axios, _axios1 } from "$config";
 
 export const login = (payload) => {
   return (dispatch) => {
     return new Promise((resolve, reject) => {
       return OauthConfig(payload)
         .then((res) => {
-          dispatch(signin(res.data));
+          dispatch(signInSuccess(res.data));
           resolve(res.data);
         })
         .catch((err) => {
-          dispatch(signin(err));
+          console.log(err?.body?.error, "err");
+          dispatch(signInError(err?.body?.error));
           reject(err);
         });
     });
@@ -34,12 +40,12 @@ export const socialLogin = (payload) => {
 };
 
 export const register = (payload) => {
-  return async(dispatch) => {
+  return async (dispatch) => {
     await _axios1
       .post(`/v2/users/register`, payload)
       .then((data) => {
         dispatch(signup(data));
-        console,log('=-=-=',data)
+        console, log("=-=-=", data);
       })
       .catch((error) => {
         console.log("error ====>", error);
@@ -49,31 +55,37 @@ export const register = (payload) => {
 
 export const reSendEmailVerification = (email) => {
   return async (dispatch) => {
-   await _axios.get(`${process.env.API_BASE_URL_1}/v1/users/resendVerificationEmail/${email}`)
-   .then( data => {
-     dispatch(emailverification(data?.data))
-   }).catch( error => {
-     console.log(' error ==>', error)
-   })
-
-  }
-}
+    await _axios
+      .get(
+        `${process.env.API_BASE_URL_1}/v1/users/resendVerificationEmail/${email}`
+      )
+      .then((data) => {
+        dispatch(emailverification(data?.data));
+      })
+      .catch((error) => {
+        console.log(" error ==>", error);
+      });
+  };
+};
 
 export const signout = () => {
   return (dispatch) => {
-    dispatch(signin({}));
+    dispatch(signInSuccess({}));
   };
 };
 
 export const recoverPassword = (email) => {
-  return dispatch => {
-    return new Promise(async (resolve, reject)=>{
-      await _axios(`${process.env.API_BASE_URL_1}/v1/users/resetPassword/${email}`)
-      .then( data => {
-        resolve(data)
-      }).catch( error => {
-        reject(error)
-      })
-    })
-  }
-}
+  return (dispatch) => {
+    return new Promise(async (resolve, reject) => {
+      await _axios(
+        `${process.env.API_BASE_URL_1}/v1/users/resetPassword/${email}`
+      )
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  };
+};

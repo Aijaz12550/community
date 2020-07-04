@@ -1,22 +1,29 @@
-import { SIGNIN, SIGNUP, EMAILVERIFICATIONSTATUS } from "../CONSTANTS";
-const signin = (payload) => {
+import { SIGNIN_SUCCESS, SIGNIN_ERROR, SIGNUP, EMAILVERIFICATIONSTATUS } from "../CONSTANTS";
+
+export const signInSuccess = (payload) => {
   return {
-    type: SIGNIN,
+    type: SIGNIN_SUCCESS,
     payload,
   };
 };
 
-const signup = (payload) => {
+export const signInError = (payload) => {
+  return {
+    type: SIGNIN_ERROR,
+    payload,
+  };
+};
+
+export const signup = (payload) => {
   return {
     type: SIGNUP,
     payload,
   };
 };
 
-const emailverification = (payload) => {
+export const emailverification = (payload) => {
   return {
     type: EMAILVERIFICATIONSTATUS,
     payload,
   };
 };
-export { signin, signup, emailverification };
