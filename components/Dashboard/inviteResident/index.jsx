@@ -16,15 +16,16 @@ export default class InviteResident extends Component {
     this.state = {
       invitationData: [
         {
-          street: "",
           appartmentUnit: "",
-          fullName: "",
-          email: "",
-          phoneNo: "",
-          roleName: "ROLE_ADMINISTRATOR",
-          source: "WEB-APP",
-          external: true,
           communityId: props?.AuthReducer?.user?.communityId,
+          email: "",
+          external: false,
+          fullName: "",
+          memberTitle: "",
+          phoneNo: "",
+          roleName: "ROLE_COMMUNITY_RESIDENT,ROLE_COMMUNITY_MEMBER",
+          source: "WEB-APP",
+          street: "",
         },
       ],
       val: "",
@@ -69,15 +70,16 @@ export default class InviteResident extends Component {
       this.setState({
         invitationData: [
           {
-            street: "",
             appartmentUnit: "",
-            fullName: "",
-            email: "",
-            phoneNo: "",
-            roleName: "ROLE_ADMINISTRATOR",
-            source: "WEB-APP",
-            external: true,
             communityId,
+            email: "",
+            external: false,
+            fullName: "",
+            memberTitle: "",
+            phoneNo: "",
+            roleName: "",
+            source: "WEB-APP",
+            street: "",
           },
         ],
       });
@@ -103,15 +105,16 @@ export default class InviteResident extends Component {
       invitationData: [
         ...this.state.invitationData,
         {
-          street: "",
           appartmentUnit: "",
-          fullName: "",
-          email: "",
-          phoneNo: "",
-          roleName: "ROLE_ADMINISTRATOR",
-          source: "WEB-APP",
-          external: true,
           communityId,
+          email: "",
+          external: false,
+          fullName: "",
+          memberTitle: "",
+          phoneNo: "",
+          roleName: "",
+          source: "WEB-APP",
+          street: "",
         },
       ],
     });
@@ -121,15 +124,16 @@ export default class InviteResident extends Component {
     this.setState({
       invitationData: [
         {
-          street: "",
           appartmentUnit: "",
-          fullName: "",
-          email: "",
-          phoneNo: "",
-          roleName: "ROLE_ADMINISTRATOR",
-          source: "WEB-APP",
-          external: true,
           communityId,
+          email: "",
+          external: false,
+          fullName: "",
+          memberTitle: "",
+          phoneNo: "",
+          roleName: "",
+          source: "WEB-APP",
+          street: "",
         },
       ],
     });
@@ -158,33 +162,21 @@ export default class InviteResident extends Component {
     } = this.props;
     const invitationObj = {
       communityId,
-      // invitationCodes: [
-      //   {
-      //     appartmentUnit: "string",
-      //     communityId: 0,
-      //     createdBy: 0,
-      //     email: "string",
-      //     external: true,
-      //     fullName: "string",
-      //     memberTitle: "string",
-      //     phoneNo: "string",
-      //     roleName: "string",
-      //     source: "string",
-      //     street: "string",
-      //   },
-      // ],
       invitationCodes: this.state.invitationData,
       inviterUserId: userId,
       sourceType: "WEB-APP",
     };
+    console.log(invitationObj, "invitationObj");
     dispatch(sendInvites(invitationObj));
   };
 
   render() {
     const {
       rolesReducer: { getRoles },
+      CommunityReducer: { appartmentOrUnitRequired },
     } = this.props;
     const { invitationData } = this.state;
+    console.log(this.props);
     return (
       <div className="content invite-resident-component">
         <Row className="MT60 section-top">
@@ -208,7 +200,7 @@ export default class InviteResident extends Component {
                   <th className="td3-m">Full Name</th>
                   <th className="td4-m">Email</th>
                   <th className="td5-m">Phone</th>
-                  <th className="td6-m">Member Role</th>
+                  <th className="td6-m">Member Title</th>
                 </tr>
               </thead>
               <tbody className="scrollBarStyle-Y tBody">
@@ -227,6 +219,7 @@ export default class InviteResident extends Component {
                         type="text"
                         name="appartmentUnit"
                         value={val.appartmentUnit}
+                        disabled={!appartmentOrUnitRequired}
                         onChange={(e) => this._onChange(e, index)}
                       />
                     </td>
@@ -258,14 +251,15 @@ export default class InviteResident extends Component {
                       <div>
                         <select
                           className="dropDownInput"
-                          name="roleName"
+                          name="memberTitle"
                           value={val.name}
                           onChange={(e) => this.dropDownChanging(e, index)}
                         >
+                          <option value={"N/A"}>N/A</option>
                           {getRoles?.map((role, index) => {
                             return (
-                              <option key={index} value={role.name}>
-                                {role.description}
+                              <option key={index} value={role}>
+                                {role}
                               </option>
                             );
                           })}

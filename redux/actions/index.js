@@ -8,3 +8,4 @@ export * from "./rolesActions";
 export * from "./profileAction"
 export * from "./externalMemberAction"
 export * from "./feedback"
+export * from './communityAction'

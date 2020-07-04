@@ -22,8 +22,6 @@ const Home = () => (
       ></link>
     </Head>
     <LandingPage />
-    {/* <DashBoard /> */}
-    {/* <GetToken/> */}
   </div>
 );
 

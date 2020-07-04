@@ -8,3 +8,4 @@ export * from "./roles";
 export * from "./profile";
 export * from "./externalMember";
 export * from "./feedback";
+export * from './community'

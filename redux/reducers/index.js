@@ -8,3 +8,4 @@ export * from "./rolesReducer";
 export * from "./profileReducer";
 export * from "./externalMemberReducer";
 export * from "./feedback";
+export * from "./communityReducer"

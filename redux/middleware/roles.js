@@ -4,7 +4,7 @@ import { _axios } from "$config";
 export const getRoles = () => {
   return async (dispatch) => {
     await _axios
-      .get(`${process.env.API_BASE_URL}/v2/lookup/userRoleType`)
+      .get(`${process.env.API_BASE_URL}/v2/lookup/memberRoleTitles`)
       .then(({ data }) => {
         dispatch(getRolesSuccess(data?.paramObjectsMap?.LookupList));
       })

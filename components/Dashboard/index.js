@@ -3,18 +3,27 @@ import { SideBar } from "./sidebar";
 import NavBar from "./navbar";
 import { routes } from "./dashboardRoutes";
 import { useRouter } from "next/router";
-import { getProfile, getAvatar } from "$middleware";
+import { getProfile, getAvatar, getCommunity } from "$middleware";
 export * from "./viewResidents";
 
 export const DashBoard = (props) => {
   const router = useRouter();
-  const { dispatch } = props;
+  const {
+    dispatch,
+    AuthReducer: {
+      user: { communityId },
+    },
+  } = props;
 
-  useEffect(() => {
-    dispatch(getProfile());
-  }, [props?.profileReducer?.getProfile?.email]);
+  useEffect(() => dispatch(getProfile()), [
+    props?.profileReducer?.getProfile?.email,
+  ]);
 
   useEffect(() => dispatch(getAvatar()), [props?.profileReducer?.getAvatar]);
+
+  useEffect(() => dispatch(getCommunity(communityId)), [
+    props?.CommunityReducer?.getCommunity?.locationId,
+  ]);
 
   return (
     <div className="wrapper">
