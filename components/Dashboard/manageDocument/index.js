@@ -44,6 +44,9 @@ export default class ManageDocument extends Component {
       },
       documentTypeList: ["document"],
       setModalShow: false,
+      setDeleteModalShow: false,
+      deleteIndexvalue: null,
+      deleteValue: {},
       hasEdit: false,
       editIndex: null,
       loader: false,
@@ -87,7 +90,7 @@ export default class ManageDocument extends Component {
     const { documentsReducer, dispatch } = this.props;
     if (
       documentsReducer.documentsError !==
-        prevProps?.documentsReducer?.documentsError &&
+      prevProps?.documentsReducer?.documentsError &&
       documentsReducer.documentsError?.length !== 0
     ) {
       this.notify(documentsReducer.documentsError);
@@ -95,7 +98,7 @@ export default class ManageDocument extends Component {
     }
     if (
       documentsReducer.documents.length !==
-        prevProps?.documentsReducer?.documents.length &&
+      prevProps?.documentsReducer?.documents.length &&
       documentsReducer.documents.length !== 0
     ) {
       this.setState({ loader: false, deleteIndex: null });
@@ -121,7 +124,7 @@ export default class ManageDocument extends Component {
     }
     if (
       documentsReducer?.updateDocument?.documentId !==
-        prevProps?.documentsReducer?.updateDocument?.documentId &&
+      prevProps?.documentsReducer?.updateDocument?.documentId &&
       documentsReducer?.updateDocument?.documentId
     ) {
       this.setState({ modalLoader: false });
@@ -188,10 +191,21 @@ export default class ManageDocument extends Component {
     });
   };
 
+  closeDeleteModal = () => {
+    this.setState({
+      setDeleteModalShow: false,
+      deleteIndexvalue: null,
+      deleteValue: {},
+    })
+  }
+
   deleteRow = (val, rowIndex) => {
-    // this.setState({
-    //   deleteIndex: rowIndex,
-    // });
+    this.setState({
+      deleteIndex: rowIndex,
+      setDeleteModalShow: false,
+      deleteIndexvalue: null,
+      deleteValue: {}
+    });
     let deleteRowObj = {
       communityId: val.communityId,
       documentId: val.documentId,
@@ -301,6 +315,14 @@ export default class ManageDocument extends Component {
       index,
     });
   };
+
+  showDeleteModal = (value, index) => {
+    this.setState({
+      setDeleteModalShow: true,
+      deleteValue: value,
+      deleteIndexvalue: index
+    })
+  }
 
   render() {
     const {
@@ -418,7 +440,7 @@ export default class ManageDocument extends Component {
                             </button>
                             <button
                               className="btn flex-center-center"
-                              onClick={() => this.deleteRow(val, index)}
+                              onClick={() => this.showDeleteModal(val, index)}
                             >
                               {deleteIndex === index ? (
                                 <ReactLoading
@@ -428,11 +450,11 @@ export default class ManageDocument extends Component {
                                   color="#009999"
                                 />
                               ) : (
-                                <Image
-                                  className=""
-                                  src={"/assets/mockup/delete-table.png"}
-                                />
-                              )}
+                                  <Image
+                                    className=""
+                                    src={"/assets/mockup/delete-table.png"}
+                                  />
+                                )}
                             </button>
                           </span>
                         </div>
@@ -460,6 +482,54 @@ export default class ManageDocument extends Component {
             </span>
           </Col>
         </Row>
+
+        <Modal
+          show={this.state.setDeleteModalShow}
+          onHide={() => this.closeDeleteModal()}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+          className="delete-record-modal-manage-document"
+        >
+          <Modal.Header>
+            <span onClick={() => this.closeDeleteModal()}>
+              <Image className="" src={"/assets/mockup/modal-close-btn.png"} />
+            </span>
+          </Modal.Header>
+          <Modal.Body>
+            <Row className="row-1">
+              <Col>
+                <p>Delete Document</p>
+              </Col>
+            </Row>
+            <Row className='row-2'>
+              <Col>
+                <p>Are you sure do you want to delete document?</p>
+              </Col>
+            </Row>
+            <Row className="row-7">
+              <Col>
+                <button onClick={() => this.closeDeleteModal()}>Cancle</button>
+              </Col>
+              <Col>
+                <button onClick={() => this.deleteRow(this.state.deleteValue, this.state.deleteIndex)}>Yes</button>
+              </Col>
+            </Row>
+            <Row>
+              <Col
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: "red",
+                  marginTop: "5px",
+                }}
+              >
+                {addDocumentsError ? addDocumentsError : updateDocumentError}
+              </Col>
+            </Row>
+          </Modal.Body>
+        </Modal>
+
         <Modal
           show={this.state.setModalShow}
           onHide={() => {
@@ -524,22 +594,22 @@ export default class ManageDocument extends Component {
                       ))}
                     </select>
                   ) : (
-                    <select
-                      className="dropDownInput"
-                      name="documentType"
-                      value={this.state.addRecord?.documentType}
-                      onChange={(e) => this._onchange(e)}
-                    >
-                      <option key="disable" value="N/A">
-                        N/A
+                      <select
+                        className="dropDownInput"
+                        name="documentType"
+                        value={this.state.addRecord?.documentType}
+                        onChange={(e) => this._onchange(e)}
+                      >
+                        <option key="disable" value="N/A">
+                          N/A
                       </option>
-                      {documentType?.map((value, index) => (
-                        <option key={index} value={value.name}>
-                          {value.description}
-                        </option>
-                      ))}
-                    </select>
-                  )}
+                        {documentType?.map((value, index) => (
+                          <option key={index} value={value.name}>
+                            {value.description}
+                          </option>
+                        ))}
+                      </select>
+                    )}
                 </div>
               </Col>
             </Row>
@@ -566,21 +636,21 @@ export default class ManageDocument extends Component {
                       <span className="fileName">{addRecord.name}</span>
                     </label>
                   ) : (
-                    <div className="drag-n-drop">
-                      <Image
-                        className=""
-                        src={"/assets/mockup/file-import.png"}
-                      />
-                      <input id="fileButton" type="file" hidden />
-                      <button
-                        className="fileUpload-btn"
-                        onClick={this.fileUploadButton}
-                      >
-                        Upload Document
+                      <div className="drag-n-drop">
+                        <Image
+                          className=""
+                          src={"/assets/mockup/file-import.png"}
+                        />
+                        <input id="fileButton" type="file" hidden />
+                        <button
+                          className="fileUpload-btn"
+                          onClick={this.fileUploadButton}
+                        >
+                          Upload Document
                       </button>
-                      <span>or Drop file here</span>
-                    </div>
-                  )}
+                        <span>or Drop file here</span>
+                      </div>
+                    )}
                 </DragAndDrop>
               </Col>
             </Row>
@@ -624,8 +694,8 @@ export default class ManageDocument extends Component {
                   ) : hasEdit ? (
                     "Update"
                   ) : (
-                    "Save"
-                  )}
+                        "Save"
+                      )}
                 </button>
               </Col>
             </Row>
@@ -643,7 +713,7 @@ export default class ManageDocument extends Component {
             </Row>
           </Modal.Body>
         </Modal>
-      </div>
+      </div >
     );
   }
 }
