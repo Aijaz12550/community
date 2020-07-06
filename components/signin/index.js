@@ -87,7 +87,6 @@ export class SignIn extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
-    console.log(AuthReducer?.userError, "AuthReducer?.userError");
     const { AuthReducer, dispatch } = this.props;
     if (AuthReducer?.user?.userId !== prevProps.AuthReducer?.user?.userId) {
       this.setState({
