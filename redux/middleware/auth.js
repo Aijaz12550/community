@@ -15,7 +15,6 @@ export const login = (payload) => {
           resolve(res.data);
         })
         .catch((err) => {
-          console.log(err?.body?.error, "err");
           dispatch(signInError(err?.body?.error));
           reject(err);
         });

@@ -12,7 +12,6 @@ const AuthReducer = (state = initialState, { payload, type }) => {
         user: payload,
       };
     case "SIGNIN_ERROR":
-      console.log(payload, 'payload')
       return {
         ...state,
         userError: payload,
