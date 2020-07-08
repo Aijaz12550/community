@@ -32,7 +32,7 @@ export class GoogleLogin extends Component {
         // payload.provider = ("provider", "GOOGLE")
         // payload.username = ("username", googleUser.Pt.yu )
         // payload.password = ("password", googleUser.tc.id_token)
-
+        console.log(googleUser, 'google user')
         let formDiv = document.createElement('div')
 
         let input_ = document.createElement('input')
@@ -86,7 +86,7 @@ export class GoogleLogin extends Component {
     g.load("auth2", function () {
       g.auth2.init({
         client_id:
-          "215485620819-r3ps1inqudcu9u0dvpeu6lrrfktd7dma.apps.googleusercontent.com",
+          "http://453083836666-bp9blejotbe2tbcj5cl2ienpm64bo7l4.apps.googleusercontent.com/",
         scope: "profile email openid",
       });
     });
