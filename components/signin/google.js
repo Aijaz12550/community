@@ -86,7 +86,7 @@ export class GoogleLogin extends Component {
     g.load("auth2", function () {
       g.auth2.init({
         client_id:
-          "http://453083836666-bp9blejotbe2tbcj5cl2ienpm64bo7l4.apps.googleusercontent.com/",
+          "453083836666-k17j9flhtppqprd27tl9lr1n6e4inrfd.apps.googleusercontent.com",
         scope: "profile email openid",
       });
     });
