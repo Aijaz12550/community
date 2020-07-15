@@ -21,13 +21,13 @@ export const ViewResident = (props) => {
   const {
     dispatch,
     AuthReducer: {
-      user: { communityId },
+      user: { communityId, access_token },
     },
   } = props;
 
   const [modalShow, setModalShow] = useState(false);
   const [sendData, setData] = useState();
-  const [sendStreetName, setStreetName] = useState('');
+  const [sendStreetName, setStreetName] = useState("");
   const [searchData, SearchCol] = useState("");
 
   function sendProps(setModalValue, setDataValue, StreetName) {
@@ -37,7 +37,7 @@ export const ViewResident = (props) => {
   }
 
   useEffect(() => {
-    dispatch(residents(communityId));
+    dispatch(residents({ Authorization: `bearer ${access_token}`, communityId }));
   }, [props.ResidentsReducer?.residents?.length]);
 
   const { ResidentsReducer } = props;
@@ -91,7 +91,9 @@ export const ViewResident = (props) => {
                         <tr
                           className="residents-table-row"
                           key={index}
-                          onClick={() => sendProps(true, data1?.familyMembers, data1.street)}
+                          onClick={() =>
+                            sendProps(true, data1?.familyMembers, data1.street)
+                          }
                         >
                           <td className="Col-1 sm-dmemberImageisplay-none">
                             {data1.street}
@@ -99,14 +101,20 @@ export const ViewResident = (props) => {
                           <td className="Col-2">
                             <Images familyMember={data1?.familyMembers} />
                           </td>
-                          <td className="Col-3">{data1.residentSince ? data1.residentSince.split(' ')[0] + ' ' + data1.residentSince.split(' ')[2] : ''}</td>
+                          <td className="Col-3">
+                            {data1.residentSince
+                              ? data1.residentSince.split(" ")[0] +
+                                " " +
+                                data1.residentSince.split(" ")[2]
+                              : ""}
+                          </td>
                         </tr>
                       );
                     } else null;
                   })
                 ) : (
-                    <Loader />
-                  )}
+                  <Loader />
+                )}
               </tbody>
             </Table>
           </Col>

@@ -11,19 +11,25 @@ export const DashBoard = (props) => {
   const {
     dispatch,
     AuthReducer: {
-      user: { communityId },
+      user: { communityId, access_token },
     },
   } = props;
 
-  useEffect(() => dispatch(getProfile()), [
+  useEffect(() => dispatch(getProfile(`bearer ${access_token}`)), [
     props?.profileReducer?.getProfile?.email,
   ]);
 
-  useEffect(() => dispatch(getAvatar()), [props?.profileReducer?.getAvatar]);
+  // useEffect(() => dispatch(getAvatar(`bearer ${access_token}`)), [
+  //   props?.profileReducer?.getAvatar?.,
+  // ]);
 
-  useEffect(() => dispatch(getCommunity(communityId)), [
-    props?.CommunityReducer?.getCommunity?.locationId,
-  ]);
+  useEffect(
+    () =>
+      dispatch(
+        getCommunity({ Authorization: `bearer ${access_token}`, communityId })
+      ),
+    [props?.CommunityReducer?.getCommunity?.locationId]
+  );
 
   return (
     <div className="wrapper">

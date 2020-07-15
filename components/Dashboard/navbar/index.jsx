@@ -64,6 +64,7 @@ class Header extends React.Component {
     const {
       profileReducer: { getProfile },
     } = this.props;
+    console.log(this.props.profileReducer, 'profileReducer')
 
     return (
       <Navbar expand="lg" className={"navbar-absolute fixed-top nav-bar-main"}>
@@ -137,9 +138,9 @@ class Header extends React.Component {
                   }}
                 >
                   <Image
+                    src={getProfile?.familyMemberAvatarUrl}
                     className="roundedCircle"
                     style={{ width: 38, height: 38, borderRadius: 19 }}
-                    src={getProfile?.familyMemberAvatarUrl}
                   />
                 </NavItem>
                 <NavItem>

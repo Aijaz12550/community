@@ -9,13 +9,17 @@ import {
   updateAvatarError,
 } from "../actions";
 import { _axios } from "$config";
+import axios from "axios";
 
-export const getProfile = () => {
+export const getProfile = (Authorization) => {
   return async (dispatch) => {
-    await _axios
-      .get(
-        `https://cors-anywhere.herokuapp.com/https://microservices-dev.weneighbors.io/ms-event/api/v1/users/profile`
-      )
+    await axios
+      .post("http://localhost:4000/", {
+        url: `https://microservices-dev.weneighbors.io/ms-event/api/v1/users/profile`,
+        headers: {
+          Authorization,
+        },
+      })
       .then(({ data }) => {
         dispatch(getProfileSuccess(data));
       })
@@ -41,12 +45,15 @@ export const updateProfile = (payload) => {
   };
 };
 
-export const getAvatar = () => {
+export const getAvatar = (Authorization) => {
   return async (dispatch) => {
-    await _axios
-      .get(
-        `https://cors-anywhere.herokuapp.com/https://microservices-dev.weneighbors.io/ms-event/api/v1/users/avatar`
-      )
+    await axios
+      .post("http://localhost:4000/", {
+        url: `https://microservices-dev.weneighbors.io/ms-event/api/v1/users/avatar`,
+        headers: {
+          Authorization,
+        },
+      })
       .then(({ data }) => {
         dispatch(getAvatarSuccess(data));
       })

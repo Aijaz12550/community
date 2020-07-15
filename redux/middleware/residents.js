@@ -1,10 +1,17 @@
 import { addResidents, residentsError } from "../actions";
-import { _axios } from "$config";
+// import { _axios } from "$config";
+import axios from "axios";
 
-export const residents = (payload) => {
+export const residents = ({ Authorization, communityId }) => {
   return async (dispatch) => {
-    await _axios
-      .get(`${process.env.API_BASE_URL}/v2/resident/community/${payload}`)
+    await axios
+      .post("http://localhost:4000", {
+        url: `${process.env.API_BASE_URL}/v2/resident/community/${communityId}`,
+        method: "GET",
+        headers: {
+          Authorization,
+        },
+      })
       .then(({ data }) => {
         dispatch(addResidents(data?.paramObjectsMap?.residentsHomeAddresses));
       })

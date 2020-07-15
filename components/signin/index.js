@@ -38,54 +38,30 @@ export class SignIn extends React.Component {
     this.setState({
       loader: true,
     });
-    console.log('data helo world')
-    // const { username, password } = this.state;
-    // const body = {
-    //   grant_type: "password",
-    //   username,
-    //   password,
-    // };
-    var axios = require("axios");
-    var FormData = require("form-data");
-    var data = new FormData();
-    data.append("grant_type", "password");
-    data.append("username", "androiduser1@unimelon.com");
-    data.append("password", "Unimel@n12345");
-    console.log('data', data)
-    debugger
-    var config = {
-      method: "post",
-      url: "https://microservices-dev.weneighbors.io/uaa/oauth/token",
-      headers: {
-        Authorization: "Basic dGFsa3RpdmFBcHA6dGFsa0BUaXZhITE=",
-      },
-      data: data,
+    const { username, password } = this.state;
+    const body = {
+      grant_type: "password",
+      username,
+      password,
     };
-    axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
+    _signin(body)
+      .then((data) => {
+        const allow = data?.roles.filter(
+          (item) => item.roleId === 7 || item.roleId === 9 || item.roleId === 10
+        );
+        if (allow.length) {
+          let scope = data.scope.toLowerCase();
+          router.push(
+            "/dashboard/[user]/[role]",
+            `/dashboard/${scope}/view_residents`
+          );
+        } else {
+          dispatch(signInError("You are not authorised to login"));
+        }
       })
-      .catch(function (error) {
-        console.log("error from login",JSON.stringify(error));
+      .catch((error) => {
+        console.log("error from component", error);
       });
-    // _signin(body)
-    //   .then((data) => {
-    //     const allow = data?.roles.filter(
-    //       (item) => item.roleId === 7 || item.roleId === 9 || item.roleId === 10
-    //     );
-    //     if (allow.length) {
-    //       let scope = data.scope.toLowerCase();
-    //       router.push(
-    //         "/dashboard/[user]/[role]",
-    //         `/dashboard/${scope}/view_residents`
-    //       );
-    //     } else {
-    //       dispatch(signInError("You are not authorised to login"))
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log("error from component", error);
-    //   });
   };
 
   onChange = (e) => {
@@ -146,6 +122,7 @@ export class SignIn extends React.Component {
   recoverPasswordSendReq = () => {
     let { _recoverPassword_, recoverPasswordLoading, error } = this.props;
     let { email } = this.state;
+    console.log(this.props, "this.props");
     return (
       <>
         <p className="close-row">

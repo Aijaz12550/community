@@ -3,12 +3,20 @@ import {
   sendInvitesError,
   invitationCode,
 } from "../actions";
-import { _axios, _axios1 } from "$config";
+// import { _axios, _axios1 } from "$config";
+import axios from "axios";
 
-export const sendInvites = (payload) => {
+export const sendInvites = ({ Authorization, invitationObj }) => {
   return async (dispatch) => {
-    await _axios
-      .post(`${process.env.API_BASE_URL}/v2/invitation/send`, payload)
+    await axios
+      .post("http://localhost:4000/", {
+        method: "POST",
+        url: `${process.env.API_BASE_URL}/v2/invitation/send`,
+        body: invitationObj,
+        header: {
+          Authorization,
+        },
+      })
       .then(({ data }) => {
         dispatch(sendInvitesSuccess(data?.paramObjectsMap?.InvitationEntityVO));
       })

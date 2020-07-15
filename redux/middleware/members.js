@@ -1,10 +1,17 @@
 import { getMembersSuccess, getMembersError } from "../actions";
-import { _axios } from "$config";
+import axios from "axios";
 
 export const getMembers = (payload) => {
+  const { Authorization, communityId } = payload;
   return async (dispatch) => {
-    await _axios
-      .get(`${process.env.API_BASE_URL}/v2/member/community/${payload}`)
+    await axios
+      .post("http://localhost:4000/", {
+        url: `${process.env.API_BASE_URL}/v2/member/community/${communityId}`,
+        method: "GET",
+        headers: {
+          Authorization,
+        },
+      })
       .then(({ data }) => {
         dispatch(getMembersSuccess(data?.paramObjectsMap?.communityMembers));
       })

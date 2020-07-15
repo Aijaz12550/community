@@ -61,30 +61,31 @@ export default class InviteResident extends Component {
       },
       dispatch,
     } = this.props;
-    if (
-      inviteReducer.sendInvites.length !==
-        prevProps?.inviteReducer?.sendInvites.length &&
-      inviteReducer.sendInvites.length !== 0
-    ) {
-      this.notify("Invited Successfully");
-      this.setState({
-        invitationData: [
-          {
-            appartmentUnit: "",
-            communityId,
-            email: "",
-            external: false,
-            fullName: "",
-            memberTitle: "",
-            phoneNo: "",
-            roleName: "",
-            source: "WEB-APP",
-            street: "",
-          },
-        ],
-      });
-      dispatch(sendInvitesSuccess([]));
-    }
+    console.log(this.props, 'this.props')
+    // if (
+    //   inviteReducer?.sendInvites?.length !==
+    //     prevProps?.inviteReducer?.sendInvites.length &&
+    //   inviteReducer?.sendInvites?.length !== 0
+    // ) {
+    //   this.notify("Invited Successfully");
+    //   this.setState({
+    //     invitationData: [
+    //       {
+    //         appartmentUnit: "",
+    //         communityId,
+    //         email: "",
+    //         external: false,
+    //         fullName: "",
+    //         memberTitle: "",
+    //         phoneNo: "",
+    //         roleName: "",
+    //         source: "WEB-APP",
+    //         street: "",
+    //       },
+    //     ],
+    //   });
+    //   dispatch(sendInvitesSuccess([]));
+    // }
     if (
       inviteReducer.sendInvitesError !==
         prevProps?.inviteReducer?.sendInvitesError &&
@@ -156,7 +157,7 @@ export default class InviteResident extends Component {
   inviteSendFunc = () => {
     const {
       AuthReducer: {
-        user: { communityId, userId },
+        user: { communityId, userId, access_token },
       },
       dispatch,
     } = this.props;
@@ -167,7 +168,7 @@ export default class InviteResident extends Component {
       sourceType: "WEB-APP",
     };
     console.log(invitationObj, "invitationObj");
-    dispatch(sendInvites(invitationObj));
+    dispatch(sendInvites({ Authorization: `bearer ${access_token}`, invitationObj }));
   };
 
   render() {
@@ -176,7 +177,6 @@ export default class InviteResident extends Component {
       CommunityReducer: { appartmentOrUnitRequired },
     } = this.props;
     const { invitationData } = this.state;
-    console.log(this.props);
     return (
       <div className="content invite-resident-component">
         <Row className="MT60 section-top">

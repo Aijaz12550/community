@@ -172,17 +172,18 @@ export default class ManageMember extends Component {
   componentDidMount() {
     const {
       AuthReducer: {
-        user: { communityId },
+        user: { communityId, access_token },
       },
       dispatch,
     } = this.props;
-    dispatch(getMembers(communityId));
+    dispatch(getMembers({ Authorization: access_token, communityId }));
   }
 
   render() {
     const {
       membersReducer: { getMembers },
     } = this.props;
+    console.log(this.props, 'this.props')
     return (
       <div className="content manage-member-component">
         <Row className="MT60 section-top">
