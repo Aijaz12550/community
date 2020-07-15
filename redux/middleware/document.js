@@ -40,10 +40,16 @@ export const addDocument = ({
   };
 };
 
-export const getDocument = (payload) => {
+export const getDocument = ({ Authorization, communityId }) => {
   return async (dispatch) => {
     await _axios
-      .get(`${process.env.API_BASE_URL}/v2/document/community/${payload}`)
+      .post("http://localhost:4000/", {
+        url: `${process.env.API_BASE_URL}/v2/document/community/${communityId}`,
+        method: "GET",
+        headers: {
+          Authorization,
+        },
+      })
       .then(($data) => {
         dispatch(
           getDocumentSuccess($data?.data?.paramObjectsMap?.DocumentEntityList)

@@ -69,15 +69,17 @@ export default class ManageDocument extends Component {
   componentDidMount() {
     const {
       AuthReducer: {
-        user: { communityId },
+        user: { communityId, access_token },
       },
       documentsReducer: { documents },
       dispatch,
     } = this.props;
-    if (!documents.length) {
+    if (!documents?.length) {
       this.setState({ loader: true });
     }
-    dispatch(getDocument(communityId));
+    dispatch(
+      getDocument({ Authorization: `bearer ${access_token}`, communityId })
+    );
     dispatch(documentType());
   }
 
@@ -89,42 +91,42 @@ export default class ManageDocument extends Component {
   componentDidUpdate(prevProps) {
     const { documentsReducer, dispatch } = this.props;
     if (
-      documentsReducer.documentsError !==
-      prevProps?.documentsReducer?.documentsError &&
-      documentsReducer.documentsError?.length !== 0
+      documentsReducer?.documentsError !==
+        prevProps?.documentsReducer?.documentsError &&
+      documentsReducer?.documentsError?.length !== 0
     ) {
-      this.notify(documentsReducer.documentsError);
+      this.notify(documentsReducer?.documentsError);
       dispatch(getDocumentError(""));
     }
     if (
-      documentsReducer.documents.length !==
-      prevProps?.documentsReducer?.documents.length &&
-      documentsReducer.documents.length !== 0
+      documentsReducer?.documents?.length !==
+        prevProps?.documentsReducer?.documents?.length &&
+      documentsReducer?.documents?.length !== 0
     ) {
       this.setState({ loader: false, deleteIndex: null });
     }
     if (
       documentsReducer?.addDocuments?.documentId !==
-      prevProps.documentsReducer?.addDocuments?.documentId
+      prevProps?.documentsReducer?.addDocuments?.documentId
     ) {
       this.closeModal();
       this.notify("Successfully add Document");
     }
     if (
       documentsReducer.addDocumentsError !==
-      prevProps.documentsReducer.addDocumentsError
+      prevProps?.documentsReducer?.addDocumentsError
     ) {
       this.setState({ modalLoader: false });
     }
     if (
-      documentsReducer.updateDocumentError !==
-      prevProps.documentsReducer.updateDocumentError
+      documentsReducer?.updateDocumentError !==
+      prevProps?.documentsReducer?.updateDocumentError
     ) {
       this.setState({ modalLoader: false });
     }
     if (
       documentsReducer?.updateDocument?.documentId !==
-      prevProps?.documentsReducer?.updateDocument?.documentId &&
+        prevProps?.documentsReducer?.updateDocument?.documentId &&
       documentsReducer?.updateDocument?.documentId
     ) {
       this.setState({ modalLoader: false });
@@ -196,15 +198,15 @@ export default class ManageDocument extends Component {
       setDeleteModalShow: false,
       deleteIndexvalue: null,
       deleteValue: {},
-    })
-  }
+    });
+  };
 
   deleteRow = (val, rowIndex) => {
     this.setState({
       deleteIndex: rowIndex,
       setDeleteModalShow: false,
       deleteIndexvalue: null,
-      deleteValue: {}
+      deleteValue: {},
     });
     let deleteRowObj = {
       communityId: val.communityId,
@@ -320,9 +322,9 @@ export default class ManageDocument extends Component {
     this.setState({
       setDeleteModalShow: true,
       deleteValue: value,
-      deleteIndexvalue: index
-    })
-  }
+      deleteIndexvalue: index,
+    });
+  };
 
   render() {
     const {
@@ -366,7 +368,7 @@ export default class ManageDocument extends Component {
                 </tr>
               </thead>
               <tbody className="scrollBarStyle-Y tBody">
-                {documents.length &&
+                {documents?.length &&
                   documents?.map((val, index) => (
                     <tr className="residents-table-row-modal" key={index}>
                       <td className="td1-m PL30">
@@ -450,11 +452,11 @@ export default class ManageDocument extends Component {
                                   color="#009999"
                                 />
                               ) : (
-                                  <Image
-                                    className=""
-                                    src={"/assets/mockup/delete-table.png"}
-                                  />
-                                )}
+                                <Image
+                                  className=""
+                                  src={"/assets/mockup/delete-table.png"}
+                                />
+                              )}
                             </button>
                           </span>
                         </div>
@@ -502,7 +504,7 @@ export default class ManageDocument extends Component {
                 <p>Delete Document</p>
               </Col>
             </Row>
-            <Row className='row-2'>
+            <Row className="row-2">
               <Col>
                 <p>Are you sure do you want to delete document?</p>
               </Col>
@@ -512,7 +514,16 @@ export default class ManageDocument extends Component {
                 <button onClick={() => this.closeDeleteModal()}>Cancle</button>
               </Col>
               <Col>
-                <button onClick={() => this.deleteRow(this.state.deleteValue, this.state.deleteIndex)}>Yes</button>
+                <button
+                  onClick={() =>
+                    this.deleteRow(
+                      this.state.deleteValue,
+                      this.state.deleteIndex
+                    )
+                  }
+                >
+                  Yes
+                </button>
               </Col>
             </Row>
             <Row>
@@ -594,22 +605,22 @@ export default class ManageDocument extends Component {
                       ))}
                     </select>
                   ) : (
-                      <select
-                        className="dropDownInput"
-                        name="documentType"
-                        value={this.state.addRecord?.documentType}
-                        onChange={(e) => this._onchange(e)}
-                      >
-                        <option key="disable" value="N/A">
-                          N/A
+                    <select
+                      className="dropDownInput"
+                      name="documentType"
+                      value={this.state.addRecord?.documentType}
+                      onChange={(e) => this._onchange(e)}
+                    >
+                      <option key="disable" value="N/A">
+                        N/A
                       </option>
-                        {documentType?.map((value, index) => (
-                          <option key={index} value={value.name}>
-                            {value.description}
-                          </option>
-                        ))}
-                      </select>
-                    )}
+                      {documentType?.map((value, index) => (
+                        <option key={index} value={value.name}>
+                          {value.description}
+                        </option>
+                      ))}
+                    </select>
+                  )}
                 </div>
               </Col>
             </Row>
@@ -636,21 +647,21 @@ export default class ManageDocument extends Component {
                       <span className="fileName">{addRecord.name}</span>
                     </label>
                   ) : (
-                      <div className="drag-n-drop">
-                        <Image
-                          className=""
-                          src={"/assets/mockup/file-import.png"}
-                        />
-                        <input id="fileButton" type="file" hidden />
-                        <button
-                          className="fileUpload-btn"
-                          onClick={this.fileUploadButton}
-                        >
-                          Upload Document
+                    <div className="drag-n-drop">
+                      <Image
+                        className=""
+                        src={"/assets/mockup/file-import.png"}
+                      />
+                      <input id="fileButton" type="file" hidden />
+                      <button
+                        className="fileUpload-btn"
+                        onClick={this.fileUploadButton}
+                      >
+                        Upload Document
                       </button>
-                        <span>or Drop file here</span>
-                      </div>
-                    )}
+                      <span>or Drop file here</span>
+                    </div>
+                  )}
                 </DragAndDrop>
               </Col>
             </Row>
@@ -694,8 +705,8 @@ export default class ManageDocument extends Component {
                   ) : hasEdit ? (
                     "Update"
                   ) : (
-                        "Save"
-                      )}
+                    "Save"
+                  )}
                 </button>
               </Col>
             </Row>
@@ -713,7 +724,7 @@ export default class ManageDocument extends Component {
             </Row>
           </Modal.Body>
         </Modal>
-      </div >
+      </div>
     );
   }
 }
