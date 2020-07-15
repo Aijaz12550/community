@@ -11,113 +11,116 @@ import {
   documentTypeError,
 } from "../actions";
 import { _axios } from "$config";
+import axios from 'axios'
 
-export const addDocument = ({
+export const addDocument = ( {
   Notes,
   file,
   docType,
   category,
   communityId,
   userId,
-}) => {
-  return async (dispatch) => {
+} ) => {
+  return async ( dispatch ) => {
     await _axios
-      .post(`${process.env.API_BASE_URL}/v2/document/add`, file, {
+      .post( "http://localhost:4000/", {
+        method: "POST",
+        url: `${process.env.API_BASE_URL}/v2/document/add`, file,
         headers: { "Content-Type": "multipart/form-data" },
         params: { Notes, category, communityId, docType, userId },
-      })
-      .then(({ data }) => {
-        dispatch(addDocumentSuccess(data?.paramObjectsMap?.DocumentEntityVO));
-      })
-      .catch((error) => {
+      } )
+      .then( ( { data } ) => {
+        dispatch( addDocumentSuccess( data?.paramObjectsMap?.DocumentEntityVO ) );
+      } )
+      .catch( ( error ) => {
         dispatch(
           addDocumentError(
-            JSON.parse(JSON.stringify(error.response))?.data?.paramObjectsMap
+            JSON.parse( JSON.stringify( error.response ) )?.data?.paramObjectsMap
               ?.ErrorMessage
           )
         );
-      });
+      } );
   };
 };
 
-export const getDocument = ({ Authorization, communityId }) => {
-  return async (dispatch) => {
-    await _axios
-      .post("http://localhost:4000/", {
-        url: `${process.env.API_BASE_URL}/v2/document/community/${communityId}`,
+export const getDocument = ( { Authorization, communityId } ) => {
+  return async ( dispatch ) => {
+    await axios
+      .post( "http://localhost:4000/", {
         method: "GET",
+        url: `${process.env.API_BASE_URL}/v2/document/community/${communityId}`,
         headers: {
-          Authorization,
+          Authorization
         },
-      })
-      .then(($data) => {
+      } )
+      .then( ( $data ) => {
         dispatch(
-          getDocumentSuccess($data?.data?.paramObjectsMap?.DocumentEntityList)
+          getDocumentSuccess( $data?.data?.paramObjectsMap?.DocumentEntityList )
         );
-      })
-      .catch((error) => {
+      } )
+      .catch( ( error ) => {
         dispatch(
           getDocumentError(
-            JSON.parse(JSON.stringify(error?.response))?.data?.error
+            JSON.parse( JSON.stringify( error?.response ) )?.data?.error
           )
         );
-      });
+      } );
   };
 };
 
-export const deleteDocument = (payload) => {
-  return async (dispatch) => {
+export const deleteDocument = ( payload ) => {
+  return async ( dispatch ) => {
     await _axios
       .delete(
         `${process.env.API_BASE_URL}/v2/document/community/${payload.communityId}/document/${payload.documentId}`
       )
-      .then(($data) => {
+      .then( ( $data ) => {
         dispatch(
-          deleteDocumentSuccess({
+          deleteDocumentSuccess( {
             data: $data?.data?.paramObjectsMap?.SuccessMsg,
             rowIndex: payload.rowIndex,
-          })
+          } )
         );
-      })
-      .catch((error) => {
-        dispatch(deleteDocumentError(error));
-      });
+      } )
+      .catch( ( error ) => {
+        dispatch( deleteDocumentError( error ) );
+      } );
   };
 };
 
-export const updateDocument = (payload) => {
-  return async (dispatch) => {
+export const updateDocument = ( payload ) => {
+  return async ( dispatch ) => {
     await _axios
-      .post(`${process.env.API_BASE_URL}/v2/document/update`, null, {
+      .post( `${process.env.API_BASE_URL}/v2/document/update`, null, {
         params: payload.docObj,
-      })
-      .then(($data) => {
+      } )
+      .then( ( $data ) => {
         console.log(
           $data?.data?.paramObjectsMap?.DocumentEntityVO,
           "$data?.data?.paramObjectsMap?.DocumentEntityVO"
         );
         dispatch(
-          updateDocumentSuccess({
+          updateDocumentSuccess( {
             data: $data?.data?.paramObjectsMap?.DocumentEntityVO,
             rowIndex: payload.rowIndex,
-          })
+          } )
         );
-      })
-      .catch((error) => {
-        dispatch(updateDocumentError(error?.response?.data?.message));
-      });
+      } )
+      .catch( ( error ) => {
+        dispatch( updateDocumentError( error?.response?.data?.message ) );
+      } );
   };
 };
 
 export const documentType = () => {
-  return async (dispatch) => {
+  return async ( dispatch ) => {
     await _axios
-      .get(`${process.env.API_BASE_URL}/v2/lookup/documentType`)
-      .then(($data) => {
-        dispatch(documentTypeSuccess($data?.data?.paramObjectsMap?.LookupList));
-      })
-      .catch((error) => {
-        dispatch(documentTypeError(error));
-      });
+      .get( `${process.env.API_BASE_URL}/v2/lookup/documentType` )
+      .then( ( $data ) => {
+        dispatch( documentTypeSuccess( $data?.data?.paramObjectsMap?.LookupList ) );
+      } )
+      .catch( ( error ) => {
+        dispatch( documentTypeError( error ) );
+      } );
   };
 };
