@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const getRoles = () => {
   return async ( dispatch ) => {
-    await axios( "http://localhost:4000/", {
+    await axios( "ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
       method: "GET",
       url: `${process.env.API_BASE_URL}/v2/lookup/memberRoleTitles`
     } )

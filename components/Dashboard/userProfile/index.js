@@ -98,7 +98,7 @@ export default class UserProfile extends Component {
       prevProps.profileReducer?.updateProfileSuccess?.fullName
     ) {
       this.setState( { loader: false } );
-      this.notify( "successfully updated" );
+      // this.notify( "successfully updated" );
     }
     if (
       profileReducer.updateProfileError !==
@@ -150,7 +150,7 @@ export default class UserProfile extends Component {
       showMyContactInfo,
       residentSince: residentSince ? residentSince : new Date(),
     };
-    dispatch( updateProfile( updatedProfile ) );
+    dispatch( updateProfile( updatedProfile, toast ) );
   };
 
   render () {

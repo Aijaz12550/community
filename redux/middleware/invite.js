@@ -9,7 +9,7 @@ import axios from "axios";
 export const sendInvites = ( { Authorization, invitationObj } ) => {
   return async ( dispatch ) => {
     await axios
-      .post( "http://localhost:4000/", {
+      .post( "ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
         method: "POST",
         url: `${process.env.API_BASE_URL}/v2/invitation/send`,
         body: invitationObj,
@@ -36,7 +36,7 @@ export const __invitationCode = ( code ) => {
   return ( dispatch ) => {
     return new Promise( async ( resolve, reject ) => {
       await axios
-        .post( "http://localhost:4000/", {
+        .post( "ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
           method: "GET",
           url: `${process.env.API_BASE_URL_1}/v2/users/invitationCode/${code}/valid`
         } )

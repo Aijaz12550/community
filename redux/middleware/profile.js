@@ -11,61 +11,62 @@ import {
 import { _axios } from "$config";
 import axios from "axios";
 
-export const getProfile = ( Authorization ) => {
-  return async ( dispatch ) => {
+export const getProfile = (Authorization) => {
+  return async (dispatch) => {
     await axios
-      .post( "http://localhost:4000/", {
+      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
         url: `https://microservices-dev.weneighbors.io/ms-event/api/v1/users/profile`,
         headers: {
           Authorization,
         },
-      } )
-      .then( ( { data } ) => {
-        dispatch( getProfileSuccess( data ) );
-      } )
-      .catch( ( error ) => {
-        dispatch( getProfileError( error ) );
-      } );
+      })
+      .then(({ data }) => {
+        dispatch(getProfileSuccess(data));
+      })
+      .catch((error) => {
+        dispatch(getProfileError(error));
+      });
   };
 };
 
-export const updateProfile = ( payload ) => {
-  return async ( dispatch ) => {
+export const updateProfile = (payload, toast) => {
+  return async (dispatch) => {
     await _axios
       .put(
         `https://cors-anywhere.herokuapp.com/https://microservices-dev.weneighbors.io/ms-event/api/v1/users/profile`,
         payload
       )
-      .then( ( { data } ) => {
-        dispatch( updateProfileSuccess( data ) );
-      } )
-      .catch( ( error ) => {
-        dispatch( updateProfileError( error?.response?.data?.errors[ 0 ]?.message ) );
-      } );
+      .then(({ data }) => {
+        toast("successfully updated");
+        dispatch(updateProfileSuccess(data));
+      })
+      .catch((error) => {
+        toast(error?.response?.data?.errors[0]?.message);
+        dispatch(updateProfileError(error?.response?.data?.errors[0]?.message));
+      });
   };
 };
 
-export const getAvatar = ( Authorization ) => {
-  return async ( dispatch ) => {
+export const getAvatar = (Authorization) => {
+  return async (dispatch) => {
     await axios
-      .post( "http://localhost:4000/", {
+      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
         url: `https://microservices-dev.weneighbors.io/ms-event/api/v1/users/avatar`,
         headers: {
           Authorization,
         },
-      } )
-      .then( ( { data } ) => {
-        dispatch( getAvatarSuccess( data ) );
-      } )
-      .catch( ( error ) => {
-        dispatch( getAvatarError( error ) );
-      } );
+      })
+      .then(({ data }) => {
+        dispatch(getAvatarSuccess(data));
+      })
+      .catch((error) => {
+        dispatch(getAvatarError(error));
+      });
   };
 };
 
-export const updateAvatar = ( payload ) => {
-  return async ( dispatch ) => {
-
+export const updateAvatar = (payload) => {
+  return async (dispatch) => {
     // await _axios
     //   .post(
     //     `https://cors-anywhere.herokuapp.com/https://microservices-dev.weneighbors.io/ms-event/api/v1/users/avatar`,
@@ -73,18 +74,18 @@ export const updateAvatar = ( payload ) => {
     //     { headers: { "Content-Type": "multipart/form-data" } }
     //   )
     await axios
-      .post( "http://localhost:4000/", {
+      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
         method: "POST",
         url: `https://cors-anywhere.herokuapp.com/https://microservices-dev.weneighbors.io/ms-event/api/v1/users/avatar`,
         body: payload,
-        headers: { "Content-Type": "multipart/form-data" }
-      } )
-      .then( ( { data } ) => {
-        console.log( data, '========FORM DATA=====' );
-        dispatch( updateAvatarSuccess( data ) );
-      } )
-      .catch( ( error ) => {
-        dispatch( updateAvatarError( "something went wrong" ) );
-      } );
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then(({ data }) => {
+        console.log(data, "========FORM DATA=====");
+        dispatch(updateAvatarSuccess(data));
+      })
+      .catch((error) => {
+        dispatch(updateAvatarError("something went wrong"));
+      });
   };
 };

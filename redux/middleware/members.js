@@ -7,7 +7,7 @@ export const getMembers = ( payload ) => {
 
   return async ( dispatch ) => {
     await axios
-      .post( "http://localhost:4000/", {
+      .post( "ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
         url: `${process.env.API_BASE_URL}/v2/member/community/${communityId}`,
         method: "GET",
         headers: {
