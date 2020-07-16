@@ -8,20 +8,20 @@ import { connect } from "react-redux";
 import {
   getUsers,
   signout,
-  familyMembersList,
+  // familyMembersList,
   inviteFamilyMembers,
   residents,
   addDocument,
 } from "$middleware";
 import { useRouter } from "next/router";
 
-export default connect((state) => state)((props) => {
+export default connect( ( state ) => state )( ( props ) => {
   const router = useRouter();
   const { dispatch } = props;
 
   const __SIGNOUT = () => {
-    dispatch(signout());
-    router.push("/signIn");
+    dispatch( signout() );
+    router.push( "/signIn" );
   };
 
   return (
@@ -32,7 +32,7 @@ export default connect((state) => state)((props) => {
         <link
           rel="stylesheet"
           type="text/css"
-          href={"/_next/static/css/styles.chunk.css?v=" + Date.now()}
+          href={ "/_next/static/css/styles.chunk.css?v=" + Date.now() }
         />
         <link
           rel="stylesheet"
@@ -44,9 +44,9 @@ export default connect((state) => state)((props) => {
         ></link>
       </Head>
       <DashBoard
-        _signout={__SIGNOUT}
-        {...props}
+        _signout={ __SIGNOUT }
+        { ...props }
       />
     </Fragment>
   );
-});
+} );

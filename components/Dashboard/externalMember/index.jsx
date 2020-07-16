@@ -6,8 +6,8 @@ import { getExternalMember, getRoles } from "$middleware";
 import "../../../styles/dashboard/externalMember/index.scss";
 
 export default class ExternalMember extends Component {
-  constructor(props) {
-    super(props);
+  constructor ( props ) {
+    super( props );
     this.state = {
       externalMemberData: [
         { role: "N/A", fullName: "", email: "", phoneNumber: "" },
@@ -23,61 +23,61 @@ export default class ExternalMember extends Component {
   }
 
   addRow = () => {
-    this.setState({
+    this.setState( {
       externalMemberData: [
         ...this.state.externalMemberData,
         { roleName: "N/A", fullName: "", email: "", phoneNumber: "" },
       ],
-    });
+    } );
     this.handleScrollToElement();
   };
-  handleScrollToElement = (event) => {
-    window.scrollTo(0, this.myRef.current.offsetTop);
+  handleScrollToElement = ( event ) => {
+    window.scrollTo( 0, this.myRef.current.offsetTop );
   };
 
   resetTable = () => {
-    this.setState({
+    this.setState( {
       externalMemberData: [
         { role: "N/A", fullName: "", email: "", phoneNumber: "" },
       ],
-    });
+    } );
   };
 
-  dropDownChanging = (e, i) => {
+  dropDownChanging = ( e, i ) => {
     let { externalMemberData } = this.state;
-    externalMemberData[i][e.target.name] = e.target.value;
-    this.setState({ externalMemberData }, () =>
-      console.log(this.state.externalMemberData)
+    externalMemberData[ i ][ e.target.name ] = e.target.value;
+    this.setState( { externalMemberData }, () =>
+      console.log( this.state.externalMemberData )
     );
   };
 
-  _onChange = (e, index) => {
+  _onChange = ( e, index ) => {
     let { externalMemberData } = this.state;
-    externalMemberData[index][e.target.name] = e.target.value;
-    this.setState({ externalMemberData });
+    externalMemberData[ index ][ e.target.name ] = e.target.value;
+    this.setState( { externalMemberData } );
   };
 
-  deleteRow = (rowIndex) => {
+  deleteRow = ( rowIndex ) => {
     let filterData = this.state.externalMemberData.filter(
-      (val, i) => i !== rowIndex
+      ( val, i ) => i !== rowIndex
     );
-    this.setState({
+    this.setState( {
       externalMemberData: filterData,
-    });
+    } );
   };
 
-  componentDidMount() {
+  componentDidMount () {
     const {
       AuthReducer: {
-        user: { communityId },
+        user: { communityId, access_token },
       },
       dispatch,
     } = this.props;
-    dispatch(getExternalMember(communityId));
-    dispatch(getRoles());
+    dispatch( getExternalMember( { Authorization: `bearer ${access_token}`, communityId } ) );
+    dispatch( getRoles() );
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate ( prevProps ) {
     const {
       externalMemberReducer: { getExternalMember, getExternalMemberError },
     } = this.props;
@@ -105,17 +105,17 @@ export default class ExternalMember extends Component {
     // }
   }
 
-  render() {
+  render () {
     const {
       rolesReducer: { getRoles },
       CommunityReducer: { appartmentOrUnitRequired },
     } = this.props;
     const { invitationData } = this.state;
-    console.log(this.props);
+    console.log( this.props );
     return (
       <div
         className="content external-member-component"
-        key={Date.now() + 5765}
+        key={ Date.now() + 5765 }
       >
         <Row className="MT60 section-top">
           <Col lg="12" md="12" sm="12" className="PL35 PR35">
@@ -126,7 +126,7 @@ export default class ExternalMember extends Component {
           <Col md="12" className="PL35 PR35">
             <Table responsive className="scrollBarStyle-X">
               <thead className="">
-                {this.state.externalMemberData.length ? (
+                { this.state.externalMemberData.length ? (
                   <tr>
                     <th className="td1-m">Role</th>
                     <th className="td2-m">Full Name</th>
@@ -135,55 +135,55 @@ export default class ExternalMember extends Component {
                     <th className="td5-m"></th>
                   </tr>
                 ) : (
-                  <tr></tr>
-                )}
+                    <tr></tr>
+                  ) }
               </thead>
-              <tbody className="scrollBarStyle-Y tBody" ref={this.myRef}>
-                {this.state.externalMemberData.length &&
-                  this.state.externalMemberData?.map((val, index) => (
-                    <tr className="residents-table-row-modal" key={index}>
+              <tbody className="scrollBarStyle-Y tBody" ref={ this.myRef }>
+                { this.state.externalMemberData.length &&
+                  this.state.externalMemberData?.map( ( val, index ) => (
+                    <tr className="residents-table-row-modal" key={ index }>
                       <td className="td1-m PL30">
                         <div>
-                          {val.roleName === "N/A" ? (
+                          { val.roleName === "N/A" ? (
                             <select
                               className="dropDownInput"
                               name="role"
-                              value={this.state.dropdownInput[0].name}
-                              onChange={(e) => this.dropDownChanging(e, index)}
+                              value={ this.state.dropdownInput[ 0 ].name }
+                              onChange={ ( e ) => this.dropDownChanging( e, index ) }
                             >
-                              <option value={this.state.dropdownInput[0].name}>
-                                {this.state.dropdownInput[0].name}
+                              <option value={ this.state.dropdownInput[ 0 ].name }>
+                                { this.state.dropdownInput[ 0 ].name }
                               </option>
-                              <option value={this.state.dropdownInput[1].name}>
-                                {this.state.dropdownInput[1].name}
+                              <option value={ this.state.dropdownInput[ 1 ].name }>
+                                { this.state.dropdownInput[ 1 ].name }
                               </option>
-                              <option value={this.state.dropdownInput[2].name}>
-                                {this.state.dropdownInput[2].name}
+                              <option value={ this.state.dropdownInput[ 2 ].name }>
+                                { this.state.dropdownInput[ 2 ].name }
                               </option>
-                              <option value={this.state.dropdownInput[3].name}>
-                                {this.state.dropdownInput[3].name}
+                              <option value={ this.state.dropdownInput[ 3 ].name }>
+                                { this.state.dropdownInput[ 3 ].name }
                               </option>
                             </select>
                           ) : (
-                            <select
-                              className="dropDownInput"
-                              name="role"
-                              value={val.roleName}
-                              onChange={(e) => this.dropDownChanging(e, index)}
-                            >
-                              <option value={val.roleName}>
-                                {val.roleName}
-                              </option>
-                            </select>
-                          )}
+                              <select
+                                className="dropDownInput"
+                                name="role"
+                                value={ val.roleName }
+                                onChange={ ( e ) => this.dropDownChanging( e, index ) }
+                              >
+                                <option value={ val.roleName }>
+                                  { val.roleName }
+                                </option>
+                              </select>
+                            ) }
                         </div>
                       </td>
                       <td>
                         <input
                           type="text"
                           name="fullName"
-                          value={val.fullName}
-                          onChange={(e) => this._onChange(e, index)}
+                          value={ val.fullName }
+                          onChange={ ( e ) => this._onChange( e, index ) }
                         />
                       </td>
                       {/* <td className="td2-m">
@@ -193,25 +193,25 @@ export default class ExternalMember extends Component {
                         <input
                           type="email"
                           name="email"
-                          value={val.email}
-                          onChange={(e) => this._onChange(e, index)}
+                          value={ val.email }
+                          onChange={ ( e ) => this._onChange( e, index ) }
                         />
                       </td>
                       <td className="td4-m">
                         <input
                           type="text"
                           name="phoneNumber"
-                          value={val.phoneNo}
-                          onChange={(e) => this._onChange(e, index)}
+                          value={ val.phoneNo }
+                          onChange={ ( e ) => this._onChange( e, index ) }
                         />
                       </td>
                       <td className="td5-m">
-                        <button onClick={() => this.deleteRow(index)}>
+                        <button onClick={ () => this.deleteRow( index ) }>
                           <img src="/assets/mockup/delete-icon.png" />
                         </button>
                       </td>
                     </tr>
-                  ))}
+                  ) ) }
               </tbody>
             </Table>
           </Col>
@@ -219,10 +219,10 @@ export default class ExternalMember extends Component {
         <Row className="add-btn-row">
           <Col lg="12" md="12" sm="12" className="PL35 PR35">
             <span className="invite-span">
-              <button className="add-row-invitation-btn" onClick={this.addRow}>
+              <button className="add-row-invitation-btn" onClick={ this.addRow }>
                 <Image
                   className="add-btn"
-                  src={"/assets/mockup/add-invite-member.png"}
+                  src={ "/assets/mockup/add-invite-member.png" }
                 />
               </button>
               <p className="btn-text">Add Resident</p>
@@ -232,10 +232,10 @@ export default class ExternalMember extends Component {
         <Row className="invite-btn-row">
           <Col lg="12" md="12" sm="12" className="PL35 PR35 invite-send-row">
             <span className="send-invite-box">
-              <button className="reset-invite" onClick={this.resetTable}>
+              <button className="reset-invite" onClick={ this.resetTable }>
                 <Image
                   className="add-btn"
-                  src={"/assets/mockup/reset-icon.png"}
+                  src={ "/assets/mockup/reset-icon.png" }
                 />
                 Reset
               </button>

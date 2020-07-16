@@ -10,8 +10,8 @@ import { toast } from "react-toastify";
 import "../../../styles/dashboard/userProfile/index.scss";
 
 export default class UserProfile extends Component {
-  constructor(props) {
-    super(props);
+  constructor ( props ) {
+    super( props );
     this.state = {
       userDetail: {
         fullName: "",
@@ -29,38 +29,39 @@ export default class UserProfile extends Component {
 
   fileUploadButton = () => {
     try {
-      document.getElementById("fileButton").click();
+      document.getElementById( "fileButton" ).click();
       let val = "";
-      document.getElementById("fileButton").onchange = (e) => {
-        let val1 = URL.createObjectURL(e.target.files[0]);
-        val = document.getElementById("fileButton").files;
-        let file = val[0];
+      document.getElementById( "fileButton" ).onchange = ( e ) => {
+        let val1 = URL.createObjectURL( e.target.files[ 0 ] );
+        val = document.getElementById( "fileButton" ).files;
+        let file = val[ 0 ];
         let { userDetail } = this.state;
         userDetail.familyMemberAvatarUrl = val1;
-        this.setState({
+        this.setState( {
           userDetail,
-        });
+        } );
         let formdata = new FormData();
-        formdata.append("file", file);
-        this.props.dispatch(updateAvatar(formdata));
+        formdata.append( "file", file );
+        this.props.dispatch( updateAvatar( formdata ) );
+
       };
-    } catch (error) {
+    } catch ( error ) {
       throw error;
     }
   };
 
-  _onChange = (e) => {
+  _onChange = ( e ) => {
     e.preventDefault();
     let { userDetail } = this.state;
-    userDetail[e.target.name] = e.target.value;
-    this.setState({
+    userDetail[ e.target.name ] = e.target.value;
+    this.setState( {
       userDetail,
-    });
+    } );
   };
 
-  componentDidMount() {
+  componentDidMount () {
     const { profileReducer } = this.props;
-    if (profileReducer.getProfile.email) {
+    if ( profileReducer.getProfile.email ) {
       const {
         fullName,
         familyMemberAvatarUrl,
@@ -68,7 +69,7 @@ export default class UserProfile extends Component {
         phone,
         residentSince,
       } = profileReducer.getProfile;
-      this.setState({
+      this.setState( {
         userDetail: {
           fullName,
           familyMemberAvatarUrl,
@@ -77,51 +78,51 @@ export default class UserProfile extends Component {
           phone,
           residentSince,
         },
-      });
+      } );
     }
   }
 
-  notify = (payload) => {
-    this.setState({ loader: false });
-    toast(payload);
+  notify = ( payload ) => {
+    this.setState( { loader: false } );
+    toast( payload );
   };
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate ( prevProps ) {
     const { profileReducer, dispatch } = this.props;
     if (
       profileReducer?.updateProfileSuccess?.email !==
-        prevProps.profileReducer?.updateProfileSuccess?.email ||
+      prevProps.profileReducer?.updateProfileSuccess?.email ||
       profileReducer?.updateProfileSuccess?.phone !==
-        prevProps.profileReducer?.updateProfileSuccess?.phone ||
+      prevProps.profileReducer?.updateProfileSuccess?.phone ||
       profileReducer?.updateProfileSuccess?.fullName !==
-        prevProps.profileReducer?.updateProfileSuccess?.fullName
+      prevProps.profileReducer?.updateProfileSuccess?.fullName
     ) {
-      this.setState({ loader: false });
-      this.notify("successfully updated");
+      this.setState( { loader: false } );
+      this.notify( "successfully updated" );
     }
     if (
       profileReducer.updateProfileError !==
       prevProps.profileReducer.updateProfileError
     ) {
-      this.setState({
+      this.setState( {
         loader: false,
         error: profileReducer.updateProfileError,
-      });
-      dispatch(updateProfileError(""));
+      } );
+      dispatch( updateProfileError( "" ) );
     }
     if (
       profileReducer?.updateAvatar?.userImage !==
       prevProps.profileReducer?.updateAvatar?.userImage
     ) {
-      this.notify("successfully Image updated");
+      this.notify( "successfully Image updated" );
     }
     if (
       profileReducer?.updateAvatarError !==
-        prevProps.profileReducer?.updateAvatarError &&
+      prevProps.profileReducer?.updateAvatarError &&
       !profileReducer?.updateAvatarError
     ) {
-      this.setState({ error: profileReducer?.updateAvatarError });
-      dispatch(updateAvatarError(""));
+      this.setState( { error: profileReducer?.updateAvatarError } );
+      dispatch( updateAvatarError( "" ) );
     }
   }
 
@@ -129,9 +130,9 @@ export default class UserProfile extends Component {
     const {
       userDetail: { fullName, familyMemberAvatarUrl, email, phone },
     } = this.state;
-    this.setState({
+    this.setState( {
       loader: true,
-    });
+    } );
     const { profileReducer, dispatch } = this.props;
     const {
       canChangeName,
@@ -149,43 +150,43 @@ export default class UserProfile extends Component {
       showMyContactInfo,
       residentSince: residentSince ? residentSince : new Date(),
     };
-    dispatch(updateProfile(updatedProfile));
+    dispatch( updateProfile( updatedProfile ) );
   };
 
-  render() {
+  render () {
     const { userDetail, loader, error } = this.state;
     return (
-      <div className="content user-profile-component" key={Date.now() + 5765}>
+      <div className="content user-profile-component" key={ Date.now() + 5765 }>
         <Row className="MT60 section-top">
           <Col lg="12" md="12" sm="12" className="PL35 PR35">
             <DashboardHeaderCard />
           </Col>
         </Row>
         <Row className="body-row scrollBarStyle-Y ">
-          {userDetail.email ? (
+          { userDetail.email ? (
             <>
               <div className="profile-card">
                 <div className="profile-div">
-                  <div className="user-name">{userDetail.fullName}</div>
+                  <div className="user-name">{ userDetail.fullName }</div>
                   <div className="user-role">
-                    <span>{this.state.userDetail.role}</span>
+                    <span>{ this.state.userDetail.role }</span>
                   </div>
                   <div className="profile-image-div">
                     <Image
                       className="profile-image"
-                      src={userDetail.familyMemberAvatarUrl}
+                      src={ userDetail.familyMemberAvatarUrl }
                     />
                   </div>
                   <div className="upload-photo-div">
                     <input id="fileButton" type="file" hidden />
                     <button
                       className="fileUpload-btn"
-                      onClick={this.fileUploadButton}
+                      onClick={ this.fileUploadButton }
                     >
                       <span>Upload Photo</span>
                     </button>
                   </div>
-                  {error && <p style={{ color: "red" }}>Hello world</p>}
+                  { error && <p style={ { color: "red" } }>Hello world</p> }
                   <div className="footer-card">
                     <div className="image-content">
                       <span>
@@ -214,8 +215,8 @@ export default class UserProfile extends Component {
                     <Input
                       type="text"
                       name="fullName"
-                      value={userDetail.fullName}
-                      onChange={(e) => this._onChange(e)}
+                      value={ userDetail.fullName }
+                      onChange={ ( e ) => this._onChange( e ) }
                     />
                   </span>
                 </div>
@@ -235,9 +236,9 @@ export default class UserProfile extends Component {
                     <Input
                       type="text"
                       name="email"
-                      value={userDetail.email}
+                      value={ userDetail.email }
                       disabled
-                      onChange={(e) => this._onChange(e)}
+                      onChange={ ( e ) => this._onChange( e ) }
                     />
                   </span>
                 </div>
@@ -250,8 +251,8 @@ export default class UserProfile extends Component {
                     <Input
                       type="text"
                       name="phone"
-                      value={userDetail.phone}
-                      onChange={(e) => this._onChange(e)}
+                      value={ userDetail.phone }
+                      onChange={ ( e ) => this._onChange( e ) }
                     />
                   </span>
                 </div>
@@ -264,53 +265,53 @@ export default class UserProfile extends Component {
                     <Input
                       type="text"
                       name="memberSince"
-                      value={userDetail.residentSince}
+                      value={ userDetail.residentSince }
                       disabled
                     />
                   </span>
                 </div>
 
                 <div className="save-btn-div">
-                  <button onClick={this.saveProfile} className="save-btn">
-                    {loader ? (
+                  <button onClick={ this.saveProfile } className="save-btn">
+                    { loader ? (
                       <div
-                        style={{
+                        style={ {
                           display: "flex",
                           justifyContent: "center",
                           alignItems: "center",
-                        }}
+                        } }
                       >
                         <ReactLoading
-                          height={"30px"}
-                          width={"30px"}
+                          height={ "30px" }
+                          width={ "30px" }
                           type="bubbles"
                           color="white"
                         />
                       </div>
                     ) : (
-                      <span>Save</span>
-                    )}
+                        <span>Save</span>
+                      ) }
                   </button>
 
                   <div
-                    style={{
+                    style={ {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
                       height: "50px",
                       color: "red",
-                    }}
+                    } }
                   >
-                    {error}
+                    { error }
                   </div>
                 </div>
               </div>
             </>
           ) : (
-            <div style={{ width: "100%", height: "100%" }}>
-              <Loader />
-            </div>
-          )}
+              <div style={ { width: "100%", height: "100%" } }>
+                <Loader />
+              </div>
+            ) }
         </Row>
       </div>
     );

@@ -35,10 +35,11 @@ export const sendInvites = ( { Authorization, invitationObj } ) => {
 export const __invitationCode = ( code ) => {
   return ( dispatch ) => {
     return new Promise( async ( resolve, reject ) => {
-      await _axios
-        .get(
-          `${process.env.API_BASE_URL_1}/v2/users/invitationCode/${code}/valid`
-        )
+      await axios
+        .post( "http://localhost:4000/", {
+          method: "GET",
+          url: `${process.env.API_BASE_URL_1}/v2/users/invitationCode/${code}/valid`
+        } )
         .then( ( data ) => {
           dispatch( invitationCode( data?.data?.body ) );
           resolve( data );
@@ -54,7 +55,7 @@ export const __invitationCode = ( code ) => {
 export const __homeAddressValidation = ( payload ) => {
   return ( dispatch ) => {
     return new Promise( async ( resolve, reject ) => {
-      await _axios1
+      await axios
         .post( "/v1/users/validateCommunity", payload )
         .then( ( data ) => {
           resolve( data );

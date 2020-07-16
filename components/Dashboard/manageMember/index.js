@@ -6,8 +6,8 @@ import { getMembers } from "$middleware";
 import "../../../styles/dashboard/manageMember/index.scss";
 
 export default class ManageMember extends Component {
-  constructor(props) {
-    super(props);
+  constructor ( props ) {
+    super( props );
     this.state = {
       tableCreate: [
         {
@@ -45,7 +45,7 @@ export default class ManageMember extends Component {
         hasResident: false,
         hasDeative: false,
       },
-      role: ["Community Member", "Service Manger", "HOA Bylaws"],
+      role: [ "Community Member", "Service Manger", "HOA Bylaws" ],
       setModalShow: false,
       hasEdit: false,
       editIndex: null,
@@ -55,15 +55,15 @@ export default class ManageMember extends Component {
   }
 
   addRowModal = () => {
-    this.setState({
+    this.setState( {
       setModalShow: true,
-    });
+    } );
   };
 
   addRow = () => {
-    if (this.state.hasEdit) {
+    if ( this.state.hasEdit ) {
       let { tableCreate } = this.state;
-      tableCreate[this.state.editIndex] = this.state.addRecord;
+      tableCreate[ this.state.editIndex ] = this.state.addRecord;
 
       this.setState(
         {
@@ -77,7 +77,7 @@ export default class ManageMember extends Component {
     } else {
       this.setState(
         {
-          tableCreate: [...this.state.tableCreate, this.state.addRecord],
+          tableCreate: [ ...this.state.tableCreate, this.state.addRecord ],
           hasAddRow: true,
           setModalShow: false,
         },
@@ -87,9 +87,9 @@ export default class ManageMember extends Component {
   };
 
   alertModal = () => {
-    if (this.state.hasAddRow) {
-      setTimeout(() => {
-        this.setState({
+    if ( this.state.hasAddRow ) {
+      setTimeout( () => {
+        this.setState( {
           hasAddRow: false,
           addRecord: {
             role: "",
@@ -100,14 +100,14 @@ export default class ManageMember extends Component {
             hasDeative: false,
           },
           hasEdit: false,
-        });
-      }, 3000);
+        } );
+      }, 3000 );
     }
   };
 
   closeAlert = () => {
-    if (this.state.hasAddRow) {
-      this.setState({
+    if ( this.state.hasAddRow ) {
+      this.setState( {
         hasAddRow: false,
         addRecord: {
           role: "",
@@ -118,72 +118,72 @@ export default class ManageMember extends Component {
           hasDeative: false,
         },
         hasEdit: false,
-      });
+      } );
     }
   };
 
   closeModal = () => {
-    this.setState({
+    this.setState( {
       setModalShow: false,
-    });
+    } );
   };
 
-  deleteRow = (rowIndex) => {
+  deleteRow = ( rowIndex ) => {
     let filterData = this.state.tableCreate.filter(
-      (val, index) => index !== rowIndex
+      ( val, index ) => index !== rowIndex
     );
-    this.setState({
+    this.setState( {
       tableCreate: filterData,
-    });
+    } );
   };
 
-  _onchange = (e) => {
+  _onchange = ( e ) => {
     let { addRecord } = this.state;
-    addRecord[e.target.name] = e.target.value;
-    this.setState({
+    addRecord[ e.target.name ] = e.target.value;
+    this.setState( {
       addRecord,
-    });
+    } );
   };
 
-  _onchangeSwitch = (e, hasChecking) => {
+  _onchangeSwitch = ( e, hasChecking ) => {
     let { addRecord } = this.state;
-    if (hasChecking) {
-      addRecord[e.target.name] = false;
-      this.setState({
+    if ( hasChecking ) {
+      addRecord[ e.target.name ] = false;
+      this.setState( {
         addRecord,
-      });
+      } );
     } else {
-      addRecord[e.target.name] = true;
-      this.setState({
+      addRecord[ e.target.name ] = true;
+      this.setState( {
         addRecord,
-      });
+      } );
     }
   };
 
-  editRow = (value, index) => {
-    this.setState({
+  editRow = ( value, index ) => {
+    this.setState( {
       addRecord: value,
       setModalShow: true,
       editIndex: index,
       hasEdit: true,
-    });
+    } );
   };
 
-  componentDidMount() {
+  componentDidMount () {
     const {
       AuthReducer: {
         user: { communityId, access_token },
       },
       dispatch,
     } = this.props;
-    dispatch(getMembers({ Authorization: access_token, communityId }));
+    dispatch( getMembers( { Authorization: `bearer ${access_token}`, communityId } ) );
   }
 
-  render() {
+  render () {
     const {
       membersReducer: { getMembers },
     } = this.props;
-    console.log(this.props, 'this.props')
+    console.log( this.props, 'this.props' )
     return (
       <div className="content manage-member-component">
         <Row className="MT60 section-top">
@@ -225,22 +225,22 @@ export default class ManageMember extends Component {
                 </tr>
               </thead>
               <tbody className="scrollBarStyle-Y tBody">
-                {getMembers?.map((val, index) => (
-                  <tr className="residents-table-row-modal" key={index}>
+                { getMembers?.map( ( val, index ) => (
+                  <tr className="residents-table-row-modal" key={ index }>
                     <td className="td1-m PL30">
                       <div
-                        style={{
+                        style={ {
                           display: "flex",
                           flexDirection: "column",
                           width: "100%",
-                        }}
+                        } }
                       >
                         <input
                           className="input1"
-                          style={{ background: "white" }}
+                          style={ { background: "white" } }
                           type="text"
                           name="role"
-                          value={val.title}
+                          value={ val.title }
                           disabled
                         />
                       </div>
@@ -248,18 +248,18 @@ export default class ManageMember extends Component {
 
                     <td className="td2-m">
                       <div
-                        style={{
+                        style={ {
                           display: "flex",
                           flexDirection: "column",
                           width: "100%",
-                        }}
+                        } }
                       >
                         <input
                           className="input2"
-                          style={{ background: "white" }}
+                          style={ { background: "white" } }
                           type="text"
                           name="fullName"
-                          value={val.fullName}
+                          value={ val.fullName }
                           disabled
                         />
                       </div>
@@ -267,18 +267,18 @@ export default class ManageMember extends Component {
 
                     <td className="td3-m">
                       <div
-                        style={{
+                        style={ {
                           display: "flex",
                           flexDirection: "column",
                           width: "100%",
-                        }}
+                        } }
                       >
                         <input
                           className="input3"
-                          style={{ background: "white" }}
+                          style={ { background: "white" } }
                           type="email"
                           name="email"
-                          value={val.email}
+                          value={ val.email }
                           placeholder="Add Note Here"
                           disabled
                         />
@@ -286,18 +286,18 @@ export default class ManageMember extends Component {
                     </td>
                     <td className="td4-m">
                       <div
-                        style={{
+                        style={ {
                           display: "flex",
                           flexDirection: "column",
                           width: "100%",
-                        }}
+                        } }
                       >
                         <input
                           className="input3"
-                          style={{ background: "white" }}
+                          style={ { background: "white" } }
                           type="email"
                           name="phoneNo"
-                          value={val.phoneNo}
+                          value={ val.phoneNo }
                           placeholder="Add Note Here"
                           disabled
                         />
@@ -305,16 +305,16 @@ export default class ManageMember extends Component {
                     </td>
                     <td className="td5-m">
                       <div
-                        style={{
+                        style={ {
                           display: "flex",
                           flexDirection: "column",
                           width: "100%",
-                        }}
+                        } }
                       >
                         <label className="container-checkbox">
                           <input
                             type="checkbox"
-                            checked={val.resident}
+                            checked={ val.resident }
                             disabled
                           />
                           <span className="checkmark-1"></span>
@@ -326,27 +326,27 @@ export default class ManageMember extends Component {
                         <span>
                           <button
                             className="btn"
-                            onClick={() => this.editRow(val, index)}
+                            onClick={ () => this.editRow( val, index ) }
                           >
                             <Image
                               className=""
-                              src={"/assets/mockup/edit-row.png"}
+                              src={ "/assets/mockup/edit-row.png" }
                             />
                           </button>
                           <button
                             className="btn"
-                            onClick={() => this.deleteRow(index)}
+                            onClick={ () => this.deleteRow( index ) }
                           >
                             <Image
                               className=""
-                              src={"/assets/mockup/delete-table.png"}
+                              src={ "/assets/mockup/delete-table.png" }
                             />
                           </button>
                         </span>
                       </div>
                     </td>
                   </tr>
-                ))}
+                ) ) }
               </tbody>
             </Table>
           </Col>
@@ -356,11 +356,11 @@ export default class ManageMember extends Component {
             <span className="invite-span">
               <button
                 className="add-row-invitation-btn"
-                onClick={this.addRowModal}
+                onClick={ this.addRowModal }
               >
                 <Image
                   className="add-btn"
-                  src={"/assets/mockup/add-invite-member.png"}
+                  src={ "/assets/mockup/add-invite-member.png" }
                 />
               </button>
               <p className="btn-text">Add Resident</p>
@@ -368,22 +368,22 @@ export default class ManageMember extends Component {
           </Col>
         </Row>
         <Modal
-          show={this.state.setModalShow}
-          onHide={() => this.setState({ setModalShow: false })}
+          show={ this.state.setModalShow }
+          onHide={ () => this.setState( { setModalShow: false } ) }
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
           className="add-record-modal"
         >
           <Modal.Header closeButton>
-            <span onClick={this.closeModal}>
-              <Image className="" src={"/assets/mockup/modal-close-btn.png"} />
+            <span onClick={ this.closeModal }>
+              <Image className="" src={ "/assets/mockup/modal-close-btn.png" } />
             </span>
           </Modal.Header>
           <Modal.Body>
             <Row className="row-1">
               <Col>
-                <p>{this.state.hasEdit ? "Edit Member" : "Add Member"}</p>
+                <p>{ this.state.hasEdit ? "Edit Member" : "Add Member" }</p>
               </Col>
             </Row>
             <Row className="row-2">
@@ -393,45 +393,45 @@ export default class ManageMember extends Component {
             </Row>
             <Row className="row-3">
               <Col>
-                {/* value={val.role} onChange={(e) => this.dropDownChanging(e, index)}  */}
+                {/* value={val.role} onChange={(e) => this.dropDownChanging(e, index)}  */ }
                 <div>
-                  {this.state.hasEdit ? (
+                  { this.state.hasEdit ? (
                     <select
                       className="dropDownInput"
                       name="role"
-                      value={this.state.addRecord.role}
-                      onChange={(e) => this._onchange(e)}
+                      value={ this.state.addRecord.role }
+                      onChange={ ( e ) => this._onchange( e ) }
                     >
-                      <option key="selected" value={this.state.addRecord.role}>
-                        {this.state.addRecord.role}
+                      <option key="selected" value={ this.state.addRecord.role }>
+                        { this.state.addRecord.role }
                       </option>
-                      {this.state.role.map((val, index) => (
+                      { this.state.role.map( ( val, index ) => (
                         <>
-                          {val !== this.state.addRecord.role ? (
-                            <option key={index} value={val}>
-                              {val}
+                          { val !== this.state.addRecord.role ? (
+                            <option key={ index } value={ val }>
+                              { val }
                             </option>
-                          ) : null}
+                          ) : null }
                         </>
-                      ))}
+                      ) ) }
                     </select>
                   ) : (
-                    <select
-                      className="dropDownInput"
-                      name="role"
-                      value={this.state.addRecord.role}
-                      onChange={(e) => this._onchange(e)}
-                    >
-                      <option key="disable" value="N/A" disabled>
-                        N/A
+                      <select
+                        className="dropDownInput"
+                        name="role"
+                        value={ this.state.addRecord.role }
+                        onChange={ ( e ) => this._onchange( e ) }
+                      >
+                        <option key="disable" value="N/A" disabled>
+                          N/A
                       </option>
-                      {this.state.role.map((value, index) => (
-                        <option key={index} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                  )}
+                        { this.state.role.map( ( value, index ) => (
+                          <option key={ index } value={ value }>
+                            { value }
+                          </option>
+                        ) ) }
+                      </select>
+                    ) }
                 </div>
               </Col>
             </Row>
@@ -445,9 +445,9 @@ export default class ManageMember extends Component {
                 <Input
                   type="text"
                   name="fullName"
-                  value={this.state.addRecord.fullName}
+                  value={ this.state.addRecord.fullName }
                   placeholder="Enter Full Name"
-                  onChange={(e) => this._onchange(e)}
+                  onChange={ ( e ) => this._onchange( e ) }
                 />
               </Col>
             </Row>
@@ -461,9 +461,9 @@ export default class ManageMember extends Component {
                 <Input
                   type="email"
                   name="email"
-                  value={this.state.addRecord.email}
+                  value={ this.state.addRecord.email }
                   placeholder="Enter Email Address"
-                  onChange={(e) => this._onchange(e)}
+                  onChange={ ( e ) => this._onchange( e ) }
                 />
               </Col>
             </Row>
@@ -477,9 +477,9 @@ export default class ManageMember extends Component {
                 <Input
                   type="text"
                   name="phoneNo"
-                  value={this.state.addRecord.phoneNo}
+                  value={ this.state.addRecord.phoneNo }
                   placeholder="Enter Phone Number"
-                  onChange={(e) => this._onchange(e)}
+                  onChange={ ( e ) => this._onchange( e ) }
                 />
               </Col>
             </Row>
@@ -492,13 +492,13 @@ export default class ManageMember extends Component {
                       <input
                         type="checkbox"
                         name="hasResident"
-                        onChange={(e) =>
+                        onChange={ ( e ) =>
                           this._onchangeSwitch(
                             e,
                             this.state.addRecord.hasResident
                           )
                         }
-                        checked={this.state.addRecord.hasResident}
+                        checked={ this.state.addRecord.hasResident }
                       />
                       <span className="slider round"></span>
                     </label>
@@ -515,13 +515,13 @@ export default class ManageMember extends Component {
                       <input
                         type="checkbox"
                         name="hasDeative"
-                        onChange={(e) =>
+                        onChange={ ( e ) =>
                           this._onchangeSwitch(
                             e,
                             this.state.addRecord.hasDeative
                           )
                         }
-                        checked={this.state.addRecord.hasDeative}
+                        checked={ this.state.addRecord.hasDeative }
                       />
                       <span className="slider round"></span>
                     </label>
@@ -532,8 +532,8 @@ export default class ManageMember extends Component {
 
             <Row className="row-12">
               <Col>
-                <button onClick={this.addRow}>
-                  {this.state.hasEdit ? "Update" : "Save"}
+                <button onClick={ this.addRow }>
+                  { this.state.hasEdit ? "Update" : "Save" }
                 </button>
               </Col>
             </Row>
@@ -548,17 +548,17 @@ export default class ManageMember extends Component {
           <Col>
             <div className="main-content">
               <span className="name-role">
-                {this.state.addRecord.fullName} "{this.state.addRecord.role}"
+                { this.state.addRecord.fullName } "{ this.state.addRecord.role }"
               </span>
               <span className="type-message">
-                {this.state.hasEdit
+                { this.state.hasEdit
                   ? "Update in the list"
-                  : "Added in the list"}
+                  : "Added in the list" }
               </span>
             </div>
             <div className="cancle-div">
-              <button onClick={this.closeAlert}>
-                <Image src={"/assets/mockup/close-icon.png"} />
+              <button onClick={ this.closeAlert }>
+                <Image src={ "/assets/mockup/close-icon.png" } />
               </button>
             </div>
           </Col>
