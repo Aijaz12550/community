@@ -14,7 +14,7 @@ import axios from "axios";
 export const getProfile = (Authorization) => {
   return async (dispatch) => {
     await axios
-      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
+      .post("http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
         url: `https://microservices-dev.weneighbors.io/ms-event/api/v1/users/profile`,
         headers: {
           Authorization,
@@ -50,7 +50,7 @@ export const updateProfile = (payload, toast) => {
 export const getAvatar = (Authorization) => {
   return async (dispatch) => {
     await axios
-      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
+      .post("http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
         url: `https://microservices-dev.weneighbors.io/ms-event/api/v1/users/avatar`,
         headers: {
           Authorization,
@@ -74,7 +74,7 @@ export const updateAvatar = (payload) => {
     //     { headers: { "Content-Type": "multipart/form-data" } }
     //   )
     await axios
-      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
+      .post("http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
         method: "POST",
         url: `https://cors-anywhere.herokuapp.com/https://microservices-dev.weneighbors.io/ms-event/api/v1/users/avatar`,
         body: payload,

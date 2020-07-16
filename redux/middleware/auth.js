@@ -11,7 +11,7 @@ export const login = (payload) => {
   return (dispatch) => {
     return new Promise((resolve, reject) => {
       return axios
-        .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000", {
+        .post("http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
           body: payload,
           method: "POST",
           url: process.env.OAUTH_TOKEN_URL,

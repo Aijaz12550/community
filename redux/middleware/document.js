@@ -37,7 +37,7 @@ export const addDocument = ({
 
   return async (dispatch) => {
     // await axios
-    // .post( "ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
+    // .post( "http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
     //   method: "POST",
     //   url: `${process.env.API_BASE_URL}/v2/document/add${params}`,
     //   headers: {
@@ -73,7 +73,7 @@ export const addDocument = ({
 export const getDocument = ({ Authorization, communityId }) => {
   return async (dispatch) => {
     await axios
-      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
+      .post("http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
         method: "GET",
         url: `${process.env.API_BASE_URL}/v2/document/community/${communityId}`,
         headers: {
@@ -102,7 +102,7 @@ export const deleteDocument = (payload) => {
     //     `${process.env.API_BASE_URL}/v2/document/community/${payload.communityId}/document/${payload.documentId}`
     //   )
     await axios
-      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
+      .post("http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
         method: "DELETE",
         url: `${process.env.API_BASE_URL}/v2/document/community/${payload.communityId}/document/${payload.documentId}`,
         headers: {
@@ -133,7 +133,7 @@ export const updateDocument = (payload) => {
     //     params: payload.docObj,
     //   } )
     // await axios
-    //   .post( "ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
+    //   .post( "http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
     //     method: "POST",
     //     url: `${process.env.API_BASE_URL}/v2/document/update?${payload.docObj}`,
     //     // params: payload.docObj,
@@ -178,7 +178,7 @@ export const updateDocument = (payload) => {
 export const documentType = (authorization) => {
   return async (dispatch) => {
     await axios
-      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000/", {
+      .post("http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
         url: `${process.env.API_BASE_URL}/v2/lookup/documentType`,
         method: "GET",
         headers: {

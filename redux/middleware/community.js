@@ -5,7 +5,7 @@ import axios from "axios";
 export const getCommunity = ({ Authorization, communityId }) => {
   return async (dispatch) => {
     await axios
-      .post("ec2-18-218-60-110.us-east-2.compute.amazonaws.com:4000", {
+      .post("http://ec2-18-188-176-187.us-east-2.compute.amazonaws.com:4000/", {
         method: "GET",
         url: `${process.env.API_BASE_URL_1}/v1/users/community/${communityId}`,
         headers: {
