@@ -46,7 +46,7 @@ export default function NotificationListComponent() {
 
               <List />
               <List />
-             
+
               <span className="list-earlier">Earlier</span>
 
               <List />
@@ -55,7 +55,6 @@ export default function NotificationListComponent() {
               <List />
               <List />
               <List />
-            
             </div>
           </div>
         </Popover>
